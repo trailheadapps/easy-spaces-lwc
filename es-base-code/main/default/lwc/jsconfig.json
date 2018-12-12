@@ -1,0 +1,56 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c-inline-message": ["inlineMessage/inlineMessage.js"],
+            "c-pubsub": ["pubsub/pubsub.js"],
+            "c-image-gallery": [
+                "../../../../es-base-styles/main/default/lwc/imageGallery/imageGallery.js"
+            ],
+            "c-image-tile": [
+                "../../../../es-base-styles/main/default/lwc/imageTile/imageTile.js"
+            ],
+            "c-pill": [
+                "../../../../es-base-styles/main/default/lwc/pill/pill.js"
+            ],
+            "c-pill-list": [
+                "../../../../es-base-styles/main/default/lwc/pillList/pillList.js"
+            ],
+            "c-customer-detail-form": [
+                "../../../../es-space-mgmt/main/default/lwc/customerDetailForm/customerDetailForm.js"
+            ],
+            "c-customer-list": [
+                "../../../../es-space-mgmt/main/default/lwc/customerList/customerList.js"
+            ],
+            "c-customer-tile": [
+                "../../../../es-space-mgmt/main/default/lwc/customerTile/customerTile.js"
+            ],
+            "c-related-spaces": [
+                "../../../../es-space-mgmt/main/default/lwc/relatedSpaces/relatedSpaces.js"
+            ],
+            "c-reservation-detail-form": [
+                "../../../../es-space-mgmt/main/default/lwc/reservationDetailForm/reservationDetailForm.js"
+            ],
+            "c-reservation-helper": [
+                "../../../../es-space-mgmt/main/default/lwc/reservationHelper/reservationHelper.js"
+            ],
+            "c-reservation-helper-form": [
+                "../../../../es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js"
+            ],
+            "c-reservation-list": [
+                "../../../../es-space-mgmt/main/default/lwc/reservationList/reservationList.js"
+            ],
+            "c-reservation-tile": [
+                "../../../../es-space-mgmt/main/default/lwc/reservationTile/reservationTile.js"
+            ],
+            "c-space-design-form": [
+                "../../../../es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js"
+            ],
+            "c-space-designer": [
+                "../../../../es-space-mgmt/main/default/lwc/spaceDesigner/spaceDesigner.js"
+            ]
+        }
+    },
+    "include": ["**/*", "../../../../.sfdx/typings/lwc/**/*.d.ts"]
+}

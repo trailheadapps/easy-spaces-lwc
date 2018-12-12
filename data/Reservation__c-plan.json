@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Reservation__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Reservation__cs.json"
+        ]
+    }
+]

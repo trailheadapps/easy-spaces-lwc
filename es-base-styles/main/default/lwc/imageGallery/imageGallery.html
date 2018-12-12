@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-layout multiple-rows="true">
+
+        <template for:each={items} for:item="item">
+            <div key={item.record.Id} class="slds-size_1-of-4 slds-p-around_xx-small">
+                <c-image-tile record={item.record} muted={item.muted} selected={item.selected} onclick={handleClick}></c-image-tile>
+            </div>
+        </template>
+
+    </lightning-layout>
+
+</template>

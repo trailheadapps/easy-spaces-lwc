@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>reservationList</componentName>
+        </componentInstances>
+        <name>leftColumn</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>spaceDesignerAura</componentName>
+        </componentInstances>
+        <name>rightColumn</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Spaces Designer</masterLabel>
+    <template>
+        <name>AppPage_3_9</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

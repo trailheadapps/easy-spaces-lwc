@@ -1,0 +1,11 @@
+<design:component >
+    <!--INPUT VARIABLES-->
+    <design:attribute name="recordId" label="Record Id"/>
+    <design:attribute name="sobject" label="Sobject Type"/>
+    <design:attribute name="state" label="State"/>
+    <!--OUTPUT VARIABLES-->
+    <design:attribute name="endDays" label="Reservation length"/>
+    <design:attribute name="startDate" label="Start date"/>
+    <design:attribute name="numberOfPeople" label="No. of guests"/>
+    <design:attribute name="requestedMarket" label="Market Id"/>
+</design:component>

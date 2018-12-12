@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-card">
+        <template if:true={errorMsg}>
+            <c-inline-message icon-name="warning" icon-size="medium" show-details="true" msg-for-user={msgForUser} message-details={errorMsg}></c-inline-message>
+        </template>
+
+        <template if:false={errorMsg}>
+            <lightning-layout>
+                <lightning-layout-item size="3">
+                    <div class="slds-box slds-m-top_xx-small slds-m-right_x-small">
+                        <h1 class="slds-text-heading_small slds-p-bottom_xx-small">Filter by Space Type:</h1>
+                        <c-pill-list pills={pillvalues} onfilterschange={handleFilters}></c-pill-list>
+                    </div>
+                    <div class="slds-box slds-m-top_xx-small slds-m-right_x-small">
+                        <template if:true={selectedtile}>
+                            <lightning-record-view-form record-id={selectedtile} object-api-name="Space__c">
+                                <div class="slds-grid slds-grid_vertical">
+                                    <div class="slds-col">
+                                        <lightning-output-field field-name="Name"></lightning-output-field>
+                                    </div>
+                                    <div class="slds-col">
+                                        <lightning-output-field field-name="Maximum_Capacity__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Minimum_Capacity__c"></lightning-output-field>
+                                    </div>
+                                    <div class="slds-col">
+                                        <lightning-output-field field-name="Daily_Booking_Rate__c"></lightning-output-field>
+                                    </div>
+                                </div>
+                            </lightning-record-view-form>
+                        </template>
+                        <template if:false={selectedtile}>
+                        <p>Select a space to see details.</p>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="9">
+                    <c-image-gallery items={items} onitemselect={handleItemSelect}></c-image-gallery>
+                    <template if:true={selectedtile}>
+                        <div class="slds-p-vertical_small">
+                            <div>
+                                <lightning-button class="slds-p-left_xx-small slds-p-right_small" variant="brand" label="Add Space &amp; Finish" onclick={handleSimpleAdd}></lightning-button>
+                                <lightning-button variant="brand" label="Add &amp; Go To Reservation" onclick={handleAddWithNav}></lightning-button>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:false={selectedtile}>
+                        <div class="slds-p-vertical_small">
+                            <lightning-button disabled class="slds-p-left_xx-small slds-p-right_small" variant="neutral" label="Add Space &amp; Finish" ></lightning-button>
+                            <lightning-button disabled variant="neutral" label="Add &amp; Go To Reservation" ></lightning-button>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    </div>
+</template>

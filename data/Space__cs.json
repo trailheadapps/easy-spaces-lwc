@@ -1,0 +1,1852 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef1"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Burbank",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef2"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Burbank",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef3"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Burbank",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef4"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Burbank",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef5"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Burbank",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef6"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Burbank",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef7"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Burbank",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef8"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Burbank",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef9"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Burbank",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef10"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Burbank",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef11"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Burbank",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef12"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef8",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Burbank",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef13"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - San Diego",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef14"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - San Diego",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef15"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - San Diego",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef16"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - San Diego",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef17"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - San Diego",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef18"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - San Diego",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef19"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - San Diego",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef20"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - San Diego",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef21"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - San Diego",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef22"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - San Diego",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef23"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - San Diego",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef24"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef1",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - San Diego",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef25"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Seattle",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef26"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Seattle",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef27"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Seattle",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef28"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Seattle",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef29"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Seattle",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef30"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Seattle",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef31"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Seattle",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef32"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Seattle",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef33"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Seattle",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef34"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Seattle",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef35"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Seattle",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef36"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef2",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Seattle",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef37"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Chicago",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef38"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Chicago",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef39"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Chicago",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef40"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Chicago",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef41"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Chicago",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef42"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Chicago",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef43"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Chicago",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef44"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Chicago",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef45"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Chicago",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef46"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Chicago",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef47"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Chicago",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef48"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef3",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Chicago",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef49"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - San Francisco",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef50"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - San Francisco",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef51"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - San Francisco",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef52"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - San Francisco",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef53"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - San Francisco",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef54"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - San Francisco",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef55"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - San Francisco",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef56"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - San Francisco",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef57"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - San Francisco",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef58"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - San Francisco",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef59"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - San Francisco",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef60"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef4",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - San Francisco",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef61"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - San Antonio",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef62"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - San Antonio",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef63"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - San Antonio",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef64"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - San Antonio",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef65"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - San Antonio",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef66"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - San Antonio",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef67"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - San Antonio",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef68"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - San Antonio",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef69"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - San Antonio",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef70"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - San Antonio",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef71"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - San Antonio",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef72"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef5",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - San Antonio",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef73"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Denver",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef74"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Denver",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef75"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Denver",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef76"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Denver",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef77"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Denver",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef78"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Denver",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef79"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Denver",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef80"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Denver",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef81"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Denver",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef82"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Denver",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef83"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Denver",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef84"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef6",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Denver",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef85"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Portland",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef86"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Portland",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef87"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Portland",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef88"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Portland",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef89"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Portland",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef90"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Portland",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef91"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Portland",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef92"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Portland",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef93"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Portland",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef94"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Portland",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef95"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Portland",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef96"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef7",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Portland",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef97"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Pittsburgh",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef98"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Pittsburgh",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef99"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Pittsburgh",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef100"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Pittsburgh",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef101"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Pittsburgh",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef102"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Pittsburgh",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef103"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Pittsburgh",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef104"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Pittsburgh",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef105"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Pittsburgh",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef106"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Pittsburgh",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef107"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Pittsburgh",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef108"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef9",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Pittsburgh",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef109"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - New York",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef110"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - New York",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef111"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - New York",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef112"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - New York",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef113"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - New York",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef114"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - New York",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef115"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - New York",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef116"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - New York",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef117"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - New York",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef118"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - New York",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef119"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - New York",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef120"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef10",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - New York",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef121"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 150,
+            "Minimum_Capacity__c": 12,
+            "Name": "Outdoor Exploration Lab - Minneapolis",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef122"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Drawing/Watercolor Studio - Minneapolis",
+            "Category__c": "Drawing/Watercolor Studio",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef123"
+            },
+            "Daily_Booking_Rate__c": 1250,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Temporary Terrace - Minneapolis",
+            "Category__c": "Temporary Terrace",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef124"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Cooking Classroom - Minneapolis",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef125"
+            },
+            "Daily_Booking_Rate__c": 1150,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 2,
+            "Name": "Walking Meditation Paths - Minneapolis",
+            "Category__c": "Walking Meditation Paths",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef126"
+            },
+            "Daily_Booking_Rate__c": 1175,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 75,
+            "Minimum_Capacity__c": 2,
+            "Name": "Building Block Room - Minneapolis",
+            "Category__c": "Building Block Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef127"
+            },
+            "Daily_Booking_Rate__c": 1100,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 35,
+            "Minimum_Capacity__c": 2,
+            "Name": "Music Room - Minneapolis",
+            "Category__c": "Music Room",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef128"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 25,
+            "Minimum_Capacity__c": 2,
+            "Name": "Sand Drawing Tables - Minneapolis",
+            "Category__c": "Sand Drawing Tables",
+            "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef129"
+            },
+            "Daily_Booking_Rate__c": 1450,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 250,
+            "Minimum_Capacity__c": 2,
+            "Name": "Outdoor Café - Minneapolis",
+            "Category__c": "Café",
+            "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef130"
+            },
+            "Daily_Booking_Rate__c": 1200,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Exploration Lab - Minneapolis",
+            "Category__c": "Exploration Lab",
+            "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef131"
+            },
+            "Daily_Booking_Rate__c": 1350,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 50,
+            "Minimum_Capacity__c": 2,
+            "Name": "Indoor Café - Minneapolis",
+            "Category__c": "Café",
+            "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+        },
+        {
+            "attributes": {
+                "type": "Space__c",
+                "referenceId": "Space__cRef132"
+            },
+            "Daily_Booking_Rate__c": 1300,
+            "Market__c": "@Market__cRef11",
+            "Maximum_Capacity__c": 200,
+            "Minimum_Capacity__c": 10,
+            "Name": "Game Room/Arcade - Minneapolis",
+            "Category__c": "Game Room/Arcade",
+            "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Lead",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Leads.json"
+        ]
+    }
+]

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Large Groups</fullName>
+        <default>false</default>
+        <label>Large Groups</label>
+    </customValue>
+    <customValue>
+        <fullName>Scheduled Activity</fullName>
+        <default>false</default>
+        <label>Scheduled Activity</label>
+    </customValue>
+    <customValue>
+        <fullName>Come-and-Go</fullName>
+        <default>false</default>
+        <label>Come-and-Go</label>
+    </customValue>
+    <customValue>
+        <fullName>Individuals or Small Groups</fullName>
+        <default>false</default>
+        <label>Individuals or Small Groups</label>
+    </customValue>
+    <customValue>
+        <fullName>Indoor</fullName>
+        <default>false</default>
+        <label>Indoor</label>
+    </customValue>
+    <customValue>
+        <fullName>Outdoor</fullName>
+        <default>false</default>
+        <label>Outdoor</label>
+    </customValue>
+    <customValue>
+        <fullName>Conversation Starter</fullName>
+        <default>false</default>
+        <label>Conversation Starter</label>
+    </customValue>
+    <customValue>
+        <fullName>Quiet</fullName>
+        <default>false</default>
+        <label>Quiet</label>
+    </customValue>
+    <customValue>
+        <fullName>Energizing</fullName>
+        <default>false</default>
+        <label>Energizing</label>
+    </customValue>
+    <customValue>
+        <fullName>Relaxing</fullName>
+        <default>false</default>
+        <label>Relaxing</label>
+    </customValue>
+    <masterLabel>Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

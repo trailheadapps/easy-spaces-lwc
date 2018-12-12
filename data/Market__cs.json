@@ -1,0 +1,114 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef1"
+            },
+            "City__c": "San Diego",
+            "Country__c": "United States",
+            "Name": "San Diego - CA",
+            "State__c": "CA"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef2"
+            },
+            "City__c": "Seattle",
+            "Country__c": "United States",
+            "Name": "Seattle - WA",
+            "State__c": "WA"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef3"
+            },
+            "City__c": "Chicago",
+            "Country__c": "United States",
+            "Name": "Chicago - IL",
+            "State__c": "IL"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef4"
+            },
+            "City__c": "San Francisco",
+            "Country__c": "United States",
+            "Name": "San Francisco - CA",
+            "State__c": "CA"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef5"
+            },
+            "City__c": "San Antonio",
+            "Country__c": "United States",
+            "Name": "San Antonio - TX",
+            "State__c": "TX"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef6"
+            },
+            "City__c": "Denver",
+            "Country__c": "United States",
+            "Name": "Denver - CO",
+            "State__c": "CO"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef7"
+            },
+            "City__c": "Portland",
+            "Country__c": "United States",
+            "Name": "Portland - OR",
+            "State__c": "OR"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef8"
+            },
+            "City__c": "Burbank",
+            "Country__c": "United States",
+            "Name": "Burbank - CA",
+            "State__c": "CA"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef9"
+            },
+            "City__c": "Pittsburgh",
+            "Country__c": "United States",
+            "Name": "Pittsburgh - PA",
+            "State__c": "PA"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef10"
+            },
+            "City__c": "New York",
+            "Country__c": "United States",
+            "Name": "New York - NY",
+            "State__c": "NY"
+        },
+        {
+            "attributes": {
+                "type": "Market__c",
+                "referenceId": "Market__cRef11"
+            },
+            "City__c": "Minneapolis",
+            "Country__c": "United States",
+            "Name": "Minneapolis - MN",
+            "State__c": "MN"
+        }
+    ]
+}

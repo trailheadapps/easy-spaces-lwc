@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Building Block Room</fullName>
+                <default>false</default>
+                <label>Building Block Room</label>
+            </value>
+            <value>
+                <fullName>Café</fullName>
+                <default>false</default>
+                <label>Café</label>
+            </value>
+            <value>
+                <fullName>Cooking Classroom</fullName>
+                <default>false</default>
+                <label>Cooking Classroom</label>
+            </value>
+            <value>
+                <fullName>Drawing/Watercolor Studio</fullName>
+                <default>false</default>
+                <label>Drawing/Watercolor Studio</label>
+            </value>
+            <value>
+                <fullName>Exploration Lab</fullName>
+                <default>false</default>
+                <label>Exploration Lab</label>
+            </value>
+            <value>
+                <fullName>Game Room/Arcade</fullName>
+                <default>false</default>
+                <label>Game Room/Arcade</label>
+            </value>
+            <value>
+                <fullName>Music Room</fullName>
+                <default>false</default>
+                <label>Music Room</label>
+            </value>
+            <value>
+                <fullName>Sand Drawing Tables</fullName>
+                <default>false</default>
+                <label>Sand Drawing Tables</label>
+            </value>
+            <value>
+                <fullName>Temporary Terrace</fullName>
+                <default>false</default>
+                <label>Temporary Terrace</label>
+            </value>
+            <value>
+                <fullName>Walking Meditation Paths</fullName>
+                <default>false</default>
+                <label>Walking Meditation Paths</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

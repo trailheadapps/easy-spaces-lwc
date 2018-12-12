@@ -1,0 +1,11 @@
+.classpath
+.DS_Store
+.sfdx
+.project
+.salesforce
+.vscode
+.idea
+.tern-project
+.settings
+IlluminatedCloud/
+node_modules

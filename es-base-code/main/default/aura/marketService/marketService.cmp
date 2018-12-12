@@ -1,0 +1,12 @@
+<aura:component access="global" controller="marketServices">
+    <aura:attribute name="relatedSpaces" type="Object[]" access="global"/>
+    <aura:attribute name="marketsByState" type="Object[]" access="global"/>
+
+    <aura:method name="getSpaces" action="{!c.getSpaces}">
+        <aura:attribute name="marketRecordId" type="Id" />
+    </aura:method>
+    
+    <aura:method name="getStateMarkets" action="{!c.getStateMarkets}">
+        <aura:attribute name="state" type="String" />
+    </aura:method>
+</aura:component>	

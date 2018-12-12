@@ -1,0 +1,8 @@
+<design:component >
+    <!--INPUT VARIABLES-->
+    <design:attribute name="marketId" label="Market Record Id"/>
+
+    <!--OUTPUT VARIABLES-->
+    <design:attribute name="popTabOnFinish" label="Go to record?"/>
+    <design:attribute name="selectedSpace" label="Space Record Id"/>
+</design:component>

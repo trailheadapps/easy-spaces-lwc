@@ -1,0 +1,8 @@
+<design:component >
+<flexipage:template>
+        <flexipage:region name="leftColumn" defaultWidth="SMALL"/>
+        <flexipage:region name="rightColumn" defaultWidth="MEDIUM">
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+        </flexipage:region>
+</flexipage:template>
+</design:component>

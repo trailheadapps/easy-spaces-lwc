@@ -1,0 +1,50 @@
+<template>
+    <template if:true={errorMsg}>
+        <c-inline-message icon-name="warning" icon-size="medium" show-details="true" msg-for-user={msgForUser} message-details={errorMsg}></c-inline-message>
+    </template>
+
+    <template if:false={errorMsg}>
+    <lightning-layout multiple-rows="true" class="slds-m-horizontal_small">
+        <lightning-layout-item size="12">
+            <h2 class="slds-text-heading_small slds-p-bottom_small">
+                Reservation Details:
+            </h2>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" flexibility="auto" class="slds-p-right_small">
+            <lightning-combobox class="slds-size_1-of-2 slds-m-bottom_small"
+                name="selectcity"
+                label="Where do they want the space?"
+                options={cityOptions}
+                placeholder={placeholder}
+                value={chosenCity}
+                onchange={handleCityChoice}></lightning-combobox>
+            <lightning-slider class="slds-size_1-of-2 slds-m-top_small"
+                label="For how many people?"
+                value={numberOfPeople}
+                min="2"
+                max="250"
+                size="large"
+                onchange={handlePeopleSelect}></lightning-slider>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-p-left_small">
+            <lightning-input class="slds-size_1-of-2"
+            name="start"
+            label="When do they need the space?"
+            type="date"
+            placeholder="Choose date..."
+            value={startdate}
+            onchange={handleStartDate}></lightning-input>
+            <lightning-radio-group class="slds-size_1-of-2 slds-m-top_small"
+                name="dateoptions"
+                label="How long do they want the space?"
+                options={dateRanges}
+                value={totaldays}
+                onchange={handleDateRange}></lightning-radio-group>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button variant="brand" label="Draft Reservation" title="Draft" onclick={handleDraft}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    </template>
+
+</template>

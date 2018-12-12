@@ -1,0 +1,42 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Accounts.json"
+        ]
+    },
+    {
+        "sobject": "Contact",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": [
+            "Contacts.json"
+        ]
+    },
+    {
+        "sobject": "Market__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Market__cs.json"
+        ]
+    },
+    {
+        "sobject": "Space__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "Space__cs.json"
+        ]
+    }, 
+    {
+        "sobject": "Reservation__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "Reservation__cs.json"
+        ]
+    }
+]

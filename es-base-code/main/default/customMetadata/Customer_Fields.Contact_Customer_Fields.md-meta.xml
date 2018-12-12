@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contact Customer Fields</label>
+    <protected>false</protected>
+    <values>
+        <field>Customer_City__c</field>
+        <value xsi:type="xsd:string">MailingCity</value>
+    </values>
+    <values>
+        <field>Customer_Email__c</field>
+        <value xsi:type="xsd:string">Email</value>
+    </values>
+    <values>
+        <field>Customer_Name__c</field>
+        <value xsi:type="xsd:string">Name</value>
+    </values>
+    <values>
+        <field>Customer_State__c</field>
+        <value xsi:type="xsd:string">MailingState</value>
+    </values>
+    <values>
+        <field>Customer_Status__c</field>
+        <value xsi:type="xsd:string">Reservation_Status__c</value>
+    </values>
+    <values>
+        <field>Sobject_Type__c</field>
+        <value xsi:type="xsd:string">Contact</value>
+    </values>
+</CustomMetadata>

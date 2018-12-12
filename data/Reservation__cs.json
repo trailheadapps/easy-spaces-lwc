@@ -1,0 +1,28 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Reservation__c",
+                "referenceId": "Reservation__cRef1"
+            },
+            "Contact__c": "@ContactRef1",
+            "Market__c": "@Market__cRef6",
+            "Start_Date__c": "2018-08-30",
+            "End_Date__c": "2018-09-30",
+            "Status__c": "Draft",
+            "Total_Number_of_Guests__c": 14
+        },
+        {
+            "attributes": {
+                "type": "Reservation__c",
+                "referenceId": "Reservation__cRef2"
+            },
+            "Contact__c": "@ContactRef3",
+            "Market__c": "@Market__cRef3",
+            "Start_Date__c": "2018-11-01",
+            "End_Date__c": "2019-01-31",
+            "Status__c": "Draft",
+            "Total_Number_of_Guests__c": 150
+        }
+    ]
+}
