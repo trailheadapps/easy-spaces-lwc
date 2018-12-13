@@ -138,13 +138,13 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
     - Drag **Space_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
-1) Follow the instructions in the **Completing the Installation** section below to enable the Easy Spaces custom theme.
+1. Follow the instructions in the **Completing the Installation** section below to enable the Easy Spaces custom theme.
 
-1) In **App Launcher**, select the **Space Management** app.
+1. In **App Launcher**, select the **Space Management** app.
 
-1) Note: Before trying to work with the Spaces Designer, use the **Reservation Manager** to draft a few reservations.
+1. Note: Before trying to work with the Spaces Designer, use the **Reservation Manager** to draft a few reservations.
 
-1) Have fun exploring!
+1. Have fun exploring!
 
 ## Completing the Installation
 
