@@ -81,13 +81,13 @@ There are two ways to install Easy Spaces:
     sfdx force:org:open
     ```
 
-1. Follow the steps in the 'Completing the Installation' section below to activate remaining settings.
+1. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
 
 ### Installing Easy Spaces using Unlocked Packages
 
 Use this option if you don't have the Salesforce CLI configured and want to experience the sample app. Because Easy Spaces is built on a set of related units, you'll be installing a series of unlocked packages. You'll also be importing sample data, after installing packages.
 
-1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 prerelease org.
+1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 pre-release org.
 
 1. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
@@ -126,37 +126,39 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Market**, and click **Add New Records**.
+    - Click the **Custom objects** tab, click **Markets**, and click **Add New Records**.
     - Drag **Market_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Spaces data:
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Space**, and click **Add New Records**.
+    - Click the **Custom objects** tab, click **Spaces**, and click **Add New Records**.
     - In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
     - Drag **Space_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
-1. Follow the instructions in the **Completing the Installation** section below to enable the Easy Spaces custom theme.
+1. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
+
+### Completing the Installation
+
+#### Activate Path Settings
+
+1. In **Setup**, navigate to **Path Settings**
+1. Click **Enable** to activate Path Settings
+
+#### Activate the Easy Spaces theme
+
+1. In **Setup**, navigate to **Themes and Branding**
+1. Activate the **Easy Spaces** theme
+
+#### Explore the application
 
 1. In **App Launcher**, select the **Space Management** app.
 
 1. Note: Before trying to work with the Spaces Designer, use the **Reservation Manager** to draft a few reservations.
 
 1. Have fun exploring!
-
-## Completing the Installation
-
-### Activate Path Settings
-
-1. In **Setup**, navigate to **Path Settings**
-1. Click **Enable** to activate Path Settings
-
-### Activate the Easy Spaces theme
-
-1. In **Setup**, navigate to **Themes and Branding**
-1. Activate the **Easy Spaces** theme
 
 ## Optional Installation Instructions
 
@@ -181,8 +183,8 @@ To set up the formatting and linting pre-commit hook:
 
 Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](package.json) for the full list):
 ```
-	npm run lint:lwc
-	npm run prettier
+npm run lint:lwc
+npm run prettier
 ```
 
 ## Features
