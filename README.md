@@ -91,13 +91,13 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
 1. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXgQAI) to install the **es-base-objects** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEDIA2) to install the **es-base-objects** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXlQAI) to install the **es-base-code** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEIIA2) to install the **es-base-code** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXqQAI) to install the **es-base-styles** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPENIA2) to install the **es-base-styles** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tYUQAY) to install the **es-space-mgmt** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPESIA2) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
