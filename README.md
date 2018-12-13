@@ -1,10 +1,10 @@
-# Easy Spaces Sample App
-
-[![CircleCI](https://circleci.com/gh/trailheadapps/easy-spaces-lwc/tree/master.svg?style=svg)](https://circleci.com/gh/trailheadapps/easy-spaces-lwc/tree/master)
+# Easy Spaces Lightning Web Components Sample Application
 
 > IMPORTANT: This is the new Lightning Web Components version of the Easy Spaces sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/easy-spaces).
 
 ![Easy Spaces Logo](./docs/EasySpacesWithText.png)
+
+[![CircleCI](https://circleci.com/gh/trailheadapps/easy-spaces-lwc.svg?style=svg)](https://circleci.com/gh/trailheadapps/easy-spaces-lwc)
 
 Easy Spaces is a fictional event management company that creates and manages custom pop-up spaces for companies and individuals. Easy Spaces helps customers create temporary spaces like cafés, game rooms or themed rooms for special occasions in their offices and homes.
 
@@ -25,7 +25,7 @@ Easy Spaces is a fictional event management company that creates and manages cus
 There are two ways to install Easy Spaces:
 
 -   [Using Salesforce DX](#installing-easy-spaces-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
--   [Using an Unlocked Package](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
+-   [Using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
 
 ### Installing Easy Spaces using Salesforce DX
 
@@ -34,7 +34,7 @@ There are two ways to install Easy Spaces:
     - Sign up for a Spring '19 pre-release org and enable Dev Hub functionality
     - Install the pre-release version of the Salesforce CLI
     - Install Visual Studio Code
-    - Install the Visual Studio Code Salesforce extensions, including the LWC extension
+    - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
 1. Authenticate with your hub org (if not already done). The command below uses the `-a` flag to assign an alias that can be used in other commands:
 
@@ -81,25 +81,25 @@ There are two ways to install Easy Spaces:
     sfdx force:org:open
     ```
 
-1. Follow the steps in the 'Completing the Installation' section below to activate remaining settings.
+1. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
 
 ### Installing Easy Spaces using Unlocked Packages
 
 Use this option if you don't have the Salesforce CLI configured and want to experience the sample app. Because Easy Spaces is built on a set of related units, you'll be installing a series of unlocked packages. You'll also be importing sample data, after installing packages.
 
-1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 prerelease org.
+1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 pre-release org.
 
 1. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXgQAI) to install the **es-base-objects** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEDIA2) to install the **es-base-objects** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXlQAI) to install the **es-base-code** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEIIA2) to install the **es-base-code** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tXqQAI) to install the **es-base-styles** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPENIA2) to install the **es-base-styles** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tYUQAY) to install the **es-space-mgmt** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPESIA2) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
-1. From the command line, enter to following commands to clone this repository. You need to do this to get the files with sample data on your computer:
+1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
     ```zsh
     git clone https://github.com/trailheadapps/easy-spaces-lwc
@@ -126,70 +126,66 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Market**, and click **Add New Records**.
+    - Click the **Custom objects** tab, click **Markets**, and click **Add New Records**.
     - Drag **Market_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Spaces data:
-    - Open the **Space_Data.csv** from the data folder of this project.
-    - In the **Market\_\_c** column, add the record Id for the correct Market imported in the previous step. Use the **Market City Name** column to help match spaces to the correct Market.
-    - Save the changes to your file. _Note: You **must** choose UTF-8 encoding when you save the file._
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Space**, and click **Add New Records**.
+    - Click the **Custom objects** tab, click **Spaces**, and click **Add New Records**.
+    - In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
     - Drag **Space_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
-    - If you see any issues with restricted picklist values blocking import, double-check that you saved your .csv with UTF-8 encoding and try again.
 
-1) Follow the instructions in the **Completing the Installation** section below to enable the Easy Spaces custom theme.
+1. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
 
-1) In **App Launcher**, select the **Space Management** app.
+### Completing the Installation
 
-1) Note: Before trying to work with the Spaces Designer, use the **Reservation Manager** to draft a few reservations.
-
-1) Have fun exploring!
-
-## Completing the Installation
-
-### Activate Path Settings
+#### Activate Path Settings
 
 1. In **Setup**, navigate to **Path Settings**
 1. Click **Enable** to activate Path Settings
 
-### Activate the Easy Spaces theme
+#### Activate the Easy Spaces theme
 
 1. In **Setup**, navigate to **Themes and Branding**
 1. Activate the **Easy Spaces** theme
 
+#### Explore the application
+
+1. In **App Launcher**, select the **Space Management** app.
+
+1. Note: Before trying to work with the Spaces Designer, use the **Reservation Manager** to draft a few reservations.
+
+1. Have fun exploring!
+
 ## Optional Installation Instructions
 
-This repository contains several files that are relevant if you want to integrate modern web development tooling into your Salesforce development processes, or to your Continuous Integration/Continuous Deployment processes.
+This repository contains several files that are relevant if you want to integrate modern web development tooling to your Salesforce development processes, or to your continuous integration/continuous deployment processes.
 
-#### Code formatting
+### Code formatting
 
-[Prettier](https://prettier.io (https://prettier.io/)) is a code formatter used to ensure consistent formatting across your code base. To use Prettier with Visual Studio Code, install [this extension] (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) from the Visual Studio Code Marketplace.
-The [.prettierignore](/.prettierignore) and [.prettierrc](/.prettierrc) files are provided as part of this repository to control the behavior of the Prettier formatter.
+[Prettier](https://prettier.io/) is a code formatter used to ensure consistent formatting across your code base. To use Prettier with Visual Studio Code, install [this extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) from the Visual Studio Code Marketplace. The [.prettierignore](/.prettierignore) and [.prettierrc](/.prettierrc) files are provided as part of this repository to control the behavior of the Prettier formatter.
 
-#### Code linting
+### Code linting
 
-[ESLint](https://eslint.org/) is a popular JavaScript linting tool used to identify stylistic errors and erroneous constructs. To use ESLint with Visual Studio Code, install [this extension] (https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode-lwc) from the Visual Studio Code Marketplace.
-The [.eslintignore](/.eslintignore) file is provided as part of this repository to exclude specific files from the linting process in the context of Lighning Web Components.
+[ESLint](https://eslint.org/) is a popular JavaScript linting tool used to identify stylistic errors and erroneous constructs. To use ESLint with Visual Studio Code, install [this extension](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode-lwc) from the Visual Studio Code Marketplace. The [.eslintignore](/.eslintignore) file is provided as part of this repository to exclude specific files from the linting process in the context of Lighning Web Components development.
 
-#### Pre-Commit Hook
+### Pre-commit hook
 
-This repository  also comes with a package.json file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you git commit changes.
+This repository also comes with a [package.json](package.json) file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you `git commit` changes.
 
 To set up the formatting and linting pre-commit hook:
 
-1. Install Node.js if you haven't already done so
-1. Run npm install in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
+1. Install [Node.js](https://nodejs.org) if you haven't already done so
+2. Run `npm install` in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
 
-Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands:
-
-	npm run lint:lwc
-	npm run prettier
-
-Check out package.json for a full list of commands.
+Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](package.json) for the full list):
+```
+npm run lint:lwc
+npm run prettier
+```
 
 ## Features
 
