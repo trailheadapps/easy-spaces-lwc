@@ -25,7 +25,7 @@ Easy Spaces is a fictional event management company that creates and manages cus
 There are two ways to install Easy Spaces:
 
 -   [Using Salesforce DX](#installing-easy-spaces-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
--   [Using an Unlocked Package](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
+-   [Using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
 
 ### Installing Easy Spaces using Salesforce DX
 
@@ -99,7 +99,7 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036tYUQAY) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
-1. From the command line, enter to following commands to clone this repository. You need to do this to get the files with sample data on your computer:
+1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
     ```zsh
     git clone https://github.com/trailheadapps/easy-spaces-lwc
@@ -131,15 +131,12 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Spaces data:
-    - Open the **Space_Data.csv** from the data folder of this project.
-    - In the **Market\_\_c** column, add the record Id for the correct Market imported in the previous step. Use the **Market City Name** column to help match spaces to the correct Market.
-    - Save the changes to your file. _Note: You **must** choose UTF-8 encoding when you save the file._
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
     - Click the **Custom objects** tab, click **Space**, and click **Add New Records**.
+    - In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
     - Drag **Space_Data.csv** from the data folder of this project to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
-    - If you see any issues with restricted picklist values blocking import, double-check that you saved your .csv with UTF-8 encoding and try again.
 
 1) Follow the instructions in the **Completing the Installation** section below to enable the Easy Spaces custom theme.
 
