@@ -3,42 +3,61 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c-inline-message": [
+            "c/inline-message": [
                 "../../../../es-base-code/main/default/lwc/inlineMessage/inlineMessage.js"
             ],
-            "c-pubsub": [
+            "c/pubsub": [
                 "../../../../es-base-code/main/default/lwc/pubsub/pubsub.js"
             ],
-            "c-image-gallery": [
+            "c/image-gallery": [
                 "../../../../es-base-styles/main/default/lwc/imageGallery/imageGallery.js"
             ],
-            "c-image-tile": [
+            "c/image-tile": [
                 "../../../../es-base-styles/main/default/lwc/imageTile/imageTile.js"
             ],
-            "c-pill": [
+            "c/pill": [
                 "../../../../es-base-styles/main/default/lwc/pill/pill.js"
             ],
-            "c-pill-list": [
+            "c/pill-list": [
                 "../../../../es-base-styles/main/default/lwc/pillList/pillList.js"
             ],
-            "c-customer-detail-form": [
+            "c/customer-detail-form": [
                 "customerDetailForm/customerDetailForm.js"
             ],
-            "c-customer-list": ["customerList/customerList.js"],
-            "c-customer-tile": ["customerTile/customerTile.js"],
-            "c-related-spaces": ["relatedSpaces/relatedSpaces.js"],
-            "c-reservation-detail-form": [
+            "c/customer-list": [
+                "customerList/customerList.js"
+            ],
+            "c/customer-tile": [
+                "customerTile/customerTile.js"
+            ],
+            "c/related-spaces": [
+                "relatedSpaces/relatedSpaces.js"
+            ],
+            "c/reservation-detail-form": [
                 "reservationDetailForm/reservationDetailForm.js"
             ],
-            "c-reservation-helper": ["reservationHelper/reservationHelper.js"],
-            "c-reservation-helper-form": [
+            "c/reservation-helper": [
+                "reservationHelper/reservationHelper.js"
+            ],
+            "c/reservation-helper-form": [
                 "reservationHelperForm/reservationHelperForm.js"
             ],
-            "c-reservation-list": ["reservationList/reservationList.js"],
-            "c-reservation-tile": ["reservationTile/reservationTile.js"],
-            "c-space-design-form": ["spaceDesignForm/spaceDesignForm.js"],
-            "c-space-designer": ["spaceDesigner/spaceDesigner.js"]
+            "c/reservation-list": [
+                "reservationList/reservationList.js"
+            ],
+            "c/reservation-tile": [
+                "reservationTile/reservationTile.js"
+            ],
+            "c/space-design-form": [
+                "spaceDesignForm/spaceDesignForm.js"
+            ],
+            "c/space-designer": [
+                "spaceDesigner/spaceDesigner.js"
+            ]
         }
     },
-    "include": ["**/*", "../../../../.sfdx/typings/lwc/**/*.d.ts"]
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ]
 }
