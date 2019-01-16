@@ -4,10 +4,10 @@ export default class ReservationDetailForm extends LightningElement {
     @api state;
     @api city;
     @api
-    get people(){
+    get people() {
         return this.numberOfPeople;
     }
-    set people(value){
+    set people(value) {
         this.numberOfPeople = value;
     }
     @api startdate;
@@ -15,12 +15,13 @@ export default class ReservationDetailForm extends LightningElement {
 
     @track cityOptions = [];
     @track chosenCity;
-    @track dateRanges = [
+    @track
+    dateRanges = [
         { label: '1 Day', value: '1' },
         { label: '7 Days', value: '7' },
         { label: '30 Days', value: '30' },
         { label: '60 Days', value: '60' },
-        { label: 'More than 60 Days', value: '61' },
+        { label: 'More than 60 Days', value: '61' }
     ];
     @track numberOfPeople = 20;
     @track errorMsg;
@@ -40,7 +41,7 @@ export default class ReservationDetailForm extends LightningElement {
         } else if (data) {
             this.cityOptions = data.map(element => ({
                 value: element.Id,
-                label: element.City__c,
+                label: element.City__c
             }));
         }
     }
@@ -67,8 +68,8 @@ export default class ReservationDetailForm extends LightningElement {
                 requestedMarket: this.chosenCity,
                 numberOfPeople: this.people,
                 startDate: this.startdate,
-                endDays: this.totaldays,
-            },
+                endDays: this.totaldays
+            }
         });
         this.dispatchEvent(draftevt);
     }

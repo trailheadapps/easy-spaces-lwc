@@ -35,8 +35,8 @@ export default class RelatedSpaces extends NavigationMixin(LightningElement) {
                 attributes: {
                     recordId: event.detail.recordId,
                     objectApiName: 'Space__c',
-                    actionName: 'view',
-                },
+                    actionName: 'view'
+                }
             });
         }
     }

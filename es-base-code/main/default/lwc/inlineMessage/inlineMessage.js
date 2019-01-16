@@ -48,10 +48,10 @@ export default class InlineMessage extends LightningElement {
                     (msg &&
                         msg.details &&
                         msg.details.body &&
-                        msg.details.body.message),
+                        msg.details.body.message)
             )
             .map(msg => ({
-                message: msg.body ? msg.body.message : msg.details.body.message,
+                message: msg.body ? msg.body.message : msg.details.body.message
             }));
     }
 

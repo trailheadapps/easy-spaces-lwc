@@ -35,7 +35,7 @@ export default class CustomerDetailForm extends LightningElement {
             }
         }
         this.dispatchEvent(
-            new CustomEvent('customerupdate', { detail: stateVal }),
+            new CustomEvent('customerupdate', { detail: stateVal })
         );
     }
 }

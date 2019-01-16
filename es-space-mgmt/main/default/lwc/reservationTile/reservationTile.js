@@ -13,11 +13,11 @@ export default class ReservationTile extends NavigationMixin(LightningElement) {
             type: 'standard__recordPage',
             attributes: {
                 recordId: this.reservation.record.Id,
-                actionName: 'view',
-            },
+                actionName: 'view'
+            }
         };
         this[NavigationMixin.GenerateUrl](this.reservationRecordRef).then(
-            url => (this.navRef = url),
+            url => (this.navRef = url)
         );
     }
 
@@ -28,8 +28,8 @@ export default class ReservationTile extends NavigationMixin(LightningElement) {
                 marketId: this.reservation.record.Market__c,
                 customerName: this.reservation.record.Contact__c
                     ? this.reservation.record.Contact__r.Name
-                    : this.reservation.record.Lead__r.Name,
-            },
+                    : this.reservation.record.Lead__r.Name
+            }
         });
         this.dispatchEvent(clickevt);
     }

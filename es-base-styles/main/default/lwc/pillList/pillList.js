@@ -9,7 +9,7 @@ export default class PillList extends LightningElement {
             this._pills = values.map(value => {
                 return {
                     label: value,
-                    selected: false,
+                    selected: false
                 };
             });
         } else {
@@ -38,9 +38,9 @@ export default class PillList extends LightningElement {
         this.dispatchEvent(
             new CustomEvent('filterschange', {
                 detail: {
-                    filters: pillLabels,
-                },
-            }),
+                    filters: pillLabels
+                }
+            })
         );
     }
 }

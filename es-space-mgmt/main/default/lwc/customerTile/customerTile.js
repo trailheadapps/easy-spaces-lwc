@@ -21,11 +21,11 @@ export default class CustomerTile extends NavigationMixin(LightningElement) {
             type: 'standard__recordPage',
             attributes: {
                 recordId: this.customer.Id,
-                actionName: 'view',
-            },
+                actionName: 'view'
+            }
         };
         this[NavigationMixin.GenerateUrl](this.customerRecordRef).then(
-            url => (this.navRef = url),
+            url => (this.navRef = url)
         );
     }
 
@@ -34,8 +34,8 @@ export default class CustomerTile extends NavigationMixin(LightningElement) {
             detail: {
                 customerId: this.customer.Id,
                 sobjectType: this.object,
-                state: this.customer.state,
-            },
+                state: this.customer.state
+            }
         });
         this.dispatchEvent(clickevt);
     }
