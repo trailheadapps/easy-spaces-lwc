@@ -9,7 +9,7 @@ export default class ImageGallery extends LightningElement {
                 return {
                     record: value.record,
                     muted: value.muted,
-                    selected: false,
+                    selected: false
                 };
             });
         } else {
@@ -33,8 +33,8 @@ export default class ImageGallery extends LightningElement {
 
         this.dispatchEvent(
             new CustomEvent('itemselect', {
-                detail: { recordId: id },
-            }),
+                detail: { recordId: id }
+            })
         );
     }
 }

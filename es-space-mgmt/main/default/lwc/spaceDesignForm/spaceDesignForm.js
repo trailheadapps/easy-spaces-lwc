@@ -45,16 +45,16 @@ export default class SpaceDesignForm extends LightningElement {
     handleSimpleAdd() {
         this.dispatchEvent(
             new CustomEvent('simpleupdate', {
-                detail: { recordId: this.selectedtile },
-            }),
+                detail: { recordId: this.selectedtile }
+            })
         );
     }
 
     handleAddWithNav() {
         this.dispatchEvent(
             new CustomEvent('updatewithnav', {
-                detail: { recordId: this.selectedtile },
-            }),
+                detail: { recordId: this.selectedtile }
+            })
         );
     }
 }

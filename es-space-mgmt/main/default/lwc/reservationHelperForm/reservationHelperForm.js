@@ -29,7 +29,7 @@ export default class reservationHelperForm extends LightningElement {
 
     handleDraftReservation(event) {
         this.dispatchEvent(
-            new CustomEvent('draftreservation', { detail: event.detail }),
+            new CustomEvent('draftreservation', { detail: event.detail })
         );
     }
 }

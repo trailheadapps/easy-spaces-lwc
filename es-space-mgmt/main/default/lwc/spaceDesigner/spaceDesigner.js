@@ -16,7 +16,7 @@ export default class SpaceDesigner extends LightningElement {
         registerListener(
             'selectreservation',
             this.handleReservationSelect,
-            this,
+            this
         );
     }
 
@@ -28,14 +28,14 @@ export default class SpaceDesigner extends LightningElement {
         if (!this.flowStarted) {
             this.flowStarted = true;
             this.dispatchEvent(
-                new CustomEvent('reservchoice', { detail: event.detail }),
+                new CustomEvent('reservchoice', { detail: event.detail })
             );
         } else if (this.flowStarted) {
             const toastEvt = new ShowToastEvent({
                 title: 'Flow interview already in progress',
                 message:
                     'Finish the flow interview in progress before selecting another reservation.',
-                variant: 'error',
+                variant: 'error'
             });
             this.dispatchEvent(toastEvt);
         }
