@@ -1,8 +1,0 @@
-<aura:component controller="customerServices" access="global">
-    <aura:attribute name="customer" type="Object" access="global"/>
-    <aura:attribute name="fieldsArray" type="String[]" access="global"/>
-    
-    <aura:method name="getFields" action="{!c.getFields}">
-        <aura:attribute name="sobject" type="String"/>
-    </aura:method>
-</aura:component>	
