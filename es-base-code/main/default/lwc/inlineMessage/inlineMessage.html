@@ -10,8 +10,8 @@
             <template if:true={showDetails}>
                 <div class="slds-p-vertical_x-small">
                     <p>Additional Details:</p>
-                    <template for:each={messageDetails} for:item="detail">
-                        <p class="slds-truncate" key={detail.message}>{detail.message}</p>
+                    <template for:each={messageSummaries} for:item="summary">
+                        <p class="slds-truncate" key={summary}>{summary}</p>
                     </template>
                 </div>
             </template>

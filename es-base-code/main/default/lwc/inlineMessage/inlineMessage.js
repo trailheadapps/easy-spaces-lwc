@@ -1,5 +1,8 @@
 import { LightningElement, api, track } from 'lwc';
+import { reduceErrors } from 'c/ldsUtils';
+
 const VARIANT_TYPES = ['success', 'error', 'warning', 'info'];
+
 export default class InlineMessage extends LightningElement {
     /*
      * Component displays system-generated error messages and utility icons.
@@ -27,32 +30,10 @@ export default class InlineMessage extends LightningElement {
         this.handleVariantCheck(normedVal);
     }
 
-    @api
-    get messageDetails() {
-        return this._msgDetails;
-    }
-    set messageDetails(value) {
-        //value can be array or singleton, normalize here
-        if (!Array.isArray(value)) {
-            value = [value];
-        }
+    @api messageDetails;
 
-        // TO DO: Uncomment line below and remove workaround when W-5644412 is fixed
-        // this._msgDetails = value.filter(detail => detail && detail.message);
-        // W-5644412 workaround
-        this._msgDetails = value
-            //handle both imperative Apex and @wire message shapes
-            .filter(
-                msg =>
-                    (msg && msg.body && msg.body.message) ||
-                    (msg &&
-                        msg.details &&
-                        msg.details.body &&
-                        msg.details.body.message)
-            )
-            .map(msg => ({
-                message: msg.body ? msg.body.message : msg.details.body.message
-            }));
+    get messageSummaries() {
+        return reduceErrors(this.messageDetails);
     }
 
     handleVariantCheck(value) {
