@@ -2,9 +2,9 @@ import { LightningElement, api, track } from 'lwc';
 const VARIANT_TYPES = ['success', 'error', 'warning', 'info'];
 export default class InlineMessage extends LightningElement {
     /*
-     * Component displays system-generated error messages and utility icons.
-     * TO DO: Edit comment just below to reflect final system message format.
-     * To display custom messages, assign text to a 'details.body.message' attribute.
+     * Component displays system-generated error messages, custom messages and SLDS utility icons.
+     * Assign human-readable errors to the 'msgForUser' property.
+     * To display other custom error details, assign text to 'messageDetails.message'.
      */
 
     _iconName;
@@ -32,27 +32,33 @@ export default class InlineMessage extends LightningElement {
         return this._msgDetails;
     }
     set messageDetails(value) {
-        //value can be array or singleton, normalize here
+        //value can be array or singleton, normalize to array
         if (!Array.isArray(value)) {
             value = [value];
         }
-
-        // TO DO: Uncomment line below and remove workaround when W-5644412 is fixed
-        // this._msgDetails = value.filter(detail => detail && detail.message);
-        // W-5644412 workaround
-        this._msgDetails = value
-            //handle both imperative Apex and @wire message shapes
-            .filter(
-                msg =>
-                    (msg && msg.body && msg.body.message) ||
-                    (msg &&
-                        msg.details &&
-                        msg.details.body &&
-                        msg.details.body.message)
-            )
-            .map(msg => ({
-                message: msg.body ? msg.body.message : msg.details.body.message
-            }));
+        const messages = value
+        //eliminate empty strings & null values
+        .filter(msg => !!msg)
+        //extract and format details from a variety of message types
+        .map(msg => {
+            if(Array.isArray(msg.body)){
+                //extract details from UI API read error array
+                let msgs = msg.body.map(b => 'Error: '+b.message);
+                //make a readable string from the array
+                return Array.from(msgs.values()).join();
+            }
+            else if(msg.body && typeof msg.body.message === 'string'){
+                //extract Apex, DML and other system errors
+                return msg.body.message;
+            }
+            else if(msg.message && typeof msg.message === 'string'){
+                //extract JS errors and custom detail messages
+                return msg.message;
+            }
+            //return HTTP status code if provided, else use failsafe string
+            return msg.statusText ? msg.statusText : 'Unknown error';
+        });
+        this._msgDetails = messages;
     }
 
     handleVariantCheck(value) {
