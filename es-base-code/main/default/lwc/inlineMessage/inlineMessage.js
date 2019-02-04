@@ -45,7 +45,7 @@ export default class InlineMessage extends LightningElement {
                 //extract details from UI API read error array
                 let msgs = msg.body.map(b => 'Error: '+b.message);
                 //make a readable string from the array
-                return Array.from(msgs.values()).join();
+                return Array.from(msgs.values()).join(', ');
             }
             else if(msg.body && typeof msg.body.message === 'string'){
                 //extract Apex, DML and other system errors
