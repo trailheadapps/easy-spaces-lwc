@@ -37,27 +37,25 @@ export default class InlineMessage extends LightningElement {
             value = [value];
         }
         const messages = value
-        //eliminate empty strings & null values
-        .filter(msg => !!msg)
-        //extract and format details from a variety of message types
-        .map(msg => {
-            if(Array.isArray(msg.body)){
-                //extract details from UI API read error array
-                let msgs = msg.body.map(b => 'Error: '+b.message);
-                //make a readable string from the array
-                return Array.from(msgs.values()).join(', ');
-            }
-            else if(msg.body && typeof msg.body.message === 'string'){
-                //extract Apex, DML and other system errors
-                return msg.body.message;
-            }
-            else if(msg.message && typeof msg.message === 'string'){
-                //extract JS errors and custom detail messages
-                return msg.message;
-            }
-            //return HTTP status code if provided, else use failsafe string
-            return msg.statusText ? msg.statusText : 'Unknown error';
-        });
+            //eliminate empty strings & null values
+            .filter(msg => !!msg)
+            //extract and format details from a variety of message types
+            .map(msg => {
+                if (Array.isArray(msg.body)) {
+                    //extract details from UI API read error array
+                    let msgs = msg.body.map(b => 'Error: ' + b.message);
+                    //make a readable string from the array
+                    return Array.from(msgs.values()).join(', ');
+                } else if (msg.body && typeof msg.body.message === 'string') {
+                    //extract Apex, DML and other system errors
+                    return msg.body.message;
+                } else if (msg.message && typeof msg.message === 'string') {
+                    //extract JS errors and custom detail messages
+                    return msg.message;
+                }
+                //return HTTP status code if provided, else use failsafe string
+                return msg.statusText ? msg.statusText : 'Unknown error';
+            });
         this._msgDetails = messages;
     }
 
