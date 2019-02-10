@@ -1,22 +1,30 @@
 <template>
     <template if:true={errorMsg}>
-        <c-inline-message icon-name="warning" icon-size="medium" show-details="true" msg-for-user={msgForUser} message-details={errorMsg}></c-inline-message>
+        <c-inline-message
+            icon-name="warning"
+            icon-size="medium"
+            show-details="true"
+            msg-for-user={msgForUser}
+            message-details={errorMsg}
+        ></c-inline-message>
     </template>
-   <div if:true={detailfields}>
-       <lightning-layout multiple-rows="true" class="slds-m-horizontal_small">
-           <lightning-layout-item size="12">
+    <div if:true={detailfields}>
+        <lightning-layout multiple-rows="true" class="slds-m-horizontal_small">
+            <lightning-layout-item size="12">
                 <h2 class="slds-text-heading_small slds-p-bottom_small">
                     Customer Info:
                 </h2>
-                <lightning-record-form class="slds-m-vertical_small"
+                <lightning-record-form
+                    class="slds-m-vertical_small"
                     record-id={recordid}
                     object-api-name={sobjecttype}
                     fields={detailfields}
                     mode="view"
                     columns="2"
-                    onsuccess={handleSavedRecord}></lightning-record-form>
-           </lightning-layout-item>
-       </lightning-layout>
-   </div>
-   <br/>
+                    onsuccess={handleSavedRecord}
+                ></lightning-record-form>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <br />
 </template>

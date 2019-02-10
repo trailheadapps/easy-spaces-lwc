@@ -1,22 +1,33 @@
 <template>
     <div class="slds-card">
         <template if:true={errorMsg}>
-                <c-inline-message icon-name="warning" icon-size="small" show-details={showDetails} msg-for-user={msgForUser} message-details={errorMsg}></c-inline-message>
+            <c-inline-message
+                icon-name="warning"
+                icon-size="small"
+                show-details={showDetails}
+                msg-for-user={msgForUser}
+                message-details={errorMsg}
+            ></c-inline-message>
         </template>
 
         <template if:false={errorMsg}>
-            <span class="slds-text-heading_small slds-m-left_small">Open Reservations:</span>
+            <span class="slds-text-heading_small slds-m-left_small"
+                >Open Reservations:</span
+            >
             <template if:true={noRecords}>
-            <p class="slds-m-left_small">No open reservations found.</p>
+                <p class="slds-m-left_small">No open reservations found.</p>
             </template>
             <template if:false={noRecords}>
-            <ul class="slds-list_vertical slds-has-dividers_bottom-space">
-                <template for:each={reservations} for:item="record">
-                    <li class="slds-item" key={record.Id}>
-                        <c-reservation-tile reservation={record} onreservationselect={handleSelectEvent}></c-reservation-tile>
-                    </li>
-                </template>
-            </ul>
+                <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                    <template for:each={reservations} for:item="record">
+                        <li class="slds-item" key={record.Id}>
+                            <c-reservation-tile
+                                reservation={record}
+                                onreservationselect={handleSelectEvent}
+                            ></c-reservation-tile>
+                        </li>
+                    </template>
+                </ul>
             </template>
         </template>
     </div>

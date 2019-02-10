@@ -1,7 +1,12 @@
 <template>
     <article class="slds-card">
         <template for:each={pills} for:item="pill">
-            <c-pill key={pill} label={pill.label} selected={pill.selected} onclick={handleClick}></c-pill>
+            <c-pill
+                key={pill}
+                label={pill.label}
+                selected={pill.selected}
+                onclick={handleClick}
+            ></c-pill>
         </template>
     </article>
 </template>
