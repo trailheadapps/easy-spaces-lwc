@@ -278,37 +278,37 @@ workflows:
                           only: /feature/.*/
             - create_package_es-base-objects:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: packaging/es-base-objects
             - create_package_es-base-code:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: packaging/es-base-code
             - create_package_es-base-styles:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: packaging/es-base-styles
             - create_package_es-space-mgmt:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: packaging/es-space-mgmt
             - install_packages_uat:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: packaging
             - install_packages_full-copy-sandbox:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                   filters:
                       branches:
                           only: develop
@@ -326,7 +326,7 @@ workflows:
                           ignore: master
             - cleanup_scratch_org:
                   requires:
-                      - setup_dx
+                      - setup_dx_orgs
                       - deploy_source
                       - create_package_es-base-objects
                       - create_package_es-base-code
