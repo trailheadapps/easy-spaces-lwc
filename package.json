@@ -31,10 +31,10 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "lint-push && npm run lint:aura"
+            "pre-push": "lint-staged && npm run lint:aura"
         }
     },
-    "lint-push": {
+    "lint-staged": {
         "**/lwc/**": [
             "prettier --write",
             "eslint",
