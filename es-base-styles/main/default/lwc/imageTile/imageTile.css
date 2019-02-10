@@ -1,28 +1,28 @@
-.es-tile{
+.es-tile {
     position: relative;
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
 }
-.es-tile:hover{
+.es-tile:hover {
     opacity: 0.75;
 }
-.selected{
+.selected {
     background-color: #8c8c67;
 }
-.muted{
+.muted {
     opacity: 0.45;
 }
-.overlay{
+.overlay {
     position: absolute;
     top: 65%;
     left: 1.4%;
     right: 1.3%;
     bottom: 1.9%;
-    background-color:#E6E6E6;
-    opacity: 0.90;
+    background-color: #e6e6e6;
+    opacity: 0.9;
 }
-.text{
+.text {
     margin-top: -0.85rem;
     margin-left: -0.5rem;
-    font-size: .85rem;
-    color:  #393939;
+    font-size: 0.85rem;
+    color: #393939;
 }

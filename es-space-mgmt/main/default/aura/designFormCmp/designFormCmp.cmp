@@ -1,12 +1,20 @@
 <aura:component implements="lightning:availableForFlowScreens" access="global">
     <!--FLOW INPUT VARIABLES-->
-    <aura:attribute name="marketId" type="String"/>
-     <!--FLOW OUTPUT VARIABLES-->
+    <aura:attribute name="marketId" type="String" />
+    <!--FLOW OUTPUT VARIABLES-->
     <aura:attribute name="selectedSpace" type="String" />
-    <aura:attribute name="popTabOnFinish" type="Boolean" default="false"/>
+    <aura:attribute name="popTabOnFinish" type="Boolean" default="false" />
 
-    <aura:attribute name="spaceTypes" type="String[]" default="Scheduled Activity,Come-and-Go,Large Groups,Individuals or Small Groups,Indoor,Outdoor,Conversation Starter,Energizing,Quiet,Relaxing"/>
+    <aura:attribute
+        name="spaceTypes"
+        type="String[]"
+        default="Scheduled Activity,Come-and-Go,Large Groups,Individuals or Small Groups,Indoor,Outdoor,Conversation Starter,Energizing,Quiet,Relaxing"
+    />
 
-    <c:spaceDesignForm pillvalues="{!v.spaceTypes}" market="{!v.marketId}" onsimpleupdate="{!c.updateReservation}" onupdatewithnav="{!c.updateAndGo}"></c:spaceDesignForm>
-
+    <c:spaceDesignForm
+        pillvalues="{!v.spaceTypes}"
+        market="{!v.marketId}"
+        onsimpleupdate="{!c.updateReservation}"
+        onupdatewithnav="{!c.updateAndGo}"
+    ></c:spaceDesignForm>
 </aura:component>

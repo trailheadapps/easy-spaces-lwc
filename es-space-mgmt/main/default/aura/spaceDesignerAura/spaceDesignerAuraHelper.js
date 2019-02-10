@@ -1,13 +1,12 @@
 ({
-
-    startFlow : function(component, recId, market){
-        var flow = component.find("flowCmp");
+    startFlow: function(component, recId, market) {
+        var flow = component.find('flowCmp');
         var inputVariables = [
-            {name : "varReservId" , type : "String" , value : recId},
-            {name : "varMarketId", type: "String", value : market},
+            { name: 'varReservId', type: 'String', value: recId },
+            { name: 'varMarketId', type: 'String', value: market }
         ];
-        if(flow){
-            flow.startFlow("spaceDesigner", inputVariables);
+        if (flow) {
+            flow.startFlow('spaceDesigner', inputVariables);
         }
     }
-})
+});

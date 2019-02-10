@@ -1,7 +1,6 @@
 <aura:component implements="lightning:availableForFlowActions">
-        <aura:attribute name="recordId" type="String" />
-        <aura:attribute name="sobject" type="String"/>
-        
-        <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sobject" type="String" />
 
-</aura:component>	
+    <lightning:workspaceAPI aura:id="workspace" />
+</aura:component>
