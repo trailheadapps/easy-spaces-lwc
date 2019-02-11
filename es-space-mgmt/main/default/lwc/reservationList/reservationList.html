@@ -20,7 +20,7 @@
             <template if:false={noRecords}>
                 <ul class="slds-list_vertical slds-has-dividers_bottom-space">
                     <template for:each={reservations} for:item="record">
-                        <li class="slds-item" key={record.Id}>
+                        <li class="slds-item" key={record.record.Id}>
                             <c-reservation-tile
                                 reservation={record}
                                 onreservationselect={handleSelectEvent}
