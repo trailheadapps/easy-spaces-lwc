@@ -2,7 +2,7 @@
     <article class="slds-card">
         <template for:each={pills} for:item="pill">
             <c-pill
-                key={pill}
+                key={pill.label}
                 label={pill.label}
                 selected={pill.selected}
                 onclick={handleClick}
