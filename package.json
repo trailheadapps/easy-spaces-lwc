@@ -31,7 +31,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "lint-staged && npm run lint:aura"
+            "pre-commit": "lint-staged && npm run lint:aura"
         }
     },
     "lint-staged": {
