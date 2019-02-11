@@ -1,28 +1,41 @@
-<aura:component implements="lightning:appHomeTemplate" description="App Home template, with 2 columns in 3:9 ratio. Left column is collapsible." access="global">
-<aura:attribute name="leftColumn" type="Aura.Component[]" access="global"/>
-<aura:attribute name="rightColumn" type="Aura.Component[]" access="global"/>
-<aura:attribute name="collapsedView" type="Boolean" default="false"/>
+<aura:component
+    implements="lightning:appHomeTemplate"
+    description="App Home template, with 2 columns in 3:9 ratio. Left column is collapsible."
+    access="global"
+>
+    <aura:attribute name="leftColumn" type="Aura.Component[]" access="global" />
+    <aura:attribute
+        name="rightColumn"
+        type="Aura.Component[]"
+        access="global"
+    />
+    <aura:attribute name="collapsedView" type="Boolean" default="false" />
 
-<div aura:id="container">
-    <lightning:buttonStateful state="{!v.collapsedView}" class="btn"
-    labelWhenOff="Hide Split View"
-    labelWhenOn="Show Split View"
-    labelWhenHover="Show Split View"
-    iconNameWhenOff="utility:richtextoutdent"
-    iconNameWhenOn="utility:richtextindent"
-    iconNameWhenHover="utility:richtextindent"
-    onclick="{!c.handleToggle}"/>
+    <div aura:id="container">
+        <lightning:buttonStateful
+            state="{!v.collapsedView}"
+            class="btn"
+            labelWhenOff="Hide Split View"
+            labelWhenOn="Show Split View"
+            labelWhenHover="Show Split View"
+            iconNameWhenOff="utility:richtextoutdent"
+            iconNameWhenOn="utility:richtextindent"
+            iconNameWhenHover="utility:richtextindent"
+            onclick="{!c.handleToggle}"
+        />
 
-<lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem
+                aura:id="leftColumn"
+                size="3"
+                class="left expanded"
+            >
+                {!v.leftColumn}
+            </lightning:layoutItem>
 
-    <lightning:layoutItem aura:id="leftColumn" size="3" class="left expanded">
-        {!v.leftColumn}
-    </lightning:layoutItem>
-
-    <lightning:layoutItem aura:id="rightColumn" size="9" class="right">
-        {!v.rightColumn}
-    </lightning:layoutItem>
-
-</lightning:layout>
-</div>
+            <lightning:layoutItem aura:id="rightColumn" size="9" class="right">
+                {!v.rightColumn}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
 </aura:component>

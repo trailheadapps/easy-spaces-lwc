@@ -19,7 +19,9 @@ Easy Spaces is a fictional event management company that creates and manages cus
   - [Completing the Installation](#completing-the-installation)
 
 - [Optional installation instructions](#optional-installation-instructions)
+
 - [Features](#features)
+
 - [Code Highlights](#code-highlights)
 
 ## Installation Instructions
@@ -31,18 +33,16 @@ There are two ways to install Easy Spaces:
 
 ### Installing Easy Spaces using Salesforce DX
 
-> IMPORTANT: Because of a current issue in pre-release, make sure your project path doesn't include any of the following folder names: lwc, aura, wave. For example, DO NOT clone this repository in a folder called /Projects/lwc.
-
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
-  - Sign up for a Spring '19 pre-release org and enable Dev Hub functionality
-  - Install the pre-release version of the Salesforce CLI
+  - Enable Dev Hub in your Trailhead Playground
+  - Install Salesforce CLI
   - Install Visual Studio Code
   - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. Authenticate with your hub org (if not already done). The command below uses the `-a` flag to assign an alias that can be used in other commands:
+2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
-  ```zsh
+  ```
   sfdx force:auth:web:login -d -a myhuborg
   ```
 
@@ -50,7 +50,7 @@ There are two ways to install Easy Spaces:
 
   ```zsh
   git clone https://github.com/trailheadapps/easy-spaces-lwc
-   cd easy-spaces-lwc
+  cd easy-spaces-lwc
   ```
 
 4. Create a scratch org and provide it with an alias (**easyspaces** in the command below):
@@ -69,14 +69,14 @@ There are two ways to install Easy Spaces:
 
   ```zsh
   sfdx force:user:permset:assign -n EasySpacesObjects
-   sfdx force:user:permset:assign -n SpaceManagementApp
+  sfdx force:user:permset:assign -n SpaceManagementApp
   ```
 
 7. Load sample data:
 
   ```zsh
   sfdx force:data:tree:import -p ./data/Plan1.json
-   sfdx force:data:tree:import -p ./data/Plan2.json
+  sfdx force:data:tree:import -p ./data/Plan2.json
   ```
 
 8. Open the scratch org:
@@ -91,23 +91,23 @@ There are two ways to install Easy Spaces:
 
 Use this option if you don't have the Salesforce CLI configured and want to experience the sample app. Because Easy Spaces is built on a set of related units, you'll be installing a series of unlocked packages. You'll also be importing sample data, after installing packages.
 
-1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 pre-release org.
+1. [Sign up](https://developer.salesforce.com/signup) for a Developer Edition (DE) org.
 
 2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEDIA2) to install the **es-base-objects** package and choose **Install for All Users**.
+3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAefIAG) to install the **es-base-objects** package and choose **Install for All Users**.
 
-4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPEIIA2) to install the **es-base-code** package and choose **Install for All Users**.
+4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAekIAG) to install the **es-base-code** package and choose **Install for All Users**.
 
-5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPENIA2) to install the **es-base-styles** package and choose **Install for All Users**.
+5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAf4IAG) to install the **es-base-styles** package and choose **Install for All Users**.
 
-6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000YGclIAG) to install the **es-space-mgmt** package and choose **Install for All Users**.
+6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAfJIAW) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 7. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
   ```zsh
   git clone https://github.com/trailheadapps/easy-spaces-lwc
-   cd easy-spaces-lwc
+  cd easy-spaces-lwc
   ```
 
 8. Import Lead data:
@@ -179,14 +179,14 @@ This repository contains several files that are relevant if you want to integrat
 
 ### Pre-commit hook
 
-This repository also comes with a <package.json> file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you `git commit` changes.
+This repository also comes with a [package.json](./package.json) file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you `git commit` changes.
 
 To set up the formatting and linting pre-commit hook:
 
 1. Install [Node.js](https://nodejs.org) if you haven't already done so
 2. Run `npm install` in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
 
-Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out <package.json> for the full list):
+Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](./package.json) for the full list):
 
 ```
 npm run lint:lwc
@@ -206,7 +206,9 @@ A quick overview of the features you can explore in Easy Spaces:
   - Local Action components
 
 - Custom Lightning Page Templates
+
 - Lightning Theming
+
 - Custom Metadata Types
 
 ## Code Highlights

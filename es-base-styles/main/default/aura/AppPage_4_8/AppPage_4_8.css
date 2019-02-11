@@ -1,11 +1,11 @@
-.THIS .btn{
+.THIS .btn {
     position: absolute;
     top: 16px;
     right: 18px;
 }
-.THIS .expanded{
-    padding-right: .75rem;
+.THIS .expanded {
+    padding-right: 0.75rem;
 }
-.THIS .collapsed{
+.THIS .collapsed {
     display: none;
 }

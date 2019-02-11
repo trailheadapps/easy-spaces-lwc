@@ -1,11 +1,20 @@
 <template>
     <template if:true={records}>
-        <c-image-gallery items={records} onitemselect={handleItemSelect}></c-image-gallery>
+        <c-image-gallery
+            items={records}
+            onitemselect={handleItemSelect}
+        ></c-image-gallery>
     </template>
     <template if:true={noRecords}>
         <p>No related spaces found.</p>
     </template>
     <template if:true={errorMsg}>
-        <c-inline-message icon-name="warning" icon-size="medium" show-details="true" msg-for-user={msgForUser} message-details={errorMsg}></c-inline-message>
+        <c-inline-message
+            icon-name="warning"
+            icon-size="medium"
+            show-details="true"
+            msg-for-user={msgForUser}
+            message-details={errorMsg}
+        ></c-inline-message>
     </template>
 </template>

@@ -1,16 +1,24 @@
-<aura:component implements="lightning:availableForFlowScreens" controller="marketServices" access="global" >
+<aura:component
+    implements="lightning:availableForFlowScreens"
+    controller="marketServices"
+    access="global"
+>
     <!--FLOW INPUT VARIABLES-->
     <aura:attribute name="sobject" type="String" />
-    <aura:attribute name="recordId" type="String" access="global"/>
+    <aura:attribute name="recordId" type="String" access="global" />
     <aura:attribute name="state" type="String" />
     <!--FLOW OUTPUT VARIABLES-->
-    <aura:attribute name="requestedMarket" type="String"/>
-    <aura:attribute name="numberOfPeople" type="Integer" default="150"/>
-    <aura:attribute name="startDate" type="Date"/>
-    <aura:attribute name="endDays" type="Integer" default="7"/>
+    <aura:attribute name="requestedMarket" type="String" />
+    <aura:attribute name="numberOfPeople" type="Integer" default="150" />
+    <aura:attribute name="startDate" type="Date" />
+    <aura:attribute name="endDays" type="Integer" default="7" />
 
     <div class="slds-card">
-        <c:reservationHelperForm objecttype="{!v.sobject}" customerid="{!v.recordId}" state="{!v.state}" ondraftreservation="{!c.draftReservation}"></c:reservationHelperForm>
+        <c:reservationHelperForm
+            objecttype="{!v.sobject}"
+            customerid="{!v.recordId}"
+            state="{!v.state}"
+            ondraftreservation="{!c.draftReservation}"
+        ></c:reservationHelperForm>
     </div>
-
 </aura:component>

@@ -1,9 +1,9 @@
-.es-pill{
+.es-pill {
     display: inline-block;
-    padding: .25rem;
-    margin: .15rem;
+    padding: 0.25rem;
+    margin: 0.15rem;
 }
-.selected{
+.selected {
     background-color: #393939;
 }
 .selected .label-color {

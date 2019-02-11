@@ -1,23 +1,32 @@
 <template>
     <div class="slds-p-around_x-small slds-box">
-    <lightning-layout horizontal-align="center" vertical-align="center">
-        <lightning-layout-item size="1" flexibility="shrink">
-            <lightning-icon icon-name={iconName} alternative-text={altText} variant={iconVariant} size={iconSize}></lightning-icon>
-        </lightning-layout-item>
-        <lightning-layout-item size="11" flexibility="auto">
-            <div class="slds-p-around_x-small">
-            <p>{msgForUser}</p>
-            <template if:true={showDetails}>
-                <div class="slds-p-vertical_x-small">
-                    <p>Additional Details:</p>
-                    <template for:each={messageDetails} for:item="detail">
-                        <p class="slds-truncate" key={detail}>{detail}</p>
+        <lightning-layout horizontal-align="center" vertical-align="center">
+            <lightning-layout-item size="1" flexibility="shrink">
+                <lightning-icon
+                    icon-name={iconName}
+                    alternative-text={altText}
+                    variant={iconVariant}
+                    size={iconSize}
+                ></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item size="11" flexibility="auto">
+                <div class="slds-p-around_x-small">
+                    <p>{msgForUser}</p>
+                    <template if:true={showDetails}>
+                        <div class="slds-p-vertical_x-small">
+                            <p>Additional Details:</p>
+                            <template
+                                for:each={messageDetails}
+                                for:item="detail"
+                            >
+                                <p class="slds-truncate" key={detail}>
+                                    {detail}
+                                </p>
+                            </template>
+                        </div>
                     </template>
                 </div>
-            </template>
-            </div>
-        </lightning-layout-item>
-    </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
     </div>
-
 </template>
