@@ -12,78 +12,78 @@ Easy Spaces is a fictional event management company that creates and manages cus
 
 ## Table of Contents
 
-- Installation Instructions
+-   Installation Instructions
 
-  - [Installing Easy Spaces using Salesforce DX](#installing-easy-spaces-using-salesforce-dx)
-  - [Installing Easy Spaces using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages)
-  - [Completing the Installation](#completing-the-installation)
+    -   [Installing Easy Spaces using Salesforce DX](#installing-easy-spaces-using-salesforce-dx)
+    -   [Installing Easy Spaces using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages)
+    -   [Completing the Installation](#completing-the-installation)
 
-- [Optional installation instructions](#optional-installation-instructions)
+-   [Optional installation instructions](#optional-installation-instructions)
 
-- [Features](#features)
+-   [Features](#features)
 
-- [Code Highlights](#code-highlights)
+-   [Code Highlights](#code-highlights)
 
 ## Installation Instructions
 
 There are two ways to install Easy Spaces:
 
-- [Using Salesforce DX](#installing-easy-spaces-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
-- [Using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
+-   [Using Salesforce DX](#installing-easy-spaces-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
+-   [Using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
 
 ### Installing Easy Spaces using Salesforce DX
 
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
-  - Enable Dev Hub in your Trailhead Playground
-  - Install Salesforce CLI
-  - Install Visual Studio Code
-  - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
+-   Enable Dev Hub in your Trailhead Playground
+-   Install Salesforce CLI
+-   Install Visual Studio Code
+-   Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
 2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
-  ```
-  sfdx force:auth:web:login -d -a myhuborg
-  ```
+```
+sfdx force:auth:web:login -d -a myhuborg
+```
 
 3. Clone this repository:
 
-  ```zsh
-  git clone https://github.com/trailheadapps/easy-spaces-lwc
-  cd easy-spaces-lwc
-  ```
+```zsh
+git clone https://github.com/trailheadapps/easy-spaces-lwc
+cd easy-spaces-lwc
+```
 
 4. Create a scratch org and provide it with an alias (**easyspaces** in the command below):
 
-  ```zsh
-  sfdx force:org:create -s -f config/project-scratch-def.json -a easyspaces
-  ```
+```zsh
+sfdx force:org:create -s -f config/project-scratch-def.json -a easyspaces
+```
 
 5. Push source to your scratch org:
 
-  ```zsh
-  sfdx force:source:push
-  ```
+```zsh
+sfdx force:source:push
+```
 
 6. Assign two Easy Spaces permission sets to the default user:
 
-  ```zsh
-  sfdx force:user:permset:assign -n EasySpacesObjects
-  sfdx force:user:permset:assign -n SpaceManagementApp
-  ```
+```zsh
+sfdx force:user:permset:assign -n EasySpacesObjects
+sfdx force:user:permset:assign -n SpaceManagementApp
+```
 
 7. Load sample data:
 
-  ```zsh
-  sfdx force:data:tree:import -p ./data/Plan1.json
-  sfdx force:data:tree:import -p ./data/Plan2.json
-  ```
+```zsh
+sfdx force:data:tree:import -p ./data/Plan1.json
+sfdx force:data:tree:import -p ./data/Plan2.json
+```
 
 8. Open the scratch org:
 
-  ```zsh
-  sfdx force:org:open
-  ```
+```zsh
+sfdx force:org:open
+```
 
 9. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
 
@@ -105,43 +105,43 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
 7. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
-  ```zsh
-  git clone https://github.com/trailheadapps/easy-spaces-lwc
-  cd easy-spaces-lwc
-  ```
+```zsh
+git clone https://github.com/trailheadapps/easy-spaces-lwc
+cd easy-spaces-lwc
+```
 
 8. Import Lead data:
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Standard objects** tab, click **Leads**, and click **Add New Records**.
-  - Drag **Lead_Data.csv** from the data folder of this project to the upload area.
-  - Click **Next**, **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Standard objects** tab, click **Leads**, and click **Add New Records**.
+-   Drag **Lead_Data.csv** from the data folder of this project to the upload area.
+-   Click **Next**, **Next**, and **Start Import**.
 
 9. Import Contact data:
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Standard objects** tab, click **Accounts and Contacts**, and click **Add New Records**.
-  - Drag **Contact_Data.csv** from the data folder of this project to the upload area.
-  - Click **Next**, **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Standard objects** tab, click **Accounts and Contacts**, and click **Add New Records**.
+-   Drag **Contact_Data.csv** from the data folder of this project to the upload area.
+-   Click **Next**, **Next**, and **Start Import**.
 
 10. Import Market data:
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Custom objects** tab, click **Markets**, and click **Add New Records**.
-  - Drag **Market_Data.csv** from the data folder of this project to the upload area.
-  - Click **Next**, **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Custom objects** tab, click **Markets**, and click **Add New Records**.
+-   Drag **Market_Data.csv** from the data folder of this project to the upload area.
+-   Click **Next**, **Next**, and **Start Import**.
 
 11. Import Spaces data:
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Custom objects** tab, click **Spaces**, and click **Add New Records**.
-  - In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
-  - Drag **Space_Data.csv** from the data folder of this project to the upload area.
-  - Click **Next**, **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Custom objects** tab, click **Spaces**, and click **Add New Records**.
+-   In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
+-   Drag **Space_Data.csv** from the data folder of this project to the upload area.
+-   Click **Next**, **Next**, and **Start Import**.
 
 12. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
 
@@ -197,19 +197,19 @@ npm run prettier
 
 A quick overview of the features you can explore in Easy Spaces:
 
-- Modular app design and Unlocked Packages
-- Lightning Console APIs & Background Refresh Methods
-- Lightning Flow
+-   Modular app design and Unlocked Packages
+-   Lightning Console APIs & Background Refresh Methods
+-   Lightning Flow
 
-  - Dynamic flow interview components
-  - Custom flow screen components
-  - Local Action components
+    -   Dynamic flow interview components
+    -   Custom flow screen components
+    -   Local Action components
 
-- Custom Lightning Page Templates
+-   Custom Lightning Page Templates
 
-- Lightning Theming
+-   Lightning Theming
 
-- Custom Metadata Types
+-   Custom Metadata Types
 
 ## Code Highlights
 
