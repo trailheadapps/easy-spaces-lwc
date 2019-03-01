@@ -9,10 +9,9 @@ package.xml
 **profiles
 **settings
 
-
-# added for compatability with LWC Extension
-es-base-styles/main/default/lwc/jsconfig.json
-es-base-styles/main/default/lwc/.eslintrc.json
-
+# LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
