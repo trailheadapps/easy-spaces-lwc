@@ -14,7 +14,7 @@ Easy Spaces is a fictional event management company that creates and manages cus
 
 -   Installation Instructions
 
-    -   [Installing Easy Spaces using Salesforce DX](#installing-easy-spaces-using-salesforce-dx)
+    -   [Installing Easy Spaces using a Scratch Org](#installing-easy-spaces-using-a-scratch-org)
     -   [Installing Easy Spaces using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages)
     -   [Completing the Installation](#completing-the-installation)
 
@@ -28,10 +28,10 @@ Easy Spaces is a fictional event management company that creates and manages cus
 
 There are two ways to install Easy Spaces:
 
--   [Using Salesforce DX](#installing-easy-spaces-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
+-   [Using a Scratch Org](#installing-easy-spaces-using-a-scratch-org): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
 -   [Using Unlocked Packages](#installing-easy-spaces-using-unlocked-packages): This option allows anybody to experience the sample app without installing a local development environment.
 
-### Installing Easy Spaces using Salesforce DX
+### Installing Easy Spaces using a Scratch Org
 
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
