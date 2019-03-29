@@ -141,7 +141,6 @@ jobs:
             - run:
                   name: Push Source
                   command: |
-                      node_modules/sfdx-cli/bin/run plugins:install salesforcedx@pre-release # Temporary using the pre-release plugin
                       node_modules/sfdx-cli/bin/run force:source:push -u ciorg
     create_package_es-base-objects:
         # Creating a package for es-base-objects, based on the GitHub branch name.
