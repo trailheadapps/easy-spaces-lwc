@@ -2,7 +2,7 @@
     "orgName": "Easy Spaces",
     "edition": "Developer",
     "hasSampleData": "false",
-    "features": "ServiceCloud;ServiceWave;SalesWave",
+    "features": "ServiceCloud",
     "settings": {
         "orgPreferenceSettings": {
             "s1DesktopEnabled": true,
