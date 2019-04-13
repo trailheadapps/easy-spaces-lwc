@@ -7,7 +7,8 @@
         "orgPreferenceSettings": {
             "s1DesktopEnabled": true,
             "s1EncryptedStoragePref2": false,
-            "selfSetPasswordInApi": true
+            "selfSetPasswordInApi": true,
+            "pathAssistantsEnabled": true
         }
     }
 }

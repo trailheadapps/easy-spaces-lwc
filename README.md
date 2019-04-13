@@ -85,7 +85,9 @@ sfdx force:data:tree:import -p ./data/Plan2.json
 sfdx force:org:open
 ```
 
-9. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
+9. In **Setup**, navigate to **Themes and Branding**
+
+10. Activate the **Easy Spaces** theme
 
 ### Installing Easy Spaces using Unlocked Packages
 
@@ -143,19 +145,9 @@ cd easy-spaces-lwc
 -   Drag **Space_Data.csv** from the data folder of this project to the upload area.
 -   Click **Next**, **Next**, and **Start Import**.
 
-12. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
+12. In **Setup**, navigate to **Themes and Branding**
 
-### Completing the Installation
-
-#### Activate Path Settings
-
-1. In **Setup**, navigate to **Path Settings**
-2. Click **Enable** to activate Path Settings
-
-#### Activate the Easy Spaces theme
-
-1. In **Setup**, navigate to **Themes and Branding**
-2. Activate the **Easy Spaces** theme
+13. Activate the **Easy Spaces** theme
 
 #### Explore the application
 
