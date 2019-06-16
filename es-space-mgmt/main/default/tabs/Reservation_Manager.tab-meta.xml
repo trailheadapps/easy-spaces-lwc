@@ -3,6 +3,6 @@
     <description>Created by Lightning App Builder</description>
     <flexiPage>Reservation_Manager</flexiPage>
     <label>Reservation Manager</label>
-    <mobileReady>true</mobileReady>
+
     <motif>Custom18: Form</motif>
 </CustomTab>

@@ -87,7 +87,9 @@ sfdx force:data:tree:import -p ./data/Plan2.json
 sfdx force:org:open
 ```
 
-9. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
+9. In **Setup**, navigate to **Themes and Branding**
+
+10. Activate the **Easy Spaces** theme
 
 ### Installing Easy Spaces using Unlocked Packages
 
@@ -97,13 +99,13 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
 2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAefIAG) to install the **es-base-objects** package and choose **Install for All Users**.
+3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVpIAK) to install the **es-base-objects** package and choose **Install for All Users**.
 
-4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAekIAG) to install the **es-base-code** package and choose **Install for All Users**.
+4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVuIAK) to install the **es-base-code** package and choose **Install for All Users**.
 
-5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAf4IAG) to install the **es-base-styles** package and choose **Install for All Users**.
+5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVzIAK) to install the **es-base-styles** package and choose **Install for All Users**.
 
-6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAfJIAW) to install the **es-space-mgmt** package and choose **Install for All Users**.
+6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjW4IAK) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 7. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
@@ -145,19 +147,9 @@ cd easy-spaces-lwc
 -   Drag **Space_Data.csv** from the data folder of this project to the upload area.
 -   Click **Next**, **Next**, and **Start Import**.
 
-12. Follow the instructions in the [Completing the Installation](#completing-the-installation) section below to finish the installation.
+12. In **Setup**, navigate to **Themes and Branding**
 
-### Completing the Installation
-
-#### Activate Path Settings
-
-1. In **Setup**, navigate to **Path Settings**
-2. Click **Enable** to activate Path Settings
-
-#### Activate the Easy Spaces theme
-
-1. In **Setup**, navigate to **Themes and Branding**
-2. Activate the **Easy Spaces** theme
+13. Activate the **Easy Spaces** theme
 
 #### Explore the application
 

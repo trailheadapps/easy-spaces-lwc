@@ -2,12 +2,13 @@
     "orgName": "Easy Spaces",
     "edition": "Developer",
     "hasSampleData": "false",
-    "features": "ServiceCloud;ServiceWave;SalesWave",
+    "features": "ServiceCloud",
     "settings": {
         "orgPreferenceSettings": {
             "s1DesktopEnabled": true,
             "s1EncryptedStoragePref2": false,
-            "selfSetPasswordInApi": true
+            "selfSetPasswordInApi": true,
+            "pathAssistantsEnabled": true
         }
     }
 }
