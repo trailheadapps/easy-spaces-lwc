@@ -351,6 +351,13 @@ workflows:
                               - develop
                               - packaging
     nightly:
+        triggers:
+            - schedule:
+                  cron: "0 12 * * 0"
+                  filters:
+                      branches:
+                          only:
+                              - /prerelease/.*
         jobs:
             - setup_tooling
             - prettier_verify:
