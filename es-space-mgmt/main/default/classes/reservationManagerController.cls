@@ -6,7 +6,7 @@ public with sharing class reservationManagerController {
 
         List<customerServices.Customer> customers = new List<customerServices.Customer>();
        if(sObjectType == 'Lead'){
-            for(Lead l:[SELECT Id, Email, Name, City, State, Status FROM Lead WHERE Status IN ('Open - Not Contacted') LIMIT 5]){
+            for(Lead l:[SELECT Id, Email, Name, City, State, Status FROM Lead WHERE Status IN ('Open - Not Contacted', 'New - Not Contacted') LIMIT 5]){
             customerServices.Customer c = new customerServices.Customer(l.Name, l.Email, l.City, l.State, l.Status,l.Id);
             customers.add(c);
             }
