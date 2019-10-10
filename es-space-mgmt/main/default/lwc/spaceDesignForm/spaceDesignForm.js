@@ -1,11 +1,21 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
-import {FlowNavigationNextEvent} from 'lightning/flowSupport';
+import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class SpaceDesignForm extends LightningElement {
-    
-    pillvalues = ['Scheduled Activity','Come-and-Go','Large Groups','Individuals or Small Groups','Indoor','Outdoor','Conversation Starter','Energizing','Quiet','Relaxing'];
-    
+    pillvalues = [
+        'Scheduled Activity',
+        'Come-and-Go',
+        'Large Groups',
+        'Individuals or Small Groups',
+        'Indoor',
+        'Outdoor',
+        'Conversation Starter',
+        'Energizing',
+        'Quiet',
+        'Relaxing'
+    ];
+
     @track items = [];
     @track errorMsg;
     @track msgForUser;

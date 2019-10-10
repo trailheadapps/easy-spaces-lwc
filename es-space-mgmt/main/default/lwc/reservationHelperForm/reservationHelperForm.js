@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import {FlowNavigationNextEvent} from 'lightning/flowSupport';
+import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class reservationHelperForm extends LightningElement {
     //Flow input variables
@@ -41,7 +41,7 @@ export default class reservationHelperForm extends LightningElement {
         this.endDays = event.detail.endDays;
         this.numberOfPeople = event.detail.numberOfPeople;
         this.requestedMarket = event.detail.requestedMarket;
-    
+
         const nextNavigationEvent = new FlowNavigationNextEvent();
         this.dispatchEvent(nextNavigationEvent);
     }
