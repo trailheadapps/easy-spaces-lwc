@@ -1,3 +1,7 @@
 .mute {
     opacity: 0.45;
 }
+
+.pointer{
+    cursor: pointer;
+}
