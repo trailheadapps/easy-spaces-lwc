@@ -78,6 +78,7 @@
             <label>isLead</label>
         </rules>
     </decisions>
+    <description>Updated to LWC</description>
     <formulas>
         <name>calcEndDate</name>
         <dataType>Date</dataType>
@@ -244,17 +245,17 @@
             <targetReference>assignCustomerLookup</targetReference>
         </connector>
         <fields>
-            <name>CustomerDetailscmp</name>
-            <extensionName>c:customerDetails</extensionName>
+            <name>reservationHelperFormLWC</name>
+            <extensionName>c:reservationHelperForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>recordId</name>
+                <name>customerid</name>
                 <value>
                     <elementReference>varRecordId</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>sobject</name>
+                <name>objecttype</name>
                 <value>
                     <elementReference>varSobjectType</elementReference>
                 </value>
@@ -275,18 +276,24 @@
                 <name>numberOfPeople</name>
             </outputParameters>
             <outputParameters>
-                <assignToReference>varStartDate</assignToReference>
-                <name>startDate</name>
-            </outputParameters>
-            <outputParameters>
                 <assignToReference>varResLength</assignToReference>
                 <name>endDays</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>varStartDate</assignToReference>
+                <name>startDate</name>
             </outputParameters>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>CustomerDetails</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>CustomerDetails</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <name>varMarket</name>
