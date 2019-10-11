@@ -49,7 +49,7 @@
             <label>GoToRecordHome</label>
         </rules>
     </decisions>
-    <description>Updated with LWC</description>
+    <description>Space Designer Flow with LWC.</description>
     <interviewLabel>spaceDesigner {!$Flow.CurrentDateTime}</interviewLabel>
     <label>spaceDesigner</label>
     <processMetadataValues>
@@ -100,7 +100,7 @@
             <targetReference>updateReservation</targetReference>
         </connector>
         <fields>
-            <name>spaceDesignFormLWC</name>
+            <name>spaceDesignForm</name>
             <extensionName>c:spaceDesignForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>

@@ -78,7 +78,7 @@
             <label>isLead</label>
         </rules>
     </decisions>
-    <description>Updated to LWC</description>
+    <description>Create Reservation Flow with LWC.</description>
     <formulas>
         <name>calcEndDate</name>
         <dataType>Date</dataType>
@@ -245,7 +245,7 @@
             <targetReference>assignCustomerLookup</targetReference>
         </connector>
         <fields>
-            <name>reservationHelperFormLWC</name>
+            <name>reservationHelperForm</name>
             <extensionName>c:reservationHelperForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
