@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <status>ACTIVE</status>
     <actionCalls>
         <name>openReservationRecord</name>
         <label>openReservationRecord</label>
-        <locationX>260</locationX>
+        <locationX>348</locationX>
         <locationY>360</locationY>
         <actionName>c:openRecordAction</actionName>
         <actionType>component</actionType>
@@ -31,7 +30,7 @@
     <decisions>
         <name>setFinishBehavior</name>
         <label>setFinishBehavior</label>
-        <locationX>256</locationX>
+        <locationX>344</locationX>
         <locationY>253</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -50,13 +49,20 @@
             <label>GoToRecordHome</label>
         </rules>
     </decisions>
+    <description>Space Designer Flow with LWC.</description>
     <interviewLabel>spaceDesigner {!$Flow.CurrentDateTime}</interviewLabel>
     <label>spaceDesigner</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>Flow</processType>
     <recordUpdates>
         <name>updateReservation</name>
         <label>updateReservation</label>
-        <locationX>94</locationX>
+        <locationX>182</locationX>
         <locationY>175</locationY>
         <connector>
             <targetReference>setFinishBehavior</targetReference>
@@ -85,7 +91,7 @@
     <screens>
         <name>spaceDesigner</name>
         <label>spaceDesigner</label>
-        <locationX>92</locationX>
+        <locationX>180</locationX>
         <locationY>71</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -94,29 +100,36 @@
             <targetReference>updateReservation</targetReference>
         </connector>
         <fields>
-            <name>designFormCmp</name>
-            <extensionName>c:designFormCmp</extensionName>
+            <name>spaceDesignForm</name>
+            <extensionName>c:spaceDesignForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>marketId</name>
+                <name>market</name>
                 <value>
                     <elementReference>varMarketId</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>varSpaceId</assignToReference>
-                <name>selectedSpace</name>
-            </outputParameters>
-            <outputParameters>
                 <assignToReference>varfinishOnRecord</assignToReference>
                 <name>popTabOnFinish</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>varSpaceId</assignToReference>
+                <name>selectedtile</name>
             </outputParameters>
         </fields>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>spaceDesigner</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>spaceDesigner</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
     <variables>
         <name>varfinishOnRecord</name>
         <dataType>Boolean</dataType>
