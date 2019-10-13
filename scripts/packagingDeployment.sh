@@ -15,12 +15,14 @@
 BRANCH=$1
 SFDX_CLI_EXEC=sfdx
 TARGET_ORG=''
-PACKAGE_VERSION_BASE_OBJECTS="ESBaseObjects@0.1.0-3"
-PACKAGE_VERSION_BASE_CODE="ESBaseCode@0.1.0-2"
-PACKAGE_VERSION_BASE_STYLES="ESBaseStyles@0.1.0-3"
-PACKAGE_VERSION_SPACE_MGMT="ESSpaceMgmt@0.1.0-3"
+NIGHTLY=false
+PACKAGE_VERSION_BASE_OBJECTS="ESObjects@2.0.0-1"
+PACKAGE_VERSION_BASE_CODE="ESBaseCodeLWC@2.0.0-1"
+PACKAGE_VERSION_BASE_STYLES="ESBaseStylesLWC@2.0.0-1"
+PACKAGE_VERSION_SPACE_MGMT="ESSpaceMgmtLWC@2.0.0-1"
 
 if [ "$#" -eq 0 ]; then
+  NIGHTLY=true
   echo "No parameter provided, this will be full package installation"
 fi
 
@@ -43,24 +45,24 @@ PACKAGE_VERSION_BASE_STYLES="$(cat sfdx-project.json | jq --arg VERSION "$PACKAG
 PACKAGE_VERSION_SPACE_MGMT="$(cat sfdx-project.json | jq --arg VERSION "$PACKAGE_VERSION_SPACE_MGMT" '.packageAliases | .[$VERSION]' | tr -d '"')"
 
 # We're in a packaging/* branch, so we need to create a new version
-if [ $BRANCH = *"es-base-objects"* ]; then
+if [ $BRANCH = *"es-base-objects"* ] || [ $NIGHTLY = true]; then
   echo "Creating new package version for es-base-objects"
-  PACKAGE_VERSION_BASE_OBJECTS="$($SFDX_CLI_EXEC force:package:version:create -p ESBaseObjects -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+  PACKAGE_VERSION_BASE_OBJECTS="$($SFDX_CLI_EXEC force:package:version:create -p ESObjects -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
   sleep 300 # We've to wait for package replication.
 fi
-if [ $BRANCH = *"es-base-code"* ]; then
+if [ $BRANCH = *"es-base-code"* ] || [ $NIGHTLY = true]; then
   echo "Creating new package version for es-base-code"
-  PACKAGE_VERSION_BASE_CODE="$($SFDX_CLI_EXEC force:package:version:create -p ESBaseCode -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+  PACKAGE_VERSION_BASE_CODE="$($SFDX_CLI_EXEC force:package:version:create -p ESBaseCodeLWC -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
   sleep 300 # We've to wait for package replication.
 fi
-if [ $BRANCH = *"es-base-styles"* ]; then
+if [ $BRANCH = *"es-base-styles"* ] || [ $NIGHTLY = true]; then
   echo "Creating new package version for es-base-styles"
-  PACKAGE_VERSION_BASE_STYLES="$($SFDX_CLI_EXEC force:package:version:create -p ESBaseStyles -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+  PACKAGE_VERSION_BASE_STYLES="$($SFDX_CLI_EXEC force:package:version:create -p ESBaseStylesLWC -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
   sleep 300 # We've to wait for package replication.
 fi
-if [ $BRANCH = *"es-space-mgmt"* ]; then
+if [ $BRANCH = *"es-space-mgmt"* ] || [ $NIGHTLY = true]; then
   echo "Creating new package version for es-space-mgmt"
-  PACKAGE_VERSION_BASE_SPACE_MGMT="$($SFDX_CLI_EXEC force:package:version:create -p ESSpaceMgmt -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+  PACKAGE_VERSION_BASE_SPACE_MGMT="$($SFDX_CLI_EXEC force:package:version:create -p ESSpaceMgmtLWC -x -w 10 --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
   sleep 300 # We've to wait for package replication.
 fi
 

@@ -100,11 +100,11 @@ jobs:
             - run:
                   name: Authenticate DevHub
                   command: |
-                      if [[ $CIRCLE_BRANCH == prerelease* ]]; then
-                        node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY_PRERELEASE --jwtkeyfile .circleci/server.key --username $USERNAME_PRERELEASE --setdefaultdevhubusername -a HubOrg
-                      else
-                        node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile .circleci/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
-                      fi
+                      #   if [[ $CIRCLE_BRANCH == prerelease* ]]; then
+                          node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY_PRERELEASE --jwtkeyfile .circleci/server.key --username $USERNAME_PRERELEASE --setdefaultdevhubusername -a HubOrg
+                      #   else
+                      #     node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile .circleci/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
+                      #   fi
             - run:
                   name: Define CI Org
                   # We define the to be used CI org. Based on the branch we either create a new scratch org
@@ -121,6 +121,8 @@ jobs:
                       elif [[ "${CIRCLE_BRANCH}" = *"feature/"* ]]; then
                         node_modules/sfdx-cli/bin/run force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -d 1
                       elif [[ "${CIRCLE_BRANCH}" = *"packaging/"* ]]; then
+                        node_modules/sfdx-cli/bin/run force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -d 1
+                      elif [[ "${CIRCLE_BRANCH}" = *"prerelease/"* ]]; then
                         node_modules/sfdx-cli/bin/run force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -d 1
                       fi
             - persist_to_workspace:
@@ -142,6 +144,16 @@ jobs:
                   name: Push Source
                   command: |
                       node_modules/sfdx-cli/bin/run force:source:push -u ciorg
+    create_packages_nightly:
+        # Creating a package for es-base-objects, based on the GitHub branch name.
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/
+            - run:
+                  name: Create and install package
+                  command: |
+                      scripts/packagingDeployment.sh
     create_package_es-base-objects:
         # Creating a package for es-base-objects, based on the GitHub branch name.
         <<: *defaults
@@ -338,3 +350,50 @@ workflows:
                               - master
                               - develop
                               - packaging
+    nightly:
+        triggers:
+            - schedule:
+                  cron: '0 17 * * 0'
+                  filters:
+                      branches:
+                          only:
+                              - develop
+                              - .*prerelease.*
+        jobs:
+            - setup_tooling
+            - prettier_verify:
+                  requires:
+                      - setup_tooling
+            - lint_lwc:
+                  requires:
+                      - prettier_verify
+            # - unit_test_lwc:
+            #       requires:
+            #           - lint_lwc
+            #       filters:
+            #           branches:
+            #               ignore: develop
+            - install_cli:
+                  requires:
+                      - lint_lwc
+            - lint_aura:
+                  requires:
+                      - install_cli
+            - setup_dx_orgs:
+                  requires:
+                      - lint_aura
+            - deploy_source:
+                  requires:
+                      - setup_dx_orgs
+            - create_packages_nightly:
+                  requires:
+                      - setup_dx_orgs
+            - run_apex_tests:
+                  requires:
+                      - deploy_source
+                      - create_packages_nightly
+            - cleanup_scratch_org:
+                  requires:
+                      - setup_dx_orgs
+                      - deploy_source
+                      - create_packages_nightly
