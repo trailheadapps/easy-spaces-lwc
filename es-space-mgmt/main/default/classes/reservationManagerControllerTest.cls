@@ -1,8 +1,7 @@
 @isTest
 public class reservationManagerControllerTest {
-    
     @testSetup
-    static void setup(){
+    static void setup() {
         List<Account> accts = testDataFactory.makeAccounts(15);
         List<Contact> contacts = testDataFactory.makeContacts(25);
         List<Lead> leads = testDataFactory.makeLeads(25);
@@ -13,17 +12,18 @@ public class reservationManagerControllerTest {
         insert leads;
         insert accts;
         Integer counter = 0;
-        for(Contact c: contacts){
+        for (Contact c : contacts) {
             c.AccountId = accts[counter].Id;
             counter++;
-            if(counter >= accts.size()) counter = 0; 
+            if (counter >= accts.size())
+                counter = 0;
         }
         insert contacts;
 
         insert markets;
-        for(Integer i=0;i <markets.size();i++){
+        for (Integer i = 0; i < markets.size(); i++) {
             List<Space__c> spaces = testDataFactory.makeSpaces(12);
-            for(Space__c s: spaces){
+            for (Space__c s : spaces) {
                 s.Market__c = markets[i].Id;
             }
             allSpaces.addAll(spaces);
@@ -31,35 +31,37 @@ public class reservationManagerControllerTest {
         insert allSpaces;
 
         counter = 0;
-        for(Reservation__c r: reservs){
+        for (Reservation__c r : reservs) {
             r.Market__c = markets[0].Id;
-            if(Math.mod(counter, 2)==0){
+            if (Math.mod(counter, 2) == 0) {
                 r.Contact__c = contacts[counter].Id;
                 r.Status__c = 'Draft';
-            }else{
+            } else {
                 r.Lead__c = leads[counter].Id;
                 r.Status__c = 'Not Started';
             }
             counter++;
         }
         insert reservs;
-
     }
 
     @isTest
-    static void canFetchCustomers(){
-        List<customerServices.Customer> contacts = reservationManagerController.getCustomerList('Contact');
-        system.assertNotEquals(contacts, NULL);
-        List<customerServices.Customer> leads = reservationManagerController.getCustomerList('Lead');
-        system.assertNotEquals(leads, NULL);
+    static void canFetchCustomers() {
+        List<customerServices.Customer> contacts = reservationManagerController.getCustomerList(
+            'Contact'
+        );
+        system.assertNotEquals(contacts, null);
+        List<customerServices.Customer> leads = reservationManagerController.getCustomerList(
+            'Lead'
+        );
+        system.assertNotEquals(leads, null);
         system.assertNotEquals(contacts, leads);
     }
 
-    @isTest 
-    static void canFetchOpenReservs(){
+    @isTest
+    static void canFetchOpenReservs() {
         List<Reservation__c> reservs = reservationManagerController.getOpenReservations();
-        system.assertNotEquals(reservs, NULL);
+        system.assertNotEquals(reservs, null);
         system.assertEquals(reservs.size(), 10);
     }
-
 }

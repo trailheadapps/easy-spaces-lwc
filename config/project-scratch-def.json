@@ -1,14 +1,22 @@
 {
     "orgName": "Easy Spaces",
     "edition": "Developer",
-    "hasSampleData": "false",
-    "features": "ServiceCloud",
+    "hasSampleData": false,
+    "features": ["ServiceCloud"],
     "settings": {
-        "orgPreferenceSettings": {
-            "s1DesktopEnabled": true,
-            "s1EncryptedStoragePref2": false,
-            "selfSetPasswordInApi": true,
-            "pathAssistantsEnabled": true
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "securitySettings": {
+            "passwordPolicies": {
+                "enableSetPasswordInApi": true
+            }
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
         }
     }
 }

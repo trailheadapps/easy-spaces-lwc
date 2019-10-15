@@ -1,9 +1,18 @@
 import { LightningElement, api, track } from 'lwc';
+import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class reservationHelperForm extends LightningElement {
+    //Flow input variables
     @api customerid;
     @api objecttype;
     @track currentstate;
+
+    //Flow output variables
+    @api startDate;
+    @api endDays = 7;
+    @api numberOfPeople = 150;
+    @api requestedMarket;
+
     @api
     get state() {
         return this.currentstate;
@@ -28,8 +37,12 @@ export default class reservationHelperForm extends LightningElement {
     }
 
     handleDraftReservation(event) {
-        this.dispatchEvent(
-            new CustomEvent('draftreservation', { detail: event.detail })
-        );
+        this.startDate = event.detail.startDate;
+        this.endDays = event.detail.endDays;
+        this.numberOfPeople = event.detail.numberOfPeople;
+        this.requestedMarket = event.detail.requestedMarket;
+
+        const nextNavigationEvent = new FlowNavigationNextEvent();
+        this.dispatchEvent(nextNavigationEvent);
     }
 }
