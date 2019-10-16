@@ -99,13 +99,13 @@ Use this option if you don't have the Salesforce CLI configured and want to expe
 
 2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVpIAK) to install the **es-base-objects** package and choose **Install for All Users**.
+3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000OEGAIA4) to install the **es-base-objects** package and choose **Install for All Users**.
 
-4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVuIAK) to install the **es-base-code** package and choose **Install for All Users**.
+4. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000OEGFIA4) to install the **es-base-code** package and choose **Install for All Users**.
 
-5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVzIAK) to install the **es-base-styles** package and choose **Install for All Users**.
+5. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000OEGKIA4) to install the **es-base-styles** package and choose **Install for All Users**.
 
-6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjW4IAK) to install the **es-space-mgmt** package and choose **Install for All Users**.
+6. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000OEGPIA4) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 7. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
@@ -209,11 +209,11 @@ A quick overview of the features you can explore in Easy Spaces:
 
 ### Dynamic Flows and Local Action Components
 
-The **spaceDesigner** and **reservationHelper** Aura components render flow interviews dynamically, by using the **lightning:flow** base component. You can see the **customerDetails** and **designFormCmp** Aura components at work as screens in these dynamic flows. Both of these components use the functionality of the **lightning:availableForFlowScreens** interface to control flow navigation actions.
+The **spaceDesigner** and **reservationHelper** Aura components render flow interviews dynamically, by using the **lightning:flow** base component. You can see the **reservationHelperForm** and **spaceDesignForm** Lightning web components at work as screens in these dynamic flows. Both of these components use **lightning\_\_FlowScreen** as the target in the component’s <targets> tag, and **FlowNavigationNextEvent** event from the **lightning/flowSupport** module to control flow navigation actions.
 
 See this [blog post](https://developer.salesforce.com/blogs/2018/06/announcing-the-easy-spaces-app.html) for more detail about custom flow navigation and dynamic flow interviews.
 
-The Aura components used as Lightning Flow screens also use a convention in the markup of their design files, to help developers better track how attributes are being used by flow interviews. See the [customerDetails](./es-space-mgmt/main/default/aura/customerDetails/customerDetails.design) and [designFormCmp](./es-space-mgmt/main/default/aura/designFormCmp/designFormCmp.design) component design files for examples.
+These components used as Lightning Flow screens also use a convention in the markup of their meta files, to help developers better track how properties are being used by flow interviews. See the [reservationHelperForm](./es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml) and [spaceDesignForm](./es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js-meta.xml) component meta files for examples.
 
 ### Object-Agnostic Design
 
