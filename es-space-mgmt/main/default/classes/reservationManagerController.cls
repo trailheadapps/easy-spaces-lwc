@@ -9,7 +9,12 @@ public with sharing class reservationManagerController {
             for (Lead l : [
                 SELECT Id, Email, Name, City, State, Status
                 FROM Lead
-                WHERE Status IN ('Open - Not Contacted')
+                WHERE
+                    Status IN (
+                        'Open - Not Contacted',
+                        'New - Not Contacted',
+                        'New'
+                    )
                 LIMIT 5
             ]) {
                 customerServices.Customer c = new customerServices.Customer(
