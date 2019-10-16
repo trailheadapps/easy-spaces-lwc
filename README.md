@@ -213,7 +213,7 @@ The **spaceDesigner** and **reservationHelper** Aura components render flow inte
 
 See this [blog post](https://developer.salesforce.com/blogs/2018/06/announcing-the-easy-spaces-app.html) for more detail about custom flow navigation and dynamic flow interviews.
 
-These components used as Lightning Flow screens also use a convention in the markup of their meta files, to help developers better track how properties are being used by flow interviews. See the [reservationHelperForm](./es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml) and [spaceDesignForm](./es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js-meta.xml/es-space-mgmt/main/default/aura/designFormCmp/designFormCmp.design) component meta files for examples.
+These components used as Lightning Flow screens also use a convention in the markup of their meta files, to help developers better track how properties are being used by flow interviews. See the [reservationHelperForm](./es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml) and [spaceDesignForm](./es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js-meta.xml) component meta files for examples.
 
 ### Object-Agnostic Design
 
