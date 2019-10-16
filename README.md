@@ -209,7 +209,7 @@ A quick overview of the features you can explore in Easy Spaces:
 
 ### Dynamic Flows and Local Action Components
 
-The **spaceDesigner** and **reservationHelper** Aura components render flow interviews dynamically, by using the **lightning:flow** base component. You can see the **reservationHelperForm** and **spaceDesignForm** Lightning web components at work as screens in these dynamic flows. Both of these components use **lightning__FlowScreen** as the target in the component’s <targets> tag, and **FlowNavigationNextEvent** event from the **lightning/flowSupport** module to control flow navigation actions.
+The **spaceDesigner** and **reservationHelper** Aura components render flow interviews dynamically, by using the **lightning:flow** base component. You can see the **reservationHelperForm** and **spaceDesignForm** Lightning web components at work as screens in these dynamic flows. Both of these components use **lightning\_\_FlowScreen** as the target in the component’s <targets> tag, and **FlowNavigationNextEvent** event from the **lightning/flowSupport** module to control flow navigation actions.
 
 See this [blog post](https://developer.salesforce.com/blogs/2018/06/announcing-the-easy-spaces-app.html) for more detail about custom flow navigation and dynamic flow interviews.
 
