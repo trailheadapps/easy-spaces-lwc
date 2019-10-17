@@ -1,15 +1,33 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
+import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class SpaceDesignForm extends LightningElement {
-    @api market;
-    @api pillvalues = [];
-    @track selectedtile;
+    pillvalues = [
+        'Scheduled Activity',
+        'Come-and-Go',
+        'Large Groups',
+        'Individuals or Small Groups',
+        'Indoor',
+        'Outdoor',
+        'Conversation Starter',
+        'Energizing',
+        'Quiet',
+        'Relaxing'
+    ];
+
     @track items = [];
     @track errorMsg;
     @track msgForUser;
     _records = [];
     _filters = [];
+
+    //Flow Input Variables
+    @api market;
+
+    //Flow Output Variables
+    @api popTabOnFinish = false;
+    @api selectedtile;
 
     @wire(getRelatedSpaces, { recordId: '$market' })
     wiredSpaces({ error, data }) {
@@ -43,18 +61,13 @@ export default class SpaceDesignForm extends LightningElement {
     }
 
     handleSimpleAdd() {
-        this.dispatchEvent(
-            new CustomEvent('simpleupdate', {
-                detail: { recordId: this.selectedtile }
-            })
-        );
+        const nextNavigationEvent = new FlowNavigationNextEvent();
+        this.dispatchEvent(nextNavigationEvent);
     }
 
     handleAddWithNav() {
-        this.dispatchEvent(
-            new CustomEvent('updatewithnav', {
-                detail: { recordId: this.selectedtile }
-            })
-        );
+        this.popTabOnFinish = true;
+        const nextNavigationEvent = new FlowNavigationNextEvent();
+        this.dispatchEvent(nextNavigationEvent);
     }
 }

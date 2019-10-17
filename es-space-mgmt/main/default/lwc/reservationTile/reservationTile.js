@@ -5,7 +5,7 @@ export default class ReservationTile extends NavigationMixin(LightningElement) {
     @track navRef;
 
     get cssClass() {
-        return this.reservation.muted ? 'mute ' : '';
+        return this.reservation.muted ? 'mute pointer' : 'pointer';
     }
 
     connectedCallback() {
