@@ -1,7 +1,7 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class PillList extends LightningElement {
-    @track _pills;
+    _pills;
 
     @api
     set pills(values) {

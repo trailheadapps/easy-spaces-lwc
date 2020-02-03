@@ -1,14 +1,13 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 import { NavigationMixin } from 'lightning/navigation';
 
 export default class RelatedSpaces extends NavigationMixin(LightningElement) {
     @api recordId;
-    @track records;
-    _records = [];
-    @track errorMsg;
-    @track msgForUser;
-    @track noRecords = false;
+    records;
+    errorMsg;
+    msgForUser;
+    noRecords = false;
 
     @wire(getRelatedSpaces, { recordId: '$recordId' })
     wiredSpaces({ error, data }) {

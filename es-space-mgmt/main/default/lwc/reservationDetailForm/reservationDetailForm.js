@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getMarketsByState from '@salesforce/apex/marketServices.getMarketsByState';
 export default class ReservationDetailForm extends LightningElement {
     @api state;
@@ -13,9 +13,9 @@ export default class ReservationDetailForm extends LightningElement {
     @api startdate;
     @api totaldays;
 
-    @track cityOptions = [];
-    @track chosenCity;
-    @track
+    cityOptions = [];
+    chosenCity;
+    
     dateRanges = [
         { label: '1 Day', value: '1' },
         { label: '7 Days', value: '7' },
@@ -23,9 +23,9 @@ export default class ReservationDetailForm extends LightningElement {
         { label: '60 Days', value: '60' },
         { label: 'More than 60 Days', value: '61' }
     ];
-    @track numberOfPeople = 20;
-    @track errorMsg;
-    @track msgForUser;
+    numberOfPeople = 20;
+    errorMsg;
+    msgForUser;
 
     get placeholder() {
         return this.cityOptions.length > 0
