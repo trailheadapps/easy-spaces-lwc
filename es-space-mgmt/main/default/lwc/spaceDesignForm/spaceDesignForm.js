@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
@@ -16,9 +16,9 @@ export default class SpaceDesignForm extends LightningElement {
         'Relaxing'
     ];
 
-    @track items = [];
-    @track errorMsg;
-    @track msgForUser;
+    items = [];
+    errorMsg;
+    msgForUser;
     _records = [];
     _filters = [];
 

@@ -1,13 +1,13 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import getCustomerFields from '@salesforce/apex/customerServices.getCustomerFields';
 const STATE_FIELD_LABEL = 'State';
 
 export default class CustomerDetailForm extends LightningElement {
     @api sobjecttype;
     @api recordid;
-    @track detailfields;
-    @track errorMsg;
-    @track msgForUser;
+    detailfields;
+    errorMsg;
+    msgForUser;
 
     connectedCallback() {
         this.getDetailFields();

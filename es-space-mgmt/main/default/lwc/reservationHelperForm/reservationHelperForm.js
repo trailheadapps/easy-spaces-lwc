@@ -1,11 +1,11 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class reservationHelperForm extends LightningElement {
     //Flow input variables
     @api customerid;
     @api objecttype;
-    @track currentstate;
+    currentstate;
 
     //Flow output variables
     @api startDate;
@@ -20,7 +20,7 @@ export default class reservationHelperForm extends LightningElement {
     set state(value) {
         this.currentstate = value;
     }
-    @track customerFields = [];
+    customerFields = [];
 
     get detailsLoaded() {
         return this.customerFields.length > 0 ? true : false;

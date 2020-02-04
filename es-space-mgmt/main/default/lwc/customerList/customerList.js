@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getCustomerList from '@salesforce/apex/reservationManagerController.getCustomerList';
 import { CurrentPageReference } from 'lightning/navigation';
@@ -6,10 +6,10 @@ import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
 
 export default class CustomerList extends LightningElement {
     @api sobject;
-    @track customers;
-    @track errorMsg;
-    @track showDetails;
-    @track msgForUser;
+    customers;
+    errorMsg;
+    showDetails;
+    msgForUser;
     wiredRecords;
 
     @wire(CurrentPageReference) pageRef;

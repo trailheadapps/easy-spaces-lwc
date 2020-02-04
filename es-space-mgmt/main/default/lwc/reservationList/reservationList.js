@@ -1,4 +1,4 @@
-import { LightningElement, track, wire } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getOpenReservations from '@salesforce/apex/reservationManagerController.getOpenReservations';
 import { CurrentPageReference } from 'lightning/navigation';
@@ -9,11 +9,11 @@ export default class ReservationList extends LightningElement {
     reservationSelected = false;
     selectedRecId;
     _records = [];
-    @track reservations;
-    @track errorMsg;
-    @track msgForUser;
-    @track showDetails;
-    @track noRecords = false;
+    reservations;
+    errorMsg;
+    msgForUser;
+    showDetails;
+    noRecords = false;
     @wire(CurrentPageReference) pageRef;
 
     connectedCallback() {

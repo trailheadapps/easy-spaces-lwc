@@ -1,9 +1,9 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 export default class CustomerTile extends NavigationMixin(LightningElement) {
     @api customer;
     @api object;
-    @track navRef;
+    navRef;
     get icon() {
         return 'standard:' + this.object.toLowerCase();
     }
