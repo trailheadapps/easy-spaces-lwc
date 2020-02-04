@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Customer_Status__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <label>Customer Status</label>
-    <metadataRelationshipControllingField>Customer_Fields__mdt.Sobject_Type__c</metadataRelationshipControllingField>
+    <metadataRelationshipControllingField
+    >Customer_Fields__mdt.Sobject_Type__c</metadataRelationshipControllingField>
     <referenceTo>FieldDefinition</referenceTo>
     <relationshipLabel>Customer_Fields</relationshipLabel>
     <relationshipName>Customer_Fields</relationshipName>

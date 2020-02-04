@@ -15,7 +15,7 @@ export default class ReservationDetailForm extends LightningElement {
 
     cityOptions = [];
     chosenCity;
-    
+
     dateRanges = [
         { label: '1 Day', value: '1' },
         { label: '7 Days', value: '7' },
