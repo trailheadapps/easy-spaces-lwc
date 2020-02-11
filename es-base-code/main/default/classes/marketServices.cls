@@ -14,11 +14,12 @@ public class marketServices {
                 Type__c
             FROM Space__c
             WHERE Market__c = :recordId
+            WITH SECURITY_ENFORCED
         ];
     }
 
     @auraEnabled(cacheable=true)
     public static List<Market__c> getMarketsByState(String state) {
-        return [SELECT Id, City__c FROM Market__c WHERE State__c = :state];
+        return [SELECT Id, City__c FROM Market__c WHERE State__c = :state WITH SECURITY_ENFORCED];
     }
 }
