@@ -20,6 +20,11 @@ public class marketServices {
 
     @auraEnabled(cacheable=true)
     public static List<Market__c> getMarketsByState(String state) {
-        return [SELECT Id, City__c FROM Market__c WHERE State__c = :state WITH SECURITY_ENFORCED];
+        return [
+            SELECT Id, City__c
+            FROM Market__c
+            WHERE State__c = :state
+            WITH SECURITY_ENFORCED
+        ];
     }
 }
