@@ -1,6 +1,6 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 export default class ImageGallery extends LightningElement {
-    @track _items = [];
+    _items = [];
 
     @api
     set items(values) {

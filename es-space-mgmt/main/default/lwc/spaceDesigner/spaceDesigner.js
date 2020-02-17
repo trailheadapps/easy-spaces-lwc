@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CurrentPageReference } from 'lightning/navigation';
 import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
@@ -9,7 +9,7 @@ export default class SpaceDesigner extends LightningElement {
      *   and LWC-based siblings. Uses pubsub in place of custom Aura application event.
      *   TO DO: Replace Aura parent component when support for LWC flow screens available.
      */
-    @track flowStarted = false;
+    flowStarted = false;
     @wire(CurrentPageReference) pageRef;
 
     connectedCallback() {

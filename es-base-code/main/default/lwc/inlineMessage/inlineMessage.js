@@ -1,4 +1,4 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 const VARIANT_TYPES = ['success', 'error', 'warning', 'info'];
 export default class InlineMessage extends LightningElement {
     /*
@@ -9,8 +9,8 @@ export default class InlineMessage extends LightningElement {
 
     _iconName;
     _msgDetails;
-    @track altText;
-    @track iconVariant = '';
+    altText;
+    iconVariant = '';
     @api iconSize;
     @api msgForUser;
     @api showDetails;

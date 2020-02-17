@@ -15,6 +15,7 @@ public with sharing class reservationManagerController {
                         'New - Not Contacted',
                         'New'
                     )
+                WITH SECURITY_ENFORCED
                 LIMIT 5
             ]) {
                 customerServices.Customer c = new customerServices.Customer(
@@ -39,6 +40,7 @@ public with sharing class reservationManagerController {
                     Reservation_Status__c
                 FROM Contact
                 WHERE Reservation_Status__c IN ('Not Started')
+                WITH SECURITY_ENFORCED
                 LIMIT 5
             ]) {
                 customerServices.Customer cu = new customerServices.Customer(
@@ -73,6 +75,7 @@ public with sharing class reservationManagerController {
                 Total_Number_of_Guests__c
             FROM Reservation__c
             WHERE Status__c IN ('Not Started', 'Draft')
+            WITH SECURITY_ENFORCED
             LIMIT 10
         ];
     }

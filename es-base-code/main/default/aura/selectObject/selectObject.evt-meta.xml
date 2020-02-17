@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AuraDefinitionBundle xmlns="urn:metadata.tooling.soap.sforce.com" fqn="selectObject">
-    <apiVersion>47.0</apiVersion>
+<AuraDefinitionBundle
+    xmlns="urn:metadata.tooling.soap.sforce.com"
+    fqn="selectObject"
+>
+    <apiVersion>48.0</apiVersion>
     <description>A Lightning Event Bundle</description>
 </AuraDefinitionBundle>

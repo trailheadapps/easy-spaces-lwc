@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CurrentPageReference } from 'lightning/navigation';
 import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
@@ -10,7 +10,7 @@ export default class ReservationHelper extends LightningElement {
      *   TO DO: Replace Aura parent component when support for LWC flow screens available.
      */
 
-    @track flowStarted = false;
+    flowStarted = false;
     @wire(CurrentPageReference) pageRef;
 
     connectedCallback() {
