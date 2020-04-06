@@ -38,12 +38,12 @@ export default class InlineMessage extends LightningElement {
         }
         const messages = value
             //eliminate empty strings & null values
-            .filter(msg => !!msg)
+            .filter((msg) => !!msg)
             //extract and format details from a variety of message types
-            .map(msg => {
+            .map((msg) => {
                 if (Array.isArray(msg.body)) {
                     //extract details from UI API read error array
-                    let msgs = msg.body.map(b => 'Error: ' + b.message);
+                    let msgs = msg.body.map((b) => 'Error: ' + b.message);
                     //make a readable string from the array
                     return Array.from(msgs.values()).join(', ');
                 } else if (msg.body && typeof msg.body.message === 'string') {

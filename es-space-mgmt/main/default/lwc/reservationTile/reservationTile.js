@@ -17,7 +17,7 @@ export default class ReservationTile extends NavigationMixin(LightningElement) {
             }
         };
         this[NavigationMixin.GenerateUrl](this.reservationRecordRef).then(
-            url => (this.navRef = url)
+            (url) => (this.navRef = url)
         );
     }
 

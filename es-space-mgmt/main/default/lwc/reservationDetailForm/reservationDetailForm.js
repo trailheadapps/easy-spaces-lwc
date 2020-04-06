@@ -39,7 +39,7 @@ export default class ReservationDetailForm extends LightningElement {
             this.errorMsg = error;
             this.msgForUser = 'There was an issue loading related market data.';
         } else if (data) {
-            this.cityOptions = data.map(element => ({
+            this.cityOptions = data.map((element) => ({
                 value: element.Id,
                 label: element.City__c
             }));

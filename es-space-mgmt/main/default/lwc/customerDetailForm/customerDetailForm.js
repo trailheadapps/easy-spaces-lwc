@@ -16,10 +16,10 @@ export default class CustomerDetailForm extends LightningElement {
     getDetailFields() {
         if (this.sobjecttype) {
             getCustomerFields({ objectType: this.sobjecttype })
-                .then(result => {
+                .then((result) => {
                     this.detailfields = Object.values(result);
                 })
-                .catch(error => {
+                .catch((error) => {
                     this.errorMsg = error;
                     this.msgForUser =
                         'There was an issue loading customer data.';
