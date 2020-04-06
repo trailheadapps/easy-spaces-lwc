@@ -21,9 +21,9 @@
         </lightning:card>
         <aura:set attribute="else">
             <lightning:card iconName="custom:custom50" title="Space Designer">
-                <h1 class="slds-text-heading_x-small slds-p-left_small"
-                    >Select a record to get started.</h1
-                >
+                <h1 class="slds-text-heading_x-small slds-p-left_small">
+                    Select a record to get started.
+                </h1>
             </lightning:card>
         </aura:set>
     </aura:if>

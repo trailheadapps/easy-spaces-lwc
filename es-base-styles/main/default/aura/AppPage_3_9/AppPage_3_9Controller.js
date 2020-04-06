@@ -1,5 +1,5 @@
 ({
-    handleToggle: function(component, event, helper) {
+    handleToggle: function (component, event, helper) {
         var collapse = component.get('v.collapsedView');
         component.set('v.collapsedView', !collapse);
         var leftColumn = component.find('leftColumn');

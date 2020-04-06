@@ -6,7 +6,7 @@ export default class PillList extends LightningElement {
     @api
     set pills(values) {
         if (Array.isArray(values)) {
-            this._pills = values.map(value => {
+            this._pills = values.map((value) => {
                 return {
                     label: value,
                     selected: false
@@ -22,7 +22,7 @@ export default class PillList extends LightningElement {
 
     handleClick(event) {
         const label = event.target.label;
-        this._pills = this._pills.map(pill => {
+        this._pills = this._pills.map((pill) => {
             if (pill.label === label) {
                 return Object.assign({}, pill, { selected: !pill.selected });
             }
@@ -33,8 +33,8 @@ export default class PillList extends LightningElement {
 
     fireFiltersChangeEvent() {
         const pillLabels = this._pills
-            .filter(pill => pill.selected)
-            .map(pill => pill.label);
+            .filter((pill) => pill.selected)
+            .map((pill) => pill.label);
         this.dispatchEvent(
             new CustomEvent('filterschange', {
                 detail: {

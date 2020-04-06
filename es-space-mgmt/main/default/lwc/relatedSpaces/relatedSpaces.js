@@ -16,7 +16,7 @@ export default class RelatedSpaces extends NavigationMixin(LightningElement) {
             this.msgForUser = 'There was an issue loading related market data.';
         } else if (data) {
             if (data.length) {
-                this.records = data.map(record => {
+                this.records = data.map((record) => {
                     return { record, muted: false };
                 });
                 this.noRecords = false;

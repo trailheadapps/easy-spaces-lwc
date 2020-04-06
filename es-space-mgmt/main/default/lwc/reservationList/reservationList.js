@@ -49,7 +49,7 @@ export default class ReservationList extends LightningElement {
     handleMute() {
         if (!this.reservationSelected) {
             let muted = '';
-            this.reservations = this._records.map(record => {
+            this.reservations = this._records.map((record) => {
                 if (this.selectedRecId) {
                     this.reservationSelected = true;
                     muted = record.Id === this.selectedRecId ? false : true;

@@ -25,7 +25,7 @@ export default class CustomerTile extends NavigationMixin(LightningElement) {
             }
         };
         this[NavigationMixin.GenerateUrl](this.customerRecordRef).then(
-            url => (this.navRef = url)
+            (url) => (this.navRef = url)
         );
     }
 

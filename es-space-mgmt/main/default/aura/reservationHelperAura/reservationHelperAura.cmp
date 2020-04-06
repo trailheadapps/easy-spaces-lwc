@@ -20,9 +20,9 @@
             />
             <aura:set attribute="else">
                 <div class="slds-card">
-                    <h1 class="slds-text-heading_x-small slds-p-left_small"
-                        >Select a record to get started.</h1
-                    >
+                    <h1 class="slds-text-heading_x-small slds-p-left_small">
+                        Select a record to get started.
+                    </h1>
                 </div>
             </aura:set>
         </aura:if>

@@ -1,5 +1,5 @@
 ({
-    startFlow: function(component, recId, market) {
+    startFlow: function (component, recId, market) {
         var flow = component.find('flowCmp');
         var inputVariables = [
             { name: 'varReservId', type: 'String', value: recId },
