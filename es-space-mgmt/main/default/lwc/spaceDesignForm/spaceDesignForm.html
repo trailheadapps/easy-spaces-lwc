@@ -14,10 +14,10 @@
             <lightning-layout>
                 <lightning-layout-item size="3">
                     <div
-                        class="slds-box slds-m-top_xx-small slds-m-right_x-small"
+                        class="slds-box slds-var-m-top_xx-small slds-var-m-right_x-small"
                     >
                         <h1
-                            class="slds-text-heading_small slds-p-bottom_xx-small"
+                            class="slds-text-heading_small slds-var-p-bottom_xx-small"
                         >
                             Filter by Space Type:
                         </h1>
@@ -27,7 +27,7 @@
                         ></c-pill-list>
                     </div>
                     <div
-                        class="slds-box slds-m-top_xx-small slds-m-right_x-small"
+                        class="slds-box slds-var-m-top_xx-small slds-var-m-right_x-small"
                     >
                         <template if:true={selectedtile}>
                             <lightning-record-view-form
@@ -67,10 +67,10 @@
                         onitemselect={handleItemSelect}
                     ></c-image-gallery>
                     <template if:true={selectedtile}>
-                        <div class="slds-p-vertical_small">
+                        <div class="slds-var-p-vertical_small">
                             <div>
                                 <lightning-button
-                                    class="slds-p-left_xx-small slds-p-right_small"
+                                    class="slds-var-p-left_xx-small slds-var-p-right_small"
                                     variant="brand"
                                     label="Add Space &amp; Finish"
                                     onclick={handleSimpleAdd}
@@ -84,10 +84,10 @@
                         </div>
                     </template>
                     <template if:false={selectedtile}>
-                        <div class="slds-p-vertical_small">
+                        <div class="slds-var-p-vertical_small">
                             <lightning-button
                                 disabled
-                                class="slds-p-left_xx-small slds-p-right_small"
+                                class="slds-var-p-left_xx-small slds-var-p-right_small"
                                 variant="neutral"
                                 label="Add Space &amp; Finish"
                             ></lightning-button>

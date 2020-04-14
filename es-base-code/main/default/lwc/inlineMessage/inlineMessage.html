@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-p-around_x-small slds-box">
+    <div class="slds-var-p-around_x-small slds-box">
         <lightning-layout horizontal-align="center" vertical-align="center">
             <lightning-layout-item size="1" flexibility="shrink">
                 <lightning-icon
@@ -10,10 +10,10 @@
                 ></lightning-icon>
             </lightning-layout-item>
             <lightning-layout-item size="11" flexibility="auto">
-                <div class="slds-p-around_x-small">
+                <div class="slds-var-p-around_x-small">
                     <p>{msgForUser}</p>
                     <template if:true={showDetails}>
-                        <div class="slds-p-vertical_x-small">
+                        <div class="slds-var-p-vertical_x-small">
                             <p>Additional Details:</p>
                             <template
                                 for:each={messageDetails}

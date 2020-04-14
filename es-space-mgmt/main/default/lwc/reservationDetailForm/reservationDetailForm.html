@@ -10,19 +10,22 @@
     </template>
 
     <template if:false={errorMsg}>
-        <lightning-layout multiple-rows="true" class="slds-m-horizontal_small">
+        <lightning-layout
+            multiple-rows="true"
+            class="slds-var-m-horizontal_small"
+        >
             <lightning-layout-item size="12">
-                <h2 class="slds-text-heading_small slds-p-bottom_small">
+                <h2 class="slds-text-heading_small slds-var-p-bottom_small">
                     Reservation Details:
                 </h2>
             </lightning-layout-item>
             <lightning-layout-item
                 size="6"
                 flexibility="auto"
-                class="slds-p-right_small"
+                class="slds-var-p-right_small"
             >
                 <lightning-combobox
-                    class="slds-size_1-of-2 slds-m-bottom_small"
+                    class="slds-size_1-of-2 slds-var-m-bottom_small"
                     name="selectcity"
                     label="Where do they want the space?"
                     options={cityOptions}
@@ -31,7 +34,7 @@
                     onchange={handleCityChoice}
                 ></lightning-combobox>
                 <lightning-slider
-                    class="slds-size_1-of-2 slds-m-top_small"
+                    class="slds-size_1-of-2 slds-var-m-top_small"
                     label="For how many people?"
                     value={numberOfPeople}
                     min="2"
@@ -40,7 +43,7 @@
                     onchange={handlePeopleSelect}
                 ></lightning-slider>
             </lightning-layout-item>
-            <lightning-layout-item size="6" class="slds-p-left_small">
+            <lightning-layout-item size="6" class="slds-var-p-left_small">
                 <lightning-input
                     class="slds-size_1-of-2"
                     name="start"
@@ -51,7 +54,7 @@
                     onchange={handleStartDate}
                 ></lightning-input>
                 <lightning-radio-group
-                    class="slds-size_1-of-2 slds-m-top_small"
+                    class="slds-size_1-of-2 slds-var-m-top_small"
                     name="dateoptions"
                     label="How long do they want the space?"
                     options={dateRanges}

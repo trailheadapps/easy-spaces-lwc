@@ -11,11 +11,11 @@
         </template>
 
         <template if:false={errorMsg}>
-            <span class="slds-text-heading_small slds-m-left_small"
-                >Open Reservations:</span
-            >
+            <p class="slds-text-heading_small slds-var-m-around_x-small">
+                Open Reservations:
+            </p>
             <template if:true={noRecords}>
-                <p class="slds-m-left_small">No open reservations found.</p>
+                <p class="slds-var-m-left_small">No open reservations found.</p>
             </template>
             <template if:false={noRecords}>
                 <ul class="slds-list_vertical slds-has-dividers_bottom-space">
