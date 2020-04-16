@@ -2,11 +2,8 @@
     <div class="slds-card">
         <template if:true={errorMsg}>
             <c-error-panel
-                icon-name="warning"
-                icon-size="small"
-                show-details={showDetails}
-                msg-for-user={msgForUser}
-                message-details={errorMsg}
+                friendly-message={msgForUser}
+                errors={errorMsg}
             ></c-error-panel>
         </template>
 
