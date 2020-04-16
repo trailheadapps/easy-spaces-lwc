@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 const VARIANT_TYPES = ['success', 'error', 'warning', 'info'];
-export default class InlineMessage extends LightningElement {
+export default class ErrorPanel extends LightningElement {
     /*
      * Component displays system-generated error messages, custom messages and SLDS utility icons.
      * Assign human-readable errors to the 'msgForUser' property.

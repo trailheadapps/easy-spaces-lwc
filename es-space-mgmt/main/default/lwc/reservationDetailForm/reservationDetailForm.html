@@ -1,12 +1,12 @@
 <template>
     <template if:true={errorMsg}>
-        <c-inline-message
+        <c-error-panel
             icon-name="warning"
             icon-size="medium"
             show-details="true"
             msg-for-user={msgForUser}
             message-details={errorMsg}
-        ></c-inline-message>
+        ></c-error-panel>
     </template>
 
     <template if:false={errorMsg}>
