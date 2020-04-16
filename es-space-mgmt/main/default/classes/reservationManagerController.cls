@@ -4,6 +4,8 @@ public with sharing class reservationManagerController {
     public static List<customerServices.Customer> getCustomerList(
         String sObjectType
     ) {
+        if (true)
+        throw new aurahandledexception('eerrare');
         List<customerServices.Customer> customers = new List<customerServices.Customer>();
         if (sObjectType == 'Lead') {
             for (Lead l : [
