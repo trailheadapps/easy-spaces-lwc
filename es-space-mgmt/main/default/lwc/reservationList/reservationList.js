@@ -12,7 +12,6 @@ export default class ReservationList extends LightningElement {
     reservations;
     errorMsg;
     msgForUser;
-    showDetails;
     noRecords = false;
     @wire(CurrentPageReference) pageRef;
 
@@ -30,7 +29,6 @@ export default class ReservationList extends LightningElement {
         if (value.error) {
             this.errorMsg = value.error;
             this.msgForUser = 'There was an issue loading reservations.';
-            this.showDetails = false;
         } else if (value.data) {
             if (value.data.length) {
                 this._records = [...value.data];

@@ -8,7 +8,6 @@ export default class CustomerList extends LightningElement {
     @api sobject;
     customers;
     errorMsg;
-    showDetails;
     msgForUser;
     wiredRecords;
 
@@ -28,7 +27,6 @@ export default class CustomerList extends LightningElement {
         if (value.error) {
             this.errorMsg = value.error;
             this.msgForUser = 'There was an issue loading customers.';
-            this.showDetails = false;
         } else if (value.data) {
             this.customers = value.data;
         }
