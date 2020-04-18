@@ -5,7 +5,7 @@
             "package": "ESObjects",
             "versionName": "Base Objects - Spring '20",
             "versionNumber": "4.0.0.NEXT",
-            "default": false
+            "default": true
         },
         {
             "path": "./es-base-code",
@@ -42,7 +42,7 @@
             "package": "ESSpaceMgmtLWC",
             "versionName": "Space Management App - Spring '20",
             "versionNumber": "4.0.0.NEXT",
-            "default": true,
+            "default": false,
             "dependencies": [
                 {
                     "package": "ESObjects",
