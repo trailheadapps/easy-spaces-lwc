@@ -63,13 +63,13 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "48.0",
     "packageAliases": {
-        "ESObjects": "0HoB0000000GmhzKAC",
-        "ESBaseCodeLWC": "0HoB0000000GmhpKAC",
-        "ESBaseStylesLWC": "0HoB0000000GmhuKAC",
-        "ESSpaceMgmtLWC": "0HoB0000000Gmi4KAC",
-        "ESObjects@4.0.0-1": "04tB0000000AxYDIA0",
-        "ESBaseCodeLWC@4.0.0-1": "04tB0000000AxYIIA0",
-        "ESBaseStylesLWC@4.0.0-1": "04tB0000000AxYNIA0",
-        "ESSpaceMgmtLWC@4.0.0-1": "04tB0000000AxYSIA0"
+        "ESObjects": "0Ho5I000000XZB5SAO",
+        "ESBaseCodeLWC": "0Ho5I000000XZBASA4",
+        "ESBaseStylesLWC": "0Ho5I000000XZBFSA4",
+        "ESSpaceMgmtLWC": "0Ho5I000000XZBKSA4",
+        "ESObjects@4.0.0-1": "04t5I000000bsn7QAA",
+        "ESBaseCodeLWC@4.0.0-1": "04t5I000000bsnCQAQ",
+        "ESBaseStylesLWC@4.0.0-1": "04t5I000000bsnHQAQ",
+        "ESSpaceMgmtLWC@4.0.0-1": "04t5I000000bsnMQAQ"
     }
 }
