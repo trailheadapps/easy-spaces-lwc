@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This my setup script
+
 # Create packages - initial action
 # sfdx force:package:create --name "ESObjects" --path ./es-base-objects --packagetype Unlocked
 # sfdx force:package:create --name "ESBaseCodeLWC" --path ./es-base-code --packagetype Unlocked
