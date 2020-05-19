@@ -26,8 +26,16 @@ export default class SpaceDesignForm extends LightningElement {
     @api market;
 
     //Flow Output Variables
-    @api popTabOnFinish = false;
-    @api selectedtile;
+    _popTabOnFinish = false;
+    @api
+    get selectedtile() {
+        return this._selectedtile;
+    }
+
+    @api
+    get popTabOnFinish() {
+        return this._popTabOnFinish;
+    }
 
     @wire(getRelatedSpaces, { recordId: '$market' })
     wiredSpaces({ error, data }) {
@@ -59,7 +67,7 @@ export default class SpaceDesignForm extends LightningElement {
     }
 
     handleItemSelect(event) {
-        this.selectedtile = event.detail.recordId;
+        this._selectedtile = event.detail.recordId;
     }
 
     handleSimpleAdd() {
@@ -68,7 +76,7 @@ export default class SpaceDesignForm extends LightningElement {
     }
 
     handleAddWithNav() {
-        this.popTabOnFinish = true;
+        this._popTabOnFinish = true;
         const nextNavigationEvent = new FlowNavigationNextEvent();
         this.dispatchEvent(nextNavigationEvent);
     }

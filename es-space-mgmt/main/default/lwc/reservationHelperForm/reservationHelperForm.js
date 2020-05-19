@@ -6,13 +6,6 @@ export default class reservationHelperForm extends LightningElement {
     @api customerid;
     @api objecttype;
     currentstate;
-
-    //Flow output variables
-    @api startDate;
-    @api endDays = 7;
-    @api numberOfPeople = 150;
-    @api requestedMarket;
-
     @api
     get state() {
         return this.currentstate;
@@ -20,6 +13,31 @@ export default class reservationHelperForm extends LightningElement {
     set state(value) {
         this.currentstate = value;
     }
+
+    //Flow output variables
+    _endDays = 7;
+    _numberOfPeople = 20;
+
+    @api
+    get startDate() {
+        return this._startDate;
+    }
+
+    @api
+    get endDays() {
+        return this._endDays;
+    }
+
+    @api
+    get numberOfPeople() {
+        return this._numberOfPeople;
+    }
+
+    @api
+    get requestedMarket() {
+        return this._requestedMarket;
+    }
+
     customerFields = [];
 
     get detailsLoaded() {
@@ -37,10 +55,10 @@ export default class reservationHelperForm extends LightningElement {
     }
 
     handleDraftReservation(event) {
-        this.startDate = event.detail.startDate;
-        this.endDays = event.detail.endDays;
-        this.numberOfPeople = event.detail.numberOfPeople;
-        this.requestedMarket = event.detail.requestedMarket;
+        this._startDate = event.detail.startDate;
+        this._endDays = event.detail.endDays;
+        this._numberOfPeople = event.detail.numberOfPeople;
+        this._requestedMarket = event.detail.requestedMarket;
 
         const nextNavigationEvent = new FlowNavigationNextEvent();
         this.dispatchEvent(nextNavigationEvent);
