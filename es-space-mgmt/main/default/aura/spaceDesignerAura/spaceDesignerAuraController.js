@@ -18,9 +18,11 @@
                 .then(function (response) {
                     //for illustration of the refreshNavigationItem() promise response
                     //true on refresh, false if refresh blocked
+                    // eslint-disable-next-line no-console
                     console.log('navRefresh', response);
                 })
                 .catch(function (error) {
+                    // eslint-disable-next-line no-console
                     console.log(error);
                 });
         }
