@@ -27,6 +27,7 @@ jobs:
                   mkdir sfdx-cli
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
+
             # Checkout the code in the pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2

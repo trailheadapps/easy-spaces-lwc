@@ -97,7 +97,7 @@ jobs:
               run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1
 
             # Install new package into scratch org
-            - name: 'Install new package versions into test org'
+            - name: 'Install new package versions into scratch org'
               if: steps.extract-data-package-version-create-baseObj.outputs.isSuccess && steps.extract-data-package-version-create-baseCode.outputs.isSuccess && steps.extract-data-package-version-create-baseStyles.outputs.isSuccess && steps.extract-data-package-version-create-spaceMgmt.outputs.isSuccess
               run: |
                   sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
