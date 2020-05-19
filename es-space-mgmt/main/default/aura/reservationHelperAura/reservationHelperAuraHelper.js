@@ -23,9 +23,11 @@
             .then(function (response) {
                 //response is true or false, depending on page state
                 //true on successful refresh, false if unsaved changes block refresh
+                // eslint-disable-next-line no-console
                 console.log('navRefresh', response);
             })
             .catch(function (error) {
+                // eslint-disable-next-line no-console
                 console.log(error);
             });
     }
