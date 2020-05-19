@@ -1,10 +1,10 @@
 # Easy Spaces Lightning Web Components Sample Application
 
+[![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+CI+%28scratch+org%29%22) [![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20(packaging)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+%28packaging%29%22)
+
 > IMPORTANT: This is the new Lightning Web Components version of the Easy Spaces sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/easy-spaces).
 
 ![Easy Spaces Logo](./docs/EasySpacesWithText.png)
-
-[![CircleCI](https://circleci.com/gh/trailheadapps/easy-spaces-lwc.svg?style=svg)](https://circleci.com/gh/trailheadapps/easy-spaces-lwc)
 
 Easy Spaces is a fictional event management company that creates and manages custom pop-up spaces for companies and individuals. Easy Spaces helps customers create temporary spaces like cafés, game rooms or themed rooms for special occasions in their offices and homes.
 

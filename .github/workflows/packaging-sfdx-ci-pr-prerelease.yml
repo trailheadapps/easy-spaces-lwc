@@ -1,0 +1,65 @@
+# Unique name for this workflow
+name: Salesforce DX Prerelease PR (packaging)
+
+# Definition when the workflow should run
+on:
+    pull_request:
+        types: [opened, synchronize, reopened]
+        branches:
+            - prerelease/spring[2-9][0-9]
+            - prerelease/summer[2-9][0-9]
+            - prerelease/winter[2-9][0-9]
+        paths:
+            - 'es-base-code/**'
+            - 'es-base-objects/**'
+            - 'es-base-styles/**'
+            - 'es-space-mgmt/**'
+
+# Jobs to be executed
+jobs:
+    packaging:
+        runs-on: ubuntu-latest
+        steps:
+            # Install Salesforce CLI
+            - name: Install Salesforce CLI
+              run: |
+                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+                  mkdir sfdx-cli
+                  tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
+                  ./sfdx-cli/install
+            # Checkout the code in the pull request
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            # Install salesforcedx pre-release plugin
+            - name: 'Install salesforcedx pre-release plugin'
+              run: 'sfdx plugins:install salesforcedx@pre-release'
+
+            # Store secret for dev hub
+            - name: 'Populate auth file with DEVHUB_PREREL_SFDX_URL secret'
+              shell: bash
+              run: 'echo ${{ secrets.DEVHUB_PREREL_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
+
+            # Create package version - ES Base Objects
+            - name: 'Create package version - ES Base Objects'
+              id: package-version-create-baseObj
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESObjects -x -w 20 --json | jq -c .)"
+
+            # Create package version - ES Base Code
+            - name: 'Create package version - ES Base Code'
+              id: package-version-create-baseCode
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json | jq -c .)"
+
+            # Create package version - ES Base Styles
+            - name: 'Create package version - ES Base Styles'
+              id: package-version-create-baseStyles
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json | jq -c .)"
+
+            # Create package version - ES Space Management
+            - name: 'Create package version - ES Space Management'
+              id: package-version-create-spaceMgmt
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json | jq -c .)"
