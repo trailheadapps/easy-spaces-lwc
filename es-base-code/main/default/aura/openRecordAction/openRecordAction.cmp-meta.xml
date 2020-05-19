@@ -4,5 +4,6 @@
     fqn="openRecordAction"
 >
     <apiVersion>48.0</apiVersion>
-    <description>A Lightning Component Bundle</description>
+    <description
+    >An Aura service component that opens a record action</description>
 </AuraDefinitionBundle>
