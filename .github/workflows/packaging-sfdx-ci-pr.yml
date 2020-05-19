@@ -25,6 +25,7 @@ jobs:
                   mkdir sfdx-cli
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
+
             # Checkout the code in the pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2
@@ -34,24 +35,13 @@ jobs:
               shell: bash
               run: 'echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
 
-            # Store secret for package target org installation
-            - name: 'Populate auth file with PACKAGING_SFDX_URL secret'
-              shell: bash
-              run: 'echo ${{ secrets.PACKAGING_SFDX_URL}} > ./PACKAGING_SFDX_URL.txt'
-
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
               run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
-            # Authenticate package target org
-            - name: 'Authenticate package target org'
-              run: 'sfdx force:auth:sfdxurl:store -f ./PACKAGING_SFDX_URL.txt -a packagingorg -s'
-
             # Remove auth files
             - name: 'Remove auth files'
-              run: |
-                  rm -f ./DEVHUB_SFDX_URL.txt
-                  rm -f ./PACKAGING_SFDX_URL.txt
+              run: rm -f ./DEVHUB_SFDX_URL.txt
 
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
@@ -103,11 +93,20 @@ jobs:
               with:
                   args: 300
 
-            # Install new package into test org
+            # Create scratch org
+            - name: Create scratch org
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1
+
+            # Install new package into scratch org
             - name: 'Install new package versions into test org'
               if: steps.extract-data-package-version-create-baseObj.outputs.isSuccess && steps.extract-data-package-version-create-baseCode.outputs.isSuccess && steps.extract-data-package-version-create-baseStyles.outputs.isSuccess && steps.extract-data-package-version-create-spaceMgmt.outputs.isSuccess
               run: |
-                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseObj.outputs.packageVersionId }} -w 10 -u packagingorg -r
-                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseCode.outputs.packageVersionId }} -w 10 -u packagingorg -r
-                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseStyles.outputs.packageVersionId }} -w 10 -u packagingorg -r
-                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-spaceMgmt.outputs.packageVersionId }} -w 10 -u packagingorg -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseCode.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseStyles.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-spaceMgmt.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Housekeeping
+            - name: Delete scratch org
+              if: always()
+              run: sfdx force:org:delete -p -u scratch-org
