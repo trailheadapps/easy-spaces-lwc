@@ -50,11 +50,10 @@ export default class ReservationHelper extends LightningElement {
         if (message.tileType === 'customer') {
             if (!this.flowStarted) {
                 this.flowStarted = true;
-                this.dispatchEvent(
-                    new CustomEvent('customerchoice', {
-                        detail: message.properties
-                    })
-                );
+                const choiceEvt = new CustomEvent('customerchoice', {
+                    detail: message.properties
+                });
+                this.dispatchEvent(choiceEvt);
             } else if (this.flowStarted) {
                 const toastEvt = new ShowToastEvent({
                     title: 'Flow interview already in progress',
