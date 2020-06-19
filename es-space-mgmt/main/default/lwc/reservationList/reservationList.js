@@ -28,14 +28,12 @@ export default class ReservationList extends LightningElement {
     messageContext;
 
     subscribeToMessageChannel() {
-        if (!this.subscription) {
-            this.subscription = subscribe(
-                this.messageContext,
-                FLOW_STATUS_CHANGE_MC,
-                (message) => this.handleMessage(message),
-                { scope: APPLICATION_SCOPE }
-            );
-        }
+        this.subscription = subscribe(
+            this.messageContext,
+            FLOW_STATUS_CHANGE_MC,
+            (message) => this.handleMessage(message),
+            { scope: APPLICATION_SCOPE }
+        );
     }
 
     unsubscribeToMessageChannel() {

@@ -25,14 +25,12 @@ export default class ReservationHelper extends LightningElement {
     messageContext;
 
     subscribeToMessageChannel() {
-        if (!this.subscription) {
-            this.subscription = subscribe(
-                this.messageContext,
-                TILE_SELECTION_MC,
-                (message) => this.handleCustomerSelect(message),
-                { scope: APPLICATION_SCOPE }
-            );
-        }
+        this.subscription = subscribe(
+            this.messageContext,
+            TILE_SELECTION_MC,
+            (message) => this.handleCustomerSelect(message),
+            { scope: APPLICATION_SCOPE }
+        );
     }
 
     unsubscribeToMessageChannel() {

@@ -24,14 +24,12 @@ export default class SpaceDesigner extends LightningElement {
     messageContext;
 
     subscribeToMessageChannel() {
-        if (!this.subscription) {
-            this.subscription = subscribe(
-                this.messageContext,
-                TILE_SELECTION_MC,
-                (message) => this.handleReservationSelect(message),
-                { scope: APPLICATION_SCOPE }
-            );
-        }
+        this.subscription = subscribe(
+            this.messageContext,
+            TILE_SELECTION_MC,
+            (message) => this.handleReservationSelect(message),
+            { scope: APPLICATION_SCOPE }
+        );
     }
 
     unsubscribeToMessageChannel() {
