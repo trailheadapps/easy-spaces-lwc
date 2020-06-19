@@ -1,48 +1,74 @@
 import { LightningElement, api, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { CurrentPageReference } from 'lightning/navigation';
-import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
+
+import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
+import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
+import {
+    subscribe,
+    unsubscribe,
+    APPLICATION_SCOPE,
+    MessageContext,
+    publish
+} from 'lightning/messageService';
 
 export default class SpaceDesigner extends LightningElement {
     /*
      *   Component coordinates event comms between Aura-based parent component
-     *   and LWC-based siblings. Uses pubsub in place of custom Aura application event.
+     *   and LWC-based siblings. Uses LMS in place of custom Aura application event.
      *   TO DO: Replace Aura parent component when support for LWC flow screens available.
      */
     flowStarted = false;
-    @wire(CurrentPageReference) pageRef;
+    subscription = null;
 
-    connectedCallback() {
-        registerListener(
-            'selectreservation',
-            this.handleReservationSelect,
-            this
+    @wire(MessageContext)
+    messageContext;
+
+    subscribeToMessageChannel() {
+        this.subscription = subscribe(
+            this.messageContext,
+            TILE_SELECTION_MC,
+            (message) => this.handleReservationSelect(message),
+            { scope: APPLICATION_SCOPE }
         );
     }
 
-    disconnectedCallback() {
-        unregisterAllListeners(this);
+    unsubscribeToMessageChannel() {
+        unsubscribe(this.subscription);
+        this.subscription = null;
     }
 
-    handleReservationSelect(event) {
-        if (!this.flowStarted) {
-            this.flowStarted = true;
-            this.dispatchEvent(
-                new CustomEvent('reservchoice', { detail: event.detail })
-            );
-        } else if (this.flowStarted) {
-            const toastEvt = new ShowToastEvent({
-                title: 'Flow interview already in progress',
-                message:
-                    'Finish the flow interview in progress before selecting another reservation.',
-                variant: 'error'
-            });
-            this.dispatchEvent(toastEvt);
+    connectedCallback() {
+        this.subscribeToMessageChannel();
+    }
+
+    disconnectedCallback() {
+        this.unsubscribeToMessageChannel();
+    }
+
+    handleReservationSelect(message) {
+        if (message.tileType === 'reservation') {
+            if (!this.flowStarted) {
+                this.flowStarted = true;
+                this.dispatchEvent(
+                    new CustomEvent('reservchoice', {
+                        detail: message.properties
+                    })
+                );
+            } else if (this.flowStarted) {
+                const toastEvt = new ShowToastEvent({
+                    title: 'Flow interview already in progress',
+                    message:
+                        'Finish the flow interview in progress before selecting another reservation.',
+                    variant: 'error'
+                });
+                this.dispatchEvent(toastEvt);
+            }
         }
     }
 
     @api
     handleFlowExit() {
-        fireEvent(this.pageRef, 'flowexit');
+        const payload = { flowName: 'spaceDesigner', status: 'FINISHED' };
+        publish(this.messageContext, FLOW_STATUS_CHANGE_MC, payload);
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>FlowStatusChange</masterLabel>
+    <isExposed>true</isExposed>
+    <description
+    >Message Channel to pass a status changes for Flows</description>
+    <lightningMessageFields>
+        <fieldName>flowName</fieldName>
+        <description
+        >This is the name of the flow whose status has changed</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>status</fieldName>
+        <description>The current status of the flow</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>state</fieldName>
+        <description>Additional flow state details (Optional)</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
