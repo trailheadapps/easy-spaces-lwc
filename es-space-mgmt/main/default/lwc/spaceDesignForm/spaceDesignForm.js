@@ -21,6 +21,7 @@ export default class SpaceDesignForm extends LightningElement {
     msgForUser;
     _records = [];
     _filters = [];
+    _selectedtile;
 
     //Flow Input Variables
     @api market;

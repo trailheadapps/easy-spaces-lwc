@@ -5,6 +5,7 @@
             { name: 'varReservId', type: 'String', value: recId },
             { name: 'varMarketId', type: 'String', value: market }
         ];
+
         if (flow) {
             flow.startFlow('spaceDesigner', inputVariables);
         }
