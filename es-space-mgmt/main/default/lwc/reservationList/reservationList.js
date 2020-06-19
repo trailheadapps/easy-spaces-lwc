@@ -1,8 +1,16 @@
 import { LightningElement, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getOpenReservations from '@salesforce/apex/reservationManagerController.getOpenReservations';
-import { CurrentPageReference } from 'lightning/navigation';
-import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
+
+import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
+import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
+import {
+    subscribe,
+    unsubscribe,
+    APPLICATION_SCOPE,
+    MessageContext,
+    publish
+} from 'lightning/messageService';
 
 export default class ReservationList extends LightningElement {
     wiredResult;
@@ -13,14 +21,43 @@ export default class ReservationList extends LightningElement {
     errorMsg;
     msgForUser;
     noRecords = false;
-    @wire(CurrentPageReference) pageRef;
+
+    subscription = null;
+
+    @wire(MessageContext)
+    messageContext;
+
+    subscribeToMessageChannel() {
+        if (!this.subscription) {
+            this.subscription = subscribe(
+                this.messageContext,
+                FLOW_STATUS_CHANGE_MC,
+                (message) => this.handleMessage(message),
+                { scope: APPLICATION_SCOPE }
+            );
+        }
+    }
+
+    unsubscribeToMessageChannel() {
+        unsubscribe(this.subscription);
+        this.subscription = null;
+    }
+
+    handleMessage(message) {
+        if (
+            message.flowName === 'spaceDesigner' &&
+            message.status === 'FINISHED'
+        ) {
+            refreshApex(this.wiredResult);
+        }
+    }
 
     connectedCallback() {
-        registerListener('flowexit', this.handleFlowExit, this);
+        this.subscribeToMessageChannel();
     }
 
     disconnectedCallback() {
-        unregisterAllListeners(this);
+        this.unsubscribeToMessageChannel();
     }
 
     @wire(getOpenReservations)
@@ -40,10 +77,6 @@ export default class ReservationList extends LightningElement {
         }
     }
 
-    handleFlowExit() {
-        return refreshApex(this.wiredResult);
-    }
-
     handleMute() {
         if (!this.reservationSelected) {
             let muted = '';
@@ -61,7 +94,8 @@ export default class ReservationList extends LightningElement {
 
     handleSelectEvent(event) {
         this.selectedRecId = event.detail.reservationId;
-        fireEvent(this.pageRef, 'selectreservation', { detail: event.detail });
+        const payload = { tileType: 'reservation', properties: event.detail };
+        publish(this.messageContext, TILE_SELECTION_MC, payload);
         this.handleMute();
     }
 }

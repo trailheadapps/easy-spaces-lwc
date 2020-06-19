@@ -1,8 +1,16 @@
 import { LightningElement, api, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getCustomerList from '@salesforce/apex/reservationManagerController.getCustomerList';
-import { CurrentPageReference } from 'lightning/navigation';
-import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
+
+import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
+import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
+import {
+    subscribe,
+    unsubscribe,
+    APPLICATION_SCOPE,
+    MessageContext,
+    publish
+} from 'lightning/messageService';
 
 export default class CustomerList extends LightningElement {
     @api sobject;
@@ -11,14 +19,45 @@ export default class CustomerList extends LightningElement {
     msgForUser;
     wiredRecords;
 
-    @wire(CurrentPageReference) pageRef;
+    subscription = null;
+
+    @wire(MessageContext)
+    messageContext;
+
+    subscribeToMessageChannel() {
+        if (!this.subscription) {
+            this.subscription = subscribe(
+                this.messageContext,
+                FLOW_STATUS_CHANGE_MC,
+                (message) => this.handleMessage(message),
+                { scope: APPLICATION_SCOPE }
+            );
+        }
+    }
+
+    unsubscribeToMessageChannel() {
+        unsubscribe(this.subscription);
+        this.subscription = null;
+    }
+
+    handleMessage(message) {
+        if (
+            message.flowName === 'createReservation' &&
+            message.status === 'FINISHED' &&
+            message.state
+        ) {
+            if (message.state.sobjecttype === this.sobject) {
+                refreshApex(this.wiredRecords);
+            }
+        }
+    }
 
     connectedCallback() {
-        registerListener('flowfinish', this.handleFlowFinish, this);
+        this.subscribeToMessageChannel();
     }
 
     disconnectedCallback() {
-        unregisterAllListeners(this);
+        this.unsubscribeToMessageChannel();
     }
 
     @wire(getCustomerList, { sObjectType: '$sobject' })
@@ -32,15 +71,8 @@ export default class CustomerList extends LightningElement {
         }
     }
 
-    handleFlowFinish(event) {
-        if (event.detail === this.sobject) {
-            return refreshApex(this.wiredRecords);
-        }
-
-        return undefined;
-    }
-
     publishSelect(event) {
-        fireEvent(this.pageRef, 'selectcustomer', { detail: event.detail });
+        const payload = { tileType: 'customer', properties: event.detail };
+        publish(this.messageContext, TILE_SELECTION_MC, payload);
     }
 }
