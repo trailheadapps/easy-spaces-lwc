@@ -1,10 +1,10 @@
 # Easy Spaces Lightning Web Components Sample Application
 
+[![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+CI+%28scratch+org%29%22) [![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20(packaging)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+%28packaging%29%22)
+
 > IMPORTANT: This is the new Lightning Web Components version of the Easy Spaces sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/easy-spaces).
 
 ![Easy Spaces Logo](./docs/EasySpacesWithText.png)
-
-[![CircleCI](https://circleci.com/gh/trailheadapps/easy-spaces-lwc.svg?style=svg)](https://circleci.com/gh/trailheadapps/easy-spaces-lwc)
 
 Easy Spaces is a fictional event management company that creates and manages custom pop-up spaces for companies and individuals. Easy Spaces helps customers create temporary spaces like cafés, game rooms or themed rooms for special occasions in their offices and homes.
 
@@ -99,13 +99,13 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AxYDIA0) to install the **es-base-objects** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KyQpIAK) to install the **es-base-objects** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AxYIIA0) to install the **es-base-code** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KyQuIAK) to install the **es-base-code** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AxYNIA0) to install the **es-base-styles** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KyQzIAK) to install the **es-base-styles** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AxYSIA0) to install the **es-space-mgmt** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KyR4IAK) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 

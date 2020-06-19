@@ -10,8 +10,20 @@ export default class ReservationDetailForm extends LightningElement {
     set people(value) {
         this.numberOfPeople = value;
     }
-    @api startdate;
-    @api totaldays;
+    @api
+    get startdate() {
+        return this._startdate;
+    }
+    set startdate(value) {
+        this._startdate = value;
+    }
+    @api
+    get totaldays() {
+        return this._totaldays;
+    }
+    set totaldays(value) {
+        this._totaldays = value;
+    }
 
     cityOptions = [];
     chosenCity;
@@ -51,15 +63,15 @@ export default class ReservationDetailForm extends LightningElement {
     }
 
     handleStartDate(event) {
-        this.startdate = event.detail.value;
+        this._startdate = event.detail.value;
     }
 
     handleDateRange(event) {
-        this.totaldays = event.detail.value;
+        this._totaldays = event.detail.value;
     }
 
     handlePeopleSelect(event) {
-        this.people = event.detail.value;
+        this.numberOfPeople = event.detail.value;
     }
 
     handleDraft() {

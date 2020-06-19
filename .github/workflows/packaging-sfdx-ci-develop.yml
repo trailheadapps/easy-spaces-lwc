@@ -1,0 +1,132 @@
+# Unique name for this workflow
+name: Salesforce DX (packaging)
+
+# Definition when the workflow should run
+on:
+    push:
+        branches:
+            - develop
+        paths:
+            - 'es-base-code/**'
+            - 'es-base-objects/**'
+            - 'es-base-styles/**'
+            - 'es-space-mgmt/**'
+
+# Jobs to be executed
+jobs:
+    packaging:
+        runs-on: ubuntu-latest
+        steps:
+            # Install Salesforce CLI
+            - name: Install Salesforce CLI
+              run: |
+                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+                  mkdir sfdx-cli
+                  tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
+                  ./sfdx-cli/install
+
+            # Checkout the code in the pull request
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            # Store secret for dev hub
+            - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
+              shell: bash
+              run: 'echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
+
+            # Remove auth files
+            - name: 'Remove auth files'
+              run: rm -f ./DEVHUB_SFDX_URL.txt
+
+            # Create package version - ES Base Objects
+            - name: 'Create package version - ES Base Objects'
+              id: package-version-create-baseObj
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESObjects -x -w 20 --json | jq -c .)"
+            # Extract data from package version create result - ES Base Objects
+            - name: 'Extract package:version:create result data  - ES Base Objects'
+              id: extract-data-package-version-create-baseObj
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@master
+              with:
+                  json: ${{steps.package-version-create-baseObj.outputs.result}}
+
+            # Create package version - ES Base Code
+            - name: 'Create package version - ES Base Code'
+              id: package-version-create-baseCode
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json | jq -c .)"
+            # Extract data from package version create result - ES Base Code
+            - name: 'Extract package:version:create result data - ES Base Code'
+              id: extract-data-package-version-create-baseCode
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@master
+              with:
+                  json: ${{steps.package-version-create-baseCode.outputs.result}}
+
+            # Create package version - ES Base Styles
+            - name: 'Create package version - ES Base Styles'
+              id: package-version-create-baseStyles
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json | jq -c .)"
+            # Extract data from package version create result - ES Base Styles
+            - name: 'Extract package:version:create result data - ES Base Styles'
+              id: extract-data-package-version-create-baseStyles
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@master
+              with:
+                  json: ${{steps.package-version-create-baseStyles.outputs.result}}
+
+            # Create package version - ES Space Management
+            - name: 'Create package version - ES Space Management'
+              id: package-version-create-spaceMgmt
+              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json | jq -c .)"
+            # Extract data from package version create result - ES Space Management
+            - name: 'Extract package:version:create result data - ES Space Management'
+              id: extract-data-package-version-create-spaceMgmt
+              uses: muenzpraeger/github-action-extract-sfdx-packaging-result@master
+              with:
+                  json: ${{steps.package-version-create-spaceMgmt.outputs.result}}
+
+            # Wait for package replication
+            - name: 'Wait for package replication'
+              uses: maddox/actions/sleep@master
+              with:
+                  args: 300
+
+            # Create scratch org
+            - name: Create scratch org
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1
+
+            # Install new package into scratch org
+            - name: 'Install new package versions into scratch org'
+              if: steps.extract-data-package-version-create-baseObj.outputs.isSuccess && steps.extract-data-package-version-create-baseCode.outputs.isSuccess && steps.extract-data-package-version-create-baseStyles.outputs.isSuccess && steps.extract-data-package-version-create-spaceMgmt.outputs.isSuccess
+              run: |
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseCode.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-baseStyles.outputs.packageVersionId }} -w 10 -u scratch-org -r
+                  sfdx force:package:install --package ${{ steps.extract-data-package-version-create-spaceMgmt.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Update sfdx-project.json and README to use only latest package version
+            - name: 'Update sfdx-project.json and README'
+              uses: muenzpraeger/github-action-sfdx-packaging-updater@master
+
+            # The main branch is protected, so we have to take a sequea for updating the README through a new PR
+            - name: 'Create new branch and pull request for updated package version ID'
+              uses: peter-evans/create-pull-request@v2
+              with:
+                  title: 'Added new package version ID'
+                  commit-message: 'Added new package version IDs'
+                  branch: 'auto/package-version-update'
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            # Merge pull request
+            - name: 'Merge pull request'
+              uses: juliangruber/merge-pull-request-action@v1
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  number: ${{ env.PULL_REQUEST_NUMBER }}
+                  method: squash
+
+            # Housekeeping
+            - name: Delete scratch org
+              if: always()
+              run: sfdx force:org:delete -p -u scratch-org
