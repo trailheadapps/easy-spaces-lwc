@@ -3,6 +3,7 @@
         var recId = event.getParam('customerId');
         var objType = event.getParam('sobjectType');
         var state = event.getParam('state');
+
         component.set('v.recordId', recId);
         component.set('v.sobjectType', objType);
         component.set('v.state', state);

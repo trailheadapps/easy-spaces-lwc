@@ -9,6 +9,7 @@
             { name: 'varSobjectType', type: 'String', value: sobj },
             { name: 'varState', type: 'String', value: state }
         ];
+
         if (flow) {
             flow.startFlow('createReservation', inputVariables);
         }
@@ -16,17 +17,13 @@
     refreshTab: function (component) {
         var lwcHelper = component.find('reservHelperLWC');
         var sobj = component.get('v.sobjectType');
+
         lwcHelper.handleFlowExit({ detail: sobj });
         var navItemAPI = component.find('navigationItemAPI');
-        navItemAPI
-            .refreshNavigationItem()
-            .then(function (response) {
-                //response is true or false, depending on page state
-                //true on successful refresh, false if unsaved changes block refresh
-                console.log('navRefresh', response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+
+        navItemAPI.refreshNavigationItem().catch(function (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        });
     }
 });

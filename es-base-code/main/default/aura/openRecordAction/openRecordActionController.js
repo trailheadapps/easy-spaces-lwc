@@ -9,7 +9,6 @@
                 url: '/lightning/r/' + sobject + '/' + recordId + '/view'
             })
             .then(function (response) {
-                console.log('openRecord detected.');
                 workspaceAPI.focusTab({ tabId: response });
                 //local action 'opens' before flow changes hit cache, so we need to refresh to grab current data
                 workspaceAPI.refreshTab({
@@ -18,7 +17,8 @@
                 });
             })
             .catch(function (error) {
-                console.log(error);
+                // eslint-disable-next-line no-console
+                console.error(error);
             });
     }
 });

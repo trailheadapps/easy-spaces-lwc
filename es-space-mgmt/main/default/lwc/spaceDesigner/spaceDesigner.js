@@ -49,11 +49,10 @@ export default class SpaceDesigner extends LightningElement {
         if (message.tileType === 'reservation') {
             if (!this.flowStarted) {
                 this.flowStarted = true;
-                this.dispatchEvent(
-                    new CustomEvent('reservchoice', {
-                        detail: message.properties
-                    })
-                );
+                const choiceEvt = new CustomEvent('reservchoice', {
+                    detail: message.properties
+                });
+                this.dispatchEvent(choiceEvt);
             } else if (this.flowStarted) {
                 const toastEvt = new ShowToastEvent({
                     title: 'Flow interview already in progress',
