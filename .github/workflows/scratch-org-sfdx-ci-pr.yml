@@ -3,12 +3,12 @@ name: Salesforce DX CI (scratch org)
 
 # Definition when the workflow should run
 on:
-    push:
-        branches:
-            - develop
-        paths-ignore:
-            - 'sfdx-project.json'
-            - 'README.md'
+    pull_request:
+        types: [opened, edited, synchronize, reopened]
+        branches-ignore:
+            - prerelease/spring[2-9][0-9]
+            - prerelease/summer[2-9][0-9]
+            - prerelease/winter[2-9][0-9]
 
 # Jobs to be executed
 jobs:

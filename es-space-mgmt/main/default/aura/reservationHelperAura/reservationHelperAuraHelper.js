@@ -21,17 +21,9 @@
         lwcHelper.handleFlowExit({ detail: sobj });
         var navItemAPI = component.find('navigationItemAPI');
 
-        navItemAPI
-            .refreshNavigationItem()
-            .then(function (response) {
-                // Response is true or false, depending on page state
-                // True on successful refresh, false if unsaved changes block refresh
-                // eslint-disable-next-line no-console
-                console.log('navRefresh', response);
-            })
-            .catch(function (error) {
-                // eslint-disable-next-line no-console
-                console.log(error);
-            });
+        navItemAPI.refreshNavigationItem().catch(function (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        });
     }
 });

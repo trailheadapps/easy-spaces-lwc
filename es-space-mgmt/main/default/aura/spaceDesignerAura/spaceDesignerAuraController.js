@@ -16,18 +16,10 @@
             spaceDesignerLWC.handleFlowExit();
             var navigationItemAPI = component.find('navigationItemAPI');
 
-            navigationItemAPI
-                .refreshNavigationItem()
-                .then(function (response) {
-                    // For illustration of the refreshNavigationItem() promise response
-                    // True on refresh, false if refresh blocked
-                    // eslint-disable-next-line no-console
-                    console.log('navRefresh', response);
-                })
-                .catch(function (error) {
-                    // eslint-disable-next-line no-console
-                    console.log(error);
-                });
+            navigationItemAPI.refreshNavigationItem().catch(function (error) {
+                // eslint-disable-next-line no-console
+                console.error(error);
+            });
         }
     }
 });
