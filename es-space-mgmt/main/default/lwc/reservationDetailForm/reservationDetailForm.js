@@ -51,14 +51,17 @@ export default class ReservationDetailForm extends LightningElement {
     }
 
     handleStartDate(event) {
+        // eslint-disable-next-line @lwc/lwc/no-api-reassignments
         this.startdate = event.detail.value;
     }
 
     handleDateRange(event) {
+        // eslint-disable-next-line @lwc/lwc/no-api-reassignments
         this.totaldays = event.detail.value;
     }
 
     handlePeopleSelect(event) {
+        // eslint-disable-next-line @lwc/lwc/no-api-reassignments
         this.people = event.detail.value;
     }
 
