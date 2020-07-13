@@ -6,7 +6,6 @@ import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change
 import {
     subscribe,
     unsubscribe,
-    APPLICATION_SCOPE,
     MessageContext,
     publish
 } from 'lightning/messageService';
@@ -27,8 +26,7 @@ export default class SpaceDesigner extends LightningElement {
         this.subscription = subscribe(
             this.messageContext,
             TILE_SELECTION_MC,
-            (message) => this.handleReservationSelect(message),
-            { scope: APPLICATION_SCOPE }
+            (message) => this.handleReservationSelect(message)
         );
     }
 

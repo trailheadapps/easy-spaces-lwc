@@ -6,7 +6,6 @@ import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change
 import {
     subscribe,
     unsubscribe,
-    APPLICATION_SCOPE,
     MessageContext,
     publish
 } from 'lightning/messageService';
@@ -28,8 +27,7 @@ export default class ReservationHelper extends LightningElement {
         this.subscription = subscribe(
             this.messageContext,
             TILE_SELECTION_MC,
-            (message) => this.handleCustomerSelect(message),
-            { scope: APPLICATION_SCOPE }
+            (message) => this.handleCustomerSelect(message)
         );
     }
 
