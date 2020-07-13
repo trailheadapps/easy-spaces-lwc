@@ -1,0 +1,136 @@
+import { createElement } from 'lwc';
+import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
+import { getNavigateCalledWith } from 'lightning/navigation';
+import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
+import RelatedSpaces from 'c/relatedSpaces';
+
+// Realistic data with a list of spaces
+const mockRelatedSpaceRecords = require('./data/getRelatedSpaces.json');
+
+// An empty list of records to verify the component does something reasonable
+// when there is no data to display
+const mockRelatedSpacesNoRecords = require('./data/getRelatedSpacesNoRecords.json');
+
+// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
+const getRelatedSpacesAdapter = registerApexTestWireAdapter(getRelatedSpaces);
+
+describe('c-related-spaces', () => {
+    afterEach(() => {
+        // The jsdom instance is shared across test cases in a single file so reset the DOM
+        while (document.body.firstChild) {
+            document.body.removeChild(document.body.firstChild);
+        }
+        // Prevent data saved on mocks from leaking between tests
+        jest.clearAllMocks();
+    });
+
+    it('getRelatedSpaces @wire data', () => {
+        const RECORDID = '0031700000pJRRSAA4';
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+        element.recordId = RECORDID;
+        document.body.appendChild(element);
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            // Select elements for validation
+            const detailEls = element.shadowRoot.querySelector(
+                'c-image-gallery'
+            );
+            expect(detailEls.items.length).toBe(mockRelatedSpaceRecords.length);
+            expect(detailEls.items[0].record.Name).toBe(
+                mockRelatedSpaceRecords[0].Name
+            );
+        });
+    });
+
+    it('renders No related spaces found when no record is available', () => {
+        const RECORDID = '0031700000pJRRSAA4';
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+        element.recordId = RECORDID;
+        document.body.appendChild(element);
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockRelatedSpacesNoRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            // Select elements for validation
+            const pElement = element.shadowRoot.querySelector('p');
+            expect(pElement.textContent).toBe('No related spaces found.');
+        });
+    });
+
+    it('shows error panel element', () => {
+        // Create initial element
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getRelatedSpacesAdapter.error();
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const errorPanelEl = element.shadowRoot.querySelector(
+                'c-error-panel'
+            );
+            expect(errorPanelEl).not.toBeNull();
+            expect(errorPanelEl.friendlyMessage).toBe(
+                'There was an issue loading related market data.'
+            );
+        });
+    });
+
+    it('select an item', () => {
+        const NAV_RECORDID = '0031700000pJRRSAA4';
+        const NAV_TYPE = 'standard__recordPage';
+        const NAV_ACTION_NAME = 'view';
+        const OBJECT_API_NAME = 'Space__c';
+        // Create initial element
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve()
+            .then(() => {
+                const detailEls = element.shadowRoot.querySelector(
+                    'c-image-gallery'
+                );
+                detailEls.dispatchEvent(
+                    new CustomEvent('itemselect', {
+                        detail: { recordId: NAV_RECORDID }
+                    })
+                );
+            })
+            .then(() => {
+                const { pageReference } = getNavigateCalledWith();
+                expect(pageReference.type).toBe(NAV_TYPE);
+                expect(pageReference.attributes.recordId).toBe(NAV_RECORDID);
+                expect(pageReference.attributes.actionName).toBe(
+                    NAV_ACTION_NAME
+                );
+                expect(pageReference.attributes.objectApiName).toBe(
+                    OBJECT_API_NAME
+                );
+            });
+    });
+});
