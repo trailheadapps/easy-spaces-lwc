@@ -25,11 +25,11 @@ describe('c-related-spaces', () => {
     });
 
     it('getRelatedSpaces @wire data', () => {
-        const RECORDID = '0031700000pJRRSAA4';
+        const RECORD_ID = '0031700000pJRRSAA4';
         const element = createElement('c-related-spaces', {
             is: RelatedSpaces
         });
-        element.recordId = RECORDID;
+        element.recordId = RECORD_ID;
         document.body.appendChild(element);
         // Emit data from @wire
         getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
@@ -50,11 +50,11 @@ describe('c-related-spaces', () => {
     });
 
     it('renders No related spaces found when no record is available', () => {
-        const RECORDID = '0031700000pJRRSAA4';
+        const RECORD_ID = '0031700000pJRRSAA4';
         const element = createElement('c-related-spaces', {
             is: RelatedSpaces
         });
-        element.recordId = RECORDID;
+        element.recordId = RECORD_ID;
         document.body.appendChild(element);
         // Emit data from @wire
         getRelatedSpacesAdapter.emit(mockRelatedSpacesNoRecords);
@@ -93,8 +93,8 @@ describe('c-related-spaces', () => {
         });
     });
 
-    it('select an item', () => {
-        const NAV_RECORDID = '0031700000pJRRSAA4';
+    it('fires a record page navigation event on image click', () => {
+        const NAV_RECORD_ID = '0031700000pJRRSAA4';
         const NAV_TYPE = 'standard__recordPage';
         const NAV_ACTION_NAME = 'view';
         const OBJECT_API_NAME = 'Space__c';
@@ -117,14 +117,14 @@ describe('c-related-spaces', () => {
                 );
                 detailEls.dispatchEvent(
                     new CustomEvent('itemselect', {
-                        detail: { recordId: NAV_RECORDID }
+                        detail: { recordId: NAV_RECORD_ID }
                     })
                 );
             })
             .then(() => {
                 const { pageReference } = getNavigateCalledWith();
                 expect(pageReference.type).toBe(NAV_TYPE);
-                expect(pageReference.attributes.recordId).toBe(NAV_RECORDID);
+                expect(pageReference.attributes.recordId).toBe(NAV_RECORD_ID);
                 expect(pageReference.attributes.actionName).toBe(
                     NAV_ACTION_NAME
                 );
