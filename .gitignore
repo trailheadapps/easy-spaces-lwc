@@ -22,6 +22,9 @@ node_modules/
 # Eslint cache
 .eslintcache
 
+#CodeCoverage files
+coverage
+
 # MacOS system files
 .DS_Store
 
