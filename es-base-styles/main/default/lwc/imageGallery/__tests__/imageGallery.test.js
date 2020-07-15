@@ -22,19 +22,43 @@ describe('c-image-gallery', () => {
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => {
-            const lightningLayoutEl = element.shadowRoot.querySelector(
-                'lightning-layout'
-            );
-            expect(lightningLayoutEl).not.toBeNull();
-
             const imageTileElements = element.shadowRoot.querySelectorAll(
                 'c-image-tile'
             );
             expect(imageTileElements.length).toBe(mockSpacesList.length);
+
+            expect(imageTileElements[0].record.Name).toBe(
+                mockSpacesList[0].record.Name
+            );
+            expect(imageTileElements[0].record.Picture_URL__c).toBe(
+                mockSpacesList[0].record.Picture_URL__c
+            );
         });
     });
 
-    it('click on an image tile', () => {
+    it('clicking on a tile once selects it and deselects it once clicked again', () => {
+        // Create element
+        const element = createElement('c-image-gallery', {
+            is: ImageGallery
+        });
+
+        element.items = mockSpacesList;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            const imageTileElement = element.shadowRoot.querySelector(
+                'c-image-tile'
+            );
+
+            imageTileElement.click();
+            expect(element.items[0].selected).toBe(true);
+
+            imageTileElement.click();
+            expect(element.items[0].selected).toBe(false);
+        });
+    });
+
+    it('clicking on an image tile fires a custom event', () => {
         const EVENT_DETAIL_PARAMETER = { recordId: '0000000000' };
 
         // Create element
@@ -52,30 +76,16 @@ describe('c-image-gallery', () => {
 
         return Promise.resolve()
             .then(() => {
-                const lightningLayoutEl = element.shadowRoot.querySelector(
-                    'lightning-layout'
-                );
-                expect(lightningLayoutEl).not.toBeNull();
-
                 const imageTileElement = element.shadowRoot.querySelector(
                     'c-image-tile'
                 );
-
                 imageTileElement.click();
-                expect(element.items[0].selected).toBe(true);
             })
             .then(() => {
                 expect(handler).toHaveBeenCalled();
                 expect(handler.mock.calls[0][0].detail).toEqual(
                     EVENT_DETAIL_PARAMETER
                 );
-
-                const imageTileElement = element.shadowRoot.querySelector(
-                    'c-image-tile'
-                );
-
-                imageTileElement.click();
-                expect(element.items[0].selected).toBe(false);
             });
     });
 });
