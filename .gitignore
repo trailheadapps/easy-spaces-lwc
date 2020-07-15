@@ -22,8 +22,8 @@ node_modules/
 # Eslint cache
 .eslintcache
 
-#CodeCoverage files
-coverage
+# LWC Jest coverage reports
+coverage/
 
 # MacOS system files
 .DS_Store

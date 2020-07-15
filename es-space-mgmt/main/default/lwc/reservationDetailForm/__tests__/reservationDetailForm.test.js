@@ -211,7 +211,7 @@ describe('c-reservation-detail-form', () => {
             });
     });
 
-    it('draft resveration via button click', () => {
+    it('send a draft reservation CustomEvent via button click', () => {
         const element = createElement('c-reservation-detail-form', {
             is: ReservationDetailForm
         });
@@ -231,14 +231,17 @@ describe('c-reservation-detail-form', () => {
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
-        return Promise.resolve().then(() => {
-            // verify combobox attributes are populated correctly
-            const button = element.shadowRoot.querySelector('lightning-button');
-            button.click();
-            Promise.resolve().then(() => {
+        return Promise.resolve()
+            .then(() => {
+                // verify combobox attributes are populated correctly
+                const button = element.shadowRoot.querySelector(
+                    'lightning-button'
+                );
+                button.click();
+            })
+            .then(() => {
                 expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.numberOfPeople).toBe(20);
+                expect(handler.mock.calls[0][0].detail.numberOfPeople).toBe(50);
             });
-        });
     });
 });
