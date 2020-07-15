@@ -35,6 +35,8 @@ describe('c-image-gallery', () => {
     });
 
     it('click on an image tile', () => {
+        const EVENT_DETAIL_PARAMETER = { recordId: '0000000000' };
+
         // Create element
         const element = createElement('c-image-gallery', {
             is: ImageGallery
@@ -43,21 +45,37 @@ describe('c-image-gallery', () => {
         element.items = mockSpacesList;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            const lightningLayoutEl = element.shadowRoot.querySelector(
-                'lightning-layout'
-            );
-            expect(lightningLayoutEl).not.toBeNull();
+        // Mock handler for child event
+        const handler = jest.fn();
+        // Add event listener to catch child event
+        element.addEventListener('itemselect', handler);
 
-            const imageTileElement = element.shadowRoot.querySelector(
-                'c-image-tile'
-            );
+        return Promise.resolve()
+            .then(() => {
+                const lightningLayoutEl = element.shadowRoot.querySelector(
+                    'lightning-layout'
+                );
+                expect(lightningLayoutEl).not.toBeNull();
 
-            imageTileElement.click();
-            expect(element.items[0].selected).toBe(true);
+                const imageTileElement = element.shadowRoot.querySelector(
+                    'c-image-tile'
+                );
 
-            imageTileElement.click();
-            expect(element.items[0].selected).toBe(false);
-        });
+                imageTileElement.click();
+                expect(element.items[0].selected).toBe(true);
+            })
+            .then(() => {
+                expect(handler).toHaveBeenCalled();
+                expect(handler.mock.calls[0][0].detail).toEqual(
+                    EVENT_DETAIL_PARAMETER
+                );
+
+                const imageTileElement = element.shadowRoot.querySelector(
+                    'c-image-tile'
+                );
+
+                imageTileElement.click();
+                expect(element.items[0].selected).toBe(false);
+            });
     });
 });
