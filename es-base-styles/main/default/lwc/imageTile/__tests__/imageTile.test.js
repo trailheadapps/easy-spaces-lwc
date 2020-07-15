@@ -39,7 +39,7 @@ describe('c-image-tile', () => {
         });
     });
 
-    it('displays correct css classes based on properties', () => {
+    it('css class .muted gets added when the property muted is set to true', () => {
         const element = createElement('c-image-tile', {
             is: ImageTile
         });
@@ -50,22 +50,31 @@ describe('c-image-tile', () => {
         return Promise.resolve()
             .then(() => {
                 const divElement = element.shadowRoot.querySelector('div');
-                expect(divElement).not.toBeNull();
                 expect(divElement.classList.contains('muted')).toBe(false);
-                expect(divElement.classList.contains('selected')).toBe(false);
-
                 element.muted = true;
             })
             .then(() => {
                 const divElement = element.shadowRoot.querySelector('div');
                 expect(divElement.classList.contains('muted')).toBe(true);
-                expect(divElement.classList.contains('selected')).toBe(false);
+            });
+    });
 
+    it('css class .selected gets added when the property selected is set to true', () => {
+        const element = createElement('c-image-tile', {
+            is: ImageTile
+        });
+
+        element.record = SPACE_RECORD;
+        document.body.appendChild(element);
+
+        return Promise.resolve()
+            .then(() => {
+                const divElement = element.shadowRoot.querySelector('div');
+                expect(divElement.classList.contains('selected')).toBe(false);
                 element.selected = true;
             })
             .then(() => {
                 const divElement = element.shadowRoot.querySelector('div');
-                expect(divElement.classList.contains('muted')).toBe(true);
                 expect(divElement.classList.contains('selected')).toBe(true);
             });
     });
