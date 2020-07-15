@@ -138,6 +138,9 @@ describe('c-customer-detail-form', () => {
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
+            expect(errorPanelEl.errors).toStrictEqual(
+                APEX_GET_CUSTOMER_FIELDS_ERROR
+            );
         });
     });
 });
