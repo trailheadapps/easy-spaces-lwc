@@ -13,21 +13,24 @@ describe('c-reservation-tile', () => {
         }
     });
 
-    it('render reservationTile for Lead', () => {
+    it('renders reservationTile for Lead', () => {
         const element = createElement('c-reservation-tile', {
             is: ReservationTile
         });
         element.reservation = RESERVATION_LEAD;
         document.body.appendChild(element);
+
         return Promise.resolve().then(() => {
             // check for div class
             const divElement = element.shadowRoot.querySelector('div.pointer');
             expect(divElement.className).toBe('pointer');
+
             // check for paragraph text nodes
             const paragraphElements = element.shadowRoot.querySelectorAll('p');
             expect(paragraphElements[0].textContent).toBe(
                 'Customer: ' + RESERVATION_LEAD.record.Lead__r.Name
             );
+            // check for status text nodes
             expect(paragraphElements[1].textContent).toBe(
                 'Status: ' + RESERVATION_LEAD.record.Status__c
             );
@@ -51,16 +54,18 @@ describe('c-reservation-tile', () => {
         });
     });
 
-    it('render reservationTile for Contact', () => {
+    it('renders reservationTile for Contact', () => {
         const element = createElement('c-reservation-tile', {
             is: ReservationTile
         });
         element.reservation = RESERVATION_CONTACT;
         document.body.appendChild(element);
+
         return Promise.resolve().then(() => {
             // check for div class
             const divElement = element.shadowRoot.querySelector('div.pointer');
             expect(divElement.className).toBe('pointer');
+
             // check for paragraph text nodes
             const paragraphElements = element.shadowRoot.querySelectorAll('p');
             expect(paragraphElements[0].textContent).toBe(
@@ -89,35 +94,32 @@ describe('c-reservation-tile', () => {
         });
     });
 
-    it('click on reservation tile', () => {
+    it('fires a reservationselect', () => {
         const element = createElement('c-reservation-tile', {
             is: ReservationTile
         });
         element.reservation = RESERVATION_CONTACT;
         document.body.appendChild(element);
-        // listen to flow navigate event
+
+        // listen to reservationselect event
         const handler = jest.fn();
         element.addEventListener('reservationselect', handler);
-        return Promise.resolve()
-            .then(() => {
-                // check for div class
-                const divElement = element.shadowRoot.querySelector(
-                    'div.pointer'
-                );
-                expect(divElement.className).toBe('pointer');
-                divElement.click();
-            })
-            .then(() => {
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.reservationId).toBe(
-                    RESERVATION_CONTACT.record.Id
-                );
-                expect(handler.mock.calls[0][0].detail.marketId).toBe(
-                    RESERVATION_CONTACT.record.Market__c
-                );
-                expect(handler.mock.calls[0][0].detail.customerName).toBe(
-                    RESERVATION_CONTACT.record.Contact__r.Name
-                );
-            });
+        // check for div class
+        const divElement = element.shadowRoot.querySelector('div.pointer');
+        expect(divElement.className).toBe('pointer');
+        divElement.click();
+
+        return Promise.resolve().then(() => {
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.reservationId).toBe(
+                RESERVATION_CONTACT.record.Id
+            );
+            expect(handler.mock.calls[0][0].detail.marketId).toBe(
+                RESERVATION_CONTACT.record.Market__c
+            );
+            expect(handler.mock.calls[0][0].detail.customerName).toBe(
+                RESERVATION_CONTACT.record.Contact__r.Name
+            );
+        });
     });
 });
