@@ -36,7 +36,7 @@ describe('c-image-gallery', () => {
         });
     });
 
-    it('clicking on a tile once selects it and deselects it once clicked again', () => {
+    it('clicking on a tile once selects it and de-selects it once clicked again', () => {
         // Create element
         const element = createElement('c-image-gallery', {
             is: ImageGallery
