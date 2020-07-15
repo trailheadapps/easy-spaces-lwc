@@ -32,7 +32,7 @@ describe('c-reservation-detail-form', () => {
         jest.clearAllMocks();
     });
 
-    it('shows error panel element', () => {
+    it('shows the error panel element when the Apex wire adapter getMarketsByState is invoked', () => {
         const element = createElement('c-reservation-detail-form', {
             is: ReservationDetailForm
         });
@@ -55,6 +55,33 @@ describe('c-reservation-detail-form', () => {
     });
 
     it('getMarketsByState @wire data', () => {
+        const element = createElement('c-reservation-detail-form', {
+            is: ReservationDetailForm
+        });
+        element.state = STATE;
+        element.city = CITY;
+        element.people = 50;
+        element.startdate = START_DATE;
+        element.totaldays = 15;
+        document.body.appendChild(element);
+        // Emit mock response from @wire
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const lighntingLayoutEl = element.shadowRoot.querySelector(
+                'lightning-layout'
+            );
+            expect(lighntingLayoutEl).not.toBeNull();
+            expect(getMarketsByStateAdapter.getLastConfig()).toStrictEqual({
+                state: STATE
+            });
+        });
+    });
+
+    it('renders template with values passed via api after getMarketsByState wire call', () => {
         const element = createElement('c-reservation-detail-form', {
             is: ReservationDetailForm
         });
@@ -121,28 +148,12 @@ describe('c-reservation-detail-form', () => {
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
-            const lighntingLayoutEl = element.shadowRoot.querySelector(
-                'lightning-layout'
-            );
             const lighntingComboBoxEl = element.shadowRoot.querySelector(
                 'lightning-combobox'
             );
-            const lighntingSliderEl = element.shadowRoot.querySelector(
-                'lightning-slider'
-            );
-            const lighntingInputEl = element.shadowRoot.querySelector(
-                'lightning-input'
-            );
-            const lighntingRadioGroupEl = element.shadowRoot.querySelector(
-                'lightning-radio-group'
-            );
-            expect(lighntingLayoutEl).not.toBeNull();
             expect(lighntingComboBoxEl).not.toBeNull();
             expect(lighntingComboBoxEl.options).toStrictEqual([]);
             expect(lighntingComboBoxEl.placeholder).toBe('No markets found');
-            expect(lighntingSliderEl).not.toBeNull();
-            expect(lighntingInputEl).not.toBeNull();
-            expect(lighntingRadioGroupEl).not.toBeNull();
         });
     });
 
@@ -156,7 +167,7 @@ describe('c-reservation-detail-form', () => {
         element.startdate = START_DATE;
         element.totaldays = 15;
         document.body.appendChild(element);
-        // Emit mock response with 0 rows
+        // Emit mock response
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
@@ -224,7 +235,7 @@ describe('c-reservation-detail-form', () => {
         // Emit mock response with 0 rows
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
-        // listen to customerupdate event
+        // listen to draftreservation event
         const handler = jest.fn();
         element.addEventListener('draftreservation', handler);
 
@@ -242,6 +253,10 @@ describe('c-reservation-detail-form', () => {
             .then(() => {
                 expect(handler).toHaveBeenCalled();
                 expect(handler.mock.calls[0][0].detail.numberOfPeople).toBe(50);
+                expect(handler.mock.calls[0][0].detail.startDate).toBe(
+                    START_DATE
+                );
+                expect(handler.mock.calls[0][0].detail.endDays).toBe(15);
             });
     });
 });
