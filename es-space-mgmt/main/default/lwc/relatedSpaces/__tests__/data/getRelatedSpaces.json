@@ -1,0 +1,13 @@
+[
+    {
+        "Id": "0031700000pJRRSAA4",
+        "Name": "Outdoor Exploration Lab - Burbank",
+        "Daily_Booking_Rate__c": 1250,
+        "Market__c": "Minneapolis - MN",
+        "Maximum_Capacity__c": 150,
+        "Minimum_Capacity__c": 12,
+        "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png",
+        "Category__c": "Exploration Lab",
+        "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing"
+    }
+]
