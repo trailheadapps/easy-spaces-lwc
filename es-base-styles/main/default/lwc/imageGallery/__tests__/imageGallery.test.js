@@ -51,10 +51,10 @@ describe('c-image-gallery', () => {
             );
 
             imageTileElement.click();
-            expect(element.items[0].selected).toBe(true);
+            expect(element.items[0].selected).toBeTruthy();
 
             imageTileElement.click();
-            expect(element.items[0].selected).toBe(false);
+            expect(element.items[0].selected).toBeFalsy();
         });
     });
 
