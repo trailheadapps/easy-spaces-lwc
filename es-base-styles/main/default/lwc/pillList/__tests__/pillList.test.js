@@ -32,15 +32,14 @@ describe('c-pill-list', () => {
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => {
-            const articleEl = element.shadowRoot.querySelector('article');
-            expect(articleEl).not.toBeNull();
-
             const pillElements = element.shadowRoot.querySelectorAll('c-pill');
             expect(pillElements.length).toBe(PILL_VALUES.length);
+            expect(pillElements[0].label).toBe(PILL_VALUES[0]);
+            expect(pillElements[0].selected).toBe(false);
         });
     });
 
-    it('click on an pill', () => {
+    it('click on an pill marks the selected property to true, and fires an event', () => {
         const EVENT_DETAIL_PARAMETER = {
             filters: ['Scheduled Activity']
         };
