@@ -9,6 +9,9 @@
 # LWC VSCode autocomplete
 jsconfig.json
 
+# LWC Jest coverage reports
+coverage/
+
 # Logs
 logs
 *.log
@@ -33,3 +36,4 @@ $RECYCLE.BIN/
 
 # VS Code project settings
 .vscode/
+
