@@ -111,6 +111,14 @@ describe('c-reservation-helper-form', () => {
             .then(() => {
                 Promise.resolve().then(() => {
                     expect(handler).toHaveBeenCalled();
+                    expect(element.startDate).toBe(EVENTDETAILS.startDate);
+                    expect(element.endDays).toBe(EVENTDETAILS.endDays);
+                    expect(element.numberOfPeople).toBe(
+                        EVENTDETAILS.numberOfPeople
+                    );
+                    expect(element.requestedMarket).toBe(
+                        EVENTDETAILS.requestedMarket
+                    );
                 });
             });
     });
