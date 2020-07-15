@@ -12,7 +12,7 @@ const SPACE_RECORD = {
     Type__c: 'Large Groups;Scheduled Activity;'
 };
 
-describe('c-image-gallery', () => {
+describe('c-image-tile', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
         while (document.body.firstChild) {
