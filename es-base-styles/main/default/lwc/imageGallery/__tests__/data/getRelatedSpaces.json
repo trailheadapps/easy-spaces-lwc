@@ -1,0 +1,58 @@
+[
+    {
+        "record": {
+            "Id": "0000000000",
+            "Daily_Booking_Rate__c": 2000,
+            "Name": "Sample 1",
+            "Market__c": "000000",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 10,
+            "Picture_URL__c": "http://someurl.com/image.jpg",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;"
+        },
+        "muted": false
+    },
+    {
+        "record": {
+            "Id": "0000000001",
+            "Daily_Booking_Rate__c": 2000,
+            "Name": "Sample 2",
+            "Market__c": "000000",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 10,
+            "Picture_URL__c": "http://someurl.com/image.jpg",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;"
+        },
+        "muted": false
+    },
+    {
+        "record": {
+            "Id": "0000000002",
+            "Daily_Booking_Rate__c": 2000,
+            "Name": "Sample 3",
+            "Market__c": "000000",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 10,
+            "Picture_URL__c": "http://someurl.com/image.jpg",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;"
+        },
+        "muted": false
+    },
+    {
+        "record": {
+            "Id": "0000000003",
+            "Daily_Booking_Rate__c": 2000,
+            "Name": "Sample 4",
+            "Market__c": "000000",
+            "Maximum_Capacity__c": 10,
+            "Minimum_Capacity__c": 10,
+            "Picture_URL__c": "http://someurl.com/image.jpg",
+            "Category__c": "Cooking Classroom",
+            "Type__c": "Large Groups;Scheduled Activity;"
+        },
+        "muted": false
+    }
+]
