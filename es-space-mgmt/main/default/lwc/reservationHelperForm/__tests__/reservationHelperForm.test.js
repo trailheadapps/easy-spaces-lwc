@@ -54,22 +54,17 @@ describe('c-reservation-helper-form', () => {
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
-        return Promise.resolve()
-            .then(() => {
-                const customerDetailForm = element.shadowRoot.querySelector(
-                    'c-customer-detail-form'
-                );
-                customerDetailForm.dispatchEvent(
-                    new CustomEvent('customerupdate', {
-                        detail: STATE_NEW
-                    })
-                );
-            })
-            .then(() => {
-                Promise.resolve().then(() => {
-                    expect(element.state).toBe(STATE_NEW);
-                });
-            });
+        return Promise.resolve().then(() => {
+            const customerDetailForm = element.shadowRoot.querySelector(
+                'c-customer-detail-form'
+            );
+            customerDetailForm.dispatchEvent(
+                new CustomEvent('customerupdate', {
+                    detail: STATE_NEW
+                })
+            );
+            expect(element.state).toBe(STATE_NEW);
+        });
     });
 
     it('dispatch draft reservation event', () => {
@@ -97,29 +92,20 @@ describe('c-reservation-helper-form', () => {
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
-        return Promise.resolve()
-            .then(() => {
-                const reservationDetailForm = element.shadowRoot.querySelector(
-                    'c-reservation-detail-form'
-                );
-                reservationDetailForm.dispatchEvent(
-                    new CustomEvent('draftreservation', {
-                        detail: EVENTDETAILS
-                    })
-                );
-            })
-            .then(() => {
-                Promise.resolve().then(() => {
-                    expect(handler).toHaveBeenCalled();
-                    expect(element.startDate).toBe(EVENTDETAILS.startDate);
-                    expect(element.endDays).toBe(EVENTDETAILS.endDays);
-                    expect(element.numberOfPeople).toBe(
-                        EVENTDETAILS.numberOfPeople
-                    );
-                    expect(element.requestedMarket).toBe(
-                        EVENTDETAILS.requestedMarket
-                    );
-                });
-            });
+        return Promise.resolve().then(() => {
+            const reservationDetailForm = element.shadowRoot.querySelector(
+                'c-reservation-detail-form'
+            );
+            reservationDetailForm.dispatchEvent(
+                new CustomEvent('draftreservation', {
+                    detail: EVENTDETAILS
+                })
+            );
+            expect(handler).toHaveBeenCalled();
+            expect(element.startDate).toBe(EVENTDETAILS.startDate);
+            expect(element.endDays).toBe(EVENTDETAILS.endDays);
+            expect(element.numberOfPeople).toBe(EVENTDETAILS.numberOfPeople);
+            expect(element.requestedMarket).toBe(EVENTDETAILS.requestedMarket);
+        });
     });
 });
