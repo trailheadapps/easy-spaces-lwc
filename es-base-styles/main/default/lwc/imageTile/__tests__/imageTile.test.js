@@ -20,7 +20,7 @@ describe('c-image-gallery', () => {
         }
     });
 
-    it('displays correct image', () => {
+    it('displays correct image and text', () => {
         const element = createElement('c-image-tile', {
             is: ImageTile
         });
@@ -32,6 +32,10 @@ describe('c-image-gallery', () => {
             const imgElement = element.shadowRoot.querySelector('img');
             expect(imgElement).not.toBeNull();
             expect(imgElement.src).toBe(SPACE_RECORD.Picture_URL__c);
+
+            const nameElement = element.shadowRoot.querySelector('h2');
+            expect(nameElement).not.toBeNull();
+            expect(nameElement.textContent).toBe(SPACE_RECORD.Name);
         });
     });
 
