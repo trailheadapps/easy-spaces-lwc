@@ -1,7 +1,7 @@
 import { createElement } from 'lwc';
 import ImageGallery from 'c/imageGallery';
 
-// Realistic data with a list of contacts
+// Realistic data with a list of spaces
 const mockSpacesList = require('./data/getRelatedSpaces.json');
 
 describe('c-image-gallery', () => {
