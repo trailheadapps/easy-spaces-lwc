@@ -17,7 +17,11 @@ export const NavigationMixin = (Base) => {
         }
         [GenerateUrl](pageReference) {
             _generatePageReference = pageReference;
-            return new Promise((resolve) => resolve('https://www.example.com'));
+            return new Promise((resolve) =>
+                resolve(
+                    `https://mydomain.my.salesforce.com/${pageReference.attributes.recordId}`
+                )
+            );
         }
     };
 };

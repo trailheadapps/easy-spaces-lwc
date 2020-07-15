@@ -103,7 +103,9 @@ describe('c-customer-tile', () => {
             expect(linkEl.getAttribute('alt')).toBe(
                 `Navigate to ${SOBJECT_TYPE} record detail for ${CUSTOMER_DETAILS.name}`
             );
-            expect(linkEl.href).toBe('https://www.example.com/');
+            expect(linkEl.href).toBe(
+                `https://mydomain.my.salesforce.com/${CUSTOMER_DETAILS.Id}`
+            );
         });
     });
 });
