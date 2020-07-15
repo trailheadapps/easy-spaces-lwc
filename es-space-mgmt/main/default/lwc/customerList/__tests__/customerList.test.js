@@ -62,20 +62,15 @@ describe('c-customer-list', () => {
                 'c-customer-tile'
             );
             expect(customerTileElements.length).toBe(mockCustomerList.length);
-            expect(customerTileElements[0].customer.name).toBe(
-                mockCustomerList[0].name
+            expect(customerTileElements[0].customer).toStrictEqual(
+                mockCustomerList[0]
             );
             expect(customerTileElements[0].object).toBe(SOBJECT_TYPE);
         });
     });
 
     it('displays error panel when getCustomerList wire adapter returns an error', () => {
-        const WIRE_ERROR = {
-            body: { message: 'An internal server error has occurred' },
-            ok: false,
-            status: 400,
-            statusText: 'Bad Request'
-        };
+        const WIRE_ERROR = 'Something bad happened';
 
         const element = createElement('c-customer-list', {
             is: CustomerList
@@ -85,14 +80,14 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getCustomerListAdapter.error();
+        getCustomerListAdapter.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => {
             const errorPanelEl = element.shadowRoot.querySelector(
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toStrictEqual(WIRE_ERROR);
+            expect(errorPanelEl.errors.body).toBe(WIRE_ERROR);
             expect(errorPanelEl.friendlyMessage).toBe(
                 'There was an issue loading customers.'
             );
