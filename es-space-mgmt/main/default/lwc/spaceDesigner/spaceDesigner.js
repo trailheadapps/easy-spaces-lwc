@@ -45,13 +45,7 @@ export default class SpaceDesigner extends LightningElement {
 
     handleReservationSelect(message) {
         if (message.tileType === 'reservation') {
-            if (!this.flowStarted) {
-                this.flowStarted = true;
-                const choiceEvt = new CustomEvent('reservchoice', {
-                    detail: message.properties
-                });
-                this.dispatchEvent(choiceEvt);
-            } else if (this.flowStarted) {
+            if (this.flowStarted) {
                 const toastEvt = new ShowToastEvent({
                     title: 'Flow interview already in progress',
                     message:
@@ -59,6 +53,12 @@ export default class SpaceDesigner extends LightningElement {
                     variant: 'error'
                 });
                 this.dispatchEvent(toastEvt);
+            } else {
+                this.flowStarted = true;
+                const choiceEvt = new CustomEvent('reservchoice', {
+                    detail: message.properties
+                });
+                this.dispatchEvent(choiceEvt);
             }
         }
     }
