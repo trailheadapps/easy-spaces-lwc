@@ -14,7 +14,7 @@ import {
 
 export default class CustomerList extends LightningElement {
     @api sobject;
-    customers;
+    customers = [];
     errorMsg;
     msgForUser;
     wiredRecords;
