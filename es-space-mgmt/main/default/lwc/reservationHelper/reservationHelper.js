@@ -46,13 +46,7 @@ export default class ReservationHelper extends LightningElement {
 
     handleCustomerSelect(message) {
         if (message.tileType === 'customer') {
-            if (!this.flowStarted) {
-                this.flowStarted = true;
-                const choiceEvt = new CustomEvent('customerchoice', {
-                    detail: message.properties
-                });
-                this.dispatchEvent(choiceEvt);
-            } else if (this.flowStarted) {
+            if (this.flowStarted) {
                 const toastEvt = new ShowToastEvent({
                     title: 'Flow interview already in progress',
                     message:
@@ -60,6 +54,12 @@ export default class ReservationHelper extends LightningElement {
                     variant: 'error'
                 });
                 this.dispatchEvent(toastEvt);
+            } else {
+                this.flowStarted = true;
+                const choiceEvt = new CustomEvent('customerchoice', {
+                    detail: message.properties
+                });
+                this.dispatchEvent(choiceEvt);
             }
         }
     }
