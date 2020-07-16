@@ -28,6 +28,9 @@ node_modules/
 # Eslint cache
 .eslintcache
 
+# LWC Jest coverage reports
+coverage/
+
 # MacOS system files
 .DS_Store
 
@@ -39,4 +42,3 @@ $RECYCLE.BIN/
 
 # VS Code project settings
 .vscode/
-
