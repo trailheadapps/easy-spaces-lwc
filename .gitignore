@@ -9,6 +9,9 @@
 # LWC VSCode autocomplete
 jsconfig.json
 
+# LWC Jest coverage reports
+coverage/
+
 # Logs
 logs
 *.log
@@ -25,6 +28,9 @@ node_modules/
 # Eslint cache
 .eslintcache
 
+#CodeCoverage files
+coverage
+
 # MacOS system files
 .DS_Store
 
@@ -36,3 +42,4 @@ $RECYCLE.BIN/
 
 # VS Code project settings
 .vscode/
+
