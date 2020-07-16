@@ -6,18 +6,16 @@
                 errors={errorMsg}
             ></c-error-panel>
         </template>
-        <template if:true={customers}>
-            <ul class="slds-list_vertical slds-has-dividers_bottom-space">
-                <template for:each={customers} for:item="record">
-                    <li class="slds-item" key={record.Id}>
-                        <c-customer-tile
-                            customer={record}
-                            object={sobject}
-                            oncustomerselect={publishSelect}
-                        ></c-customer-tile>
-                    </li>
-                </template>
-            </ul>
-        </template>
+        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+            <template for:each={customers} for:item="record">
+                <li class="slds-item" key={record.Id}>
+                    <c-customer-tile
+                        customer={record}
+                        object={sobject}
+                        oncustomerselect={publishSelect}
+                    ></c-customer-tile>
+                </li>
+            </template>
+        </ul>
     </div>
 </template>
