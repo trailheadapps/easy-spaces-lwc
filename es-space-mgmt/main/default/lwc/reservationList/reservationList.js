@@ -17,7 +17,7 @@ export default class ReservationList extends LightningElement {
     reservationSelected = false;
     selectedRecId;
     _records = [];
-    reservations;
+    reservations = [];
     errorMsg;
     msgForUser;
     noRecords = false;
