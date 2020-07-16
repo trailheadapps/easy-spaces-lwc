@@ -1,0 +1,35 @@
+[
+    {
+        "Id": "000000",
+        "Daily_Booking_Rate__c": 1250,
+        "Market__c": "100000",
+        "Maximum_Capacity__c": 100,
+        "Minimum_Capacity__c": 10,
+        "Name": "Space 1",
+        "Category__c": "Exploration Lab",
+        "Type__c": "Large Groups;Scheduled Activity;Outdoor",
+        "Picture_URL__c": "https://someurl.com/space1.png"
+    },
+    {
+        "Id": "000001",
+        "Daily_Booking_Rate__c": 1250,
+        "Market__c": "100000",
+        "Maximum_Capacity__c": 150,
+        "Minimum_Capacity__c": 12,
+        "Name": "Space 2",
+        "Category__c": "Exploration Lab",
+        "Type__c": "Outdoor;Conversation Starter;Energizing",
+        "Picture_URL__c": "https://someurl.com/space2.png"
+    },
+    {
+        "Id": "000002",
+        "Daily_Booking_Rate__c": 1250,
+        "Market__c": "100001",
+        "Maximum_Capacity__c": 200,
+        "Minimum_Capacity__c": 20,
+        "Name": "Space 3",
+        "Category__c": "Exploration Lab",
+        "Type__c": "Large Groups;Scheduled Activity",
+        "Picture_URL__c": "https://someurl.com/space3.png"
+    }
+]

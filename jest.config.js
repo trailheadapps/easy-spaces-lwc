@@ -7,6 +7,8 @@ module.exports = {
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/flowSupport',
         '^lightning/navigation$':
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/navigation',
+        '^lightning/flowSupport$':
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/flowSupport',
         '^lightning/messageService$':
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService'
     }
