@@ -1,0 +1,18 @@
+{
+    "record": {
+        "Id": "00B55000d0BFveDEAT",
+        "Lead__c": "00Q5500000BFveDEAT",
+        "Lead__r": {
+            "Name": "Test Lead"
+        },
+        "Status__c": "Draft",
+        "Market__c": "a0055000005uFhQAAU",
+        "Market__r": {
+            "Name": "Test Market"
+        },
+        "Start_Date__c": "1/1/2021",
+        "End_Date__c": "12/30/2021",
+        "Total_Number_of_Guests__c": 20
+    },
+    "muted": true
+}
