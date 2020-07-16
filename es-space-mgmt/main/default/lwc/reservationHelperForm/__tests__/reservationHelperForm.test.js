@@ -12,10 +12,11 @@ describe('c-reservation-helper-form', () => {
         jest.clearAllMocks();
     });
 
-    it('reservation helper form render', () => {
+    it('renders c-reservation-helper-form', () => {
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
+
         const element = createElement('c-reservation-helper-form', {
             is: ReservationHelperForm
         });
@@ -39,11 +40,12 @@ describe('c-reservation-helper-form', () => {
         });
     });
 
-    it('dispatch update customer event', () => {
+    it('dispatches customer update event', () => {
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
         const STATE_NEW = 'NY';
+
         const element = createElement('c-reservation-helper-form', {
             is: ReservationHelperForm
         });
@@ -67,10 +69,11 @@ describe('c-reservation-helper-form', () => {
         });
     });
 
-    it('dispatch draft reservation event', () => {
+    it('dispatches draft reservation event', () => {
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
+
         //event Data
         const EVENTDETAILS = {
             startDate: '01/01/2021',
@@ -78,6 +81,7 @@ describe('c-reservation-helper-form', () => {
             numberOfPeople: 400,
             requestedMarket: 'San Mateo'
         };
+
         const element = createElement('c-reservation-helper-form', {
             is: ReservationHelperForm
         });
