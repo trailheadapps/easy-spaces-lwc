@@ -11,6 +11,8 @@ const mockSpacesList = require('./data/getRelatedSpaces.json');
 // Register as Apex wire adapter. Some tests verify that data is retrieved.
 const getRelatedSpacesAdapter = registerApexTestWireAdapter(getRelatedSpaces);
 
+const MARKET_ID = '100000';
+
 const SELECT_EVENT_DETAIL = {
     recordId: '000000'
 };
@@ -27,7 +29,6 @@ describe('c-space-design-form', () => {
 
     describe('displays components on load', () => {
         it('shows a 2 column layout when getRelatedSpaces wire is successfull', () => {
-            const MARKET_ID = '000000';
             const element = createElement('c-space-design-form', {
                 is: SpaceDesignForm
             });
@@ -52,7 +53,6 @@ describe('c-space-design-form', () => {
         });
 
         it('shows a error panel when getRelatedSpaces wire is not successfull', () => {
-            const MARKET_ID = '000000';
             const WIRE_ERROR = 'Something bad happened';
 
             const element = createElement('c-space-design-form', {
@@ -78,7 +78,6 @@ describe('c-space-design-form', () => {
         });
 
         it('shows a list of spaces if wire is successfull', () => {
-            const MARKET_ID = '100000';
             const element = createElement('c-space-design-form', {
                 is: SpaceDesignForm
             });
@@ -103,7 +102,6 @@ describe('c-space-design-form', () => {
         });
 
         it('shows a list of filters if wire is successfull', () => {
-            const MARKET_ID = '100000';
             const element = createElement('c-space-design-form', {
                 is: SpaceDesignForm
             });
@@ -125,8 +123,6 @@ describe('c-space-design-form', () => {
 
     describe('show/hide components on user actions', () => {
         it('clicking on a space tile shows the space details', () => {
-            const MARKET_ID = '100000';
-
             const OUTPUT_FIELDS = [
                 'Name',
                 'Maximum_Capacity__c',
@@ -175,7 +171,6 @@ describe('c-space-design-form', () => {
         });
 
         it('changing filters mutes tiles based on filter value', () => {
-            const MARKET_ID = '100000';
             const FILTER_CHANGE_EVENT_DETAIL = {
                 filters: ['Outdoor']
             };
@@ -210,141 +205,133 @@ describe('c-space-design-form', () => {
                     expect(imageGalleryEl.items[2].muted).toBeTruthy();
                 });
         });
+    });
 
-        describe('button behavior', () => {
-            it('buttons are disabled when no space is selected', () => {
-                const MARKET_ID = '100000';
+    describe('button behavior', () => {
+        it('buttons are disabled when no space is selected', () => {
+            const element = createElement('c-space-design-form', {
+                is: SpaceDesignForm
+            });
 
-                const element = createElement('c-space-design-form', {
-                    is: SpaceDesignForm
-                });
+            element.market = MARKET_ID;
+            document.body.appendChild(element);
 
-                element.market = MARKET_ID;
-                document.body.appendChild(element);
+            // Emit data from @wire
+            getRelatedSpacesAdapter.emit(mockSpacesList);
 
-                // Emit data from @wire
-                getRelatedSpacesAdapter.emit(mockSpacesList);
+            return Promise.resolve().then(() => {
+                const buttonEl = element.shadowRoot.querySelectorAll(
+                    'lightning-button'
+                );
+                expect(buttonEl[0].disabled).toBeTruthy();
+                expect(buttonEl[1].disabled).toBeTruthy();
+            });
+        });
 
-                return Promise.resolve().then(() => {
+        it('buttons are enabled when no space is selected', () => {
+            const element = createElement('c-space-design-form', {
+                is: SpaceDesignForm
+            });
+
+            element.market = MARKET_ID;
+            document.body.appendChild(element);
+            // Emit data from @wire
+            getRelatedSpacesAdapter.emit(mockSpacesList);
+
+            return Promise.resolve()
+                .then(() => {
+                    const imageGalleryEl = element.shadowRoot.querySelector(
+                        'c-image-gallery'
+                    );
+                    imageGalleryEl.dispatchEvent(
+                        new CustomEvent('itemselect', {
+                            detail: SELECT_EVENT_DETAIL
+                        })
+                    );
+                })
+                .then(() => {
                     const buttonEl = element.shadowRoot.querySelectorAll(
                         'lightning-button'
                     );
-                    expect(buttonEl[0].disabled).toBeTruthy();
-                    expect(buttonEl[1].disabled).toBeTruthy();
+                    expect(buttonEl[0].disabled).toBeFalsy();
+                    expect(buttonEl[1].disabled).toBeFalsy();
                 });
+        });
+
+        it('clicking add space and finish triggers flow navigation event with popTabOnFinish set to false', () => {
+            const element = createElement('c-space-design-form', {
+                is: SpaceDesignForm
             });
 
-            it('buttons are enabled when no space is selected', () => {
-                const MARKET_ID = '100000';
+            element.market = MARKET_ID;
+            document.body.appendChild(element);
 
-                const element = createElement('c-space-design-form', {
-                    is: SpaceDesignForm
+            // listen to flow navigate event
+            const handler = jest.fn();
+            element.addEventListener(FlowNavigationNextEventName, handler);
+
+            // Emit data from @wire
+            getRelatedSpacesAdapter.emit(mockSpacesList);
+
+            return Promise.resolve()
+                .then(() => {
+                    const imageGalleryEl = element.shadowRoot.querySelector(
+                        'c-image-gallery'
+                    );
+                    imageGalleryEl.dispatchEvent(
+                        new CustomEvent('itemselect', {
+                            detail: SELECT_EVENT_DETAIL
+                        })
+                    );
+                })
+                .then(() => {
+                    const buttonEl = element.shadowRoot.querySelectorAll(
+                        'lightning-button'
+                    );
+                    buttonEl[0].click();
+                })
+                .then(() => {
+                    expect(handler).toBeCalled();
+                    expect(element.popTabOnFinish).toBeFalsy();
                 });
+        });
 
-                element.market = MARKET_ID;
-                document.body.appendChild(element);
-                // Emit data from @wire
-                getRelatedSpacesAdapter.emit(mockSpacesList);
-
-                return Promise.resolve()
-                    .then(() => {
-                        const imageGalleryEl = element.shadowRoot.querySelector(
-                            'c-image-gallery'
-                        );
-                        imageGalleryEl.dispatchEvent(
-                            new CustomEvent('itemselect', {
-                                detail: SELECT_EVENT_DETAIL
-                            })
-                        );
-                    })
-                    .then(() => {
-                        const buttonEl = element.shadowRoot.querySelectorAll(
-                            'lightning-button'
-                        );
-                        expect(buttonEl[0].disabled).toBeFalsy();
-                        expect(buttonEl[1].disabled).toBeFalsy();
-                    });
+        it('clicking add space and go to reservation triggers flow navigation event with popTabOnFinish set to true', () => {
+            const element = createElement('c-space-design-form', {
+                is: SpaceDesignForm
             });
 
-            it('clicking add space and finish triggers flow navigation event with popTabOnFinish set to false', () => {
-                const MARKET_ID = '100000';
+            element.market = MARKET_ID;
+            document.body.appendChild(element);
 
-                const element = createElement('c-space-design-form', {
-                    is: SpaceDesignForm
+            // listen to flow navigate event
+            const handler = jest.fn();
+            element.addEventListener(FlowNavigationNextEventName, handler);
+
+            // Emit data from @wire
+            getRelatedSpacesAdapter.emit(mockSpacesList);
+
+            return Promise.resolve()
+                .then(() => {
+                    const imageGalleryEl = element.shadowRoot.querySelector(
+                        'c-image-gallery'
+                    );
+                    imageGalleryEl.dispatchEvent(
+                        new CustomEvent('itemselect', {
+                            detail: SELECT_EVENT_DETAIL
+                        })
+                    );
+                })
+                .then(() => {
+                    const buttonEl = element.shadowRoot.querySelectorAll(
+                        'lightning-button'
+                    );
+                    buttonEl[1].click();
+                })
+                .then(() => {
+                    expect(handler).toBeCalled();
+                    expect(element.popTabOnFinish).toBeTruthy();
                 });
-
-                element.market = MARKET_ID;
-                document.body.appendChild(element);
-
-                // listen to flow navigate event
-                const handler = jest.fn();
-                element.addEventListener(FlowNavigationNextEventName, handler);
-
-                // Emit data from @wire
-                getRelatedSpacesAdapter.emit(mockSpacesList);
-
-                return Promise.resolve()
-                    .then(() => {
-                        const imageGalleryEl = element.shadowRoot.querySelector(
-                            'c-image-gallery'
-                        );
-                        imageGalleryEl.dispatchEvent(
-                            new CustomEvent('itemselect', {
-                                detail: SELECT_EVENT_DETAIL
-                            })
-                        );
-                    })
-                    .then(() => {
-                        const buttonEl = element.shadowRoot.querySelectorAll(
-                            'lightning-button'
-                        );
-                        buttonEl[0].click();
-                    })
-                    .then(() => {
-                        expect(handler).toBeCalled();
-                        expect(element.popTabOnFinish).toBeFalsy();
-                    });
-            });
-
-            it('clicking add space and go to reservation triggers flow navigation event with popTabOnFinish set to true', () => {
-                const MARKET_ID = '100000';
-
-                const element = createElement('c-space-design-form', {
-                    is: SpaceDesignForm
-                });
-
-                element.market = MARKET_ID;
-                document.body.appendChild(element);
-
-                // listen to flow navigate event
-                const handler = jest.fn();
-                element.addEventListener(FlowNavigationNextEventName, handler);
-
-                // Emit data from @wire
-                getRelatedSpacesAdapter.emit(mockSpacesList);
-
-                return Promise.resolve()
-                    .then(() => {
-                        const imageGalleryEl = element.shadowRoot.querySelector(
-                            'c-image-gallery'
-                        );
-                        imageGalleryEl.dispatchEvent(
-                            new CustomEvent('itemselect', {
-                                detail: SELECT_EVENT_DETAIL
-                            })
-                        );
-                    })
-                    .then(() => {
-                        const buttonEl = element.shadowRoot.querySelectorAll(
-                            'lightning-button'
-                        );
-                        buttonEl[1].click();
-                    })
-                    .then(() => {
-                        expect(handler).toBeCalled();
-                        expect(element.popTabOnFinish).toBeTruthy();
-                    });
-            });
         });
     });
 });
