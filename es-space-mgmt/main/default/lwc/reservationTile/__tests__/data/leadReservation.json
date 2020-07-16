@@ -14,5 +14,5 @@
         "End_Date__c": "12/30/2021",
         "Total_Number_of_Guests__c": 20
     },
-    "muted": false
+    "muted": true
 }

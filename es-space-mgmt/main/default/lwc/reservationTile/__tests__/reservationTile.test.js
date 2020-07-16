@@ -13,7 +13,7 @@ describe('c-reservation-tile', () => {
         }
     });
 
-    it('renders reservationTile for Lead', () => {
+    it('renders c-reservation-tile for Lead', () => {
         const element = createElement('c-reservation-tile', {
             is: ReservationTile
         });
@@ -22,24 +22,23 @@ describe('c-reservation-tile', () => {
 
         return Promise.resolve().then(() => {
             // check for div class
-            const divElement = element.shadowRoot.querySelector('div.pointer');
-            expect(divElement.className).toBe('pointer');
+            const divElement = element.shadowRoot.querySelector('div');
+            expect(divElement).not.toBeNull();
 
             // check for paragraph text nodes
             const paragraphElements = element.shadowRoot.querySelectorAll('p');
             expect(paragraphElements[0].textContent).toBe(
-                'Customer: ' + RESERVATION_LEAD.record.Lead__r.Name
+                `Customer: ${RESERVATION_LEAD.record.Lead__r.Name}`
             );
             // check for status text nodes
             expect(paragraphElements[1].textContent).toBe(
-                'Status: ' + RESERVATION_LEAD.record.Status__c
+                `Status: ${RESERVATION_LEAD.record.Status__c}`
             );
             expect(paragraphElements[2].textContent).toBe(
-                'Market: ' + RESERVATION_LEAD.record.Market__r.Name
+                `Market: ${RESERVATION_LEAD.record.Market__r.Name}`
             );
             expect(paragraphElements[5].textContent).toBe(
-                'Total Guests: ' +
-                    RESERVATION_LEAD.record.Total_Number_of_Guests__c
+                `Total Guests: ${RESERVATION_LEAD.record.Total_Number_of_Guests__c}`
             );
             // check value of formatted date elements
             const datetimeElements = element.shadowRoot.querySelectorAll(
@@ -63,23 +62,23 @@ describe('c-reservation-tile', () => {
 
         return Promise.resolve().then(() => {
             // check for div class
-            const divElement = element.shadowRoot.querySelector('div.pointer');
+            const divElement = element.shadowRoot.querySelector('div');
+            expect(divElement).not.toBeNull();
             expect(divElement.className).toBe('pointer');
 
             // check for paragraph text nodes
             const paragraphElements = element.shadowRoot.querySelectorAll('p');
             expect(paragraphElements[0].textContent).toBe(
-                'Customer: ' + RESERVATION_CONTACT.record.Contact__r.Name
+                `Customer: ${RESERVATION_CONTACT.record.Contact__r.Name}`
             );
             expect(paragraphElements[1].textContent).toBe(
-                'Status: ' + RESERVATION_CONTACT.record.Status__c
+                `Status: ${RESERVATION_CONTACT.record.Status__c}`
             );
             expect(paragraphElements[2].textContent).toBe(
-                'Market: ' + RESERVATION_CONTACT.record.Market__r.Name
+                `Market: ${RESERVATION_CONTACT.record.Market__r.Name}`
             );
             expect(paragraphElements[5].textContent).toBe(
-                'Total Guests: ' +
-                    RESERVATION_CONTACT.record.Total_Number_of_Guests__c
+                `Total Guests: ${RESERVATION_CONTACT.record.Total_Number_of_Guests__c}`
             );
             // check value of formatted date elements
             const datetimeElements = element.shadowRoot.querySelectorAll(
@@ -94,7 +93,7 @@ describe('c-reservation-tile', () => {
         });
     });
 
-    it('fires a reservationselect', () => {
+    it('fires a reservationselect for contact', () => {
         const element = createElement('c-reservation-tile', {
             is: ReservationTile
         });
@@ -104,10 +103,8 @@ describe('c-reservation-tile', () => {
         // listen to reservationselect event
         const handler = jest.fn();
         element.addEventListener('reservationselect', handler);
-        // check for div class
-        const divElement = element.shadowRoot.querySelector('div.pointer');
-        expect(divElement.className).toBe('pointer');
-        divElement.click();
+        // click on div element
+        element.shadowRoot.querySelector('div').click();
 
         return Promise.resolve().then(() => {
             expect(handler).toHaveBeenCalled();
@@ -121,5 +118,43 @@ describe('c-reservation-tile', () => {
                 RESERVATION_CONTACT.record.Contact__r.Name
             );
         });
+    });
+
+    it('fires a reservationselect for lead', () => {
+        const element = createElement('c-reservation-tile', {
+            is: ReservationTile
+        });
+        element.reservation = RESERVATION_LEAD;
+        document.body.appendChild(element);
+
+        // listen to reservationselect event
+        const handler = jest.fn();
+        element.addEventListener('reservationselect', handler);
+        // click on div element
+        element.shadowRoot.querySelector('div').click();
+
+        return Promise.resolve().then(() => {
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.reservationId).toBe(
+                RESERVATION_LEAD.record.Id
+            );
+            expect(handler.mock.calls[0][0].detail.marketId).toBe(
+                RESERVATION_LEAD.record.Market__c
+            );
+            expect(handler.mock.calls[0][0].detail.customerName).toBe(
+                RESERVATION_LEAD.record.Lead__r.Name
+            );
+        });
+    });
+
+    it('validates cssClass on reservation mute', () => {
+        const element = createElement('c-reservation-tile', {
+            is: ReservationTile
+        });
+        element.reservation = RESERVATION_LEAD;
+        document.body.appendChild(element);
+        // check for div class
+        const divElement = element.shadowRoot.querySelector('div');
+        expect(divElement.className).toBe('mute pointer');
     });
 });
