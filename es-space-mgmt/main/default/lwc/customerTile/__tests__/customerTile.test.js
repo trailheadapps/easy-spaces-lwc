@@ -1,5 +1,7 @@
 import { createElement } from 'lwc';
 import CustomerTile from 'c/customerTile';
+// imports the Salesforce Base URL from the mock implementation of lightning/navigation in jest-mocks
+import { SalesforceBaseUrl } from 'lightning/navigation';
 
 const CUSTOMER_DETAILS = {
     name: 'Test 1',
@@ -57,6 +59,9 @@ describe('c-customer-tile', () => {
 
         const iconElement = element.shadowRoot.querySelector('lightning-icon');
         expect(iconElement.iconName).toBe(`standard:${lowerCaseObjectName}`);
+        expect(iconElement.alternativeText).toBe(
+            `Navigate to ${SOBJECT_TYPE} record detail for ${CUSTOMER_DETAILS.name}`
+        );
     });
 
     it('clicking the tile fires the customerselect custom event', () => {
@@ -103,9 +108,7 @@ describe('c-customer-tile', () => {
             expect(linkEl.getAttribute('alt')).toBe(
                 `Navigate to ${SOBJECT_TYPE} record detail for ${CUSTOMER_DETAILS.name}`
             );
-            expect(linkEl.href).toBe(
-                `https://mydomain.my.salesforce.com/${CUSTOMER_DETAILS.Id}`
-            );
+            expect(linkEl.href).toBe(SalesforceBaseUrl + CUSTOMER_DETAILS.Id);
         });
     });
 });

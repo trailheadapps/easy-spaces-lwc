@@ -9,6 +9,9 @@ let _navigatePageReference, _generatePageReference, _replace;
 
 const Navigate = Symbol('Navigate');
 const GenerateUrl = Symbol('GenerateUrl');
+
+export const SalesforceBaseUrl = 'https://mydomain.my.salesforce.com/';
+
 export const NavigationMixin = (Base) => {
     return class extends Base {
         [Navigate](pageReference, replace) {
@@ -18,9 +21,7 @@ export const NavigationMixin = (Base) => {
         [GenerateUrl](pageReference) {
             _generatePageReference = pageReference;
             return new Promise((resolve) =>
-                resolve(
-                    `https://mydomain.my.salesforce.com/${pageReference.attributes.recordId}`
-                )
+                resolve(SalesforceBaseUrl + pageReference.attributes.recordId)
             );
         }
     };
