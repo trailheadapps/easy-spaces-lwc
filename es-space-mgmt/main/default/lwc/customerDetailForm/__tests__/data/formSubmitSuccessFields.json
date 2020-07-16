@@ -1,0 +1,44 @@
+{
+    "fields": {
+        "AccountId": {
+            "displayValue": null,
+            "value": "0010w00000ApfGIAAZ"
+        },
+        "Email": {
+            "displayValue": null,
+            "value": "maya.belle@cafepress.com"
+        },
+        "FirstName": {
+            "displayValue": null,
+            "value": "Maya"
+        },
+        "LastName": {
+            "displayValue": null,
+            "value": "Obelle"
+        },
+        "MailingCity": {
+            "displayValue": null,
+            "value": "New York"
+        },
+        "MailingCountry": {
+            "displayValue": null,
+            "value": "US"
+        },
+        "MailingPostalCode": {
+            "displayValue": null,
+            "value": "11215"
+        },
+        "MailingState": {
+            "displayValue": null,
+            "value": "NY"
+        },
+        "MailingStreet": {
+            "displayValue": null,
+            "value": "289 Boyd Center"
+        },
+        "MobilePhone": {
+            "displayValue": null,
+            "value": "+1 (520) 547-2228"
+        }
+    }
+}
