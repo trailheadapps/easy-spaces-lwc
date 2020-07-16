@@ -16,6 +16,8 @@ const mockMarketsByStateNoRecords = require('./data/getMarketsByStateNoRecords.j
 const CITY = 'San Francisco';
 const STATE = 'CA';
 const START_DATE = '1/1/2020';
+const NO_OF_PEOPLE = 50;
+const NO_OF_DAYS = 15;
 
 const CITY_OPTIONS = [
     { value: '0031700000pJRRSAA4', label: 'San Francisco' },
@@ -32,13 +34,30 @@ describe('c-reservation-detail-form', () => {
         jest.clearAllMocks();
     });
 
-    it('shows the error panel element when the Apex wire adapter getMarketsByState is invoked', () => {
+    // creates c-reservation-detail-form elements and appends to DOM.
+    function createReservationDetailElement() {
+        const element = createElement('c-reservation-detail-form', {
+            is: ReservationDetailForm
+        });
+        element.state = STATE;
+        element.city = CITY;
+        element.people = NO_OF_PEOPLE;
+        element.startdate = START_DATE;
+        element.totaldays = NO_OF_DAYS;
+        document.body.appendChild(element);
+        return element;
+    }
+    it('shows the error panel element when the Apex wire adapter getMarketsByState returns an error', () => {
+        const ERROR_MESSAGE = 'An error occurred';
+        const FRIENDLY_ERROR_MESSAGE =
+            'There was an issue loading related market data.';
+
         const element = createElement('c-reservation-detail-form', {
             is: ReservationDetailForm
         });
         document.body.appendChild(element);
         // Emit error from @wire
-        getMarketsByStateAdapter.error();
+        getMarketsByStateAdapter.error(ERROR_MESSAGE);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -48,22 +67,13 @@ describe('c-reservation-detail-form', () => {
                 'c-error-panel'
             );
             expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.friendlyMessage).toBe(
-                'There was an issue loading related market data.'
-            );
+            expect(errorPanelEl.friendlyMessage).toBe(FRIENDLY_ERROR_MESSAGE);
+            expect(errorPanelEl.errors.body).toBe(ERROR_MESSAGE);
         });
     });
 
-    it('getMarketsByState @wire data', () => {
-        const element = createElement('c-reservation-detail-form', {
-            is: ReservationDetailForm
-        });
-        element.state = STATE;
-        element.city = CITY;
-        element.people = 50;
-        element.startdate = START_DATE;
-        element.totaldays = 15;
-        document.body.appendChild(element);
+    it('calls getMarketsByState wire with the right parameters', () => {
+        const element = createReservationDetailElement();
         // Emit mock response from @wire
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
@@ -82,9 +92,6 @@ describe('c-reservation-detail-form', () => {
     });
 
     it('renders template with values passed via api after getMarketsByState wire call', () => {
-        const element = createElement('c-reservation-detail-form', {
-            is: ReservationDetailForm
-        });
         const DATE_RANGES = [
             { label: '1 Day', value: '1' },
             { label: '7 Days', value: '7' },
@@ -92,12 +99,10 @@ describe('c-reservation-detail-form', () => {
             { label: '60 Days', value: '60' },
             { label: 'More than 60 Days', value: '61' }
         ];
-        element.state = STATE;
-        element.city = CITY;
-        element.people = 50;
-        element.startdate = START_DATE;
-        element.totaldays = 15;
-        document.body.appendChild(element);
+        const CHOOSE_MARKET_PLACEHOLDER = 'Choose a market';
+
+        const element = createReservationDetailElement();
+
         // Emit mock response from @wire
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
@@ -120,30 +125,32 @@ describe('c-reservation-detail-form', () => {
             const lighntingRadioGroupEl = element.shadowRoot.querySelector(
                 'lightning-radio-group'
             );
+
             expect(lighntingLayoutEl).not.toBeNull();
+
             expect(lighntingComboBoxEl).not.toBeNull();
             expect(lighntingComboBoxEl.options).toStrictEqual(CITY_OPTIONS);
-            expect(lighntingComboBoxEl.placeholder).toBe('Choose a market');
+            expect(lighntingComboBoxEl.placeholder).toBe(
+                CHOOSE_MARKET_PLACEHOLDER
+            );
+
             expect(lighntingSliderEl).not.toBeNull();
+            expect(lighntingSliderEl.value).toBe(NO_OF_PEOPLE);
+
             expect(lighntingInputEl).not.toBeNull();
+            expect(lighntingInputEl.value).toBe(START_DATE);
+
             expect(lighntingRadioGroupEl).not.toBeNull();
             expect(lighntingRadioGroupEl.options).toMatchObject(DATE_RANGES);
         });
     });
 
-    it('getMarketsByState @wire return no data', () => {
-        const element = createElement('c-reservation-detail-form', {
-            is: ReservationDetailForm
-        });
-        element.state = STATE;
-        element.city = CITY;
-        element.people = 50;
-        element.startdate = START_DATE;
-        element.totaldays = 15;
-        document.body.appendChild(element);
+    it('renders no city when getMarketsByState returns 0 rows', () => {
+        const PLACEHOLDER_TEXT = 'No markets found';
+        const element = createReservationDetailElement();
+
         // Emit mock response with 0 rows
         getMarketsByStateAdapter.emit(mockMarketsByStateNoRecords);
-
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
@@ -153,20 +160,14 @@ describe('c-reservation-detail-form', () => {
             );
             expect(lighntingComboBoxEl).not.toBeNull();
             expect(lighntingComboBoxEl.options).toStrictEqual([]);
-            expect(lighntingComboBoxEl.placeholder).toBe('No markets found');
+            expect(lighntingComboBoxEl.placeholder).toBe(PLACEHOLDER_TEXT);
         });
     });
 
-    it('change input handlers', () => {
-        const element = createElement('c-reservation-detail-form', {
-            is: ReservationDetailForm
-        });
-        element.state = STATE;
-        element.city = CITY;
-        element.people = 50;
-        element.startdate = START_DATE;
-        element.totaldays = 15;
-        document.body.appendChild(element);
+    it('handles change in city choice by combobox element', () => {
+        const element = createReservationDetailElement();
+        const UPDATE_CITY_CHOICE = 'San Ramon';
+
         // Emit mock response
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
@@ -180,58 +181,89 @@ describe('c-reservation-detail-form', () => {
                 );
                 // Change city
                 const changeCity = new CustomEvent('change', {
-                    detail: { value: 'San Ramon' }
+                    detail: { value: UPDATE_CITY_CHOICE }
                 });
                 lighntingComboBoxEl.dispatchEvent(changeCity);
-
-                const lighntingSliderEl = element.shadowRoot.querySelector(
-                    'lightning-slider'
-                );
-                // change Number of people
-                const changeNoOfPeople = new CustomEvent('change', {
-                    detail: { value: 100 }
-                });
-                lighntingSliderEl.dispatchEvent(changeNoOfPeople);
-
-                const lighntingInputEl = element.shadowRoot.querySelector(
-                    'lightning-input'
-                );
-                //change Start Date
-                const changeStartDate = new CustomEvent('change', {
-                    detail: { value: '2/14/2020' }
-                });
-                lighntingInputEl.dispatchEvent(changeStartDate);
-
-                const lighntingRadioGroupEl = element.shadowRoot.querySelector(
-                    'lightning-radio-group'
-                );
-                //change Date Range
-                const changeDateRange = new CustomEvent('change', {
-                    detail: { value: 7 }
-                });
-                lighntingRadioGroupEl.dispatchEvent(changeDateRange);
             })
             .then(() => {
-                expect(element.people).toBe(100);
                 const lighntingComboBoxEl = element.shadowRoot.querySelector(
                     'lightning-combobox'
                 );
-                expect(lighntingComboBoxEl.value).toBe('San Ramon');
-                expect(element.startdate).toBe('2/14/2020');
-                expect(element.totaldays).toBe(7);
+                expect(lighntingComboBoxEl.value).toBe(UPDATE_CITY_CHOICE);
             });
     });
 
-    it('send a draft reservation CustomEvent via button click', () => {
-        const element = createElement('c-reservation-detail-form', {
-            is: ReservationDetailForm
+    it('handles change in number of people by slider element', () => {
+        const element = createReservationDetailElement();
+        const UPDATE_NUMBER_OF_PEOPLE = 100; // change from 50 to 100
+
+        // Emit mock response
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const lighntingSliderEl = element.shadowRoot.querySelector(
+                'lightning-slider'
+            );
+            // change Number of people
+            const changeNoOfPeople = new CustomEvent('change', {
+                detail: { value: UPDATE_NUMBER_OF_PEOPLE }
+            });
+            lighntingSliderEl.dispatchEvent(changeNoOfPeople);
+            expect(element.people).toBe(UPDATE_NUMBER_OF_PEOPLE);
         });
-        element.state = STATE;
-        element.city = CITY;
-        element.people = 50;
-        element.startdate = START_DATE;
-        element.totaldays = 15;
-        document.body.appendChild(element);
+    });
+
+    it('handles change in start date by input element', () => {
+        const element = createReservationDetailElement();
+        const UPDATE_START_DATE = '2/14/2020';
+
+        // Emit mock response
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const lighntingInputEl = element.shadowRoot.querySelector(
+                'lightning-input'
+            );
+            //change Start Date
+            const changeStartDate = new CustomEvent('change', {
+                detail: { value: UPDATE_START_DATE }
+            });
+            lighntingInputEl.dispatchEvent(changeStartDate);
+            expect(element.startdate).toBe(UPDATE_START_DATE);
+        });
+    });
+
+    it('handles change in number of days by radio-group element', () => {
+        const element = createReservationDetailElement();
+        const UPDATE_NO_OF_DAYS = 7; // from 15 to 7
+
+        // Emit mock response
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            const lighntingRadioGroupEl = element.shadowRoot.querySelector(
+                'lightning-radio-group'
+            );
+            //change Date Range
+            const changeDateRange = new CustomEvent('change', {
+                detail: { value: UPDATE_NO_OF_DAYS }
+            });
+            lighntingRadioGroupEl.dispatchEvent(changeDateRange);
+            expect(element.totaldays).toBe(7);
+        });
+    });
+
+    it('sends a draft reservation event via button click', () => {
+        const element = createReservationDetailElement();
         // Emit mock response with 0 rows
         getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
 
@@ -242,21 +274,15 @@ describe('c-reservation-detail-form', () => {
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
-        return Promise.resolve()
-            .then(() => {
-                // verify combobox attributes are populated correctly
-                const button = element.shadowRoot.querySelector(
-                    'lightning-button'
-                );
-                button.click();
-            })
-            .then(() => {
-                expect(handler).toHaveBeenCalled();
-                expect(handler.mock.calls[0][0].detail.numberOfPeople).toBe(50);
-                expect(handler.mock.calls[0][0].detail.startDate).toBe(
-                    START_DATE
-                );
-                expect(handler.mock.calls[0][0].detail.endDays).toBe(15);
-            });
+        return Promise.resolve().then(() => {
+            // verify combobox attributes are populated correctly
+            element.shadowRoot.querySelector('lightning-button').click();
+            expect(handler).toHaveBeenCalled();
+            expect(handler.mock.calls[0][0].detail.numberOfPeople).toBe(
+                NO_OF_PEOPLE
+            );
+            expect(handler.mock.calls[0][0].detail.startDate).toBe(START_DATE);
+            expect(handler.mock.calls[0][0].detail.endDays).toBe(NO_OF_DAYS);
+        });
     });
 });
