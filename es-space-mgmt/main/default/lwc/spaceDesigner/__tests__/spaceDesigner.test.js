@@ -86,6 +86,34 @@ describe('c-space-designer', () => {
         });
     });
 
+    it('Does not dispatch reservchoice event when a flow is in progress', () => {
+        // Create element
+        const element = createElement('c-space-designer', {
+            is: SpaceDesigner
+        });
+        document.body.appendChild(element);
+
+        // Mock handler for child event
+        const handler = jest.fn();
+        element.addEventListener('reservchoice', handler);
+
+        // Simulate pulishing a message using TILE_SELECTION_MC message channel
+        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+
+        return Promise.resolve()
+            .then(() => {
+                expect(handler).toHaveBeenCalledTimes(1);
+                publish(
+                    messageContextWireAdapter,
+                    TILE_SELECTION_MC,
+                    MESSAGE_PAYLOAD
+                );
+            })
+            .then(() => {
+                expect(handler).toHaveBeenCalledTimes(1);
+            });
+    });
+
     it('Does not fire a toast message when a flow interview is NOT in progress', () => {
         const element = createElement('c-space-designer', {
             is: SpaceDesigner
@@ -143,5 +171,39 @@ describe('c-space-designer', () => {
                     TOAST_DETAIL
                 );
             });
+    });
+
+    it('Nothing happens when message tileType is not reservation', () => {
+        const CUSTOMER_MESSAGE_PAYLOAD = {
+            tileType: 'customer',
+            properties: {
+                recordId: '200000'
+            }
+        };
+
+        const element = createElement('c-space-designer', {
+            is: SpaceDesigner
+        });
+        document.body.appendChild(element);
+
+        // Mock handler for toast event
+        const toastHandler = jest.fn();
+        element.addEventListener(ShowToastEventName, toastHandler);
+
+        // Mock handler for child event
+        const reservChoiceHandler = jest.fn();
+        element.addEventListener('reservchoice', reservChoiceHandler);
+
+        // Simulate pulishing a message using TILE_SELECTION_MC message channel
+        publish(
+            messageContextWireAdapter,
+            TILE_SELECTION_MC,
+            CUSTOMER_MESSAGE_PAYLOAD
+        );
+
+        return Promise.resolve().then(() => {
+            expect(toastHandler).not.toHaveBeenCalled();
+            expect(reservChoiceHandler).not.toHaveBeenCalled();
+        });
     });
 });
