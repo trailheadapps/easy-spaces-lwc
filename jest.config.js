@@ -10,6 +10,10 @@ module.exports = {
         '^lightning/flowSupport$':
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/flowSupport',
         '^lightning/messageService$':
-            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService'
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService',
+        '^lightning/flowSupport$':
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/flowSupport',
+        '^lightning/platformShowToastEvent$':
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/platformShowToastEvent'
     }
 };
