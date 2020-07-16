@@ -52,7 +52,7 @@ describe('c-space-design-form', () => {
             });
         });
 
-        it('shows a error panel when getRelatedSpaces wire is not successfull', () => {
+        it('shows an error panel when getRelatedSpaces wire is not successful', () => {
             const WIRE_ERROR = 'Something bad happened';
 
             const element = createElement('c-space-design-form', {
@@ -77,7 +77,7 @@ describe('c-space-design-form', () => {
             });
         });
 
-        it('shows a list of spaces if wire is successfull', () => {
+        it('shows a list of spaces if wire is successful', () => {
             const element = createElement('c-space-design-form', {
                 is: SpaceDesignForm
             });
@@ -228,7 +228,7 @@ describe('c-space-design-form', () => {
             });
         });
 
-        it('buttons are enabled when no space is selected', () => {
+        it('buttons are enabled when a space is selected', () => {
             const element = createElement('c-space-design-form', {
                 is: SpaceDesignForm
             });
