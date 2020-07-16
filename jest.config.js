@@ -6,6 +6,8 @@ module.exports = {
         '^lightning/navigation$':
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/navigation',
         '^lightning/messageService$':
-            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService'
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService',
+        '^lightning/platformShowToastEvent$':
+            '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/platformShowToastEvent'
     }
 };
