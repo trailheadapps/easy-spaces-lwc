@@ -98,7 +98,7 @@ describe('c-reservation-helper', () => {
             variant: 'error'
         };
 
-        const element = createElement('c-space-designer', {
+        const element = createElement('c-reservation-helper', {
             is: ReservationHelper
         });
         document.body.appendChild(element);
@@ -128,5 +128,88 @@ describe('c-reservation-helper', () => {
                     TOAST_DETAIL
                 );
             });
+    });
+
+    it('does not dispatch reservchoice event when a flow is in progress', () => {
+        // Create element
+        const element = createElement('c-reservation-helper', {
+            is: ReservationHelper
+        });
+        document.body.appendChild(element);
+
+        // Mock handler for child event
+        const handler = jest.fn();
+        element.addEventListener('customerchoice', handler);
+
+        // Simulate pulishing a message using TILE_SELECTION_MC message channel
+        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+
+        return Promise.resolve()
+            .then(() => {
+                expect(handler).toHaveBeenCalledTimes(1);
+                publish(
+                    messageContextWireAdapter,
+                    TILE_SELECTION_MC,
+                    MESSAGE_PAYLOAD
+                );
+            })
+            .then(() => {
+                expect(handler).toHaveBeenCalledTimes(1);
+            });
+    });
+
+    it('does not fire a toast message when a flow interview is NOT in progress', () => {
+        const element = createElement('c-reservation-helper', {
+            is: ReservationHelper
+        });
+        document.body.appendChild(element);
+
+        // Mock handler for toast event
+        const handler = jest.fn();
+        // Add event listener to catch toast event
+        element.addEventListener(ShowToastEventName, handler);
+
+        // Simulate pulishing a message using TILE_SELECTION_MC message channel
+        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+
+        return Promise.resolve().then(() => {
+            expect(handler).not.toHaveBeenCalled();
+        });
+    });
+
+    it('does not fire events when message tileType is not customer', () => {
+        const CUSTOMER_MESSAGE_PAYLOAD = {
+            tileType: 'reservation',
+            properties: {
+                reservationId: 'a019A000005fpB7QAI',
+                marketId: 'a009A000001mrfYQAQ',
+                customerName: 'Test contact'
+            }
+        };
+
+        const element = createElement('c-reservation-helper', {
+            is: ReservationHelper
+        });
+        document.body.appendChild(element);
+
+        // Mock handler for toast event
+        const toastHandler = jest.fn();
+        element.addEventListener(ShowToastEventName, toastHandler);
+
+        // Mock handler for child event
+        const customerChoiceHandler = jest.fn();
+        element.addEventListener('customerchoice', customerChoiceHandler);
+
+        // Simulate pulishing a message using TILE_SELECTION_MC message channel
+        publish(
+            messageContextWireAdapter,
+            TILE_SELECTION_MC,
+            CUSTOMER_MESSAGE_PAYLOAD
+        );
+
+        return Promise.resolve().then(() => {
+            expect(toastHandler).not.toHaveBeenCalled();
+            expect(customerChoiceHandler).not.toHaveBeenCalled();
+        });
     });
 });
