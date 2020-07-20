@@ -1,6 +1,6 @@
 # Easy Spaces Lightning Web Components Sample Application
 
-[![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+CI+%28scratch+org%29%22) [![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20(packaging)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+%28packaging%29%22)
+[![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+CI+%28scratch+org%29%22) [![Github Workflow](<https://github.com/trailheadapps/easy-spaces-lwc/workflows/Salesforce%20DX%20(packaging)/badge.svg?branch=develop>)](https://github.com/trailheadapps/easy-spaces-lwc/actions?query=workflow%3A%22Salesforce+DX+%28packaging%29%22) [![codecov](https://codecov.io/gh/trailheadapps/easy-spaces-lwc/branch/develop/graph/badge.svg)](https://codecov.io/gh/trailheadapps/easy-spaces-lwc)
 
 > IMPORTANT: This is the new Lightning Web Components version of the Easy Spaces sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/easy-spaces).
 

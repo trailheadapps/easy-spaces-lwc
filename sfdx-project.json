@@ -61,7 +61,7 @@
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "48.0",
+    "sourceApiVersion": "49.0",
     "packageAliases": {
         "ESObjects": "0HoB0000000GmhzKAC",
         "ESBaseCodeLWC": "0HoB0000000GmhpKAC",

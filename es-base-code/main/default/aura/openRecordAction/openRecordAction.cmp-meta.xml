@@ -3,7 +3,6 @@
     xmlns="urn:metadata.tooling.soap.sforce.com"
     fqn="openRecordAction"
 >
-    <apiVersion>48.0</apiVersion>
-    <description
-    >An Aura service component that opens a record action</description>
+    <apiVersion>49.0</apiVersion>
+    <description>A Lightning Component Bundle</description>
 </AuraDefinitionBundle>

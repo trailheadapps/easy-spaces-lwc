@@ -9,12 +9,6 @@ on:
         paths-ignore:
             - 'sfdx-project.json'
             - 'README.md'
-    pull_request:
-        types: [opened, edited, synchronize, reopened]
-        branches-ignore:
-            - prerelease/spring[2-9][0-9]
-            - prerelease/summer[2-9][0-9]
-            - prerelease/winter[2-9][0-9]
 
 # Jobs to be executed
 jobs:
@@ -44,9 +38,23 @@ jobs:
             - name: 'Code formatting verification with Prettier'
               run: npm run prettier:verify
 
-            # ESlint
+            # Lint LWC
             - name: 'Lint Lightning Web Components'
               run: npm run lint:lwc
+
+            # Lint Aura
+            - name: 'Lint Aura components'
+              run: npm run lint:aura
+
+            # Unit tests
+            - name: 'Unit test Lightning Web Components'
+              run: npm run test:unit:coverage
+
+            # Upload code coverage data
+            - name: 'Upload code coverage for LWC to Codecov.io'
+              uses: codecov/codecov-action@v1
+              with:
+                  flags: LWC
 
     scratch-org-test:
         runs-on: ubuntu-latest
@@ -72,10 +80,6 @@ jobs:
             - name: 'Authenticate Dev Hub'
               run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
-            # Lint Aura components
-            - name: 'Lint Aura components'
-              run: 'sfdx force:lightning:lint force-app/main/default/aura --exit'
-
             # Create scratch org
             - name: 'Create scratch org'
               run: 'sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
@@ -99,6 +103,12 @@ jobs:
             # Run Apex tests in scratch org
             - name: 'Run Apex tests'
               run: 'sfdx force:apex:test:run -c -r human -d ./tests/apex -w 20'
+
+            # Upload code coverage data
+            - name: 'Upload code coverage for Apex to Codecov.io'
+              uses: codecov/codecov-action@v1
+              with:
+                  flags: Apex
 
             # Housekeeping
             - name: 'Delete scratch org'

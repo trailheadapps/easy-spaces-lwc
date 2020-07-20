@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>TileSelection</masterLabel>
+    <isExposed>true</isExposed>
+    <description
+    >Message Channel to pass the details of a selected tile</description>
+    <lightningMessageFields>
+        <fieldName>tileType</fieldName>
+        <description
+        >This is the type of tile that has been selected</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>properties</fieldName>
+        <description
+        >An object holding the properties and data from the selected tile</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
