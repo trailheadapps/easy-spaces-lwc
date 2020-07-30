@@ -3,8 +3,6 @@
     <fullName>Customer_City__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
-    <inlineHelpText
-    >Enter the API name of the field that holds the customer&apos;s city information.</inlineHelpText>
     <label>Customer City</label>
     <metadataRelationshipControllingField
     >Customer_Fields__mdt.Sobject_Type__c</metadataRelationshipControllingField>

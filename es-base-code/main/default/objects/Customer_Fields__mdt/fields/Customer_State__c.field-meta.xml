@@ -3,8 +3,6 @@
     <fullName>Customer_State__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
-    <inlineHelpText
-    >Enter the API name of the field that holds the customer&apos;s state information.</inlineHelpText>
     <label>Customer State</label>
     <metadataRelationshipControllingField
     >Customer_Fields__mdt.Sobject_Type__c</metadataRelationshipControllingField>
