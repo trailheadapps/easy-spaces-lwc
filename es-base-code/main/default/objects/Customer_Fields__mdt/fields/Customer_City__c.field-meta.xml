@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Customer_City__c</fullName>
-    <description
-    >Used because Address compound fields aren't yet available as independent fields in entity relationships.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
-    <inlineHelpText
-    >Enter the API name of the field that holds the customer's city information.</inlineHelpText>
+    <inlineHelpText>Enter the API name of the field that holds the customer&apos;s city information.</inlineHelpText>
     <label>Customer City</label>
-    <length>55</length>
+    <metadataRelationshipControllingField>Customer_Fields__mdt.Sobject_Type__c</metadataRelationshipControllingField>
+    <referenceTo>EntityParticle</referenceTo>
+    <relationshipLabel>Customer_Fields</relationshipLabel>
+    <relationshipName>Customer_Fields</relationshipName>
     <required>false</required>
-    <type>Text</type>
+    <type>MetadataRelationship</type>
     <unique>false</unique>
 </CustomField>

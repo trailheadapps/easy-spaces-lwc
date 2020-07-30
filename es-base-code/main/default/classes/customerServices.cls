@@ -6,8 +6,8 @@ public inherited sharing class customerServices {
             SELECT
                 Customer_Name__r.QualifiedAPIName,
                 Customer_Email__r.QualifiedAPIName,
-                Customer_City__c,
-                Customer_State__c,
+                Customer_City__r.QualifiedAPIName,
+                Customer_State__r.QualifiedAPIName,
                 Customer_Status__r.QualifiedAPIName
             FROM Customer_Fields__mdt
             WHERE Sobject_Type__r.QualifiedAPIName = :objectType
@@ -16,8 +16,8 @@ public inherited sharing class customerServices {
             customer = new Customer(
                 c.Customer_Name__r.QualifiedAPIName,
                 c.Customer_Email__r.QualifiedAPIName,
-                c.Customer_City__c,
-                c.Customer_State__c,
+                c.Customer_City__r.QualifiedAPIName,
+                c.Customer_State__r.QualifiedAPIName,
                 '',
                 ''
             );
