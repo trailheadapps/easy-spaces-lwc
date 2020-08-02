@@ -71,6 +71,8 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <layoutColumns />
+        <layoutColumns />
+        <layoutColumns />
         <style>CustomLinks</style>
     </layoutSections>
     <showEmailCheckbox>false</showEmailCheckbox>
