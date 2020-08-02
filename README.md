@@ -99,13 +99,13 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QITbIAO) to install the **es-base-objects** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLjJIAW) to install the **es-base-objects** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QITlIAO) to install the **es-base-code** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLjOIAW) to install the **es-base-code** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QITqIAO) to install the **es-base-styles** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLjTIAW) to install the **es-base-styles** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QITvIAO) to install the **es-space-mgmt** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLjYIAW) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
 
