@@ -85,8 +85,8 @@ public class testDataFactory {
             s.Type__c = Math.mod(x, 2) == 0
                 ? 'Conversation Starter;Large Groups;Outdoor;Energizing;Scheduled Activity'
                 : (Math.mod(x, 3) == 0
-                        ? 'Individuals or Small Groups;Come-and-Go;Indoor;Relaxing;Quiet'
-                        : 'Scheduled Activity;Come-and-Go;Indoor;Outdoor;Large Groups;Relaxing;Conversation Starter');
+                      ? 'Individuals or Small Groups;Come-and-Go;Indoor;Relaxing;Quiet'
+                      : 'Scheduled Activity;Come-and-Go;Indoor;Outdoor;Large Groups;Relaxing;Conversation Starter');
             spaces.add(s);
         }
         return spaces;
