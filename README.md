@@ -120,6 +120,20 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     sfdx force:auth:web:login -s -a mydevorg
     ```
 
+1. Assign EasySpacesObjects permission set by following below steps:
+
+    - Go to **Setup > Users > Permission Sets**.
+    - Click **EasySpacesObjects**.
+    - Click **Manage Assignments**.
+    - Check your user and click **Add Assigements**.
+
+1. Assign SpaceManagementApp permission set by following below steps:
+
+    - Go to **Setup > Users > Permission Sets**.
+    - Click **SpaceManagementApp**.
+    - Click **Manage Assignments**.
+    - Check your user and click **Add Assigements**.
+
 1. Import Lead data:
 
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
