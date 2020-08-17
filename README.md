@@ -107,11 +107,17 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLkbIAG) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
-1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
+1. From the command line, enter the following commands to clone this repository. You need to do this to get the metadata, code and files with sample data on your computer:
 
     ```
     git clone https://github.com/trailheadapps/easy-spaces-lwc
     cd easy-spaces-lwc
+    ```
+
+1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
+
+    ```
+    sfdx force:auth:web:login -s -a mydevorg
     ```
 
 1. Import Lead data:
