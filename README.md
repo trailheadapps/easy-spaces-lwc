@@ -114,12 +114,6 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     cd easy-spaces-lwc
     ```
 
-1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
-
-    ```
-    sfdx force:auth:web:login -s -a mydevorg
-    ```
-
 1. Assign EasySpacesObjects permission set by following below steps:
 
     - Go to **Setup > Users > Permission Sets**.
