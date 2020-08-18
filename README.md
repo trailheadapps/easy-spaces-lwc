@@ -107,12 +107,26 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000QLkbIAG) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
-1. From the command line, enter the following commands to clone this repository. You need to do this to get the files with sample data on your computer:
+1. From the command line, enter the following commands to clone this repository. You need to do this to get the metadata, code and files with sample data on your computer:
 
     ```
     git clone https://github.com/trailheadapps/easy-spaces-lwc
     cd easy-spaces-lwc
     ```
+
+1. Assign EasySpacesObjects permission set by following below steps:
+
+    - Go to **Setup > Users > Permission Sets**.
+    - Click **EasySpacesObjects**.
+    - Click **Manage Assignments**.
+    - Check your user and click **Add Assigements**.
+
+1. Assign SpaceManagementApp permission set by following below steps:
+
+    - Go to **Setup > Users > Permission Sets**.
+    - Click **SpaceManagementApp**.
+    - Click **Manage Assignments**.
+    - Check your user and click **Add Assigements**.
 
 1. Import Lead data:
 
