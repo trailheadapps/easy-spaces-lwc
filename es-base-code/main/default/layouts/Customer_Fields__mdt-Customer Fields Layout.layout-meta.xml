@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>Customer_State__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Customer_Draft_Status_Values__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
