@@ -78,4 +78,17 @@ describe('c-image-tile', () => {
                 expect(divElement.classList.contains('selected')).toBe(true);
             });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-image-tile', {
+            is: ImageTile
+        });
+
+        element.record = SPACE_RECORD;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

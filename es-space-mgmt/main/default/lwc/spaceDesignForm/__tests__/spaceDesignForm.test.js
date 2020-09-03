@@ -334,4 +334,16 @@ describe('c-space-design-form', () => {
                 });
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-space-design-form', {
+            is: SpaceDesignForm
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

@@ -88,4 +88,16 @@ describe('c-image-gallery', () => {
                 );
             });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-image-gallery', {
+            is: ImageGallery
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

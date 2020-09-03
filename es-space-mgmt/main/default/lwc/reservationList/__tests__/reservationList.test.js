@@ -280,4 +280,16 @@ describe('c-reservation-list', () => {
             );
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-reservation-list', {
+            is: ReservationList
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

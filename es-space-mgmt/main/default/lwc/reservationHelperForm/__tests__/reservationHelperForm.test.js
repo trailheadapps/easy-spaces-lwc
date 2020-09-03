@@ -112,4 +112,16 @@ describe('c-reservation-helper-form', () => {
             expect(element.requestedMarket).toBe(EVENTDETAILS.requestedMarket);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-reservation-helper-form', {
+            is: ReservationHelperForm
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

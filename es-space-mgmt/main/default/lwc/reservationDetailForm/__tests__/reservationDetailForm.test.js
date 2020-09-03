@@ -285,4 +285,16 @@ describe('c-reservation-detail-form', () => {
             expect(handler.mock.calls[0][0].detail.endDays).toBe(NO_OF_DAYS);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-reservation-detail-form', {
+            is: ReservationDetailForm
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

@@ -22,4 +22,17 @@ describe('c-pill', () => {
 
         expect(pill.textContent).toBe(MOCK_LABEL);
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-pill', {
+            is: Pill
+        });
+
+        element.label = MOCK_LABEL;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

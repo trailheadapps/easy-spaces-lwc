@@ -133,4 +133,16 @@ describe('c-related-spaces', () => {
                 );
             });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

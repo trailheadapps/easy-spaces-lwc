@@ -212,4 +212,16 @@ describe('c-reservation-helper', () => {
             expect(customerChoiceHandler).not.toHaveBeenCalled();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-reservation-helper', {
+            is: ReservationHelper
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

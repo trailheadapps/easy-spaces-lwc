@@ -11,5 +11,6 @@ module.exports = {
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/messageService',
         '^lightning/platformShowToastEvent$':
             '<rootDir>/es-space-mgmt/test/jest-mocks/lightning/platformShowToastEvent'
-    }
+    },
+    setupFilesAfterEnv: ['<rootDir>/jest-sa11y-setup.js']
 };

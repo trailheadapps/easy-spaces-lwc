@@ -171,4 +171,16 @@ describe('c-customer-list', () => {
             expect(refreshApex).toHaveBeenCalled();
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-customer-list', {
+            is: CustomerList
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });

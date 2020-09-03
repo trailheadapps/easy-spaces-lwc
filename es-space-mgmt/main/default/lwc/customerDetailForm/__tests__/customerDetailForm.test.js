@@ -143,4 +143,16 @@ describe('c-customer-detail-form', () => {
             );
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-customer-detail-form', {
+            is: CustomerDetailForm
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => {
+            expect(element).toBeAccessible();
+        });
+    });
 });
