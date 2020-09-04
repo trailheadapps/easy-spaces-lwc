@@ -5,54 +5,49 @@ public with sharing class reservationManagerController {
         String sObjectType
     ) {
         List<customerServices.Customer> customers = new List<customerServices.Customer>();
-        if (sObjectType == 'Lead') {
-            for (Lead l : [
-                SELECT Id, Email, Name, City, State, Status
-                FROM Lead
-                WHERE
-                    Status IN (
-                        'Open - Not Contacted',
-                        'New - Not Contacted',
-                        'New'
-                    )
-                WITH SECURITY_ENFORCED
-                LIMIT 5
-            ]) {
-                customerServices.Customer c = new customerServices.Customer(
-                    l.Name,
-                    l.Email,
-                    l.City,
-                    l.State,
-                    l.Status,
-                    l.Id
-                );
-                customers.add(c);
-            }
+        Customer_Fields__mdt c = [
+            SELECT
+                Customer_Name__r.QualifiedAPIName,
+                Customer_Email__r.QualifiedAPIName,
+                Customer_City__r.QualifiedAPIName,
+                Customer_State__r.QualifiedAPIName,
+                Customer_Status__r.QualifiedAPIName,
+                Customer_Draft_Status_Values__c
+            FROM Customer_Fields__mdt
+            WHERE Sobject_Type__r.QualifiedAPIName = :sObjectType
+            WITH SECURITY_ENFORCED
+            LIMIT 1
+        ];
+
+        List<String> draftStatus = new List<String>();
+        draftStatus = c.Customer_Draft_Status_Values__c.split(',');
+
+        String query = 'SELECT ';
+        query += c.Customer_Name__r.QualifiedAPIName + ', ';
+        query += c.Customer_Email__r.QualifiedAPIName + ', ';
+        query += c.Customer_City__r.QualifiedAPIName + ', ';
+        query += c.Customer_State__r.QualifiedAPIName + ', ';
+        query += c.Customer_Status__r.QualifiedAPIName + ', ';
+        query += 'Id';
+        query += ' FROM ' + sObjectType;
+        if (draftStatus.size() > 0) {
+            query +=
+                ' WHERE ' +
+                c.Customer_Status__r.QualifiedAPIName +
+                ' IN: draftStatus';
         }
-        if (sObjectType == 'Contact') {
-            for (Contact c : [
-                SELECT
-                    Id,
-                    Email,
-                    Name,
-                    MailingCity,
-                    MailingState,
-                    Reservation_Status__c
-                FROM Contact
-                WHERE Reservation_Status__c IN ('Not Started')
-                WITH SECURITY_ENFORCED
-                LIMIT 5
-            ]) {
-                customerServices.Customer cu = new customerServices.Customer(
-                    c.Name,
-                    c.Email,
-                    c.MailingCity,
-                    c.MailingState,
-                    c.Reservation_Status__c,
-                    c.Id
-                );
-                customers.add(cu);
-            }
+        query += ' WITH SECURITY_ENFORCED LIMIT 5';
+
+        for (Sobject sobj : Database.query(query)) {
+            customerServices.Customer customer = new customerServices.Customer(
+                (String) sobj.get(c.Customer_Name__r.QualifiedAPIName),
+                (String) sobj.get(c.Customer_Email__r.QualifiedAPIName),
+                (String) sobj.get(c.Customer_City__r.QualifiedAPIName),
+                (String) sobj.get(c.Customer_State__r.QualifiedAPIName),
+                (String) sobj.get(c.Customer_Status__r.QualifiedAPIName),
+                (String) sobj.get('Id')
+            );
+            customers.add(customer);
         }
         return customers;
     }

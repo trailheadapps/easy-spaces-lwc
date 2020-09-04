@@ -11,6 +11,10 @@
         <value xsi:type="xsd:string">MailingCity</value>
     </values>
     <values>
+        <field>Customer_Draft_Status_Values__c</field>
+        <value xsi:type="xsd:string">Not Started</value>
+    </values>
+    <values>
         <field>Customer_Email__c</field>
         <value xsi:type="xsd:string">Email</value>
     </values>
