@@ -23,21 +23,20 @@ public with sharing class reservationManagerController {
         draftStatus = c.Customer_Draft_Status_Values__c.split(',');
 
         String query = 'SELECT ';
-        query = query + c.Customer_Name__r.QualifiedAPIName + ', ';
-        query = query + c.Customer_Email__r.QualifiedAPIName + ', ';
-        query = query + c.Customer_City__r.QualifiedAPIName + ', ';
-        query = query + c.Customer_State__r.QualifiedAPIName + ', ';
-        query = query + c.Customer_Status__r.QualifiedAPIName + ', ';
-        query = query + 'Id';
-        query = query + ' FROM ' + sObjectType;
+        query += c.Customer_Name__r.QualifiedAPIName + ', ';
+        query += c.Customer_Email__r.QualifiedAPIName + ', ';
+        query += c.Customer_City__r.QualifiedAPIName + ', ';
+        query += c.Customer_State__r.QualifiedAPIName + ', ';
+        query += c.Customer_Status__r.QualifiedAPIName + ', ';
+        query += 'Id';
+        query += ' FROM ' + sObjectType;
         if (draftStatus.size() > 0) {
-            query =
-                query +
+            query +=
                 ' WHERE ' +
                 c.Customer_Status__r.QualifiedAPIName +
                 ' IN: draftStatus';
         }
-        query = query + ' WITH SECURITY_ENFORCED LIMIT 5';
+        query += ' WITH SECURITY_ENFORCED LIMIT 5';
 
         for (Sobject sobj : Database.query(query)) {
             customerServices.Customer customer = new customerServices.Customer(
