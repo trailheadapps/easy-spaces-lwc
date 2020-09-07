@@ -286,10 +286,48 @@ describe('c-reservation-detail-form', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when markets returned', () => {
+        const DATE_RANGES = [
+            { label: '1 Day', value: '1' },
+            { label: '7 Days', value: '7' },
+            { label: '30 Days', value: '30' },
+            { label: '60 Days', value: '60' },
+            { label: 'More than 60 Days', value: '61' }
+        ];
+        const CHOOSE_MARKET_PLACEHOLDER = 'Choose a market';
+
+        const element = createReservationDetailElement();
+
+        // Emit mock response from @wire
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when no markets returned', () => {
+        const PLACEHOLDER_TEXT = 'No markets found';
+        const element = createReservationDetailElement();
+
+        document.body.appendChild(element);
+
+        // Emit mock response with 0 rows
+        getMarketsByStateAdapter.emit(mockMarketsByStateNoRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when errors returned', () => {
+        const ERROR_MESSAGE = 'An error occurred';
+        const FRIENDLY_ERROR_MESSAGE =
+            'There was an issue loading related market data.';
+
         const element = createElement('c-reservation-detail-form', {
             is: ReservationDetailForm
         });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getMarketsByStateAdapter.error(ERROR_MESSAGE);
 
         document.body.appendChild(element);
 

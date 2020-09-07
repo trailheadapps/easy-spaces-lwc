@@ -206,14 +206,4 @@ describe('c-space-designer', () => {
             expect(reservChoiceHandler).not.toHaveBeenCalled();
         });
     });
-
-    it('is accessible', () => {
-        const element = createElement('c-space-designer', {
-            is: SpaceDesigner
-        });
-
-        document.body.appendChild(element);
-
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
-    });
 });

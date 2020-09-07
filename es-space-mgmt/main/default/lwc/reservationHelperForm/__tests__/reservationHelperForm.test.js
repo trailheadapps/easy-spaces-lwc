@@ -114,9 +114,16 @@ describe('c-reservation-helper-form', () => {
     });
 
     it('is accessible', () => {
+        const CUSTOMERID = '00Q5500000BFveDEAT';
+        const OBJECTTYPE = 'Lead';
+        const STATE = 'CA';
+
         const element = createElement('c-reservation-helper-form', {
             is: ReservationHelperForm
         });
+        element.customerid = CUSTOMERID;
+        element.objecttype = OBJECTTYPE;
+        element.state = STATE;
 
         document.body.appendChild(element);
 

@@ -144,11 +144,40 @@ describe('c-customer-detail-form', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when customer detail fields returned', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+
+        const RECORD_ID_INPUT = '0031700000pJRRSAA4';
+        const OBJECT_API_NAME_INPUT = 'Contact';
+        const RECORD_FIELDS_OUTPUT = [
+            'MailingCity',
+            'Email',
+            'Name',
+            'MailingState'
+        ];
+
+        // Create element
         const element = createElement('c-customer-detail-form', {
             is: CustomerDetailForm
         });
+        element.sobjecttype = OBJECT_API_NAME_INPUT;
+        element.recordid = RECORD_ID_INPUT;
+        document.body.appendChild(element);
 
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error returned', () => {
+        // Assign mock value for rejected Apex promise
+        getCustomerFields.mockRejectedValue(APEX_GET_CUSTOMER_FIELDS_ERROR);
+
+        // Create element
+        const element = createElement('c-customer-detail-form', {
+            is: CustomerDetailForm
+        });
+        element.sobjecttype = 'Lead';
+        element.recordId = '0000000000';
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());

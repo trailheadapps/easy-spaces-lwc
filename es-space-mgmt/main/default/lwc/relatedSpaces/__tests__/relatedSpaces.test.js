@@ -134,12 +134,44 @@ describe('c-related-spaces', () => {
             });
     });
 
-    it('is accessible', () => {
+    it('is accessible when related spaces returned', () => {
+        const RECORD_ID = '0031700000pJRRSAA4';
         const element = createElement('c-related-spaces', {
             is: RelatedSpaces
         });
 
+        element.recordId = RECORD_ID;
         document.body.appendChild(element);
+
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when no spaces returned', () => {
+        const RECORD_ID = '0031700000pJRRSAA4';
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+
+        element.recordId = RECORD_ID;
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockRelatedSpacesNoRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error returned', () => {
+        const element = createElement('c-related-spaces', {
+            is: RelatedSpaces
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getRelatedSpacesAdapter.error();
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

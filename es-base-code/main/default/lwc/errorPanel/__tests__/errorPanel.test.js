@@ -117,12 +117,42 @@ describe('c-error-panel', () => {
         });
     });
 
-    it('is accessible', () => {
+    it('is accessible when inline message', () => {
+        const ERROR_MESSAGES_INPUT = [
+            { message: 'First bad error' },
+            { message: 'Second bad error' }
+        ];
+
         const element = createElement('c-error-panel', {
             is: ErrorPanel
         });
 
+        element.type = 'inlineMessage';
+        element.errors = ERROR_MESSAGES_INPUT;
         document.body.appendChild(element);
+
+        // Click link to show details
+        element.shadowRoot.querySelector('a').click();
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when no data illustration', () => {
+        const ERROR_MESSAGES_INPUT = [
+            { message: 'First bad error' },
+            { message: 'Second bad error' }
+        ];
+
+        const element = createElement('c-error-panel', {
+            is: ErrorPanel
+        });
+
+        element.type = 'noDataIllustration';
+        element.errors = ERROR_MESSAGES_INPUT;
+        document.body.appendChild(element);
+
+        // Click link to show details
+        element.shadowRoot.querySelector('a').click();
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
