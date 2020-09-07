@@ -166,8 +166,6 @@ describe('c-reservation-tile', () => {
         element.reservation = RESERVATION_LEAD;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

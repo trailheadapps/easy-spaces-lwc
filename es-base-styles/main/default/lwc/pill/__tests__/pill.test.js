@@ -31,8 +31,6 @@ describe('c-pill', () => {
         element.label = MOCK_LABEL;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

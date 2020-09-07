@@ -87,8 +87,6 @@ describe('c-image-tile', () => {
         element.record = SPACE_RECORD;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });

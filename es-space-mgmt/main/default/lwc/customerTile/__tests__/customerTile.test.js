@@ -121,8 +121,6 @@ describe('c-customer-tile', () => {
         element.object = SOBJECT_TYPE;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => {
-            expect(element).toBeAccessible();
-        });
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
 });
