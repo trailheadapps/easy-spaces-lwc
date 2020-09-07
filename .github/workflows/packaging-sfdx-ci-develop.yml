@@ -110,16 +110,38 @@ jobs:
               uses: muenzpraeger/github-action-sfdx-packaging-updater@master
 
             # The main branch is protected, so we have to take a sequea for updating the README through a new PR
-            - name: 'Create new branch and pull request for updated package version ID'
-              uses: peter-evans/create-pull-request@v2
+            - name: 'Create PR for new package versions'
+              id: create-pr
+              uses: peter-evans/create-pull-request@v3
               with:
-                  title: 'Added new package version ID'
-                  commit-message: 'Added new package version IDs'
-                  branch: 'auto/package-version-update'
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  title: 'Released new package versions'
+                  body: |
+                      Released new package versions:
 
-            # Merge pull request
-            - name: 'Merge pull request'
+                      - ESObjects ${{ steps.extract-data-package-version-create-baseObj.outputs.packageVersionId }}
+                      - ESBaseCodeLWC ${{ steps.extract-data-package-version-create-baseCode.outputs.packageVersionId }}
+                      - ESBaseStylesLWC ${{ steps.extract-data-package-version-create-baseStyles.outputs.packageVersionId }}
+                      - ESSpaceMgmtLWC ${{ steps.extract-data-package-version-create-spaceMgmt.outputs.packageVersionId }}
+                  author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+                  commit-message: 'Released new package versions'
+                  branch: 'auto/release-package-version'
+                  token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+            # Approve PR
+            - name: 'Approve PR'
+              uses: juliangruber/approve-pull-request-action@v1
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  number: ${{ steps.create-pr.outputs.pull-request-number }}
+
+            # Wait for CI to be skipped on PR
+            - name: Wait for CI to be skipped on PR
+              uses: maddox/actions/sleep@master
+              with:
+                  args: 60
+
+            # Merge PR
+            - name: 'Merge PR'
               uses: juliangruber/merge-pull-request-action@v1
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}

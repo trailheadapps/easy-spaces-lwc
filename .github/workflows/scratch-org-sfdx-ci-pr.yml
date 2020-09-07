@@ -12,7 +12,18 @@ on:
 
 # Jobs to be executed
 jobs:
+    # Dummy job used to skip CI run on automated PRs
+    skip-ci:
+        if: "github.actor == 'trailheadapps-bot'"
+        runs-on: ubuntu-latest
+        steps:
+            - name: Noop
+              run: |
+                  echo "Skipping CI run for automated PRs."
+
+    # Formatting and linting only runs on human-submitted PRs
     formatting-and-linting:
+        if: "github.actor != 'trailheadapps-bot'"
         runs-on: ubuntu-latest
         steps:
             # Checkout the code in the pull request
@@ -29,6 +40,7 @@ jobs:
                   restore-keys: |
                       npm-${{ env.cache-name }}-
                       npm-
+
             # Install npm dependencies for Prettier and Jest
             - name: 'Install npm dependencies'
               if: steps.cache-npm.outputs.cache-hit != 'true'
@@ -67,6 +79,7 @@ jobs:
                   mkdir sfdx-cli
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
+
             # Checkout the code in the pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2
