@@ -6,7 +6,6 @@ import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
 import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
 import {
     subscribe,
-    unsubscribe,
     APPLICATION_SCOPE,
     MessageContext,
     publish
@@ -19,23 +18,16 @@ export default class CustomerList extends LightningElement {
     msgForUser;
     wiredRecords;
 
-    subscription = null;
-
     @wire(MessageContext)
     messageContext;
 
     subscribeToMessageChannel() {
-        this.subscription = subscribe(
+        subscribe(
             this.messageContext,
             FLOW_STATUS_CHANGE_MC,
             (message) => this.handleMessage(message),
             { scope: APPLICATION_SCOPE }
         );
-    }
-
-    unsubscribeToMessageChannel() {
-        unsubscribe(this.subscription);
-        this.subscription = null;
     }
 
     handleMessage(message) {
@@ -52,10 +44,6 @@ export default class CustomerList extends LightningElement {
 
     connectedCallback() {
         this.subscribeToMessageChannel();
-    }
-
-    disconnectedCallback() {
-        this.unsubscribeToMessageChannel();
     }
 
     @wire(getCustomerList, { sObjectType: '$sobject' })
