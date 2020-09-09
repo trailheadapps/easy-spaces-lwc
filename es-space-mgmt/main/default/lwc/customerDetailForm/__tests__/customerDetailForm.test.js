@@ -150,12 +150,6 @@ describe('c-customer-detail-form', () => {
 
         const RECORD_ID_INPUT = '0031700000pJRRSAA4';
         const OBJECT_API_NAME_INPUT = 'Contact';
-        const RECORD_FIELDS_OUTPUT = [
-            'MailingCity',
-            'Email',
-            'Name',
-            'MailingState'
-        ];
 
         // Create element
         const element = createElement('c-customer-detail-form', {
