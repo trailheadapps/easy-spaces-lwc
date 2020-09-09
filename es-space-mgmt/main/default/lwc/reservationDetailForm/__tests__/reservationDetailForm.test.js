@@ -313,7 +313,7 @@ describe('c-reservation-detail-form', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getMarketsByStateAdapter.error(ERROR_MESSAGE);
+        getMarketsByStateAdapter.error();
 
         document.body.appendChild(element);
 
