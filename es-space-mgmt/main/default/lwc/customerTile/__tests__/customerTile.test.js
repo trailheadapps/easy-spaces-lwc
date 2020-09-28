@@ -111,4 +111,16 @@ describe('c-customer-tile', () => {
             expect(linkEl.href).toBe(SalesforceBaseUrl + CUSTOMER_DETAILS.Id);
         });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-customer-tile', {
+            is: CustomerTile
+        });
+
+        element.customer = CUSTOMER_DETAILS;
+        element.object = SOBJECT_TYPE;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

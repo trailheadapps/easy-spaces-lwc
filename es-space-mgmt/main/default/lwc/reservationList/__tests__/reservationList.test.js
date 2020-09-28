@@ -280,4 +280,41 @@ describe('c-reservation-list', () => {
             );
         });
     });
+
+    it('is accessible when reservations returned', () => {
+        const element = createElement('c-reservation-list', {
+            is: ReservationList
+        });
+        document.body.appendChild(element);
+
+        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when no reservations returned', () => {
+        const element = createElement('c-reservation-list', {
+            is: ReservationList
+        });
+        document.body.appendChild(element);
+
+        getOpenReservationsAdapter.emit([]);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error returned', () => {
+        const WIRE_ERROR = 'Custom Exception';
+
+        // Create initial element
+        const element = createElement('c-reservation-tile', {
+            is: ReservationList
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getOpenReservationsAdapter.error(WIRE_ERROR);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

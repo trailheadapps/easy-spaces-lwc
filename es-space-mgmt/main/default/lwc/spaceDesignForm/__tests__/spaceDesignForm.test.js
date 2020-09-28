@@ -334,4 +334,47 @@ describe('c-space-design-form', () => {
                 });
         });
     });
+
+    it('is accessible when related spaces returned', () => {
+        const element = createElement('c-space-design-form', {
+            is: SpaceDesignForm
+        });
+
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockSpacesList);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when tile selected', () => {
+        const element = createElement('c-space-design-form', {
+            is: SpaceDesignForm
+        });
+
+        element.market = MARKET_ID;
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getRelatedSpacesAdapter.emit(mockSpacesList);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error returned', () => {
+        const WIRE_ERROR = 'Something bad happened';
+
+        const element = createElement('c-space-design-form', {
+            is: SpaceDesignForm
+        });
+
+        element.market = MARKET_ID;
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getRelatedSpacesAdapter.error(WIRE_ERROR);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

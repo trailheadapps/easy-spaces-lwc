@@ -285,4 +285,38 @@ describe('c-reservation-detail-form', () => {
             expect(handler.mock.calls[0][0].detail.endDays).toBe(NO_OF_DAYS);
         });
     });
+
+    it('is accessible when markets returned', () => {
+        const element = createReservationDetailElement();
+
+        // Emit mock response from @wire
+        getMarketsByStateAdapter.emit(mockMarketsByStateRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when no markets returned', () => {
+        const element = createReservationDetailElement();
+
+        document.body.appendChild(element);
+
+        // Emit mock response with 0 rows
+        getMarketsByStateAdapter.emit(mockMarketsByStateNoRecords);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when errors returned', () => {
+        const element = createElement('c-reservation-detail-form', {
+            is: ReservationDetailForm
+        });
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getMarketsByStateAdapter.error();
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

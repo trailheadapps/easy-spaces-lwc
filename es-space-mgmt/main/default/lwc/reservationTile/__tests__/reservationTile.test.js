@@ -157,4 +157,15 @@ describe('c-reservation-tile', () => {
         const divElement = element.shadowRoot.querySelector('div');
         expect(divElement.className).toBe('mute pointer');
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-reservation-tile', {
+            is: ReservationTile
+        });
+
+        element.reservation = RESERVATION_LEAD;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

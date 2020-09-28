@@ -171,4 +171,34 @@ describe('c-customer-list', () => {
             expect(refreshApex).toHaveBeenCalled();
         });
     });
+
+    it('is accessible when customer list returned', () => {
+        const element = createElement('c-customer-list', {
+            is: CustomerList
+        });
+
+        element.sobject = SOBJECT_TYPE;
+        document.body.appendChild(element);
+
+        // Emit data from @wire
+        getCustomerListAdapter.emit(mockCustomerList);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+
+    it('is accessible when error returned', () => {
+        const WIRE_ERROR = 'Something bad happened';
+
+        const element = createElement('c-customer-list', {
+            is: CustomerList
+        });
+
+        element.sobject = SOBJECT_TYPE;
+        document.body.appendChild(element);
+
+        // Emit error from @wire
+        getCustomerListAdapter.error(WIRE_ERROR);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });

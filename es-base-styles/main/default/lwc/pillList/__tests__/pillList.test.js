@@ -73,4 +73,15 @@ describe('c-pill-list', () => {
                 );
             });
     });
+
+    it('is accessible', () => {
+        const element = createElement('c-pill-list', {
+            is: PillList
+        });
+
+        element.pills = PILL_VALUES;
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
 });
