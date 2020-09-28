@@ -56,6 +56,10 @@
         "ESObjects": "0Ho4W000000CaeJSAS",
         "ESBaseCodeLWC": "0Ho4W000000CaeTSAS",
         "ESBaseStylesLWC": "0Ho4W000000CaeOSAS",
-        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS"
+        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS",
+        "ESObjects@4.0.0-5": "04t4W000002PE37QAG",
+        "ESBaseCodeLWC@4.0.0-5": "04t4W000002PE3HQAW",
+        "ESBaseStylesLWC@4.0.0-5": "04t4W000002PE3MQAW",
+        "ESSpaceMgmtLWC@4.0.0-5": "04t4W000002PE7ZQAW"
     }
 }
