@@ -2,12 +2,12 @@
 public class ReservationManagerControllerTest {
     @testSetup
     static void setup() {
-        List<Account> accts = testDataFactory.makeAccounts(15);
-        List<Contact> contacts = testDataFactory.makeContacts(25);
-        List<Lead> leads = testDataFactory.makeLeads(25);
-        List<Market__c> markets = testDataFactory.makeMarkets(25);
+        List<Account> accts = TestDataFactory.makeAccounts(15);
+        List<Contact> contacts = TestDataFactory.makeContacts(25);
+        List<Lead> leads = TestDataFactory.makeLeads(25);
+        List<Market__c> markets = TestDataFactory.makeMarkets(25);
         List<Space__c> allSpaces = new List<Space__c>();
-        List<Reservation__c> reservs = testDataFactory.makeReservations(12);
+        List<Reservation__c> reservs = TestDataFactory.makeReservations(12);
 
         insert leads;
         insert accts;
@@ -22,7 +22,7 @@ public class ReservationManagerControllerTest {
 
         insert markets;
         for (Integer i = 0; i < markets.size(); i++) {
-            List<Space__c> spaces = testDataFactory.makeSpaces(12);
+            List<Space__c> spaces = TestDataFactory.makeSpaces(12);
             for (Space__c s : spaces) {
                 s.Market__c = markets[i].Id;
             }
@@ -47,11 +47,11 @@ public class ReservationManagerControllerTest {
 
     @isTest
     static void canFetchCustomers() {
-        List<CustomerServices.Customer> contacts = reservationManagerController.getCustomerList(
+        List<CustomerServices.Customer> contacts = ReservationManagerController.getCustomerList(
             'Contact'
         );
         system.assertNotEquals(contacts, null);
-        List<CustomerServices.Customer> leads = reservationManagerController.getCustomerList(
+        List<CustomerServices.Customer> leads = ReservationManagerController.getCustomerList(
             'Lead'
         );
         system.assertNotEquals(leads, null);
@@ -60,8 +60,66 @@ public class ReservationManagerControllerTest {
 
     @isTest
     static void canFetchOpenReservs() {
-        List<Reservation__c> reservs = reservationManagerController.getOpenReservations();
+        List<Reservation__c> reservs = ReservationManagerController.getOpenReservations();
         system.assertNotEquals(reservs, null);
         system.assertEquals(reservs.size(), 10);
+    }
+
+    @isTest
+    static void canupdateLeadReservationStatus() {
+        Lead lead = [SELECT Id FROM Lead LIMIT 1];
+        ReservationManagerController.Requests request = new ReservationManagerController.Requests();
+        request.recordId = lead.Id;
+        List<Id> lstIds = ReservationManagerController.updateReservationStatus(
+            new List<ReservationManagerController.Requests>{ request }
+        );
+        List<Customer_Fields__mdt> lstcmdts = [
+            SELECT
+                Customer_Status__r.QualifiedAPIName,
+                Customer_Reservation_Status_Value__c
+            FROM Customer_Fields__mdt
+            WHERE Sobject_Type__r.QualifiedAPIName = 'Lead'
+            WITH SECURITY_ENFORCED
+            LIMIT 1
+        ];
+        Lead updatedLeadRecord = [
+            SELECT Id, Status
+            FROM Lead
+            WHERE Id = :lstIds[0]
+            LIMIT 1
+        ];
+        System.assertEquals(
+            lstcmdts[0].Customer_Reservation_Status_Value__c,
+            updatedLeadRecord.Status
+        );
+    }
+
+    @isTest
+    static void canupdateContactReservationStatus() {
+        Contact contact = [SELECT Id FROM Contact LIMIT 1];
+        ReservationManagerController.Requests request = new ReservationManagerController.Requests();
+        request.recordId = contact.Id;
+        List<Id> lstIds = ReservationManagerController.updateReservationStatus(
+            new List<ReservationManagerController.Requests>{ request }
+        );
+        List<Customer_Fields__mdt> lstcmdts = [
+            SELECT
+                Customer_Status__r.QualifiedAPIName,
+                Customer_Reservation_Status_Value__c
+            FROM Customer_Fields__mdt
+            WHERE Sobject_Type__r.QualifiedAPIName = 'Contact'
+            WITH SECURITY_ENFORCED
+            LIMIT 1
+        ];
+        Contact updatedContactRecord = [
+            SELECT Id, Reservation_Status__c
+            FROM Contact
+            WHERE Id = :lstIds[0]
+            LIMIT 1
+        ];
+        System.assertEquals(
+            lstcmdts[0].Customer_Reservation_Status_Value__c,
+            updatedContactRecord.Reservation_Status__c
+        );
     }
 }
