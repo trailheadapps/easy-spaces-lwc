@@ -1,10 +1,10 @@
-public with sharing class reservationManagerController {
+public with sharing class ReservationManagerController {
     //Note: This is a sample, so we're using 'LIMIT' to simulate proper set/pagination controls
     @auraEnabled(cacheable=true)
-    public static List<customerServices.Customer> getCustomerList(
+    public static List<CustomerServices.Customer> getCustomerList(
         String sObjectType
     ) {
-        List<customerServices.Customer> customers = new List<customerServices.Customer>();
+        List<CustomerServices.Customer> customers = new List<CustomerServices.Customer>();
         Customer_Fields__mdt c = [
             SELECT
                 Customer_Name__r.QualifiedAPIName,
@@ -39,7 +39,7 @@ public with sharing class reservationManagerController {
         query += ' WITH SECURITY_ENFORCED LIMIT 5';
 
         for (Sobject sobj : Database.query(query)) {
-            customerServices.Customer customer = new customerServices.Customer(
+            CustomerServices.Customer customer = new CustomerServices.Customer(
                 (String) sobj.get(c.Customer_Name__r.QualifiedAPIName),
                 (String) sobj.get(c.Customer_Email__r.QualifiedAPIName),
                 (String) sobj.get(c.Customer_City__r.QualifiedAPIName),
@@ -73,5 +73,62 @@ public with sharing class reservationManagerController {
             WITH SECURITY_ENFORCED
             LIMIT 10
         ];
+    }
+
+    @InvocableMethod
+    public static List<Id> updateReservationStatus(
+        List<Requests> recordsToUpdate
+    ) {
+        Schema.SObjectType sObjectType;
+        SObject recordToUpdate;
+        String objectName;
+        List<Id> sucessIds = new List<Id>();
+        if (recordsToUpdate.size() > 0) {
+            // Safe navigate to avoid null pointers
+            sObjectType = recordsToUpdate[0]?.recordId?.getSObjectType();
+            objectName = sObjectType?.getDescribe()?.getName();
+            // Query custom Metadata Records to update sObject type
+            List<Customer_Fields__mdt> lstcmdts = [
+                SELECT
+                    Customer_Status__r.QualifiedAPIName,
+                    Customer_Reservation_Status_Value__c
+                FROM Customer_Fields__mdt
+                WHERE Sobject_Type__r.QualifiedAPIName = :objectName
+                WITH SECURITY_ENFORCED
+                LIMIT 1
+            ];
+            if (lstcmdts.size() == 1) {
+                Customer_Fields__mdt cmdt = lstcmdts[0];
+                recordToUpdate = sObjectType.newSObject(
+                    recordsToUpdate[0].recordId
+                );
+                recordToUpdate.put(
+                    cmdt.Customer_Status__r.QualifiedAPIName,
+                    cmdt.Customer_Reservation_Status_Value__c
+                );
+                // Check for CRUD and FLS
+                SObjectAccessDecision decision = Security.stripInaccessible(
+                    AccessType.UPDATABLE,
+                    new List<SObject>{ recordToUpdate },
+                    true
+                );
+                List<SObject> lstToUpdate = decision.getRecords();
+                try {
+                    update lstToUpdate;
+                    sucessIds.add(lstToUpdate[0].Id);
+                } catch (exception e) {
+                    throw new ReservationManagerException(e.getMessage());
+                }
+            }
+        }
+        return sucessIds;
+    }
+
+    public class Requests {
+        @InvocableVariable
+        public Id recordId;
+    }
+
+    public class ReservationManagerException extends Exception {
     }
 }

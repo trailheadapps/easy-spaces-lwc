@@ -1,5 +1,5 @@
 @isTest
-public class customerServicesTest {
+public class CustomerServicesTest {
     @isTest
     static void canFetchCustomerFields() {
         customerServices.Customer contact = customerServices.getCustomerFields(
