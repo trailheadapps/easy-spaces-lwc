@@ -20,7 +20,7 @@ public with sharing class ReservationManagerController {
         ];
 
         List<String> draftStatus = new List<String>();
-        draftStatus = c.Customer_Draft_Status_Values__c.split(',');
+        draftStatus = c.Customer_Draft_Status_Values__c?.split(',');
 
         String query = 'SELECT ';
         query += c.Customer_Name__r.QualifiedAPIName + ', ';

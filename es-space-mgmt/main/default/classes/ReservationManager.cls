@@ -9,8 +9,8 @@ public with sharing class ReservationManager {
         List<Id> sucessIds = new List<Id>();
         if (recordsToUpdate.size() > 0) {
             // Safe navigate to avoid null pointers
-            sObjectType = recordsToUpdate[0].recordId.getSObjectType();
-            objectName = sObjectType.getDescribe().getName();
+            sObjectType = recordsToUpdate[0].recordId?.getSObjectType();
+            objectName = sObjectType?.getDescribe()?.getName();
             // Query custom Metadata Records to update sObject type
             List<Customer_Fields__mdt> lstcmdts = [
                 SELECT
