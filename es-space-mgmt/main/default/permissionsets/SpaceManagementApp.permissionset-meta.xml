@@ -5,7 +5,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>reservationManagerController</apexClass>
+        <apexClass>ReservationManagerController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReservationManager</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <description

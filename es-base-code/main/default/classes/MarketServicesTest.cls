@@ -1,5 +1,5 @@
 @isTest
-public class marketServicesTest {
+public class MarketServicesTest {
     @testSetup
     static void setup() {
         List<Account> accts = testDataFactory.makeAccounts(15);

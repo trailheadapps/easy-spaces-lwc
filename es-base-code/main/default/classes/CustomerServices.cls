@@ -1,4 +1,4 @@
-public inherited sharing class customerServices {
+public inherited sharing class CustomerServices {
     @auraEnabled(cacheable=true)
     public static Customer getCustomerFields(String objectType) {
         Customer customer;

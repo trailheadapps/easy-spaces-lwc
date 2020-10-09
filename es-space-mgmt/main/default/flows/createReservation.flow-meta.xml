@@ -3,8 +3,8 @@
     <actionCalls>
         <name>openReservationSubtab</name>
         <label>openReservationSubtab</label>
-        <locationX>340</locationX>
-        <locationY>452</locationY>
+        <locationX>314</locationX>
+        <locationY>734</locationY>
         <actionName>c:openRecordAction</actionName>
         <actionType>component</actionType>
         <inputParameters>
@@ -17,6 +17,25 @@
             <name>sobject</name>
             <value>
                 <elementReference>ReservationAPIName</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description
+        >Invokes a generic apex method that updates Lead or Contact status fields as defined in the custom metadata</description>
+        <name>Update_Lead_Contact_Reservation_Status</name>
+        <label>Update Lead/Contact Reservation Status</label>
+        <locationX>314</locationX>
+        <locationY>614</locationY>
+        <actionName>ReservationManager</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>openReservationSubtab</targetReference>
+        </connector>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>varRecordId</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -44,8 +63,8 @@
     <decisions>
         <name>assignCustomerLookup</name>
         <label>assignCustomerLookup</label>
-        <locationX>341</locationX>
-        <locationY>126</locationY>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isContact</name>
@@ -92,15 +111,22 @@
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
         <name>createContactReservation</name>
         <label>createContactReservation</label>
-        <locationX>183</locationX>
-        <locationY>254</locationY>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
         <assignRecordIdToReference>varReservationId</assignRecordIdToReference>
         <connector>
-            <targetReference>updateContact</targetReference>
+            <targetReference
+            >Update_Lead_Contact_Reservation_Status</targetReference>
         </connector>
         <inputAssignments>
             <field>Contact__c</field>
@@ -143,11 +169,12 @@
     <recordCreates>
         <name>createLeadReservation</name>
         <label>createLeadReservation</label>
-        <locationX>492</locationX>
-        <locationY>256</locationY>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
         <assignRecordIdToReference>varReservationId</assignRecordIdToReference>
         <connector>
-            <targetReference>updateLead</targetReference>
+            <targetReference
+            >Update_Lead_Contact_Reservation_Status</targetReference>
         </connector>
         <inputAssignments>
             <field>End_Date__c</field>
@@ -187,57 +214,12 @@
         </inputAssignments>
         <object>Reservation__c</object>
     </recordCreates>
-    <recordUpdates>
-        <name>updateContact</name>
-        <label>updateContact</label>
-        <locationX>185</locationX>
-        <locationY>356</locationY>
-        <connector>
-            <targetReference>openReservationSubtab</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varRecordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Reservation_Status__c</field>
-            <value>
-                <stringValue>Draft</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Contact</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>updateLead</name>
-        <label>updateLead</label>
-        <locationX>488</locationX>
-        <locationY>354</locationY>
-        <connector>
-            <targetReference>openReservationSubtab</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varRecordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Working - Contacted</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Lead</object>
-    </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>CustomerDetails</name>
         <label>CustomerDetails</label>
-        <locationX>180</locationX>
-        <locationY>62</locationY>
+        <locationX>314</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -288,8 +270,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>CustomerDetails</targetReference>
         </connector>

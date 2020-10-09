@@ -1,10 +1,10 @@
-public with sharing class reservationManagerController {
+public with sharing class ReservationManagerController {
     //Note: This is a sample, so we're using 'LIMIT' to simulate proper set/pagination controls
     @auraEnabled(cacheable=true)
-    public static List<customerServices.Customer> getCustomerList(
+    public static List<CustomerServices.Customer> getCustomerList(
         String sObjectType
     ) {
-        List<customerServices.Customer> customers = new List<customerServices.Customer>();
+        List<CustomerServices.Customer> customers = new List<CustomerServices.Customer>();
         Customer_Fields__mdt c = [
             SELECT
                 Customer_Name__r.QualifiedAPIName,
@@ -39,7 +39,7 @@ public with sharing class reservationManagerController {
         query += ' WITH SECURITY_ENFORCED LIMIT 5';
 
         for (Sobject sobj : Database.query(query)) {
-            customerServices.Customer customer = new customerServices.Customer(
+            CustomerServices.Customer customer = new CustomerServices.Customer(
                 (String) sobj.get(c.Customer_Name__r.QualifiedAPIName),
                 (String) sobj.get(c.Customer_Email__r.QualifiedAPIName),
                 (String) sobj.get(c.Customer_City__r.QualifiedAPIName),
