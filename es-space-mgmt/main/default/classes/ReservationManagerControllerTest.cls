@@ -66,7 +66,7 @@ public class ReservationManagerControllerTest {
     }
 
     @isTest
-    static void canupdateLeadReservationStatus() {
+    static void canUpdateLeadReservationStatus() {
         Lead lead = [SELECT Id FROM Lead LIMIT 1];
         ReservationManagerController.Requests request = new ReservationManagerController.Requests();
         request.recordId = lead.Id;
@@ -95,7 +95,7 @@ public class ReservationManagerControllerTest {
     }
 
     @isTest
-    static void canupdateContactReservationStatus() {
+    static void canUpdateContactReservationStatus() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
         ReservationManagerController.Requests request = new ReservationManagerController.Requests();
         request.recordId = contact.Id;
