@@ -34,10 +34,10 @@ public class ReservationManagerControllerTest {
         for (Reservation__c r : reservs) {
             r.Market__c = markets[0].Id;
             if (Math.mod(counter, 2) == 0) {
-                r.Contact__c = contacts[counter].Id;
+                r.Contact__c = contacts[counter]?.Id;
                 r.Status__c = 'Draft';
             } else {
-                r.Lead__c = leads[counter].Id;
+                r.Lead__c = leads[counter]?.Id;
                 r.Status__c = 'Not Started';
             }
             counter++;
