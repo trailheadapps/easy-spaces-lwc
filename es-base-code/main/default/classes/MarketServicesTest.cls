@@ -42,13 +42,4 @@ public class MarketServicesTest {
         system.assertEquals(one.size(), 12);
         system.assertEquals(two.size(), 12);
     }
-
-    @isTest
-    static void canFetchMarketsByState() {
-        List<Market__c> one = marketServices.getMarketsByState('NY');
-        system.assertNotEquals(one, null);
-        List<Market__c> two = marketServices.getMarketsByState('OR');
-        system.assertNotEquals(two, null);
-        system.assertNotEquals(one, two);
-    }
 }
