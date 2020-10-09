@@ -121,6 +121,25 @@ describe('c-customer-detail-form', () => {
             });
     });
 
+    it('sends a draft reservation event via button click', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+        const element = createElement('c-customer-detail-form', {
+            is: CustomerDetailForm
+        });
+        element.sobjecttype = 'Lead';
+        element.recordId = '0000000000';
+        document.body.appendChild(element);
+        // listen to draftreservation event
+        const handler = jest.fn();
+        element.addEventListener('draftreservation', handler);
+
+        return flushPromises().then(() => {
+            element.shadowRoot.querySelector('lightning-button').click();
+            expect(handler).toHaveBeenCalled();
+        });
+    });
+
     it('shows error panel element', () => {
         // Assign mock value for rejected Apex promise
         getCustomerFields.mockRejectedValue(APEX_GET_CUSTOMER_FIELDS_ERROR);
