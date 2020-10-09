@@ -27,7 +27,7 @@
         <label>Update Lead/Contact Reservation Status</label>
         <locationX>314</locationX>
         <locationY>614</locationY>
-        <actionName>ReservationManagerController</actionName>
+        <actionName>ReservationManager</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>openReservationSubtab</targetReference>
