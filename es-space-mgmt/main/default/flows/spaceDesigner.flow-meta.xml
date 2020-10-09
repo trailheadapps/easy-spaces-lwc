@@ -3,8 +3,8 @@
     <actionCalls>
         <name>openReservationRecord</name>
         <label>openReservationRecord</label>
-        <locationX>348</locationX>
-        <locationY>360</locationY>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
         <actionName>c:openRecordAction</actionName>
         <actionType>component</actionType>
         <inputParameters>
@@ -20,6 +20,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>50.0</apiVersion>
     <constants>
         <name>constReservation</name>
         <dataType>String</dataType>
@@ -30,8 +31,8 @@
     <decisions>
         <name>setFinishBehavior</name>
         <label>setFinishBehavior</label>
-        <locationX>344</locationX>
-        <locationY>253</locationY>
+        <locationX>182</locationX>
+        <locationY>398</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>GoToRecordHome</name>
@@ -51,11 +52,17 @@
     </decisions>
     <description>Space Designer Flow with LWC.</description>
     <interviewLabel>spaceDesigner {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>spaceDesigner</label>
+    <label>Space Designer</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
@@ -63,10 +70,11 @@
         <name>updateReservation</name>
         <label>updateReservation</label>
         <locationX>182</locationX>
-        <locationY>175</locationY>
+        <locationY>278</locationY>
         <connector>
             <targetReference>setFinishBehavior</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -88,11 +96,12 @@
         </inputAssignments>
         <object>Reservation__c</object>
     </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>spaceDesigner</name>
         <label>spaceDesigner</label>
-        <locationX>180</locationX>
-        <locationY>71</locationY>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -123,8 +132,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>spaceDesigner</targetReference>
         </connector>

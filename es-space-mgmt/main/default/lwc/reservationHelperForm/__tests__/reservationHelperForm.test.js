@@ -31,12 +31,8 @@ describe('c-reservation-helper-form', () => {
             const customerDetailForm = element.shadowRoot.querySelector(
                 'c-customer-detail-form'
             );
-            const reservationDetailForm = element.shadowRoot.querySelector(
-                'c-reservation-detail-form'
-            );
             expect(customerDetailForm.recordid).toBe(CUSTOMERID);
             expect(customerDetailForm.sobjecttype).toBe(OBJECTTYPE);
-            expect(reservationDetailForm.state).toBe(STATE);
         });
     });
 
@@ -74,14 +70,6 @@ describe('c-reservation-helper-form', () => {
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
 
-        //event Data
-        const EVENTDETAILS = {
-            startDate: '01/01/2021',
-            endDays: 30,
-            numberOfPeople: 400,
-            requestedMarket: 'San Mateo'
-        };
-
         const element = createElement('c-reservation-helper-form', {
             is: ReservationHelperForm
         });
@@ -97,19 +85,13 @@ describe('c-reservation-helper-form', () => {
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
-            const reservationDetailForm = element.shadowRoot.querySelector(
-                'c-reservation-detail-form'
+            const customerDetailForm = element.shadowRoot.querySelector(
+                'c-customer-detail-form'
             );
-            reservationDetailForm.dispatchEvent(
-                new CustomEvent('draftreservation', {
-                    detail: EVENTDETAILS
-                })
+            customerDetailForm.dispatchEvent(
+                new CustomEvent('draftreservation')
             );
             expect(handler).toHaveBeenCalled();
-            expect(element.startDate).toBe(EVENTDETAILS.startDate);
-            expect(element.endDays).toBe(EVENTDETAILS.endDays);
-            expect(element.numberOfPeople).toBe(EVENTDETAILS.numberOfPeople);
-            expect(element.requestedMarket).toBe(EVENTDETAILS.requestedMarket);
         });
     });
 

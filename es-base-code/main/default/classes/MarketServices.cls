@@ -17,14 +17,4 @@ public inherited sharing class MarketServices {
             WITH SECURITY_ENFORCED
         ];
     }
-
-    @auraEnabled(cacheable=true)
-    public static List<Market__c> getMarketsByState(String state) {
-        return [
-            SELECT Id, City__c
-            FROM Market__c
-            WHERE State__c = :state
-            WITH SECURITY_ENFORCED
-        ];
-    }
 }
