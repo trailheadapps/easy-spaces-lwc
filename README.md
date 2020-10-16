@@ -119,14 +119,16 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Go to **Setup > Users > Permission Sets**.
     - Click **EasySpacesObjects**.
     - Click **Manage Assignments**.
-    - Check your user and click **Add Assigements**.
+    - Click **Add Assignments**.
+    - Select your username and click **Assign**.
 
 1. Assign SpaceManagementApp permission set by following below steps:
 
     - Go to **Setup > Users > Permission Sets**.
     - Click **SpaceManagementApp**.
     - Click **Manage Assignments**.
-    - Check your user and click **Add Assigements**.
+    - Click **Add Assignments**.
+    - Select your username and click **Assign**.
 
 1. Import Lead data:
 
