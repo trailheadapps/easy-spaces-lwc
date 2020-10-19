@@ -3,8 +3,8 @@
     <actionCalls>
         <name>openReservationSubtab</name>
         <label>openReservationSubtab</label>
-        <locationX>340</locationX>
-        <locationY>452</locationY>
+        <locationX>314</locationX>
+        <locationY>854</locationY>
         <actionName>c:openRecordAction</actionName>
         <actionType>component</actionType>
         <inputParameters>
@@ -20,6 +20,71 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <actionCalls>
+        <description
+        >Invokes a generic apex method that updates Lead or Contact status fields as defined in the custom metadata</description>
+        <name>updateLeadContactReservationStatus</name>
+        <label>updateLeadContactReservationStatus</label>
+        <locationX>314</locationX>
+        <locationY>734</locationY>
+        <actionName>ReservationManager</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>openReservationSubtab</targetReference>
+        </connector>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>varRecordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>50.0</apiVersion>
+    <choices>
+        <name>Day1</name>
+        <choiceText
+        >&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;1 Day&lt;/span&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Day30</name>
+        <choiceText
+        >&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;30 Days&lt;/span&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>30.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Day60</name>
+        <choiceText
+        >&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;60 Days&lt;/span&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>60.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Day7</name>
+        <choiceText
+        >&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;7 Days&lt;/span&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>7.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>GreaterThan60</name>
+        <choiceText
+        >&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;More than 60 Days&lt;/span&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>61.0</numberValue>
+        </value>
+    </choices>
     <constants>
         <name>Contact</name>
         <dataType>String</dataType>
@@ -44,8 +109,8 @@
     <decisions>
         <name>assignCustomerLookup</name>
         <label>assignCustomerLookup</label>
-        <locationX>341</locationX>
-        <locationY>126</locationY>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isContact</name>
@@ -79,28 +144,60 @@
         </rules>
     </decisions>
     <description>Create Reservation Flow with LWC.</description>
+    <dynamicChoiceSets>
+        <description>Shows all the market records by state</description>
+        <name>marketRecordsByState</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>State__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varState</elementReference>
+            </value>
+        </filters>
+        <object>Market__c</object>
+        <outputAssignments>
+            <assignToReference>varMarket</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
     <formulas>
         <name>calcEndDate</name>
         <dataType>Date</dataType>
-        <expression>{!varStartDate}+{!varResLength}</expression>
+        <expression>{!reservationStartDate}+{!varResLength}</expression>
+    </formulas>
+    <formulas>
+        <name>currentDate</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}</expression>
     </formulas>
     <interviewLabel>createReservation {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>createReservation</label>
+    <label>Create Reservation</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
         <name>createContactReservation</name>
         <label>createContactReservation</label>
-        <locationX>183</locationX>
-        <locationY>254</locationY>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
         <assignRecordIdToReference>varReservationId</assignRecordIdToReference>
         <connector>
-            <targetReference>updateContact</targetReference>
+            <targetReference
+            >updateLeadContactReservationStatus</targetReference>
         </connector>
         <inputAssignments>
             <field>Contact__c</field>
@@ -123,7 +220,7 @@
         <inputAssignments>
             <field>Start_Date__c</field>
             <value>
-                <elementReference>varStartDate</elementReference>
+                <elementReference>reservationStartDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -135,7 +232,7 @@
         <inputAssignments>
             <field>Total_Number_of_Guests__c</field>
             <value>
-                <elementReference>varNoOfGuests</elementReference>
+                <elementReference>numberOfGuests.value</elementReference>
             </value>
         </inputAssignments>
         <object>Reservation__c</object>
@@ -143,11 +240,12 @@
     <recordCreates>
         <name>createLeadReservation</name>
         <label>createLeadReservation</label>
-        <locationX>492</locationX>
-        <locationY>256</locationY>
+        <locationX>314</locationX>
+        <locationY>518</locationY>
         <assignRecordIdToReference>varReservationId</assignRecordIdToReference>
         <connector>
-            <targetReference>updateLead</targetReference>
+            <targetReference
+            >updateLeadContactReservationStatus</targetReference>
         </connector>
         <inputAssignments>
             <field>End_Date__c</field>
@@ -170,7 +268,7 @@
         <inputAssignments>
             <field>Start_Date__c</field>
             <value>
-                <elementReference>varStartDate</elementReference>
+                <elementReference>reservationStartDate</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -182,67 +280,22 @@
         <inputAssignments>
             <field>Total_Number_of_Guests__c</field>
             <value>
-                <elementReference>varNoOfGuests</elementReference>
+                <elementReference>numberOfGuests.value</elementReference>
             </value>
         </inputAssignments>
         <object>Reservation__c</object>
     </recordCreates>
-    <recordUpdates>
-        <name>updateContact</name>
-        <label>updateContact</label>
-        <locationX>185</locationX>
-        <locationY>356</locationY>
-        <connector>
-            <targetReference>openReservationSubtab</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varRecordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Reservation_Status__c</field>
-            <value>
-                <stringValue>Draft</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Contact</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>updateLead</name>
-        <label>updateLead</label>
-        <locationX>488</locationX>
-        <locationY>354</locationY>
-        <connector>
-            <targetReference>openReservationSubtab</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varRecordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Working - Contacted</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Lead</object>
-    </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>CustomerDetails</name>
-        <label>CustomerDetails</label>
-        <locationX>180</locationX>
-        <locationY>62</locationY>
+        <label>Customer Details</label>
+        <locationX>314</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>assignCustomerLookup</targetReference>
+            <targetReference>ReservationDetails</targetReference>
         </connector>
         <fields>
             <name>reservationHelperForm</name>
@@ -287,9 +340,88 @@
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <description>Provide Reservation Details</description>
+        <name>ReservationDetails</name>
+        <label>Reservation Details</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>assignCustomerLookup</targetReference>
+        </connector>
+        <fields>
+            <name>selectMarket</name>
+            <choiceReferences>marketRecordsByState</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Where do they want the space?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>reservationStartDate</name>
+            <dataType>Date</dataType>
+            <defaultValue>
+                <elementReference>currentDate</elementReference>
+            </defaultValue>
+            <fieldText>When do they need the space?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>numberOfGuests</name>
+            <extensionName>flowruntime:slider</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>For how many people?</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>max</name>
+                <value>
+                    <numberValue>250.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>min</name>
+                <value>
+                    <numberValue>2.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>size</name>
+                <value>
+                    <stringValue>medium</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>reservationDuration</name>
+            <choiceReferences>Day1</choiceReferences>
+            <choiceReferences>Day7</choiceReferences>
+            <choiceReferences>Day30</choiceReferences>
+            <choiceReferences>Day60</choiceReferences>
+            <choiceReferences>GreaterThan60</choiceReferences>
+            <dataType>Number</dataType>
+            <defaultSelectedChoiceReference
+            >Day7</defaultSelectedChoiceReference>
+            <fieldText>How long do they want the space?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>CustomerDetails</targetReference>
         </connector>

@@ -25,6 +25,10 @@
         <value xsi:type="xsd:string">Name</value>
     </values>
     <values>
+        <field>Customer_Reservation_Status_Value__c</field>
+        <value xsi:type="xsd:string">Working - Contacted</value>
+    </values>
+    <values>
         <field>Customer_State__c</field>
         <value xsi:type="xsd:string">State</value>
     </values>

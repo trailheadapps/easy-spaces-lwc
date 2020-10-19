@@ -39,4 +39,9 @@ export default class CustomerDetailForm extends LightningElement {
         });
         this.dispatchEvent(saveEvent);
     }
+
+    handleDraft() {
+        const draftevt = new CustomEvent('draftreservation');
+        this.dispatchEvent(draftevt);
+    }
 }

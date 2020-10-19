@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ApexClass
     xmlns="urn:metadata.tooling.soap.sforce.com"
-    fqn="customerServicesTest"
+    fqn="reservationManagerController"
 >
-    <apiVersion>49.0</apiVersion>
+    <apiVersion>50.0</apiVersion>
     <status>Active</status>
 </ApexClass>

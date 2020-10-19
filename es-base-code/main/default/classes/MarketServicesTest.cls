@@ -1,5 +1,5 @@
 @isTest
-public class marketServicesTest {
+public class MarketServicesTest {
     @testSetup
     static void setup() {
         List<Account> accts = testDataFactory.makeAccounts(15);
@@ -41,14 +41,5 @@ public class marketServicesTest {
         system.assertNotEquals(one, two);
         system.assertEquals(one.size(), 12);
         system.assertEquals(two.size(), 12);
-    }
-
-    @isTest
-    static void canFetchMarketsByState() {
-        List<Market__c> one = marketServices.getMarketsByState('NY');
-        system.assertNotEquals(one, null);
-        List<Market__c> two = marketServices.getMarketsByState('OR');
-        system.assertNotEquals(two, null);
-        system.assertNotEquals(one, two);
     }
 }
