@@ -7,14 +7,14 @@
             "line": 17,
             "selection": {
                 "start": {
-                  "line": 17,
-                  "character": 1
+                    "line": 17,
+                    "character": 1
                 },
                 "end": {
-                  "line": 20,
-                  "character": 1
+                    "line": 20,
+                    "character": 1
                 }
-              }
+            }
         },
         {
             "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAuraHelper.js",
@@ -27,14 +27,14 @@
             "line": 10,
             "selection": {
                 "start": {
-                  "line": 10,
-                  "character": 1
+                    "line": 10,
+                    "character": 1
                 },
                 "end": {
-                  "line": 13,
-                  "character": 1
+                    "line": 13,
+                    "character": 1
                 }
-              }
+            }
         },
         {
             "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml",
@@ -42,14 +42,14 @@
             "line": 9,
             "selection": {
                 "start": {
-                  "line": 9,
-                  "character": 1
+                    "line": 9,
+                    "character": 1
                 },
                 "end": {
-                  "line": 54,
-                  "character": 1
+                    "line": 54,
+                    "character": 1
                 }
-              }
+            }
         },
         {
             "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js",
@@ -57,14 +57,14 @@
             "line": 58,
             "selection": {
                 "start": {
-                  "line": 58,
-                  "character": 1
+                    "line": 58,
+                    "character": 1
                 },
                 "end": {
-                  "line": 59,
-                  "character": 1
+                    "line": 59,
+                    "character": 1
                 }
-              }
+            }
         }
     ]
 }
