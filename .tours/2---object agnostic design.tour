@@ -1,0 +1,25 @@
+{
+    "title": "2 - Object-Agnostic Design",
+    "steps": [
+        {
+            "file": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Sobject_Type__c.field-meta.xml",
+            "description": "The app uses Custom Metadata Customer Fields to allow administrators to configure Lightning Web Components and Flow Screen Components to work with any object",
+            "line": 7
+        },
+        {
+            "file": "es-space-mgmt/main/default/lwc/customerList/customerList.html",
+            "description": "The customerList and customerTile Lightning Web Components can display information from any object as long as the object names and fields are in the Custom Metadata Customer Fields",
+            "line": 14
+        },
+        {
+            "file": "es-space-mgmt/main/default/lwc/customerList/customerList.js-meta.xml",
+            "description": "The customerList Lightning web component uses a design attribute to allow for users working in Lightning App Builder to control which object an instance of the Lightning Web Component should display",
+            "line": 11
+        },
+        {
+            "file": "es-space-mgmt/main/default/classes/ReservationManagerController.cls",
+            "description": "The getCustomerList method in ReservationManagerController apex class takes an SObject name as a parameter and queries for Custom Metadata records. It then constructs a dynamic SOQL from the Custom Metadata record field values. This method is an example of how to write SOQL queries that are not referencing object metadata",
+            "line": 5
+        }
+    ]
+}

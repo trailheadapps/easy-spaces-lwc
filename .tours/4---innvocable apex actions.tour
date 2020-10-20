@@ -1,0 +1,15 @@
+{
+  "title": "4 - Innvocable Actions",
+  "steps": [
+    {
+      "file": "es-space-mgmt/main/default/classes/ReservationManager.cls",
+      "description": "The ReservationManager apex class shows how to write apex actions for flows.",
+      "line": 2
+    },
+    {
+      "file": "es-space-mgmt/main/default/classes/ReservationManager.cls",
+      "description": "The Update Reservation Status method uses object agnostic design. Uses dynamic DML to update records. Admin can configure the fields that need an update in the custom metadata",
+      "line": 14
+    }
+  ]
+}

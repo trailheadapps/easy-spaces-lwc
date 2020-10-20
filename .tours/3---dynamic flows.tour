@@ -1,0 +1,70 @@
+{
+    "title": "3 - Dynamic Flows",
+    "steps": [
+        {
+            "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
+            "description": "The reservationHelper Aura component render flow interviews dynamically, by using the lightning:flow base component",
+            "line": 17,
+            "selection": {
+                "start": {
+                  "line": 17,
+                  "character": 1
+                },
+                "end": {
+                  "line": 20,
+                  "character": 1
+                }
+              }
+        },
+        {
+            "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAuraHelper.js",
+            "description": "Use the startFlow method to start the create reservation flow",
+            "line": 14
+        },
+        {
+            "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
+            "description": "The reservationHelper Aura component embeds lwc component reservationHelper. reservationHelper lwc component acts a bridge between reservationHelperForm lwc flow screen component and reservationHelperAura component. The component uses LMS to subscribe to flow status change event and customer tile selection event",
+            "line": 10,
+            "selection": {
+                "start": {
+                  "line": 10,
+                  "character": 1
+                },
+                "end": {
+                  "line": 13,
+                  "character": 1
+                }
+              }
+        },
+        {
+            "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml",
+            "description": "reservationHelperForm lwc component is configured to work in flow screens. The component target config uses lightning__FlowScreen as a target",
+            "line": 9,
+            "selection": {
+                "start": {
+                  "line": 9,
+                  "character": 1
+                },
+                "end": {
+                  "line": 54,
+                  "character": 1
+                }
+              }
+        },
+        {
+            "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js",
+            "description": "FlowNavigationNextEvent event advances flow to the next flow screen",
+            "line": 58,
+            "selection": {
+                "start": {
+                  "line": 58,
+                  "character": 1
+                },
+                "end": {
+                  "line": 59,
+                  "character": 1
+                }
+              }
+        }
+    ]
+}
