@@ -1,30 +1,26 @@
 {
-    "title": "1 - Welcome to Easy Spaces Sample App",
+    "title": "1 - Welcome to Easy Spaces Sample App.This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform. ",
     "steps": [
         {
-            "file": "sfdx-project.json",
-            "description": "The app uses a modular application design pattern. The app comprises four different unlocked packages, and the source code and metadata components for each package is in its directory. The dependency between other packages is defined in sfdx-project.json file",
-            "line": 1
+            "directory": "es-space-mgmt",
+            "description": "The app uses a modular application design pattern.The app comprises four different unlocked packages, and the source code and metadata components for each package is in its directory."
         },
         {
-            "file": "sfdx-project.json",
-            "description": "All the custom objects, custom fields, layouts, tabs, and permission sets for objects are contained in the es-base-objects directory",
-            "line": 4
+            "directory": "es-base-code/main/default",
+            "description": "All the custom objects, custom fields, layouts, tabs, and permission sets for objects are contained in the es-base-objects directory"
         },
         {
-            "file": "sfdx-project.json",
-            "description": "es-base-styles directory holds all the styling related lightning web components, logos, themes, and  lightning app page template metadata",
-            "line": 11
+            "directory": "es-base-styles/main/default",
+            "description": "es-base-styles directory holds all the styling related Lightning Web Components, logos, themes, and  Lightning App Page Template metadata"
         },
         {
-            "file": "sfdx-project.json",
-            "line": 18,
+            "directory": "es-base-code/main/default",
             "description": "es-base-code directory contains code components that are reusable. This directory has custom metadata definitions and records along with the Lightning Messaging Service (LMS) metadata"
         },
         {
-            "file": "sfdx-project.json",
-            "description": "es-space-mgmt directory contains most of the metadata including the Lightning Console app, lightning web components, flows, lightning pages and other components required for the Easy Spaces application",
-            "line": 31
+            "directory": "es-space-mgmt/main/default",
+            "description": "es-space-mgmt directory contains most of the metadata including the Lightning Console App, Lightning Web Components, Flows, Lightning Pages and other components required for the Easy Spaces application"
         }
-    ]
+    ],
+    "isPrimary": true
 }
