@@ -23,22 +23,17 @@
     },
     {
       "file": "sfdx-project.json",
-      "description": "Dependencies are configured between the packages using `dependencies` attribute.***ESSpaceMgmtLWC*** package is dependent on the ***ESObjects***, ***ESBaseCodeLWC*** and ***ESBaseStylesLWC*** packages",
+      "description": "Dependencies are configured between the packages using `dependencies` attribute. ***ESSpaceMgmtLWC*** package is dependent on the ***ESObjects***, ***ESBaseCodeLWC*** and ***ESBaseStylesLWC*** packages",
       "line": 36
     },
     {
       "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
-      "description": "Creation of package versions for each package is automated using GitHub actions.",
+      "description": "Creation of package versions for each package is automated using GitHub actions. First a package is created for each directory manually using `sfdx force:package:create` command. The name of the package is used to create package versions.",
       "line": 1
     },
     {
       "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
-      "description": "Creation of package versions for each package is automated using GitHub actions.",
-      "line": 1
-    },
-    {
-      "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
-      "description": "Package version for each package is created using the command `sfdx force:package:version:create`",
+      "description": "Package version for each package is created using the command `sfdx force:package:version:create`.",
       "line": 49,
       "selection": {
         "start": {
