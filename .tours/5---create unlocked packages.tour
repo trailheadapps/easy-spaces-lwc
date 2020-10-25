@@ -1,25 +1,70 @@
 {
-    "title": "5 - Create Unlocked Packages",
-    "steps": [
-        {
-            "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
-            "description": "Creation of package versions for each package is automated using GitHub actions.",
-            "line": 1
+  "title": "5 - Create Unlocked Packages",
+  "steps": [
+    {
+      "file": "sfdx-project.json",
+      "description": "`sfdx-project.json` file provides packaging-specific configuration options to support package creation",
+      "line": 1
+    },
+    {
+      "file": "sfdx-project.json",
+      "description": "`packageDirectories` lists all the directories used in package creation and source sync between the orgs and local directory.",
+      "line": 2
+    },
+    {
+      "file": "sfdx-project.json",
+      "description": "`path` attribute maps the package directory to the local directory relative path. All the Metadata for the ***ESObjects*** package is present in the `./es-base-objects` path",
+      "line": 4
+    },
+    {
+      "file": "sfdx-project.json",
+      "description": "`package` attribute maps path of local directory to the name of the package.",
+      "line": 5
+    },
+    {
+      "file": "sfdx-project.json",
+      "description": "Dependencies are configured between the packages using `dependencies` attribute.***ESSpaceMgmtLWC*** package is dependent on the ***ESObjects***, ***ESBaseCodeLWC*** and ***ESBaseStylesLWC*** packages",
+      "line": 36
+    },
+    {
+      "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
+      "description": "Creation of package versions for each package is automated using GitHub actions.",
+      "line": 1
+    },
+    {
+      "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
+      "description": "Creation of package versions for each package is automated using GitHub actions.",
+      "line": 1
+    },
+    {
+      "file": ".github/workflows/packaging-sfdx-ci-develop.yml",
+      "description": "Package version for each package is created using the command `sfdx force:package:version:create`",
+      "line": 49,
+      "selection": {
+        "start": {
+          "line": 47,
+          "character": 1
         },
-        {
-            "file": "sfdx-project.json",
-            "description": "The packageId for installation to orgs is listed in the sfdx-project.json ",
-            "line": 60,
-            "selection": {
-                "start": {
-                    "line": 60,
-                    "character": 1
-                },
-                "end": {
-                    "line": 63,
-                    "character": 1
-                }
-            }
+        "end": {
+          "line": 49,
+          "character": 1
         }
-    ]
+      }
+    },
+    {
+      "file": "sfdx-project.json",
+      "description": "The packageId for installation to orgs is listed in the `sfdx-project.json` automatically each time a new package version is generated",
+      "line": 60,
+      "selection": {
+        "start": {
+          "line": 60,
+          "character": 1
+        },
+        "end": {
+          "line": 63,
+          "character": 1
+        }
+      }
+    }
+  ]
 }

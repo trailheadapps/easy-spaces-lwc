@@ -3,7 +3,7 @@
     "steps": [
         {
             "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
-            "description": "The reservationHelper Aura component render flow interviews dynamically, by using the lightning:flow base component",
+            "description": "The `reservationHelper` Aura component render flow interviews dynamically, by using the `lightning:flow` base component. You can read more about `lightning:flow` [here](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_using_flow_cmp.htm). We use Aura component embedding LWC component because LWC components do not provide ability to launch flows dynamically yet",
             "line": 17,
             "selection": {
                 "start": {
@@ -18,12 +18,12 @@
         },
         {
             "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAuraHelper.js",
-            "description": "Use the startFlow method to start the create reservation flow",
+            "description": "Use the `startFlow` method to start the create reservation flow with input variables",
             "line": 14
         },
         {
             "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
-            "description": "The reservationHelper Aura component embeds lwc component reservationHelper. reservationHelper lwc component acts a bridge between reservationHelperForm lwc flow screen component and reservationHelperAura component. The component uses LMS to subscribe to flow status change event and customer tile selection event",
+            "description": "The `reservationHelper` Aura component embeds LWC component `reservationHelper`.",
             "line": 10,
             "selection": {
                 "start": {
@@ -37,8 +37,28 @@
             }
         },
         {
+            "file": "es-space-mgmt/main/default/lwc/reservationHelper/reservationHelper.js",
+            "description": "`reservationHelper` LWC component acts a bridge between `reservationHelperForm` LWC flow screen component and `reservationHelperAura` component.",
+            "line": 1
+        },
+        {
+            "file": "es-space-mgmt/main/default/lwc/reservationHelper/reservationHelper.js",
+            "description": " The component uses [LMS](https://developer.salesforce.com/docs/component-library/bundle/lightning-message-service/documentation) to subscribe to flow status change event and customer tile selection event",
+            "line": 1,
+            "selection": {
+                "start": {
+                    "line": 4,
+                    "character": 1
+                },
+                "end": {
+                    "line": 11,
+                    "character": 1
+                }
+            }
+        },
+        {
             "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml",
-            "description": "reservationHelperForm lwc component is configured to work in flow screens. The component target config uses lightning__FlowScreen as a target",
+            "description": "`reservationHelperForm` LWC component is configured to work in flow screens. The component target config uses lightning__FlowScreen as a target. Read more about configuring LWC component for flow screen [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_flow_screens)",
             "line": 9,
             "selection": {
                 "start": {
@@ -53,7 +73,7 @@
         },
         {
             "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js",
-            "description": "FlowNavigationNextEvent event advances flow to the next flow screen",
+            "description": "FlowNavigationNextEvent event advances flow to the next flow screen. You can read about ***FlowNavigationNextEvent*** [here](https://developer.salesforce.com/docs/component-library/bundle/lightning-flow-support/documentation)",
             "line": 58,
             "selection": {
                 "start": {
@@ -65,6 +85,11 @@
                     "character": 1
                 }
             }
+        },
+        {
+            "file": "es-space-mgmt/main/default/flows/createReservation.flow-meta.xml",
+            "description": "`Create Reservation` flow is a multi-screen flow with LWC, standard flow screen components, and apex action. This flow creates reservation records and updates the record status field.",
+            "line": 1
         }
     ]
 }
