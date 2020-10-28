@@ -2,7 +2,7 @@
     "orgName": "Easy Spaces",
     "edition": "Developer",
     "hasSampleData": false,
-    "features": ["ServiceCloud"],
+    "features": ["ServiceCloud", "Walkthroughs"],
     "settings": {
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
