@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
     <masterLabel>Space Designer Prompt</masterLabel>
     <promptVersions>
-        <body>Space Designer Lightning Page lets Easy Spaces agent design spaces for one of the draft reservations.</body>
+        <body
+        >Space Designer Lightning Page lets Easy Spaces agent design spaces for one of the draft reservations.</body>
         <customApplication>Space_Management</customApplication>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
@@ -24,7 +25,8 @@
         <versionNumber>1</versionNumber>
     </promptVersions>
     <promptVersions>
-        <body>The page uses custom Lightning page template containing two main components. Open reservations component lists the reservation record in draft status, Space Designer flow component that allows an agent to design Spaces.</body>
+        <body
+        >The page uses custom Lightning page template containing two main components. Open reservations component lists the reservation record in draft status, Space Designer flow component that allows an agent to design Spaces.</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
@@ -42,7 +44,8 @@
         <versionNumber>1</versionNumber>
     </promptVersions>
     <promptVersions>
-        <body>From the Open Reservations list, click one of the Open Reservation items. From Filter By Space Type, select one or more Filter types.</body>
+        <body
+        >From the Open Reservations list, click one of the Open Reservation items. From Filter By Space Type, select one or more Filter types.</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
@@ -60,7 +63,8 @@
         <versionNumber>1</versionNumber>
     </promptVersions>
     <promptVersions>
-        <body>Select one of the cards to indicate the type of Space to reserve and click on &quot;Add and Go To Reservation.&quot;</body>
+        <body
+        >Select one of the cards to indicate the type of Space to reserve and click on &quot;Add and Go To Reservation.&quot;</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
@@ -78,7 +82,8 @@
         <versionNumber>1</versionNumber>
     </promptVersions>
     <promptVersions>
-        <body>The  status value of reservation record updates from &quot;draft&quot; to the &quot;proposal ready.&quot; The Open Reservations List items refreshes to show only reservations in draft state.</body>
+        <body
+        >The  status value of reservation record updates from &quot;draft&quot; to the &quot;proposal ready.&quot; The Open Reservations List items refreshes to show only reservations in draft state.</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
