@@ -26,7 +26,7 @@
     </promptVersions>
     <promptVersions>
         <body
-        >Easy Spaces agents use the Reservation Manager to browse the list of leads and contacts that need reservations. The Reservation Manager is a Lightning page built with custom Lightning web components and flows.</body>
+        >Easy Spaces agents use the Reservation Manager to browse the list of leads and contacts that need reservations. The Reservation Manager is a Lightning page built with custom Lightning Web Components and Flows.</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>

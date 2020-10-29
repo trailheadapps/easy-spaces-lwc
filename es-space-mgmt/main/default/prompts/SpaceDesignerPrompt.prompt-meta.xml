@@ -26,7 +26,7 @@
     </promptVersions>
     <promptVersions>
         <body
-        >The page uses custom Lightning page template containing two main components. Open reservations component lists the reservation record in draft status, Space Designer flow component that allows an agent to design Spaces.</body>
+        >The page uses custom Lightning Page Template containing two main components. Open reservations component lists the reservation record in draft status, Space Designer flow component that allows an agent to design Spaces.</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Dismiss</dismissButtonLabel>
         <displayPosition>BottomCenter</displayPosition>
