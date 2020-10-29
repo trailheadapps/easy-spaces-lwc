@@ -3,25 +3,6 @@
     <masterLabel>Create Reservation Prompt</masterLabel>
     <promptVersions>
         <body
-        >To make a reservation, select a Lead or Contact card from the Lead/Contact list and click on the &quot;Draft Reservation&quot; button</body>
-        <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
-        <displayType>FloatingPanel</displayType>
-        <isPublished>false</isPublished>
-        <masterLabel>Create Reservation Prompt Step 4</masterLabel>
-        <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
-        <stepNumber>4</stepNumber>
-        <targetPageKey1>Reservation_Manager</targetPageKey1>
-        <targetPageType>standard__navItemPage</targetPageType>
-        <title>Create Reservations</title>
-        <userAccess>Everyone</userAccess>
-        <userProfileAccess>Everyone</userProfileAccess>
-        <versionNumber>1</versionNumber>
-    </promptVersions>
-    <promptVersions>
-        <body
         >Welcome to Easy Spaces Sample App. This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform.</body>
         <customApplication>Space_Management</customApplication>
         <delayDays>1</delayDays>
@@ -77,6 +58,25 @@
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
         <title>Reservation Manager Page Design</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >To make a reservation, select a Lead or Contact card from the Lead/Contact list and click on the &quot;Draft Reservation&quot; button</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Create Reservation Prompt Step 4</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>4</stepNumber>
+        <targetPageKey1>Reservation_Manager</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Create Reservations</title>
         <userAccess>Everyone</userAccess>
         <userProfileAccess>Everyone</userProfileAccess>
         <versionNumber>1</versionNumber>
