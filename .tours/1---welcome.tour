@@ -1,6 +1,10 @@
 {
-  "title": "1 - Welcome to Easy Spaces Sample App. This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform. ",
+  "title": "1 - Welcome to Easy Spaces Sample App.",
   "steps": [
+    {
+      "directory": "es-space-mgmt",
+      "description": "This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform."
+    },
     {
       "directory": "es-space-mgmt",
       "description": "The app uses a modular application design pattern. The app comprises four different unlocked packages, and the source code and metadata components for each package are in its directory."
