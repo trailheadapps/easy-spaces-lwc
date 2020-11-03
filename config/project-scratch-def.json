@@ -2,7 +2,7 @@
     "orgName": "Easy Spaces",
     "edition": "Developer",
     "hasSampleData": false,
-    "features": ["ServiceCloud"],
+    "features": ["Walkthroughs"],
     "settings": {
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
@@ -17,6 +17,10 @@
         },
         "pathAssistantSettings": {
             "pathAssistantEnabled": true
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
         }
     }
 }

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Space Designer Prompt</masterLabel>
+    <promptVersions>
+        <body
+        >Space Designer Lightning Page lets Easy Spaces agent design spaces for one of the draft reservations.</body>
+        <customApplication>Space_Management</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopLeft</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Space Designer Prompt Step 1</masterLabel>
+        <publishedDate>2020-11-03</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-10-28</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Discover the Spaces Designer</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >The page uses custom Lightning Page Template containing two main components. Open reservations component lists the reservation record in draft status, Space Designer flow component that allows an agent to design Spaces.</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Space Designer Prompt Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Space Designer Page Design</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >From the Open Reservations list 👆, click one of the Open Reservation items.</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomLeft</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Space Designer Prompt Step 3</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Select Space Type</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >👈 From &quot;Filter By Space Type&quot; , select one or more Filter types. Select one of the cards 👇 to indicate the type of Space to reserve and click on &quot;Add and Go To Reservation&quot; 👇</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopRight</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Space Designer Prompt Step 4</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>4</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Reserve a Space and Confirm</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >The  status value of reservation record updates from &quot;draft&quot; to the &quot;proposal ready.&quot; The Open Reservations List items refreshes to show only reservations in draft state.</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Space Designer Prompt Step 5</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>5</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Reservation Record Updates</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Code Tours</actionButtonLabel>
+        <actionButtonLink
+        >https://github.com/trailheadapps/easy-spaces-lwc#code-tours</actionButtonLink>
+        <body
+        >You&amp;#39;ve now completed the Easy Spaces sample app tour 🎉. We hope you enjoyed the trip and that you are curious to explore app design and code. Take a look at VS Code code tours to learn more about the app code.</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Space Designer Prompt Step 6</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>6</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Code Tours</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>
