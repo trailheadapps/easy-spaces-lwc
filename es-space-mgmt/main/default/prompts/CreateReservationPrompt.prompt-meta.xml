@@ -7,7 +7,7 @@
         <customApplication>Space_Management</customApplication>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Close</dismissButtonLabel>
-        <displayPosition>BottomLeft</displayPosition>
+        <displayPosition>BottomCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>true</isPublished>
         <masterLabel>Create Reservation Prompt Step 1</masterLabel>
@@ -133,7 +133,7 @@
         <shouldDisplayActionButton>true</shouldDisplayActionButton>
         <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
         <stepNumber>7</stepNumber>
-        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
         <title>Object Agnostic Design Using CMDT</title>
         <userAccess>Everyone</userAccess>
