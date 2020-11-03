@@ -67,7 +67,7 @@
     },
     {
       "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml",
-      "description": "`reservationHelperForm` LWC component is configured to work in flow screens. The component target config uses lightning__FlowScreen as a target. Read more about configuring LWC component for flow screen [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_flow_screens)",
+      "description": "`reservationHelperForm` LWC component is configured to work in flow screens. The component target config uses `lightning__FlowScreen` as a target. Read more about configuring LWC component for flow screen [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_flow_screens)",
       "line": 9,
       "selection": {
         "start": {
