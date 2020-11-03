@@ -6,12 +6,12 @@
         >Welcome to Easy Spaces Sample App. This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform.</body>
         <customApplication>Space_Management</customApplication>
         <delayDays>1</delayDays>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomLeft</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>true</isPublished>
         <masterLabel>Create Reservation Prompt Step 1</masterLabel>
-        <publishedDate>2020-10-28</publishedDate>
+        <publishedDate>2020-11-03</publishedDate>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
         <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <startDate>2020-10-28</startDate>
@@ -28,8 +28,8 @@
         <body
         >Easy Spaces agents use the Reservation Manager to browse the list of leads and contacts that need reservations. The Reservation Manager is a Lightning page built with custom Lightning Web Components and Flows.</body>
         <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopLeft</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 2</masterLabel>
@@ -47,8 +47,8 @@
         <body
         >The page uses custom Lightning page template that contains three main components, component that displays leads that need reservations, component that displays contacts that needs reservations , flow screen component that intakes details</body>
         <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 3</masterLabel>
@@ -64,10 +64,10 @@
     </promptVersions>
     <promptVersions>
         <body
-        >To make a reservation, select a Lead or Contact card from the Lead/Contact list and click on the &quot;Draft Reservation&quot; button</body>
+        >To make a reservation, select a Lead or Contact card from the Lead/Contact list ☝️ and click on the &quot;Draft Reservation&quot; button on Reservation Detail form 👉</body>
         <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomLeft</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 4</masterLabel>
@@ -83,10 +83,10 @@
     </promptVersions>
     <promptVersions>
         <body
-        >The screen where you provide reservation details uses  out-of-box Lightning Flow screen components. Click &quot;Next&quot; to finish reservation record creation</body>
+        >The screen where you provide reservation details 👇uses  out-of-box Lightning Flow screen components. Click &quot;Next&quot; 👇to finish reservation record creation</body>
         <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopRight</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 5</masterLabel>
@@ -102,10 +102,10 @@
     </promptVersions>
     <promptVersions>
         <body
-        >Notice a new reservation record is created and the Details sub tab opens displaying the reservation detail page.</body>
+        >User is navigated to a subtab that displays reservation record details.</body>
         <customApplication>Space_Management</customApplication>
-        <dismissButtonLabel>Dismiss</dismissButtonLabel>
-        <displayPosition>BottomCenter</displayPosition>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>TopRight</displayPosition>
         <displayType>FloatingPanel</displayType>
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 6</masterLabel>
@@ -115,6 +115,27 @@
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
         <title>View Reservation Record</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Tour</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Spaces_Designer</actionButtonLink>
+        <body
+        >customerList component is object agnostic, and you can control the object it shows from app builder and custom metadata types. If you would like to learn about how agents can use Space Designer  click on &quot;Next Tour&quot; link below 👇</body>
+        <customApplication>Space_Management</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Create Reservation Prompt Step 7</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>7</stepNumber>
+        <targetPageKey1>Spaces_Designer</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Object Agnostic Design Using CMDT</title>
         <userAccess>Everyone</userAccess>
         <userProfileAccess>Everyone</userProfileAccess>
         <versionNumber>1</versionNumber>
