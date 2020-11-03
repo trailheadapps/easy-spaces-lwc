@@ -1,0 +1,57 @@
+{
+  "title": "2 - Object-Agnostic Design.",
+  "steps": [
+    {
+      "directory": "es-base-code/main/default/customMetadata",
+      "description": "We used Custom Metadata Types to allow Lightning Web Components, Apex Methods and Apex Actions for Flows to work with any object without having to make any code changes."
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/customerList/customerList.html",
+      "description": "The `customerList` Lightning Web Component can display information from any object if the object to display is configured in the Custom Metadata Type **Customer Fields**",
+      "line": 14
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/customerList/customerList.js-meta.xml",
+      "description": "The `customerList` component uses a design attribute `sobject` to allow for users working in Lightning App Builder to control which object an instance of the Lightning Web Component should display",
+      "line": 11
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/customerList/customerList.js",
+      "description": "The `customerList` component passes the `sobject` value as a param to an Apex method using @wire",
+      "line": 49
+    },
+    {
+      "file": "es-space-mgmt/main/default/classes/ReservationManagerController.cls",
+      "description": "The `getCustomerList` method in `ReservationManagerController` Apex class uses the `sObject` value and queries the Custom Metadata Type for the API names of fields to be displayed for the selected object. It then constructs a dynamic SOQL from the Custom Metadata Type field values. \nThis method is an example of how to write SOQL queries that do not hard reference object fields.",
+      "line": 5
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt",
+      "description": "Lets now look at the fields on Custom Metadata Type **Customer Fields**."
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Sobject_Type__c.field-meta.xml",
+      "description": "The ***Sobject Type*** field provides administrators the ability to select the object for the lightning component to display data from"
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Customer_Name__c.field-meta.xml",
+      "description": "The ***Customer Name*** field provide administrators the ability to map the name field displayed on the LWC component `customerTile` to the salesforce object field."
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Customer_Email__c.field-meta.xml",
+      "description": "The ***Customer Email*** field provide administrators the ability to map the email field displayed on the LWC component `customerTile` to the salesforce object field."
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Customer_Status__c.field-meta.xml",
+      "description": "The ***Customer Status*** field provides administrators the ability to indicate the status field used for querying and updating records"
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Customer_Draft_Status_Values__c.field-meta.xml",
+      "description": "The ***Customer Draft Status Value*** field provides administrators the ability to add picklist values(comma separated) used in the query filter to display records that need the reservation"
+    },
+    {
+      "directory": "es-base-code/main/default/objects/Customer_Fields__mdt/fields/Customer_Reservation_Status_Value__c.field-meta.xml",
+      "description": "The ***Customer Reservation Status Value*** field provides administrators the ability to configure picklist value that will be assigned to sobject records when a space is reserved for a customer"
+    }
+  ]
+}

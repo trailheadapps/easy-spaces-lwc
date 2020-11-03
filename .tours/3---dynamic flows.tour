@@ -1,0 +1,99 @@
+{
+  "title": "3 - Dynamic Flows",
+  "steps": [
+    {
+      "directory": "es-space-mgmt/main/default/flexipages/Reservation_Manager.flexipage-meta.xml",
+      "description": "Reservation Manager page comprises of LWC Components, Aura Components and a Lighntning Flow. To better understand how various components communicate using Events and LMS refer to the diagram [here](https://github.com/trailheadapps/easy-spaces-lwc/blob/develop/docs/reservation_manager_event_architecture.png)"
+    },
+    {
+      "file": "es-space-mgmt/main/default/flows/createReservation.flow-meta.xml",
+      "description": "`Create Reservation` flow is a multi-screen flow with LWC, standard flow screen components, and apex action. This flow creates reservation records and updates the record status field. We launch this flow dynamically in `reservationHelperAura` Aura component",
+      "line": 1
+    },
+    {
+      "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
+      "description": "The `reservationHelperAura` component render flow interviews dynamically, by using the `lightning:flow` base component. You can read more about `lightning:flow` [here](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_using_flow_cmp.htm). We embed the LWC component inside an Aura component because LWC components do not provide the ability to launch flows dynamically.",
+      "line": 17,
+      "selection": {
+        "start": {
+          "line": 17,
+          "character": 1
+        },
+        "end": {
+          "line": 20,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAuraHelper.js",
+      "description": "Use the `startFlow` method to start the create reservation flow with input variables",
+      "line": 14
+    },
+    {
+      "file": "es-space-mgmt/main/default/aura/reservationHelperAura/reservationHelperAura.cmp",
+      "description": "The `reservationHelperAura` Aura component embeds LWC component `reservationHelper`.",
+      "line": 10,
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 13,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/reservationHelper/reservationHelper.js",
+      "description": "`reservationHelper` LWC component acts a bridge between `reservationHelperForm` LWC flow screen component and `reservationHelperAura` component.",
+      "line": 1
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/reservationHelper/reservationHelper.js",
+      "description": " The component uses [LMS](https://developer.salesforce.com/docs/component-library/bundle/lightning-message-service/documentation) to subscribe to flow status change event and customer tile selection event",
+      "line": 1,
+      "selection": {
+        "start": {
+          "line": 4,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml",
+      "description": "`reservationHelperForm` LWC component is configured to work in flow screens. The component target config uses `lightning__FlowScreen` as a target. Read more about configuring LWC component for flow screen [here](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_flow_screens)",
+      "line": 9,
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 54,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js",
+      "description": "FlowNavigationNextEvent event advances flow to the next flow screen. You can read about ***FlowNavigationNextEvent*** [here](https://developer.salesforce.com/docs/component-library/bundle/lightning-flow-support/documentation)",
+      "line": 58,
+      "selection": {
+        "start": {
+          "line": 58,
+          "character": 1
+        },
+        "end": {
+          "line": 59,
+          "character": 1
+        }
+      }
+    }
+  ]
+}

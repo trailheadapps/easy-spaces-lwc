@@ -35,4 +35,4 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # VS Code project settings
-.vscode/
+.vscode/tasks.json

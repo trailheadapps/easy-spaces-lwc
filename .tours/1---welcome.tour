@@ -1,0 +1,30 @@
+{
+  "title": "1 - Welcome to Easy Spaces Sample App.",
+  "steps": [
+    {
+      "directory": "es-space-mgmt",
+      "description": "This app helps Easy Spaces, a fictitious event management company, find the right theme for its customer’s space, and manage reservations on the Salesforce Platform."
+    },
+    {
+      "directory": "es-space-mgmt",
+      "description": "The app uses a modular application design pattern. The app comprises four different unlocked packages, and the source code and metadata components for each package are in its directory."
+    },
+    {
+      "directory": "es-base-code/main/default",
+      "description": "The `es-base-objects` directory contains all the Custom Objects, Custom Fields, Layouts, Tabs, and Permission Sets for objects."
+    },
+    {
+      "directory": "es-base-styles/main/default",
+      "description": "`The es-base-styles` directory holds all the styling related Lightning Web Components, Aura Components, logos, themes, and  Lightning App Page Template metadata"
+    },
+    {
+      "directory": "es-base-code/main/default",
+      "description": "The `es-base-code` directory contains reusable code components. This directory also has custom metadata definitions and records along with the Lightning Messaging Service (LMS) metadata."
+    },
+    {
+      "directory": "es-space-mgmt/main/default",
+      "description": "The `es-space-mgmt` directory contains most of the metadata including the Lightning Console App, Lightning Web Components, Flows, Lightning Pages and other components required for the Easy Spaces application"
+    }
+  ],
+  "isPrimary": true
+}
