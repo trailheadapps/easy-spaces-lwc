@@ -8,6 +8,13 @@
 
 Easy Spaces is a fictional event management company that creates and manages custom pop-up spaces for companies and individuals. Easy Spaces helps customers create temporary spaces like cafés, game rooms or themed rooms for special occasions in their offices and homes.
 
+<div>
+   <img src="https://developer.salesforce.com/resource/images/trailhead/badges/projects/trailhead_project_quick-start-explore-the-easyspaces-sample-app.png" align="left" alt="Trailhead Badge" height="40px" width="40px" style="padding-right: 0.5em;"/>
+   <p style="padding-top:0.5em;">
+      Learn more about this app by completing the <a href="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-explore-the-easyspaces-sample-app" >Quick Start: Explore the Easy Spaces Sample App</a> Trailhead project.
+   </p>
+</div>
+
 [![Thumbnail](./docs/space_designer.png)](https://youtu.be/ZwvegTLx9kk)
 
 > This sample application is designed to run on Salesforce Platform. If you want to experience Lightning Web Components on any platform, please visit https://lwc.dev, and try out our Lightning Web Components sample application [LWC Recipes OSS](https://github.com/trailheadapps/lwc-recipes-oss).
