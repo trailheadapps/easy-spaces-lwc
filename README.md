@@ -112,8 +112,6 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Log in to your org
 
-1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
-
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PpiJQAS) to install the **es-base-objects** package and choose **Install for All Users**.
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PpiTQAS) to install the **es-base-styles** package and choose **Install for All Users**.
