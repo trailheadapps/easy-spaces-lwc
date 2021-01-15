@@ -50,7 +50,7 @@ There are two ways to install Easy Spaces:
 1. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
     ```
-    sfdx force:auth:web:login -d -a myhuborg
+    sfdx auth:web:login -d -a myhuborg
     ```
 
 1. Clone this repository:
