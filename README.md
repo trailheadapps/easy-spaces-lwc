@@ -50,7 +50,7 @@ There are two ways to install Easy Spaces:
 1. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
     ```
-    sfdx force:auth:web:login -d -a myhuborg
+    sfdx auth:web:login -d -a myhuborg
     ```
 
 1. Clone this repository:
@@ -111,8 +111,6 @@ Follow this set of instructions if you want to deploy the app to a more permanen
 Make sure to start from a brand-new environment to avoid conflicts with previous work you may have done.
 
 1. Log in to your org
-
-1. If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PpiJQAS) to install the **es-base-objects** package and choose **Install for All Users**.
 
