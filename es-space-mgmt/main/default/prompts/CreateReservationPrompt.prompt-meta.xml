@@ -83,7 +83,7 @@
     </promptVersions>
     <promptVersions>
         <body
-        >The screen where you provide reservation details 👇uses  out-of-box Lightning Flow screen components. Click &quot;Next&quot; 👇to finish reservation record creation</body>
+        >The screen where you provide reservation details 👇uses  out-of-box Salesforce Flow screen components. Click &quot;Next&quot; 👇to finish reservation record creation</body>
         <customApplication>Space_Management</customApplication>
         <dismissButtonLabel>Close</dismissButtonLabel>
         <displayPosition>TopRight</displayPosition>

@@ -222,7 +222,7 @@ A quick overview of the features you can explore in Easy Spaces:
 
 -   Modular app design and Unlocked Packages
 -   Lightning Console APIs & Background Refresh Methods
--   Lightning Flow
+-   Salesforce Flow
 
     -   Dynamic flow interview components
     -   Custom flow screen components
@@ -240,7 +240,7 @@ The **spaceDesigner** and **reservationHelper** Aura components render flow inte
 
 See this [blog post](https://developer.salesforce.com/blogs/2018/06/announcing-the-easy-spaces-app.html) for more detail about custom flow navigation and dynamic flow interviews.
 
-These components used as Lightning Flow screens also use a convention in the markup of their meta files, to help developers better track how properties are being used by flow interviews. See the [reservationHelperForm](./es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml) and [spaceDesignForm](./es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js-meta.xml) component meta files for examples.
+These components used as Salesforce Flow screens also use a convention in the markup of their meta files, to help developers better track how properties are being used by flow interviews. See the [reservationHelperForm](./es-space-mgmt/main/default/lwc/reservationHelperForm/reservationHelperForm.js-meta.xml) and [spaceDesignForm](./es-space-mgmt/main/default/lwc/spaceDesignForm/spaceDesignForm.js-meta.xml) component meta files for examples.
 
 ### Object-Agnostic Design
 
