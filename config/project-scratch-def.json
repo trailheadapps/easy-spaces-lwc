@@ -2,18 +2,13 @@
     "orgName": "Easy Spaces",
     "edition": "Developer",
     "hasSampleData": false,
-    "features": ["Walkthroughs"],
+    "features": ["Walkthroughs","EnableSetPasswordInApi"],
     "settings": {
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
         },
         "mobileSettings": {
             "enableS1EncryptedStoragePref2": false
-        },
-        "securitySettings": {
-            "passwordPolicies": {
-                "enableSetPasswordInApi": true
-            }
         },
         "pathAssistantSettings": {
             "pathAssistantEnabled": true
