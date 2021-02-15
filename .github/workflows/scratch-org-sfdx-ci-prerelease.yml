@@ -29,6 +29,7 @@ jobs:
                   restore-keys: |
                       npm-${{ env.cache-name }}-
                       npm-
+
             # Install npm dependencies for Prettier and Jest
             - name: 'Install npm dependencies'
               if: steps.cache-npm.outputs.cache-hit != 'true'
@@ -67,13 +68,10 @@ jobs:
                   mkdir sfdx-cli
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
+
             # Checkout the code in the pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2
-
-            # Install salesforcedx pre-release plugin
-            - name: 'Install salesforcedx pre-release plugin'
-              run: 'sfdx plugins:install salesforcedx@pre-release'
 
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_PREREL_SFDX_URL secret'
