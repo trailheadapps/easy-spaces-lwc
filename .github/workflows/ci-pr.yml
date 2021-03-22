@@ -177,7 +177,7 @@ jobs:
             # Trigger packaging PR workflow
             - name: 'Trigger packaging PR workflow if needed'
               uses: peter-evans/repository-dispatch@v1.1.0
-              if: ${{ steps.checkForChanges.outputs.hasChanges == 'true' }}
+              if: ${{ steps.checkForChanges.outputs.changes != '[]' }}
               with:
                   token: ${{ secrets.BOT_ACCESS_TOKEN }}
                   event-type: start-packaging-pr
