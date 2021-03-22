@@ -1,25 +1,37 @@
 # Unique name for this workflow
 name: Packaging on Pre-release PR
 
-# Definition when the workflow should run
+# Workflow starts when receiving start-packaging-pr-prerelease custom event
+# Event contains the packageName of the target package for which a new version will be released
 on:
-    pull_request:
-        types: [opened, synchronize, reopened]
-        branches:
-            - prerelease/spring[2-9][0-9]
-            - prerelease/summer[2-9][0-9]
-            - prerelease/winter[2-9][0-9]
-        paths:
-            - 'es-base-code/**'
-            - 'es-base-objects/**'
-            - 'es-base-styles/**'
-            - 'es-space-mgmt/**'
+    repository_dispatch:
+        types: [start-packaging-pr-prerelease]
 
 # Jobs to be executed
 jobs:
-    packaging:
+    release-package-version:
         runs-on: ubuntu-latest
         steps:
+            # Get packages with changes
+            - name: 'Get packages with changes'
+              id: should-package
+              run: |
+                  hasChange = $(${{ github.event.client_payload.packageNames }} | jq 'index("ESObjects")')
+                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
+                  echo "::set-output name=baseObj::$hasChange"
+
+                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESBaseStylesLWC")'
+                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
+                  echo "::set-output name=baseStyles::$hasChange"
+
+                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESBaseCodeLWC")'
+                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
+                  echo "::set-output name=baseCode::$hasChange"
+
+                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESSpaceMgmtLWC")'
+                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
+                  echo "::set-output name=spaceMgmt::$hasChange"
+
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
               run: |
@@ -31,6 +43,8 @@ jobs:
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.client_payload.ref }}
 
             # Store secret for dev hub
             - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
@@ -47,20 +61,103 @@ jobs:
 
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
-              id: package-version-create-baseObj
-              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESObjects -x -w 20 --json | jq -c .)"
+              id: package-baseObj
+              if: ${{ steps.should-package.outputs.baseObj }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESObjects -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
 
             # Create package version - ES Base Code
             - name: 'Create package version - ES Base Code'
-              id: package-version-create-baseCode
-              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json | jq -c .)"
+              id: package-baseCode
+              if: ${{ steps.should-package.outputs.baseCode }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
 
             # Create package version - ES Base Styles
             - name: 'Create package version - ES Base Styles'
-              id: package-version-create-baseStyles
-              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json | jq -c .)"
+              id: package-baseStyles
+              if: ${{ steps.should-package.outputs.baseStyles }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
 
             # Create package version - ES Space Management
             - name: 'Create package version - ES Space Management'
-              id: package-version-create-spaceMgmt
-              run: echo "::set-output name=result::$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json | jq -c .)"
+              id: package-spaceMgmt
+              if: ${{ steps.should-package.outputs.spaceMgmt }}
+              run: |
+                  set +e
+                  json=$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json)
+                  echo $json
+                  status=$(echo $json | jq '.status')
+                  if [ $status == "0" ]; then
+                      packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
+                      echo "::set-output name=packageVersionId::$packageVersionId"
+                  else
+                      echo "sfdx force:package:version:create failed"
+                  fi
+                  exit $status
+
+            # Wait for package replication
+            - name: 'Wait for package replication'
+              uses: maddox/actions/sleep@master
+              with:
+                  args: 300
+
+            # Create scratch org
+            - name: 'Create scratch org'
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 release=Preview
+
+            # Install into scratch org - ES Base Objects
+            - name: 'Install into scratch org - ES Base Objects'
+              if: ${{ steps.should-package.outputs.baseObj }}
+              run: sfdx force:package:install --package ${{ steps.package-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Base Code
+            - name: 'Install into scratch org - ES Base Code'
+              if: ${{ steps.should-package.outputs.baseCode }}
+              run: sfdx force:package:install --package ${{ steps.package-baseCode.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Base Styles
+            - name: 'Install into scratch org - ES Base Styles'
+              if: ${{ steps.should-package.outputs.baseStyles }}
+              run: sfdx force:package:install --package ${{ steps.package-baseStyles.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Install into scratch org - ES Space Management
+            - name: 'Install into scratch org - ES Space Management'
+              if: ${{ steps.should-package.outputs.spaceMgmt }}
+              run: sfdx force:package:install --package ${{ steps.package-spaceMgmt.outputs.packageVersionId }} -w 10 -u scratch-org -r
+
+            # Housekeeping
+            - name: 'Delete scratch org'
+              if: always()
+              run: sfdx force:org:delete -p -u scratch-org
