@@ -1,5 +1,5 @@
 # Unique name for this workflow
-name: Salesforce DX Prerelease PR (packaging)
+name: Packaging on Pre-release PR
 
 # Definition when the workflow should run
 on:
@@ -21,29 +21,29 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             # Install Salesforce CLI
-            - name: Install Salesforce CLI
+            - name: 'Install Salesforce CLI'
               run: |
                   wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
                   mkdir sfdx-cli
                   tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
                   ./sfdx-cli/install
 
-            # Checkout the code in the pull request
+            # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
-            # Install salesforcedx pre-release plugin
-            - name: 'Install salesforcedx pre-release plugin'
-              run: 'sfdx plugins:install salesforcedx@pre-release'
-
             # Store secret for dev hub
-            - name: 'Populate auth file with DEVHUB_PREREL_SFDX_URL secret'
+            - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
               shell: bash
-              run: 'echo ${{ secrets.DEVHUB_PREREL_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
+              run: echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt
 
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
-              run: 'sfdx auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
+              run: sfdx auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d
+
+            # Remove auth file
+            - name: 'Remove auth file'
+              run: rm -f ./DEVHUB_SFDX_URL.txt
 
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
