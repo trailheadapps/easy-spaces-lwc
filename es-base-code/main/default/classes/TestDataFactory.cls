@@ -48,7 +48,7 @@ public class TestDataFactory {
                 : (Math.mod(x, 3) == 0 ? 'NY' : 'OR');
             l.Country = Math.mod(x, 2) == 0 ? 'Amsterdam' : 'United States';
             l.PostalCode = Math.mod(x, 2) == 0
-                ? '1011 AJ'
+                ? '1011 AZ'
                 : (Math.mod(x, 3) == 0 ? '10006' : '97230');
             testPeeps.add(l);
         }
