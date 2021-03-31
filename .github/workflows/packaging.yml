@@ -12,22 +12,6 @@ jobs:
     release-package-version:
         runs-on: ubuntu-latest
         steps:
-            # Get packages with changes
-            - name: 'Get packages with changes'
-              id: should-package
-              run: |
-                  baseObjHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
-                  echo "::set-output name=baseObj::$baseObjHasChange"
-
-                  baseStylesHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
-                  echo "::set-output name=baseStyles::$baseStylesHasChange"
-
-                  baseCodeHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
-                  echo "::set-output name=baseCode::$baseCodeHasChange"
-
-                  spaceMgmtHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
-                  echo "::set-output name=spaceMgmt::$spaceMgmtHasChange"
-
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
               run: |
@@ -58,7 +42,7 @@ jobs:
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
               id: package-baseObj
-              if: ${{ steps.should-package.outputs.baseObj }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
               run: |
                   set +e
                   json=$(sfdx force:package:version:create -p ESObjects -x -w 20 --json)
@@ -75,7 +59,7 @@ jobs:
             # Create package version - ES Base Code
             - name: 'Create package version - ES Base Code'
               id: package-baseCode
-              if: ${{ steps.should-package.outputs.baseCode }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
               run: |
                   set +e
                   json=$(sfdx force:package:version:create -p ESBaseCodeLWC -x -w 20 --json)
@@ -92,7 +76,7 @@ jobs:
             # Create package version - ES Base Styles
             - name: 'Create package version - ES Base Styles'
               id: package-baseStyles
-              if: ${{ steps.should-package.outputs.baseStyles }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
               run: |
                   set +e
                   json=$(sfdx force:package:version:create -p ESBaseStylesLWC -x -w 20 --json)
@@ -109,7 +93,7 @@ jobs:
             # Create package version - ES Space Management
             - name: 'Create package version - ES Space Management'
               id: package-spaceMgmt
-              if: ${{ steps.should-package.outputs.spaceMgmt }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
               run: |
                   set +e
                   json=$(sfdx force:package:version:create -p ESSpaceMgmtLWC -x -w 20 --json)
@@ -135,22 +119,22 @@ jobs:
 
             # Install into scratch org - ES Base Objects
             - name: 'Install into scratch org - ES Base Objects'
-              if: ${{ steps.should-package.outputs.baseObj }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
               run: sfdx force:package:install --package ${{ steps.package-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Code
             - name: 'Install into scratch org - ES Base Code'
-              if: ${{ steps.should-package.outputs.baseCode }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
               run: sfdx force:package:install --package ${{ steps.package-baseCode.outputs.packageVersionId }} -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Styles
             - name: 'Install into scratch org - ES Base Styles'
-              if: ${{ steps.should-package.outputs.baseStyles }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
               run: sfdx force:package:install --package ${{ steps.package-baseStyles.outputs.packageVersionId }} -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Space Management
             - name: 'Install into scratch org - ES Space Management'
-              if: ${{ steps.should-package.outputs.spaceMgmt }}
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
               run: sfdx force:package:install --package ${{ steps.package-spaceMgmt.outputs.packageVersionId }} -w 10 -u scratch-org -r
 
             # Update sfdx-project.json and README to use only latest package version
