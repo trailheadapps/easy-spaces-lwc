@@ -16,21 +16,17 @@ jobs:
             - name: 'Get packages with changes'
               id: should-package
               run: |
-                  hasChange = $(${{ github.event.client_payload.packageNames }} | jq 'index("ESObjects")')
-                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
-                  echo "::set-output name=baseObj::$hasChange"
+                  baseObjHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
+                  echo "::set-output name=baseObj::$baseObjHasChange"
 
-                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESBaseStylesLWC")'
-                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
-                  echo "::set-output name=baseStyles::$hasChange"
+                  baseStylesHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
+                  echo "::set-output name=baseStyles::$baseStylesHasChange"
 
-                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESBaseCodeLWC")'
-                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
-                  echo "::set-output name=baseCode::$hasChange"
+                  baseCodeHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
+                  echo "::set-output name=baseCode::$baseCodeHasChange"
 
-                  hasChange = ${{ github.event.client_payload.packageNames }} | jq 'index("ESSpaceMgmtLWC")'
-                  [[ $hasChange == 'null' ]] && hasChange=0 || hasChange=1
-                  echo "::set-output name=spaceMgmt::$hasChange"
+                  spaceMgmtHasChange = ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
+                  echo "::set-output name=spaceMgmt::$spaceMgmtHasChange"
 
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
