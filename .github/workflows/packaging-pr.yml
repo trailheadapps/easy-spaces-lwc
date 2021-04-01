@@ -125,7 +125,7 @@ jobs:
             - name: 'Get package version IDs'
               id: packageVersions
               run: |
-                  versionIds=$(cat sfdx-project.json | jq -r '.packageAliases | map_values( select( . | startswith("04t") ) ) | [.[]]')
+                  versionIds=$(cat sfdx-project.json | jq -r '.packageAliases | map_values( select( . | startswith("04t") ) )')
                   versionIds=$(echo "$versionIds" | sed -e 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
                   echo "::set-output name=ids::$versionIds"
 
