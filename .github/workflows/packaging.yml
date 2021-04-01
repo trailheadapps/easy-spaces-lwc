@@ -113,33 +113,45 @@ jobs:
               with:
                   args: 300
 
+            # Update sfdx-project.json and README to use only latest package version
+            - name: 'Update sfdx-project.json and README'
+              uses: trailheadapps/github-action-sfdx-packaging-updater@1.1.0
+
             # Create scratch org
             - name: 'Create scratch org'
               run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1
 
+            # Get package version IDs
+            - name: 'Get package version IDs'
+              id: packageVersions
+              run: |
+                  versionIds=$(cat sfdx-project.json | jq -r '.packageAliases | map_values( select( . | startswith("04t") ) ) | [.[]]')
+                  versionIds=$(echo "$versionIds" | sed -E 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
+                  echo "::set-output name=ids::$versionIds"
+
             # Install into scratch org - ES Base Objects
             - name: 'Install into scratch org - ES Base Objects'
-              if: ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
-              run: sfdx force:package:install --package ${{ steps.package-baseObj.outputs.packageVersionId }} -w 10 -u scratch-org -r
+              run: |
+                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESObjects')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Code
             - name: 'Install into scratch org - ES Base Code'
-              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
-              run: sfdx force:package:install --package ${{ steps.package-baseCode.outputs.packageVersionId }} -w 10 -u scratch-org -r
+              run: |
+                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESBaseCodeLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Styles
             - name: 'Install into scratch org - ES Base Styles'
-              if: ${{ contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
-              run: sfdx force:package:install --package ${{ steps.package-baseStyles.outputs.packageVersionId }} -w 10 -u scratch-org -r
+              run: |
+                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESBaseStylesLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Space Management
             - name: 'Install into scratch org - ES Space Management'
-              if: ${{ contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
-              run: sfdx force:package:install --package ${{ steps.package-spaceMgmt.outputs.packageVersionId }} -w 10 -u scratch-org -r
-
-            # Update sfdx-project.json and README to use only latest package version
-            - name: 'Update sfdx-project.json and README'
-              uses: muenzpraeger/github-action-sfdx-packaging-updater@master
+              run: |
+                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESSpaceMgmtLWC')
+                  sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # The main branch is protected, so we have to take a sequea for updating the README through a new PR
             - name: 'Create PR for new package versions'
