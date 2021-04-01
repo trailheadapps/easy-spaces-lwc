@@ -125,32 +125,32 @@ jobs:
             - name: 'Get package version IDs'
               id: packageVersions
               run: |
-                  versionIds=$(cat sfdx-project.json | jq -r '.packageAliases | map_values( select( . | startswith("04t") ) )')
-                  versionIds=$(echo "$versionIds" | sed -e 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
+                  versionIds=$(cat sfdx-project.json | jq -c -r '.packageAliases | map_values( select( . | startswith("04t") ) )')
+                  versionIds=$(echo "$versionIds" | sed -E 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
                   echo "::set-output name=ids::$versionIds"
 
             # Install into scratch org - ES Base Objects
             - name: 'Install into scratch org - ES Base Objects'
               run: |
-                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESObjects')
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESObjects')
                   sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Code
             - name: 'Install into scratch org - ES Base Code'
               run: |
-                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESBaseCodeLWC')
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESBaseCodeLWC')
                   sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Base Styles
             - name: 'Install into scratch org - ES Base Styles'
               run: |
-                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESBaseStylesLWC')
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESBaseStylesLWC')
                   sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # Install into scratch org - ES Space Management
             - name: 'Install into scratch org - ES Space Management'
               run: |
-                  versionId = $(${{ steps.packageVersions.outputs.ids }} | jq '.ESSpaceMgmtLWC')
+                  versionId=$(echo '${{ steps.packageVersions.outputs.ids }}' | jq -r '.ESSpaceMgmtLWC')
                   sfdx force:package:install --package $versionId -w 10 -u scratch-org -r
 
             # The main branch is protected, so we have to take a sequea for updating the README through a new PR
