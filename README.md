@@ -116,7 +116,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PsIOQA0) to install the **es-base-styles** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PsIJQA0) to install the **es-base-code** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002YyBMQA0) to install the **es-base-code** package and choose **Install for All Users**.
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002PsITQA0) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
