@@ -58,9 +58,8 @@ describe('c-customer-list', () => {
         getCustomerListAdapter.emit(mockCustomerList);
 
         return Promise.resolve().then(() => {
-            const customerTileElements = element.shadowRoot.querySelectorAll(
-                'c-customer-tile'
-            );
+            const customerTileElements =
+                element.shadowRoot.querySelectorAll('c-customer-tile');
             expect(customerTileElements.length).toBe(mockCustomerList.length);
             expect(customerTileElements[0].customer).toStrictEqual(
                 mockCustomerList[0]
@@ -83,9 +82,8 @@ describe('c-customer-list', () => {
         getCustomerListAdapter.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors.body).toBe(WIRE_ERROR);
             expect(errorPanelEl.friendlyMessage).toBe(
@@ -116,9 +114,8 @@ describe('c-customer-list', () => {
         getCustomerListAdapter.emit(mockCustomerList);
 
         return Promise.resolve().then(() => {
-            const customerTileElement = element.shadowRoot.querySelector(
-                'c-customer-tile'
-            );
+            const customerTileElement =
+                element.shadowRoot.querySelector('c-customer-tile');
             customerTileElement.dispatchEvent(
                 new CustomEvent('customerselect', {
                     detail: SELECT_EVENT_DETAIL

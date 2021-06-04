@@ -22,9 +22,8 @@ describe('c-image-gallery', () => {
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => {
-            const imageTileElements = element.shadowRoot.querySelectorAll(
-                'c-image-tile'
-            );
+            const imageTileElements =
+                element.shadowRoot.querySelectorAll('c-image-tile');
             expect(imageTileElements.length).toBe(mockSpacesList.length);
 
             expect(imageTileElements[0].record.Name).toBe(
@@ -46,9 +45,8 @@ describe('c-image-gallery', () => {
         document.body.appendChild(element);
 
         return Promise.resolve().then(() => {
-            const imageTileElement = element.shadowRoot.querySelector(
-                'c-image-tile'
-            );
+            const imageTileElement =
+                element.shadowRoot.querySelector('c-image-tile');
 
             imageTileElement.click();
             expect(element.items[0].selected).toBeTruthy();
@@ -76,9 +74,8 @@ describe('c-image-gallery', () => {
 
         return Promise.resolve()
             .then(() => {
-                const imageTileElement = element.shadowRoot.querySelector(
-                    'c-image-tile'
-                );
+                const imageTileElement =
+                    element.shadowRoot.querySelector('c-image-tile');
                 imageTileElement.click();
             })
             .then(() => {

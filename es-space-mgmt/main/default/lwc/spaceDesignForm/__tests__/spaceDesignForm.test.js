@@ -40,14 +40,14 @@ describe('c-space-design-form', () => {
             getRelatedSpacesAdapter.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
-                const lightningLayoutEl = element.shadowRoot.querySelector(
-                    'lightning-layout'
-                );
+                const lightningLayoutEl =
+                    element.shadowRoot.querySelector('lightning-layout');
                 expect(lightningLayoutEl).not.toBeNull();
 
-                const lightningLayoutItemsEl = element.shadowRoot.querySelectorAll(
-                    'lightning-layout-item'
-                );
+                const lightningLayoutItemsEl =
+                    element.shadowRoot.querySelectorAll(
+                        'lightning-layout-item'
+                    );
                 expect(lightningLayoutItemsEl.length).toBe(2);
             });
         });
@@ -66,9 +66,8 @@ describe('c-space-design-form', () => {
             getRelatedSpacesAdapter.error(WIRE_ERROR);
 
             return Promise.resolve().then(() => {
-                const errorPanelEl = element.shadowRoot.querySelector(
-                    'c-error-panel'
-                );
+                const errorPanelEl =
+                    element.shadowRoot.querySelector('c-error-panel');
                 expect(errorPanelEl).not.toBeNull();
                 expect(errorPanelEl.errors.body).toBe(WIRE_ERROR);
                 expect(errorPanelEl.friendlyMessage).toBe(
@@ -89,9 +88,8 @@ describe('c-space-design-form', () => {
             getRelatedSpacesAdapter.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
-                const imageGalleryEl = element.shadowRoot.querySelector(
-                    'c-image-gallery'
-                );
+                const imageGalleryEl =
+                    element.shadowRoot.querySelector('c-image-gallery');
                 expect(imageGalleryEl).not.toBeNull();
                 expect(imageGalleryEl.items.length).toBe(3);
                 expect(imageGalleryEl.items[0].record).toStrictEqual(
@@ -112,9 +110,8 @@ describe('c-space-design-form', () => {
             getRelatedSpacesAdapter.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
-                const pillListEl = element.shadowRoot.querySelector(
-                    'c-pill-list'
-                );
+                const pillListEl =
+                    element.shadowRoot.querySelector('c-pill-list');
                 expect(pillListEl).not.toBeNull();
                 expect(pillListEl.pills.length).toBe(10);
             });
@@ -142,9 +139,8 @@ describe('c-space-design-form', () => {
 
             return Promise.resolve()
                 .then(() => {
-                    const imageGalleryEl = element.shadowRoot.querySelector(
-                        'c-image-gallery'
-                    );
+                    const imageGalleryEl =
+                        element.shadowRoot.querySelector('c-image-gallery');
                     imageGalleryEl.dispatchEvent(
                         new CustomEvent('itemselect', {
                             detail: SELECT_EVENT_DETAIL
@@ -187,9 +183,8 @@ describe('c-space-design-form', () => {
 
             return Promise.resolve()
                 .then(() => {
-                    const pillsEl = element.shadowRoot.querySelector(
-                        'c-pill-list'
-                    );
+                    const pillsEl =
+                        element.shadowRoot.querySelector('c-pill-list');
                     pillsEl.dispatchEvent(
                         new CustomEvent('filterschange', {
                             detail: FILTER_CHANGE_EVENT_DETAIL
@@ -197,9 +192,8 @@ describe('c-space-design-form', () => {
                     );
                 })
                 .then(() => {
-                    const imageGalleryEl = element.shadowRoot.querySelector(
-                        'c-image-gallery'
-                    );
+                    const imageGalleryEl =
+                        element.shadowRoot.querySelector('c-image-gallery');
                     expect(imageGalleryEl.items[0].muted).toBeFalsy();
                     expect(imageGalleryEl.items[1].muted).toBeFalsy();
                     expect(imageGalleryEl.items[2].muted).toBeTruthy();
@@ -220,9 +214,8 @@ describe('c-space-design-form', () => {
             getRelatedSpacesAdapter.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
-                const buttonEl = element.shadowRoot.querySelectorAll(
-                    'lightning-button'
-                );
+                const buttonEl =
+                    element.shadowRoot.querySelectorAll('lightning-button');
                 expect(buttonEl[0].disabled).toBeTruthy();
                 expect(buttonEl[1].disabled).toBeTruthy();
             });
@@ -240,9 +233,8 @@ describe('c-space-design-form', () => {
 
             return Promise.resolve()
                 .then(() => {
-                    const imageGalleryEl = element.shadowRoot.querySelector(
-                        'c-image-gallery'
-                    );
+                    const imageGalleryEl =
+                        element.shadowRoot.querySelector('c-image-gallery');
                     imageGalleryEl.dispatchEvent(
                         new CustomEvent('itemselect', {
                             detail: SELECT_EVENT_DETAIL
@@ -250,9 +242,8 @@ describe('c-space-design-form', () => {
                     );
                 })
                 .then(() => {
-                    const buttonEl = element.shadowRoot.querySelectorAll(
-                        'lightning-button'
-                    );
+                    const buttonEl =
+                        element.shadowRoot.querySelectorAll('lightning-button');
                     expect(buttonEl[0].disabled).toBeFalsy();
                     expect(buttonEl[1].disabled).toBeFalsy();
                 });
@@ -275,9 +266,8 @@ describe('c-space-design-form', () => {
 
             return Promise.resolve()
                 .then(() => {
-                    const imageGalleryEl = element.shadowRoot.querySelector(
-                        'c-image-gallery'
-                    );
+                    const imageGalleryEl =
+                        element.shadowRoot.querySelector('c-image-gallery');
                     imageGalleryEl.dispatchEvent(
                         new CustomEvent('itemselect', {
                             detail: SELECT_EVENT_DETAIL
@@ -285,9 +275,8 @@ describe('c-space-design-form', () => {
                     );
                 })
                 .then(() => {
-                    const buttonEl = element.shadowRoot.querySelectorAll(
-                        'lightning-button'
-                    );
+                    const buttonEl =
+                        element.shadowRoot.querySelectorAll('lightning-button');
                     buttonEl[0].click();
                 })
                 .then(() => {
@@ -313,9 +302,8 @@ describe('c-space-design-form', () => {
 
             return Promise.resolve()
                 .then(() => {
-                    const imageGalleryEl = element.shadowRoot.querySelector(
-                        'c-image-gallery'
-                    );
+                    const imageGalleryEl =
+                        element.shadowRoot.querySelector('c-image-gallery');
                     imageGalleryEl.dispatchEvent(
                         new CustomEvent('itemselect', {
                             detail: SELECT_EVENT_DETAIL
@@ -323,9 +311,8 @@ describe('c-space-design-form', () => {
                     );
                 })
                 .then(() => {
-                    const buttonEl = element.shadowRoot.querySelectorAll(
-                        'lightning-button'
-                    );
+                    const buttonEl =
+                        element.shadowRoot.querySelectorAll('lightning-button');
                     buttonEl[1].click();
                 })
                 .then(() => {

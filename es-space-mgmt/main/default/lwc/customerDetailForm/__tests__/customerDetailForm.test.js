@@ -153,9 +153,8 @@ describe('c-customer-detail-form', () => {
         document.body.appendChild(element);
 
         return flushPromises().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors).toStrictEqual(
                 APEX_GET_CUSTOMER_FIELDS_ERROR
