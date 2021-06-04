@@ -22,9 +22,8 @@ describe('c-customer-tile', () => {
         }
     });
 
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
     it('displays the correct content in the tile', () => {
@@ -64,7 +63,7 @@ describe('c-customer-tile', () => {
         );
     });
 
-    it('clicking the tile fires the customerselect custom event', () => {
+    it('clicking the tile fires the customerselect custom event', async () => {
         const SELECT_EVENT_DETAIL = {
             customerId: '0000000',
             sobjectType: 'Lead',
@@ -85,16 +84,14 @@ describe('c-customer-tile', () => {
         const divEl = element.shadowRoot.querySelector('div');
         divEl.click();
 
-        return Promise.resolve().then(() => {
-            // Validate if event got fired
-            expect(handler).toHaveBeenCalled();
-            expect(handler.mock.calls[0][0].detail).toEqual(
-                SELECT_EVENT_DETAIL
-            );
-        });
+        await flushPromises();
+
+        // Validate if event got fired
+        expect(handler).toHaveBeenCalled();
+        expect(handler.mock.calls[0][0].detail).toEqual(SELECT_EVENT_DETAIL);
     });
 
-    it('check if the hyperlink has correct href and alt attributes', () => {
+    it('check if the hyperlink has correct href and alt attributes', async () => {
         const element = createElement('c-customer-tile', {
             is: CustomerTile
         });
@@ -102,17 +99,17 @@ describe('c-customer-tile', () => {
         element.object = SOBJECT_TYPE;
         document.body.appendChild(element);
 
-        return flushPromises().then(() => {
-            // Validate if event got fired
-            const linkEl = element.shadowRoot.querySelector('a');
-            expect(linkEl.getAttribute('alt')).toBe(
-                `Navigate to ${SOBJECT_TYPE} record detail for ${CUSTOMER_DETAILS.name}`
-            );
-            expect(linkEl.href).toBe(SalesforceBaseUrl + CUSTOMER_DETAILS.Id);
-        });
+        await flushPromises();
+
+        // Validate if event got fired
+        const linkEl = element.shadowRoot.querySelector('a');
+        expect(linkEl.getAttribute('alt')).toBe(
+            `Navigate to ${SOBJECT_TYPE} record detail for ${CUSTOMER_DETAILS.name}`
+        );
+        expect(linkEl.href).toBe(SalesforceBaseUrl + CUSTOMER_DETAILS.Id);
     });
 
-    it('is accessible', () => {
+    it('is accessible', async () => {
         const element = createElement('c-customer-tile', {
             is: CustomerTile
         });
@@ -121,6 +118,8 @@ describe('c-customer-tile', () => {
         element.object = SOBJECT_TYPE;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await flushPromises();
+
+        return expect(element).toBeAccessible();
     });
 });
