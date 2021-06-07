@@ -35,14 +35,6 @@ jobs:
               if: steps.cache-npm.outputs.cache-hit != 'true'
               run: npm ci
 
-            # Log dependencies
-            - name: 'Log node dependencies'
-              run: npm ls --depth=999
-
-            # Log dependencies
-            - name: 'Log node_modules'
-              run: ls node_modules
-
             # Prettier formatting
             - name: 'Code formatting verification with Prettier'
               run: npm run prettier:verify
