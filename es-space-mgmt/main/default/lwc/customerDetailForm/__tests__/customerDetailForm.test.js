@@ -43,12 +43,11 @@ describe('c-customer-detail-form', () => {
 
     // Helper function to wait until the microtask queue is empty. This is needed for promise
     // timing when calling imperative Apex.
-    function flushPromises() {
-        // eslint-disable-next-line no-undef
-        return new Promise((resolve) => setImmediate(resolve));
+    async function flushPromises() {
+        return Promise.resolve();
     }
 
-    it('renders the detail form successfully', () => {
+    it('renders the detail form successfully', async () => {
         // Assign mock value for resolved Apex promise
         getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
 
@@ -69,19 +68,19 @@ describe('c-customer-detail-form', () => {
         element.recordid = RECORD_ID_INPUT;
         document.body.appendChild(element);
 
-        return flushPromises().then(() => {
-            // Validate if correct parameters have been passed to base components
-            const formEl = element.shadowRoot.querySelector(
-                'lightning-record-form'
-            );
+        await flushPromises();
 
-            expect(formEl.fields).toEqual(RECORD_FIELDS_OUTPUT);
-            expect(formEl.recordId).toBe(RECORD_ID_INPUT);
-            expect(formEl.objectApiName).toBe(OBJECT_API_NAME_INPUT);
-        });
+        // Validate if correct parameters have been passed to base components
+        const formEl = element.shadowRoot.querySelector(
+            'lightning-record-form'
+        );
+
+        expect(formEl.fields).toEqual(RECORD_FIELDS_OUTPUT);
+        expect(formEl.recordId).toBe(RECORD_ID_INPUT);
+        expect(formEl.objectApiName).toBe(OBJECT_API_NAME_INPUT);
     });
 
-    it('handles form submission succesfully and fires a custom event', () => {
+    it('handles form submission succesfully and fires a custom event', async () => {
         // Assign mock value for resolved Apex promise
         getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
 
@@ -103,25 +102,25 @@ describe('c-customer-detail-form', () => {
         // Add event listener to catch child event
         element.addEventListener('customerupdate', customerUpdateHandler);
 
-        return flushPromises()
-            .then(() => {
-                // Validate if correct parameters have been passed to base components
-                const formEl = element.shadowRoot.querySelector(
-                    'lightning-record-form'
-                );
-                formEl.dispatchEvent(
-                    new CustomEvent('success', { detail: FORM_SUBMIT_RESPONSE })
-                );
-            })
-            .then(() => {
-                expect(customerUpdateHandler).toHaveBeenCalled();
-                expect(customerUpdateHandler.mock.calls[0][0].detail).toEqual(
-                    EVENT_DETAIL_PARAMETER
-                );
-            });
+        await flushPromises();
+
+        // Validate if correct parameters have been passed to base components
+        const formEl = element.shadowRoot.querySelector(
+            'lightning-record-form'
+        );
+        formEl.dispatchEvent(
+            new CustomEvent('success', { detail: FORM_SUBMIT_RESPONSE })
+        );
+
+        await flushPromises();
+
+        expect(customerUpdateHandler).toHaveBeenCalled();
+        expect(customerUpdateHandler.mock.calls[0][0].detail).toEqual(
+            EVENT_DETAIL_PARAMETER
+        );
     });
 
-    it('sends a draft reservation event via button click', () => {
+    it('sends a draft reservation event via button click', async () => {
         // Assign mock value for resolved Apex promise
         getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
         const element = createElement('c-customer-detail-form', {
@@ -134,13 +133,13 @@ describe('c-customer-detail-form', () => {
         const handler = jest.fn();
         element.addEventListener('draftreservation', handler);
 
-        return flushPromises().then(() => {
-            element.shadowRoot.querySelector('lightning-button').click();
-            expect(handler).toHaveBeenCalled();
-        });
+        await flushPromises();
+
+        element.shadowRoot.querySelector('lightning-button').click();
+        expect(handler).toHaveBeenCalled();
     });
 
-    it('shows error panel element', () => {
+    it('shows error panel element', async () => {
         // Assign mock value for rejected Apex promise
         getCustomerFields.mockRejectedValue(APEX_GET_CUSTOMER_FIELDS_ERROR);
 
@@ -152,18 +151,16 @@ describe('c-customer-detail-form', () => {
         element.recordId = '0000000000';
         document.body.appendChild(element);
 
-        return flushPromises().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
-            expect(errorPanelEl).not.toBeNull();
-            expect(errorPanelEl.errors).toStrictEqual(
-                APEX_GET_CUSTOMER_FIELDS_ERROR
-            );
-        });
+        await flushPromises();
+
+        const errorPanelEl = element.shadowRoot.querySelector('c-error-panel');
+        expect(errorPanelEl).not.toBeNull();
+        expect(errorPanelEl.errors).toStrictEqual(
+            APEX_GET_CUSTOMER_FIELDS_ERROR
+        );
     });
 
-    it('is accessible when customer detail fields returned', () => {
+    it('is accessible when customer detail fields returned', async () => {
         // Assign mock value for resolved Apex promise
         getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
 
@@ -178,10 +175,12 @@ describe('c-customer-detail-form', () => {
         element.recordid = RECORD_ID_INPUT;
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await flushPromises();
+
+        return expect(element).toBeAccessible();
     });
 
-    it('is accessible when error returned', () => {
+    it('is accessible when error returned', async () => {
         // Assign mock value for rejected Apex promise
         getCustomerFields.mockRejectedValue(APEX_GET_CUSTOMER_FIELDS_ERROR);
 
@@ -193,6 +192,8 @@ describe('c-customer-detail-form', () => {
         element.recordId = '0000000000';
         document.body.appendChild(element);
 
-        return Promise.resolve().then(() => expect(element).toBeAccessible());
+        await flushPromises();
+
+        return expect(element).toBeAccessible();
     });
 });

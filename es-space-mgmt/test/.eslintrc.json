@@ -1,0 +1,6 @@
+{
+    "extends": ["@salesforce/eslint-config-lwc/recommended", "prettier"],
+    "env": {
+        "node": true
+    }
+}

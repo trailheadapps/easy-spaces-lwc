@@ -39,9 +39,8 @@ describe('c-related-spaces', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Select elements for validation
-            const detailEls = element.shadowRoot.querySelector(
-                'c-image-gallery'
-            );
+            const detailEls =
+                element.shadowRoot.querySelector('c-image-gallery');
             expect(detailEls.items.length).toBe(mockRelatedSpaceRecords.length);
             expect(detailEls.items[0].record.Name).toBe(
                 mockRelatedSpaceRecords[0].Name
@@ -83,9 +82,8 @@ describe('c-related-spaces', () => {
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.friendlyMessage).toBe(
                 'There was an issue loading related market data.'
@@ -112,9 +110,8 @@ describe('c-related-spaces', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve()
             .then(() => {
-                const detailEls = element.shadowRoot.querySelector(
-                    'c-image-gallery'
-                );
+                const detailEls =
+                    element.shadowRoot.querySelector('c-image-gallery');
                 detailEls.dispatchEvent(
                     new CustomEvent('itemselect', {
                         detail: { recordId: NAV_RECORD_ID }
