@@ -39,7 +39,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <choices>
         <name>Day1</name>
         <choiceText

@@ -14,9 +14,8 @@ import { subscribe, MessageContext, publish } from 'lightning/messageService';
 // Realistic data with a list of spaces
 const mockOpenReservationsRecords = require('./data/getOpenReservations.json');
 // Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
-const getOpenReservationsAdapter = registerApexTestWireAdapter(
-    getOpenReservations
-);
+const getOpenReservationsAdapter =
+    registerApexTestWireAdapter(getOpenReservations);
 // Register as a standard wire adapter because the component under test requires this adapter.
 // We don't exercise this wire adapter in the tests.
 const messageContextWireAdapter = registerTestWireAdapter(MessageContext);
@@ -54,16 +53,14 @@ describe('c-reservation-list', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // check if the text is rendered fine
-            const openReservationParagraphElement = element.shadowRoot.querySelector(
-                'p.slds-text-heading_small'
-            );
+            const openReservationParagraphElement =
+                element.shadowRoot.querySelector('p.slds-text-heading_small');
             expect(openReservationParagraphElement.textContent).toBe(
                 'Open Reservations:'
             );
             // check if tile elements are rendered properly
-            const reservationTileElements = element.shadowRoot.querySelectorAll(
-                'c-reservation-tile'
-            );
+            const reservationTileElements =
+                element.shadowRoot.querySelectorAll('c-reservation-tile');
             expect(reservationTileElements.length).toBe(
                 mockOpenReservationsRecords.length
             );
@@ -98,9 +95,8 @@ describe('c-reservation-list', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Select elements for validation
-            const reservationTileElements = element.shadowRoot.querySelectorAll(
-                'c-reservation-tile'
-            );
+            const reservationTileElements =
+                element.shadowRoot.querySelectorAll('c-reservation-tile');
             expect(reservationTileElements.length).toBe(
                 mockOpenReservationsRecords.length
             );
@@ -147,9 +143,8 @@ describe('c-reservation-list', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Select tile element to select and dispatch event
-            const reservationTileElements = element.shadowRoot.querySelectorAll(
-                'c-reservation-tile'
-            );
+            const reservationTileElements =
+                element.shadowRoot.querySelectorAll('c-reservation-tile');
             // payload to publish
             const PAYLOAD = {
                 reservationId: mockOpenReservationsRecords[0].Id,
@@ -197,9 +192,8 @@ describe('c-reservation-list', () => {
         return Promise.resolve()
             .then(() => {
                 // Select elements for validation
-                const reservationTileElements = element.shadowRoot.querySelectorAll(
-                    'c-reservation-tile'
-                );
+                const reservationTileElements =
+                    element.shadowRoot.querySelectorAll('c-reservation-tile');
                 const reservationselectevt = new CustomEvent(
                     'reservationselect',
                     {
@@ -210,9 +204,8 @@ describe('c-reservation-list', () => {
                 reservationTileElements[0].dispatchEvent(reservationselectevt);
             })
             .then(() => {
-                const reservationTileElements = element.shadowRoot.querySelectorAll(
-                    'c-reservation-tile'
-                );
+                const reservationTileElements =
+                    element.shadowRoot.querySelectorAll('c-reservation-tile');
                 const mutedElements = [];
                 // collect all muted elements
                 reservationTileElements.forEach((reservationTile) => {
@@ -246,9 +239,8 @@ describe('c-reservation-list', () => {
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
-            const errorPanelEl = element.shadowRoot.querySelector(
-                'c-error-panel'
-            );
+            const errorPanelEl =
+                element.shadowRoot.querySelector('c-error-panel');
             expect(errorPanelEl).not.toBeNull();
             expect(errorPanelEl.errors.body).toBe(WIRE_ERROR);
             expect(errorPanelEl.friendlyMessage).toBe(
@@ -272,9 +264,8 @@ describe('c-reservation-list', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // check if the text is rendered fine
-            const noReservationParagraphElement = element.shadowRoot.querySelector(
-                'p.slds-var-m-left_small'
-            );
+            const noReservationParagraphElement =
+                element.shadowRoot.querySelector('p.slds-var-m-left_small');
             expect(noReservationParagraphElement.textContent).toBe(
                 'No open reservations found.'
             );
