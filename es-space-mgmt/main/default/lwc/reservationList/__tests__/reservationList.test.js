@@ -2,10 +2,6 @@
 import { createElement } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getOpenReservations from '@salesforce/apex/reservationManagerController.getOpenReservations';
-import {
-    registerApexTestWireAdapter,
-    registerTestWireAdapter
-} from '@salesforce/sfdx-lwc-jest';
 import ReservationList from 'c/reservationList';
 import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
 import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
@@ -13,12 +9,6 @@ import { subscribe, MessageContext, publish } from 'lightning/messageService';
 
 // Realistic data with a list of spaces
 const mockOpenReservationsRecords = require('./data/getOpenReservations.json');
-// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
-const getOpenReservationsAdapter =
-    registerApexTestWireAdapter(getOpenReservations);
-// Register as a standard wire adapter because the component under test requires this adapter.
-// We don't exercise this wire adapter in the tests.
-const messageContextWireAdapter = registerTestWireAdapter(MessageContext);
 
 // mock apex refresh method
 jest.mock(
@@ -47,7 +37,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+        getOpenReservations.emit(mockOpenReservationsRecords);
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
@@ -89,7 +79,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+        getOpenReservations.emit(mockOpenReservationsRecords);
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
         // ending the test and fail the test if the promise rejects.
@@ -114,11 +104,7 @@ describe('c-reservation-list', () => {
             flowName: 'spaceDesigner',
             status: 'FINISHED'
         };
-        publish(
-            messageContextWireAdapter,
-            FLOW_STATUS_CHANGE_MC,
-            messagePayload
-        );
+        publish(MessageContext, FLOW_STATUS_CHANGE_MC, messagePayload);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -136,7 +122,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+        getOpenReservations.emit(mockOpenReservationsRecords);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -177,7 +163,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+        getOpenReservations.emit(mockOpenReservationsRecords);
 
         // payload to publish
         const PAYLOAD = {
@@ -233,7 +219,7 @@ describe('c-reservation-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getOpenReservationsAdapter.error(WIRE_ERROR);
+        getOpenReservations.error(WIRE_ERROR);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -257,7 +243,7 @@ describe('c-reservation-list', () => {
         document.body.appendChild(element);
 
         // Emit empty response from @wire
-        getOpenReservationsAdapter.emit([]);
+        getOpenReservations.emit([]);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -278,7 +264,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit(mockOpenReservationsRecords);
+        getOpenReservations.emit(mockOpenReservationsRecords);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -289,7 +275,7 @@ describe('c-reservation-list', () => {
         });
         document.body.appendChild(element);
 
-        getOpenReservationsAdapter.emit([]);
+        getOpenReservations.emit([]);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -304,7 +290,7 @@ describe('c-reservation-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getOpenReservationsAdapter.error(WIRE_ERROR);
+        getOpenReservations.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

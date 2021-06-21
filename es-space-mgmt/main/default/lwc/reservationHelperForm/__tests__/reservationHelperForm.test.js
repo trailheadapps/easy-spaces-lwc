@@ -1,6 +1,26 @@
 import { createElement } from 'lwc';
 import { FlowNavigationNextEventName } from 'lightning/flowSupport';
 import ReservationHelperForm from 'c/reservationHelperForm';
+import getCustomerFields from '@salesforce/apex/customerServices.getCustomerFields';
+
+// Mock realistic data
+const APEX_GET_CUSTOMER_FIELDS_SUCCESS = {
+    city: 'MailingCity',
+    email: 'Email',
+    name: 'Name',
+    state: 'MailingState'
+};
+
+// Mocking imperative Apex method call
+jest.mock(
+    '@salesforce/apex/customerServices.getCustomerFields',
+    () => {
+        return {
+            default: jest.fn()
+        };
+    },
+    { virtual: true }
+);
 
 describe('c-reservation-helper-form', () => {
     afterEach(() => {
@@ -13,6 +33,9 @@ describe('c-reservation-helper-form', () => {
     });
 
     it('renders c-reservation-helper-form', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
@@ -37,6 +60,9 @@ describe('c-reservation-helper-form', () => {
     });
 
     it('dispatches customer update event', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
@@ -66,6 +92,9 @@ describe('c-reservation-helper-form', () => {
     });
 
     it('dispatches draft reservation event', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';
@@ -96,6 +125,9 @@ describe('c-reservation-helper-form', () => {
     });
 
     it('is accessible', () => {
+        // Assign mock value for resolved Apex promise
+        getCustomerFields.mockResolvedValue(APEX_GET_CUSTOMER_FIELDS_SUCCESS);
+
         const CUSTOMERID = '00Q5500000BFveDEAT';
         const OBJECTTYPE = 'Lead';
         const STATE = 'CA';

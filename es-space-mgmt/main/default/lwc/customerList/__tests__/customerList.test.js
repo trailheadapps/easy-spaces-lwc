@@ -8,21 +8,8 @@ import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change
 
 import { refreshApex } from '@salesforce/apex';
 
-import {
-    registerApexTestWireAdapter,
-    registerTestWireAdapter
-} from '@salesforce/sfdx-lwc-jest';
-
 // Realistic data with a list of customers
 const mockCustomerList = require('./data/getCustomerList.json');
-
-// Register as Apex wire adapter. Some tests verify that data is retrieved.
-const getCustomerListAdapter = registerApexTestWireAdapter(getCustomerList);
-
-// Register as a standard wire adapter because the component under test requires this adapter.
-// We don't exercise this wire adapter in the tests.
-// eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
-const messageContextWireAdapter = registerTestWireAdapter(MessageContext);
 
 const SOBJECT_TYPE = 'Lead';
 
@@ -55,7 +42,7 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getCustomerListAdapter.emit(mockCustomerList);
+        getCustomerList.emit(mockCustomerList);
 
         return Promise.resolve().then(() => {
             const customerTileElements =
@@ -79,7 +66,7 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getCustomerListAdapter.error(WIRE_ERROR);
+        getCustomerList.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => {
             const errorPanelEl =
@@ -111,7 +98,7 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getCustomerListAdapter.emit(mockCustomerList);
+        getCustomerList.emit(mockCustomerList);
 
         return Promise.resolve().then(() => {
             const customerTileElement =
@@ -158,8 +145,10 @@ describe('c-customer-list', () => {
             status: 'FINISHED',
             state: { sobjecttype: SOBJECT_TYPE }
         };
+
         publish(
-            messageContextWireAdapter,
+            // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+            MessageContext,
             FLOW_STATUS_CHANGE_MC,
             messagePayload
         );
@@ -178,7 +167,7 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getCustomerListAdapter.emit(mockCustomerList);
+        getCustomerList.emit(mockCustomerList);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -194,7 +183,7 @@ describe('c-customer-list', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getCustomerListAdapter.error(WIRE_ERROR);
+        getCustomerList.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
