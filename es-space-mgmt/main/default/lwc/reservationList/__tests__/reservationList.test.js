@@ -7,6 +7,20 @@ import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
 import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
 import { subscribe, MessageContext, publish } from 'lightning/messageService';
 
+// mock apex method getOpenReservations
+jest.mock(
+    '@salesforce/apex/reservationManagerController.getOpenReservations',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 // Realistic data with a list of spaces
 const mockOpenReservationsRecords = require('./data/getOpenReservations.json');
 

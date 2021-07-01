@@ -4,6 +4,20 @@ import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 
 import { FlowNavigationNextEventName } from 'lightning/flowSupport';
 
+// mock apex method getRelatedSpaces
+jest.mock(
+    '@salesforce/apex/marketServices.getRelatedSpaces',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 // Realistic data with a list of spaces
 const mockSpacesList = require('./data/getRelatedSpaces.json');
 

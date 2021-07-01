@@ -13,6 +13,20 @@ const mockCustomerList = require('./data/getCustomerList.json');
 
 const SOBJECT_TYPE = 'Lead';
 
+// mock apex method getCustomerList
+jest.mock(
+    '@salesforce/apex/reservationManagerController.getCustomerList',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
+
 // mock apex refresh method
 jest.mock(
     '@salesforce/apex',

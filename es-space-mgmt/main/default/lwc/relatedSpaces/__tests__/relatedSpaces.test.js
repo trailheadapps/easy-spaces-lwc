@@ -1,7 +1,22 @@
 import { createElement } from 'lwc';
+
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 import { getNavigateCalledWith } from 'lightning/navigation';
 import RelatedSpaces from 'c/relatedSpaces';
+
+// mock apex method getRelatedSpaces
+jest.mock(
+    '@salesforce/apex/marketServices.getRelatedSpaces',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 
 // Realistic data with a list of spaces
 const mockRelatedSpaceRecords = require('./data/getRelatedSpaces.json');
