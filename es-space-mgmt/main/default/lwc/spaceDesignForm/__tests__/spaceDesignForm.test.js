@@ -2,14 +2,24 @@ import { createElement } from 'lwc';
 import SpaceDesignForm from 'c/spaceDesignForm';
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import { FlowNavigationNextEventName } from 'lightning/flowSupport';
+
+// mock apex method getRelatedSpaces
+jest.mock(
+    '@salesforce/apex/marketServices.getRelatedSpaces',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 
 // Realistic data with a list of spaces
 const mockSpacesList = require('./data/getRelatedSpaces.json');
-
-// Register as Apex wire adapter. Some tests verify that data is retrieved.
-const getRelatedSpacesAdapter = registerApexTestWireAdapter(getRelatedSpaces);
 
 const MARKET_ID = '100000';
 
@@ -37,7 +47,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
                 const lightningLayoutEl =
@@ -63,7 +73,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit error from @wire
-            getRelatedSpacesAdapter.error(WIRE_ERROR);
+            getRelatedSpaces.error(WIRE_ERROR);
 
             return Promise.resolve().then(() => {
                 const errorPanelEl =
@@ -85,7 +95,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
                 const imageGalleryEl =
@@ -107,7 +117,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
                 const pillListEl =
@@ -135,7 +145,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve()
                 .then(() => {
@@ -179,7 +189,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve()
                 .then(() => {
@@ -211,7 +221,7 @@ describe('c-space-design-form', () => {
             document.body.appendChild(element);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve().then(() => {
                 const buttonEl =
@@ -229,7 +239,7 @@ describe('c-space-design-form', () => {
             element.market = MARKET_ID;
             document.body.appendChild(element);
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve()
                 .then(() => {
@@ -262,7 +272,7 @@ describe('c-space-design-form', () => {
             element.addEventListener(FlowNavigationNextEventName, handler);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve()
                 .then(() => {
@@ -298,7 +308,7 @@ describe('c-space-design-form', () => {
             element.addEventListener(FlowNavigationNextEventName, handler);
 
             // Emit data from @wire
-            getRelatedSpacesAdapter.emit(mockSpacesList);
+            getRelatedSpaces.emit(mockSpacesList);
 
             return Promise.resolve()
                 .then(() => {
@@ -330,7 +340,7 @@ describe('c-space-design-form', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockSpacesList);
+        getRelatedSpaces.emit(mockSpacesList);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -344,7 +354,7 @@ describe('c-space-design-form', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockSpacesList);
+        getRelatedSpaces.emit(mockSpacesList);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -360,7 +370,7 @@ describe('c-space-design-form', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getRelatedSpacesAdapter.error(WIRE_ERROR);
+        getRelatedSpaces.error(WIRE_ERROR);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

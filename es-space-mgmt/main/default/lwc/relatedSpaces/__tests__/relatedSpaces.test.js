@@ -1,8 +1,22 @@
 import { createElement } from 'lwc';
+
 import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
 import { getNavigateCalledWith } from 'lightning/navigation';
-import { registerApexTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
 import RelatedSpaces from 'c/relatedSpaces';
+
+// mock apex method getRelatedSpaces
+jest.mock(
+    '@salesforce/apex/marketServices.getRelatedSpaces',
+    () => {
+        const {
+            createApexTestWireAdapter
+        } = require('@salesforce/sfdx-lwc-jest');
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 
 // Realistic data with a list of spaces
 const mockRelatedSpaceRecords = require('./data/getRelatedSpaces.json');
@@ -10,9 +24,6 @@ const mockRelatedSpaceRecords = require('./data/getRelatedSpaces.json');
 // An empty list of records to verify the component does something reasonable
 // when there is no data to display
 const mockRelatedSpacesNoRecords = require('./data/getRelatedSpacesNoRecords.json');
-
-// Register as Apex wire adapter. Some tests verify that provisioned values trigger desired behavior.
-const getRelatedSpacesAdapter = registerApexTestWireAdapter(getRelatedSpaces);
 
 describe('c-related-spaces', () => {
     afterEach(() => {
@@ -32,7 +43,7 @@ describe('c-related-spaces', () => {
         element.recordId = RECORD_ID;
         document.body.appendChild(element);
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+        getRelatedSpaces.emit(mockRelatedSpaceRecords);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -56,7 +67,7 @@ describe('c-related-spaces', () => {
         element.recordId = RECORD_ID;
         document.body.appendChild(element);
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockRelatedSpacesNoRecords);
+        getRelatedSpaces.emit(mockRelatedSpacesNoRecords);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -76,7 +87,7 @@ describe('c-related-spaces', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getRelatedSpacesAdapter.error();
+        getRelatedSpaces.error();
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -103,7 +114,7 @@ describe('c-related-spaces', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+        getRelatedSpaces.emit(mockRelatedSpaceRecords);
 
         // Return a promise to wait for any asynchronous DOM updates. Jest
         // will automatically wait for the Promise chain to complete before
@@ -141,7 +152,7 @@ describe('c-related-spaces', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockRelatedSpaceRecords);
+        getRelatedSpaces.emit(mockRelatedSpaceRecords);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -156,7 +167,7 @@ describe('c-related-spaces', () => {
         document.body.appendChild(element);
 
         // Emit data from @wire
-        getRelatedSpacesAdapter.emit(mockRelatedSpacesNoRecords);
+        getRelatedSpaces.emit(mockRelatedSpacesNoRecords);
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
@@ -168,7 +179,7 @@ describe('c-related-spaces', () => {
         document.body.appendChild(element);
 
         // Emit error from @wire
-        getRelatedSpacesAdapter.error();
+        getRelatedSpaces.error();
 
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });

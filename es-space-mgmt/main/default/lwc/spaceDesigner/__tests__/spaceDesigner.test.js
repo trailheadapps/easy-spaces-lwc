@@ -7,13 +7,6 @@ import { subscribe, publish, MessageContext } from 'lightning/messageService';
 import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
 import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';
 
-import { registerTestWireAdapter } from '@salesforce/sfdx-lwc-jest';
-
-// Register as a standard wire adapter because the component under test requires this adapter.
-// We don't exercise this wire adapter in the tests.
-// eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
-const messageContextWireAdapter = registerTestWireAdapter(MessageContext);
-
 const MESSAGE_PAYLOAD = {
     tileType: 'reservation',
     properties: {
@@ -75,7 +68,9 @@ describe('c-space-designer', () => {
         element.addEventListener('reservchoice', handler);
 
         // Simulate pulishing a message using TILE_SELECTION_MC message channel
-        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+        // We don't exercise this wire adapter in the tests.
+        // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+        publish(MessageContext, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
 
         return Promise.resolve().then(() => {
             // Validate if event got fired
@@ -98,13 +93,17 @@ describe('c-space-designer', () => {
         element.addEventListener('reservchoice', handler);
 
         // Simulate pulishing a message using TILE_SELECTION_MC message channel
-        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+        // We don't exercise this wire adapter in the tests.
+        // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+        publish(MessageContext, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
 
         return Promise.resolve()
             .then(() => {
                 expect(handler).toHaveBeenCalledTimes(1);
                 publish(
-                    messageContextWireAdapter,
+                    // We don't exercise this wire adapter in the tests.
+                    // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+                    MessageContext,
                     TILE_SELECTION_MC,
                     MESSAGE_PAYLOAD
                 );
@@ -126,7 +125,9 @@ describe('c-space-designer', () => {
         element.addEventListener(ShowToastEventName, handler);
 
         // Simulate pulishing a message using TILE_SELECTION_MC message channel
-        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+        // We don't exercise this wire adapter in the tests.
+        // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+        publish(MessageContext, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
 
         return Promise.resolve().then(() => {
             expect(handler).not.toHaveBeenCalled();
@@ -152,14 +153,18 @@ describe('c-space-designer', () => {
         element.addEventListener(ShowToastEventName, handler);
 
         // Simulate pulishing a message using TILE_SELECTION_MC message channel
-        publish(messageContextWireAdapter, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
+        // We don't exercise this wire adapter in the tests.
+        // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+        publish(MessageContext, TILE_SELECTION_MC, MESSAGE_PAYLOAD);
 
         return Promise.resolve()
             .then(() => {
                 // Validate that the toast message does not fire for the first TILE_SELECTION_MC event
                 expect(handler).not.toHaveBeenCalled();
                 publish(
-                    messageContextWireAdapter,
+                    // We don't exercise this wire adapter in the tests.
+                    // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+                    MessageContext,
                     TILE_SELECTION_MC,
                     MESSAGE_PAYLOAD
                 );
@@ -196,7 +201,9 @@ describe('c-space-designer', () => {
 
         // Simulate pulishing a message using TILE_SELECTION_MC message channel
         publish(
-            messageContextWireAdapter,
+            // We don't exercise this wire adapter in the tests.
+            // eslint-disable-next-line @lwc/lwc/no-unexpected-wire-adapter-usages
+            MessageContext,
             TILE_SELECTION_MC,
             CUSTOMER_MESSAGE_PAYLOAD
         );
