@@ -118,7 +118,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002YzsbQAC) to install the **es-base-code** package and choose **Install for All Users**.
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002YzsgQAC) to install the **es-space-mgmt** package and choose **Install for All Users**.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002Z0HbQAK) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
 1. From the command line, enter the following commands to clone this repository. You need to do this to get the metadata, code and files with sample data on your computer:
 
