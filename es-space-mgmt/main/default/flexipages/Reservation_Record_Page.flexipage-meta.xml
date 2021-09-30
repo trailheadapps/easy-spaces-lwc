@@ -122,6 +122,7 @@
             <componentInstance>
                 <componentName
                 >runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
