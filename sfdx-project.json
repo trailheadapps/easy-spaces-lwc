@@ -23,7 +23,7 @@
             "dependencies": [
                 {
                     "package": "ESObjects",
-                    "versionNumber": "52.0.0.LATEST"
+                    "versionNumber": "53.0.0.LATEST"
                 }
             ]
         },
