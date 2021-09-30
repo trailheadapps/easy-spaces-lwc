@@ -99,8 +99,9 @@
                 </componentInstanceProperties>
                 <componentName
                 >runtime_sales_pathassistant:pathAssistant</componentName>
+                <identifier
+                >runtime_sales_pathassistant_pathAssistant1</identifier>
             </componentInstance>
-            <identifier>runtime_sales_pathassistant_pathAssistant1</identifier>
         </itemInstances>
         <itemInstances>
             <componentInstance>

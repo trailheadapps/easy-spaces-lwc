@@ -27,6 +27,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel1</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fa95c93d-2c2b-4e09-8427-2f31b4bb35f8</name>
