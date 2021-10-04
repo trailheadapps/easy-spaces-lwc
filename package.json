@@ -24,7 +24,7 @@
         "url": "git+https://github.com/trailheadapps/easy-spaces-lwc"
     },
     "devDependencies": {
-        "@lwc/eslint-plugin-lwc": "^1.0.1",
+        "@lwc/eslint-plugin-lwc": "^1.1.0",
         "@prettier/plugin-xml": "^1.1.0",
         "@sa11y/jest": "^3.0.0",
         "@salesforce/eslint-config-lwc": "^3.0.0",
@@ -34,9 +34,9 @@
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-import": "^2.24.2",
-        "eslint-plugin-jest": "^24.5.0",
+        "eslint-plugin-jest": "^24.5.2",
         "husky": "^7.0.2",
-        "lint-staged": "^11.1.2",
+        "lint-staged": "^11.2.0",
         "prettier": "^2.4.1",
         "prettier-plugin-apex": "^1.10.0"
     },
