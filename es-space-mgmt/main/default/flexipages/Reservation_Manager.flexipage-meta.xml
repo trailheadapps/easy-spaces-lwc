@@ -8,6 +8,7 @@
                     <value>Lead</value>
                 </componentInstanceProperties>
                 <componentName>customerList</componentName>
+                <identifier>customerList1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -17,6 +18,7 @@
                     <value>Contact</value>
                 </componentInstanceProperties>
                 <componentName>customerList</componentName>
+                <identifier>customerList2</identifier>
             </componentInstance>
         </itemInstances>
         <name>leftColumn</name>
@@ -26,6 +28,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>reservationHelperAura</componentName>
+                <identifier>reservationHelperAura1</identifier>
             </componentInstance>
         </itemInstances>
         <name>rightColumn</name>
