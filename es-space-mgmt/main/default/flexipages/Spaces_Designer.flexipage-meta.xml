@@ -4,6 +4,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>reservationList</componentName>
+                <identifier>reservationList1</identifier>
             </componentInstance>
         </itemInstances>
         <name>leftColumn</name>
@@ -13,6 +14,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>spaceDesignerAura</componentName>
+                <identifier>spaceDesignerAura1</identifier>
             </componentInstance>
         </itemInstances>
         <name>rightColumn</name>
