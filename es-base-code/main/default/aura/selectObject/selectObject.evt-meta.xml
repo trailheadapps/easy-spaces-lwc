@@ -3,6 +3,6 @@
     xmlns="urn:metadata.tooling.soap.sforce.com"
     fqn="selectObject"
 >
-    <apiVersion>53.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <description>A Lightning Event Bundle</description>
 </AuraDefinitionBundle>
