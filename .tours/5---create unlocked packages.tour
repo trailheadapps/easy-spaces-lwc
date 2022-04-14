@@ -39,7 +39,7 @@
     {
       "file": "sfdx-project.json",
       "description": "The packageId for installation to orgs is listed in the `sfdx-project.json` automatically each time a new package version is generated",
-      "line": 60
+      "line": 61
     }
   ]
 }
