@@ -20,7 +20,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <constants>
         <name>constReservation</name>
         <dataType>String</dataType>
