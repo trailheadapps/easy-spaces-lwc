@@ -11,7 +11,7 @@ on:
 # Jobs to be executed
 jobs:
     validate-branch-name:
-        runs-on: ubuntu-latest
+        runs-on: trailheadapps-Ubuntu
         steps:
             - name: Validate branch name requirements
               uses: deepakputhraya/action-branch-name@master
