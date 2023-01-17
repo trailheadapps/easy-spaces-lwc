@@ -57,7 +57,7 @@ jobs:
                   status=$(echo $json | jq '.status')
                   if [ $status == "0" ]; then
                       packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
-                      echo "::set-output name=packageVersionId::$packageVersionId"
+                      echo "packageVersionId=$packageVersionId" >> $GITHUB_OUTPUT
                   else
                       echo "sfdx force:package:version:create failed"
                   fi
@@ -74,7 +74,7 @@ jobs:
                   status=$(echo $json | jq '.status')
                   if [ $status == "0" ]; then
                       packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
-                      echo "::set-output name=packageVersionId::$packageVersionId"
+                      echo "packageVersionId=$packageVersionId" >> $GITHUB_OUTPUT
                   else
                       echo "sfdx force:package:version:create failed"
                   fi
@@ -91,7 +91,7 @@ jobs:
                   status=$(echo $json | jq '.status')
                   if [ $status == "0" ]; then
                       packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
-                      echo "::set-output name=packageVersionId::$packageVersionId"
+                      echo "packageVersionId=$packageVersionId" >> $GITHUB_OUTPUT
                   else
                       echo "sfdx force:package:version:create failed"
                   fi
@@ -108,7 +108,7 @@ jobs:
                   status=$(echo $json | jq '.status')
                   if [ $status == "0" ]; then
                       packageVersionId=$(echo $json | jq -r '.result.SubscriberPackageVersionId')
-                      echo "::set-output name=packageVersionId::$packageVersionId"
+                      echo "packageVersionId=$packageVersionId" >> $GITHUB_OUTPUT
                   else
                       echo "sfdx force:package:version:create failed"
                   fi
@@ -134,7 +134,7 @@ jobs:
               run: |
                   versionIds=$(cat sfdx-project.json | jq -c -r '.packageAliases | map_values( select( . | startswith("04t") ) )')
                   versionIds=$(echo "$versionIds" | sed -E 's,@[0-9]+\.[0-9]+\.[0-9]+\-[0-9]+,,g')
-                  echo "::set-output name=ids::$versionIds"
+                  echo "ids=$versionIds" >> $GITHUB_OUTPUT
 
             # Install into scratch org - ES Base Objects
             - name: 'Install into scratch org - ES Base Objects'
