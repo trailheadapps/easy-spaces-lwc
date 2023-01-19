@@ -120,7 +120,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4W000002Lm9kQAC) to install the **es-space-mgmt** package and choose **Install for All Users**.
 
-1. From the command line, enter the following commands to clone this repository. You need to do this to get the metadata, code and files with sample data on your computer:
+1. From the command line, enter the following commands to clone this repository. You need to do this to get the metadata, code and files with sample data on your computer. We will upload some sample files from the data folder of the project from your computer to Salesforce in steps 9 through 12:
 
     ```
     git clone https://github.com/trailheadapps/easy-spaces-lwc
@@ -148,7 +148,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
     - Click the **Standard objects** tab, click **Leads**, and click **Add New Records**.
-    - Drag **Lead_Data.csv** from the data folder of this project to the upload area.
+    - Drag **Lead_Data.csv** from the data folder of this project from your computer to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Contact data:
@@ -156,7 +156,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
     - Click the **Standard objects** tab, click **Accounts and Contacts**, and click **Add New Records**.
-    - Drag **Contact_Data.csv** from the data folder of this project to the upload area.
+    - Drag **Contact_Data.csv** from the data folder of this project from your computer to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Market data:
@@ -164,7 +164,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
     - Click the **Custom objects** tab, click **Markets**, and click **Add New Records**.
-    - Drag **Market_Data.csv** from the data folder of this project to the upload area.
+    - Drag **Market_Data.csv** from the data folder of this project from your computer to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. Import Spaces data:
@@ -173,7 +173,7 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
     - Click **Launch Wizard**.
     - Click the **Custom objects** tab, click **Spaces**, and click **Add New Records**.
     - In the **Add New Records** menu, under _Which Market field in your file specifies the Master/Detail relationship?_ select **Market Name**
-    - Drag **Space_Data.csv** from the data folder of this project to the upload area.
+    - Drag **Space_Data.csv** from the data folder of this project from your computer to the upload area.
     - Click **Next**, **Next**, and **Start Import**.
 
 1. In **Setup**, navigate to **Themes and Branding**
