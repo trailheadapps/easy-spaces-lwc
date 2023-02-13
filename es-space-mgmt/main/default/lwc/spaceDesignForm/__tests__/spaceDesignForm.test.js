@@ -290,7 +290,7 @@ describe('c-space-design-form', () => {
                     buttonEl[0].click();
                 })
                 .then(() => {
-                    expect(handler).toBeCalled();
+                    expect(handler).toHaveBeenCalled();
                     expect(element.popTabOnFinish).toBeFalsy();
                 });
         });
@@ -326,7 +326,7 @@ describe('c-space-design-form', () => {
                     buttonEl[1].click();
                 })
                 .then(() => {
-                    expect(handler).toBeCalled();
+                    expect(handler).toHaveBeenCalled();
                     expect(element.popTabOnFinish).toBeTruthy();
                 });
         });
