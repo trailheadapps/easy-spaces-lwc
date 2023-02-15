@@ -4,21 +4,21 @@
             "path": "./es-base-objects",
             "package": "ESObjects",
             "versionName": "Base Objects - Winter '22",
-            "versionNumber": "57.0.0.NEXT",
+            "versionNumber": "57.0.0",
             "default": false
         },
         {
             "path": "./es-base-styles",
             "package": "ESBaseStylesLWC",
             "versionName": "Base Styles LWC - Winter '22",
-            "versionNumber": "57.0.0.NEXT",
+            "versionNumber": "57.0.0",
             "default": false
         },
         {
             "path": "./es-base-code",
             "package": "ESBaseCodeLWC",
             "versionName": "Base Code LWC - Winter '22",
-            "versionNumber": "57.0.0.NEXT",
+            "versionNumber": "57.0.0",
             "default": false,
             "dependencies": [
                 {
@@ -31,7 +31,7 @@
             "path": "./es-space-mgmt",
             "package": "ESSpaceMgmtLWC",
             "versionName": "Space Management App - Winter '22",
-            "versionNumber": "57.0.0.NEXT",
+            "versionNumber": "57.0.0",
             "default": true,
             "dependencies": [
                 {
