@@ -4,26 +4,26 @@
             "path": "./es-base-objects",
             "package": "ESObjects",
             "versionName": "Base Objects - Winter '22",
-            "versionNumber": "55.0.0.NEXT",
+            "versionNumber": "57.0.0.NEXT",
             "default": false
         },
         {
             "path": "./es-base-styles",
             "package": "ESBaseStylesLWC",
             "versionName": "Base Styles LWC - Winter '22",
-            "versionNumber": "55.0.0.NEXT",
+            "versionNumber": "57.0.0.NEXT",
             "default": false
         },
         {
             "path": "./es-base-code",
             "package": "ESBaseCodeLWC",
             "versionName": "Base Code LWC - Winter '22",
-            "versionNumber": "55.0.0.NEXT",
+            "versionNumber": "57.0.0.NEXT",
             "default": false,
             "dependencies": [
                 {
                     "package": "ESObjects",
-                    "versionNumber": "55.0.0.LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 }
             ]
         },
@@ -31,20 +31,20 @@
             "path": "./es-space-mgmt",
             "package": "ESSpaceMgmtLWC",
             "versionName": "Space Management App - Winter '22",
-            "versionNumber": "55.0.0.NEXT",
+            "versionNumber": "57.0.0.NEXT",
             "default": true,
             "dependencies": [
                 {
                     "package": "ESObjects",
-                    "versionNumber": "55.0.0.LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 },
                 {
                     "package": "ESBaseCodeLWC",
-                    "versionNumber": "55.0.0.LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 },
                 {
                     "package": "ESBaseStylesLWC",
-                    "versionNumber": "55.0.0.LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 }
             ]
         }
@@ -52,11 +52,15 @@
     "pushPackageDirectoriesSequentially": true,
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "55.0",
+    "sourceApiVersion": "57.0",
     "packageAliases": {
         "ESObjects": "0Ho4W000000CaeJSAS",
         "ESBaseCodeLWC": "0Ho4W000000CaeTSAS",
         "ESBaseStylesLWC": "0Ho4W000000CaeOSAS",
-        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS"
+        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS",
+        "ESObjects@53.0.0-1": "04t4W000002Lm9QQAS",
+        "ESBaseCodeLWC@53.0.0-1": "04t4W000002LmAJQA0",
+        "ESBaseStylesLWC@53.0.0-3": "04t4W000002LmAOQA0",
+        "ESSpaceMgmtLWC@53.0.0-1": "04t4W000002Lm9kQAC"
     }
 }
