@@ -48,6 +48,7 @@ jobs:
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
               id: package-baseObj
+              if: ${{ contains(github.event.client_payload.packageNames, 'ESObjects') }}
               run: |
                   set +e
                   json=$(sfdx force:package:version:create -p ESObjects -x -w 20 --json)

@@ -3,48 +3,48 @@
         {
             "path": "./es-base-objects",
             "package": "ESObjects",
-            "versionName": "Base Objects - Winter '22",
+            "versionName": "Base Objects - Spring '23",
             "versionNumber": "57.0.0.NEXT",
             "default": false
         },
         {
             "path": "./es-base-styles",
             "package": "ESBaseStylesLWC",
-            "versionName": "Base Styles LWC - Winter '22",
+            "versionName": "Base Styles LWC - Spring '23",
             "versionNumber": "57.0.0.NEXT",
             "default": false
         },
         {
             "path": "./es-base-code",
             "package": "ESBaseCodeLWC",
-            "versionName": "Base Code LWC - Winter '22",
+            "versionName": "Base Code LWC - Spring '23",
             "versionNumber": "57.0.0.NEXT",
             "default": false,
             "dependencies": [
                 {
                     "package": "ESObjects",
-                    "versionNumber": "LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 }
             ]
         },
         {
             "path": "./es-space-mgmt",
             "package": "ESSpaceMgmtLWC",
-            "versionName": "Space Management App - Winter '22",
+            "versionName": "Space Management App - Spring '23",
             "versionNumber": "57.0.0.NEXT",
             "default": true,
             "dependencies": [
                 {
                     "package": "ESObjects",
-                    "versionNumber": "LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 },
                 {
                     "package": "ESBaseCodeLWC",
-                    "versionNumber": "LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 },
                 {
                     "package": "ESBaseStylesLWC",
-                    "versionNumber": "LATEST"
+                    "versionNumber": "57.0.0.LATEST"
                 }
             ]
         }
@@ -61,6 +61,7 @@
         "ESObjects@53.0.0-1": "04t4W000002Lm9QQAS",
         "ESBaseCodeLWC@53.0.0-1": "04t4W000002LmAJQA0",
         "ESBaseStylesLWC@53.0.0-3": "04t4W000002LmAOQA0",
-        "ESSpaceMgmtLWC@53.0.0-1": "04t4W000002Lm9kQAC"
+        "ESSpaceMgmtLWC@53.0.0-1": "04t4W000002Lm9kQAC",
+        "ESObjects@57.0.0-1": "04t4W000002GrC5QAK"
     }
 }
