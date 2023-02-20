@@ -58,9 +58,9 @@
         "ESBaseCodeLWC": "0Ho4W000000CaeTSAS",
         "ESBaseStylesLWC": "0Ho4W000000CaeOSAS",
         "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS",
-        "ESBaseCodeLWC@53.0.0-1": "04t4W000002LmAJQA0",
-        "ESBaseStylesLWC@53.0.0-3": "04t4W000002LmAOQA0",
-        "ESSpaceMgmtLWC@53.0.0-1": "04t4W000002Lm9kQAC",
-        "ESObjects@57.0.0-2": "04t4W000002GrDcQAK"
+        "ESObjects@57.0.0-2": "04t4W000002GrDcQAK",
+        "ESBaseCodeLWC@57.0.0-1": "04t4W000002GrDhQAK",
+        "ESBaseStylesLWC@57.0.0-1": "04t4W000002GrDmQAK",
+        "ESSpaceMgmtLWC@57.0.0-1": "04t4W000002GrDrQAK"
     }
 }
