@@ -121,7 +121,7 @@ jobs:
 
             # Update sfdx-project.json and README to use only latest package version
             - name: 'Update sfdx-project.json and README'
-              uses: trailheadapps/github-action-sfdx-packaging-updater@1.1.0
+              uses: trailheadapps/github-action-sfdx-packaging-updater@1.2.0
 
             # Create scratch org
             - name: 'Create scratch org'
