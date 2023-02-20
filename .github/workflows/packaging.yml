@@ -1,22 +1,23 @@
 # Unique name for this workflow
 name: Packaging
 
-# Workflow starts when receiving start-packaging custom event
-# Event contains the packageName of the target package for which a new version will be released
+# Workflow starts when receiving start-packaging custom event (or manually)
+# start-packaging event contains the packageName of the target package for which a new version will be released
 on:
     workflow_dispatch:
-        forcePackageBaseObjects:
-            description: 'Package Base Objects'
-            default: 'true'
-        forcePackageBaseCode:
-            description: 'Package Base Code'
-            default: 'true'
-        forcePackageBaseStyles:
-            description: 'Package Base Styles'
-            default: 'true'
-        forcePackageSpaceMgmt:
-            description: 'Package Space Management App'
-            default: 'true'
+        inputs:
+            forcePackageBaseObjects:
+                description: 'Package Base Objects'
+                default: 'true'
+            forcePackageBaseCode:
+                description: 'Package Base Code'
+                default: 'true'
+            forcePackageBaseStyles:
+                description: 'Package Base Styles'
+                default: 'true'
+            forcePackageSpaceMgmt:
+                description: 'Package Space Management App'
+                default: 'true'
     repository_dispatch:
         types: [start-packaging]
 
