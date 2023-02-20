@@ -9,7 +9,59 @@
     <type>MultiselectPicklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetName>Types</valueSetName>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Large Groups</fullName>
+                <default>false</default>
+                <label>Large Groups</label>
+            </value>
+            <value>
+                <fullName>Scheduled Activity</fullName>
+                <default>false</default>
+                <label>Scheduled Activity</label>
+            </value>
+            <value>
+                <fullName>Come-and-Go</fullName>
+                <default>false</default>
+                <label>Come-and-Go</label>
+            </value>
+            <value>
+                <fullName>Individuals or Small Groups</fullName>
+                <default>false</default>
+                <label>Individuals or Small Groups</label>
+            </value>
+            <value>
+                <fullName>Indoor</fullName>
+                <default>false</default>
+                <label>Indoor</label>
+            </value>
+            <value>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <label>Outdoor</label>
+            </value>
+            <value>
+                <fullName>Conversation Starter</fullName>
+                <default>false</default>
+                <label>Conversation Starter</label>
+            </value>
+            <value>
+                <fullName>Quiet</fullName>
+                <default>false</default>
+                <label>Quiet</label>
+            </value>
+            <value>
+                <fullName>Energizing</fullName>
+                <default>false</default>
+                <label>Energizing</label>
+            </value>
+            <value>
+                <fullName>Relaxing</fullName>
+                <default>false</default>
+                <label>Relaxing</label>
+            </value>
+        </valueSetDefinition>
     </valueSet>
     <visibleLines>4</visibleLines>
 </CustomField>
