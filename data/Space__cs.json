@@ -12,7 +12,7 @@
             "Name": "Outdoor Exploration Lab - Burbank",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -26,7 +26,7 @@
             "Name": "Drawing/Watercolor Studio - Burbank",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -40,7 +40,7 @@
             "Name": "Temporary Terrace - Burbank",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -54,7 +54,7 @@
             "Name": "Cooking Classroom - Burbank",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -68,7 +68,7 @@
             "Name": "Walking Meditation Paths - Burbank",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -82,7 +82,7 @@
             "Name": "Building Block Room - Burbank",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -96,7 +96,7 @@
             "Name": "Music Room - Burbank",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -110,7 +110,7 @@
             "Name": "Sand Drawing Tables - Burbank",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -124,7 +124,7 @@
             "Name": "Outdoor Café - Burbank",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -138,7 +138,7 @@
             "Name": "Indoor Exploration Lab - Burbank",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -152,7 +152,7 @@
             "Name": "Indoor Café - Burbank",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -166,7 +166,7 @@
             "Name": "Game Room/Arcade - Burbank",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -180,7 +180,7 @@
             "Name": "Outdoor Exploration Lab - San Diego",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -194,7 +194,7 @@
             "Name": "Drawing/Watercolor Studio - San Diego",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -208,7 +208,7 @@
             "Name": "Temporary Terrace - San Diego",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -222,7 +222,7 @@
             "Name": "Cooking Classroom - San Diego",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -236,7 +236,7 @@
             "Name": "Walking Meditation Paths - San Diego",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -250,7 +250,7 @@
             "Name": "Building Block Room - San Diego",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -264,7 +264,7 @@
             "Name": "Music Room - San Diego",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -278,7 +278,7 @@
             "Name": "Sand Drawing Tables - San Diego",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -292,7 +292,7 @@
             "Name": "Outdoor Café - San Diego",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -306,7 +306,7 @@
             "Name": "Indoor Exploration Lab - San Diego",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -320,7 +320,7 @@
             "Name": "Indoor Café - San Diego",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -334,7 +334,7 @@
             "Name": "Game Room/Arcade - San Diego",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -348,7 +348,7 @@
             "Name": "Outdoor Exploration Lab - Seattle",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -362,7 +362,7 @@
             "Name": "Drawing/Watercolor Studio - Seattle",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -376,7 +376,7 @@
             "Name": "Temporary Terrace - Seattle",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -390,7 +390,7 @@
             "Name": "Cooking Classroom - Seattle",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -404,7 +404,7 @@
             "Name": "Walking Meditation Paths - Seattle",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -418,7 +418,7 @@
             "Name": "Building Block Room - Seattle",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -432,7 +432,7 @@
             "Name": "Music Room - Seattle",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -446,7 +446,7 @@
             "Name": "Sand Drawing Tables - Seattle",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -460,7 +460,7 @@
             "Name": "Outdoor Café - Seattle",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -474,7 +474,7 @@
             "Name": "Indoor Exploration Lab - Seattle",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -488,7 +488,7 @@
             "Name": "Indoor Café - Seattle",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -502,7 +502,7 @@
             "Name": "Game Room/Arcade - Seattle",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -516,7 +516,7 @@
             "Name": "Outdoor Exploration Lab - Chicago",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -530,7 +530,7 @@
             "Name": "Drawing/Watercolor Studio - Chicago",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -544,7 +544,7 @@
             "Name": "Temporary Terrace - Chicago",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -558,7 +558,7 @@
             "Name": "Cooking Classroom - Chicago",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -572,7 +572,7 @@
             "Name": "Walking Meditation Paths - Chicago",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -586,7 +586,7 @@
             "Name": "Building Block Room - Chicago",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -600,7 +600,7 @@
             "Name": "Music Room - Chicago",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -614,7 +614,7 @@
             "Name": "Sand Drawing Tables - Chicago",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -628,7 +628,7 @@
             "Name": "Outdoor Café - Chicago",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -642,7 +642,7 @@
             "Name": "Indoor Exploration Lab - Chicago",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -656,7 +656,7 @@
             "Name": "Indoor Café - Chicago",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -670,7 +670,7 @@
             "Name": "Game Room/Arcade - Chicago",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -684,7 +684,7 @@
             "Name": "Outdoor Exploration Lab - San Francisco",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -698,7 +698,7 @@
             "Name": "Drawing/Watercolor Studio - San Francisco",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -712,7 +712,7 @@
             "Name": "Temporary Terrace - San Francisco",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -726,7 +726,7 @@
             "Name": "Cooking Classroom - San Francisco",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -740,7 +740,7 @@
             "Name": "Walking Meditation Paths - San Francisco",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -754,7 +754,7 @@
             "Name": "Building Block Room - San Francisco",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -768,7 +768,7 @@
             "Name": "Music Room - San Francisco",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -782,7 +782,7 @@
             "Name": "Sand Drawing Tables - San Francisco",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -796,7 +796,7 @@
             "Name": "Outdoor Café - San Francisco",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -810,7 +810,7 @@
             "Name": "Indoor Exploration Lab - San Francisco",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -824,7 +824,7 @@
             "Name": "Indoor Café - San Francisco",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -838,7 +838,7 @@
             "Name": "Game Room/Arcade - San Francisco",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -852,7 +852,7 @@
             "Name": "Outdoor Exploration Lab - San Antonio",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -866,7 +866,7 @@
             "Name": "Drawing/Watercolor Studio - San Antonio",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -880,7 +880,7 @@
             "Name": "Temporary Terrace - San Antonio",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -894,7 +894,7 @@
             "Name": "Cooking Classroom - San Antonio",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -908,7 +908,7 @@
             "Name": "Walking Meditation Paths - San Antonio",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -922,7 +922,7 @@
             "Name": "Building Block Room - San Antonio",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -936,7 +936,7 @@
             "Name": "Music Room - San Antonio",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -950,7 +950,7 @@
             "Name": "Sand Drawing Tables - San Antonio",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -964,7 +964,7 @@
             "Name": "Outdoor Café - San Antonio",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -978,7 +978,7 @@
             "Name": "Indoor Exploration Lab - San Antonio",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -992,7 +992,7 @@
             "Name": "Indoor Café - San Antonio",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1006,7 +1006,7 @@
             "Name": "Game Room/Arcade - San Antonio",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -1020,7 +1020,7 @@
             "Name": "Outdoor Exploration Lab - Denver",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -1034,7 +1034,7 @@
             "Name": "Drawing/Watercolor Studio - Denver",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -1048,7 +1048,7 @@
             "Name": "Temporary Terrace - Denver",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -1062,7 +1062,7 @@
             "Name": "Cooking Classroom - Denver",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -1076,7 +1076,7 @@
             "Name": "Walking Meditation Paths - Denver",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -1090,7 +1090,7 @@
             "Name": "Building Block Room - Denver",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -1104,7 +1104,7 @@
             "Name": "Music Room - Denver",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -1118,7 +1118,7 @@
             "Name": "Sand Drawing Tables - Denver",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -1132,7 +1132,7 @@
             "Name": "Outdoor Café - Denver",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -1146,7 +1146,7 @@
             "Name": "Indoor Exploration Lab - Denver",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -1160,7 +1160,7 @@
             "Name": "Indoor Café - Denver",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1174,7 +1174,7 @@
             "Name": "Game Room/Arcade - Denver",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -1188,7 +1188,7 @@
             "Name": "Outdoor Exploration Lab - Portland",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -1202,7 +1202,7 @@
             "Name": "Drawing/Watercolor Studio - Portland",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -1216,7 +1216,7 @@
             "Name": "Temporary Terrace - Portland",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -1230,7 +1230,7 @@
             "Name": "Cooking Classroom - Portland",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -1244,7 +1244,7 @@
             "Name": "Walking Meditation Paths - Portland",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -1258,7 +1258,7 @@
             "Name": "Building Block Room - Portland",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -1272,7 +1272,7 @@
             "Name": "Music Room - Portland",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -1286,7 +1286,7 @@
             "Name": "Sand Drawing Tables - Portland",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -1300,7 +1300,7 @@
             "Name": "Outdoor Café - Portland",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -1314,7 +1314,7 @@
             "Name": "Indoor Exploration Lab - Portland",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -1328,7 +1328,7 @@
             "Name": "Indoor Café - Portland",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1342,7 +1342,7 @@
             "Name": "Game Room/Arcade - Portland",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -1356,7 +1356,7 @@
             "Name": "Outdoor Exploration Lab - Pittsburgh",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -1370,7 +1370,7 @@
             "Name": "Drawing/Watercolor Studio - Pittsburgh",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -1384,7 +1384,7 @@
             "Name": "Temporary Terrace - Pittsburgh",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -1398,7 +1398,7 @@
             "Name": "Cooking Classroom - Pittsburgh",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -1412,7 +1412,7 @@
             "Name": "Walking Meditation Paths - Pittsburgh",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -1426,7 +1426,7 @@
             "Name": "Building Block Room - Pittsburgh",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -1440,7 +1440,7 @@
             "Name": "Music Room - Pittsburgh",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -1454,7 +1454,7 @@
             "Name": "Sand Drawing Tables - Pittsburgh",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -1468,7 +1468,7 @@
             "Name": "Outdoor Café - Pittsburgh",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -1482,7 +1482,7 @@
             "Name": "Indoor Exploration Lab - Pittsburgh",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -1496,7 +1496,7 @@
             "Name": "Indoor Café - Pittsburgh",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1510,7 +1510,7 @@
             "Name": "Game Room/Arcade - Pittsburgh",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -1524,7 +1524,7 @@
             "Name": "Outdoor Exploration Lab - New York",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -1538,7 +1538,7 @@
             "Name": "Drawing/Watercolor Studio - New York",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -1552,7 +1552,7 @@
             "Name": "Temporary Terrace - New York",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -1566,7 +1566,7 @@
             "Name": "Cooking Classroom - New York",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -1580,7 +1580,7 @@
             "Name": "Walking Meditation Paths - New York",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -1594,7 +1594,7 @@
             "Name": "Building Block Room - New York",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -1608,7 +1608,7 @@
             "Name": "Music Room - New York",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -1622,7 +1622,7 @@
             "Name": "Sand Drawing Tables - New York",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -1636,7 +1636,7 @@
             "Name": "Outdoor Café - New York",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -1650,7 +1650,7 @@
             "Name": "Indoor Exploration Lab - New York",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -1664,7 +1664,7 @@
             "Name": "Indoor Café - New York",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1678,7 +1678,7 @@
             "Name": "Game Room/Arcade - New York",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         },
         {
             "attributes": {
@@ -1692,7 +1692,7 @@
             "Name": "Outdoor Exploration Lab - Minneapolis",
             "Category__c": "Exploration Lab",
             "Type__c": "Large Groups;Scheduled Activity;Outdoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/outdoor_lab.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/outdoor_lab.png"
         },
         {
             "attributes": {
@@ -1706,7 +1706,7 @@
             "Name": "Drawing/Watercolor Studio - Minneapolis",
             "Category__c": "Drawing/Watercolor Studio",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/drawing_watercolor_studio.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/drawing_watercolor_studio.png"
         },
         {
             "attributes": {
@@ -1720,7 +1720,7 @@
             "Name": "Temporary Terrace - Minneapolis",
             "Category__c": "Temporary Terrace",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Indoor;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/temp_terrace.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/temp_terrace.png"
         },
         {
             "attributes": {
@@ -1734,7 +1734,7 @@
             "Name": "Cooking Classroom - Minneapolis",
             "Category__c": "Cooking Classroom",
             "Type__c": "Large Groups;Scheduled Activity;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cooking_classroom.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cooking_classroom.png"
         },
         {
             "attributes": {
@@ -1748,7 +1748,7 @@
             "Name": "Walking Meditation Paths - Minneapolis",
             "Category__c": "Walking Meditation Paths",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Outdoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/walking_paths.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/walking_paths.png"
         },
         {
             "attributes": {
@@ -1762,7 +1762,7 @@
             "Name": "Building Block Room - Minneapolis",
             "Category__c": "Building Block Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/building_block_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/building_block_room.png"
         },
         {
             "attributes": {
@@ -1776,7 +1776,7 @@
             "Name": "Music Room - Minneapolis",
             "Category__c": "Music Room",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/music_room.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/music_room.png"
         },
         {
             "attributes": {
@@ -1790,7 +1790,7 @@
             "Name": "Sand Drawing Tables - Minneapolis",
             "Category__c": "Sand Drawing Tables",
             "Type__c": "Scheduled Activity;Come-and-Go;Individuals or Small Groups;Indoor;Quiet;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/sand_drawing_tables.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/sand_drawing_tables.png"
         },
         {
             "attributes": {
@@ -1804,7 +1804,7 @@
             "Name": "Outdoor Café - Minneapolis",
             "Category__c": "Café",
             "Type__c": "Large Groups;Come-and-Go;Individuals or Small Groups;Outdoor;Conversation Starter;Relaxing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_2.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_2.png"
         },
         {
             "attributes": {
@@ -1818,7 +1818,7 @@
             "Name": "Indoor Exploration Lab - Minneapolis",
             "Category__c": "Exploration Lab",
             "Type__c": "Scheduled Activity;Individuals or Small Groups;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/exploration_lab_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/exploration_lab_1.png"
         },
         {
             "attributes": {
@@ -1832,7 +1832,7 @@
             "Name": "Indoor Café - Minneapolis",
             "Category__c": "Café",
             "Type__c": "Come-and-Go;Individuals or Small Groups;Indoor;Conversation Starter",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/cafe_1.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/cafe_1.png"
         },
         {
             "attributes": {
@@ -1846,7 +1846,7 @@
             "Name": "Game Room/Arcade - Minneapolis",
             "Category__c": "Game Room/Arcade",
             "Type__c": "Large Groups;Scheduled Activity;Come-and-Go;Indoor;Conversation Starter;Energizing",
-            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/ztsfdc-demo-files/easy-spaces/game_room_arcade.png"
+            "Picture_URL__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/easy-spaces/game_room_arcade.png"
         }
     ]
 }
