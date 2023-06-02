@@ -28,12 +28,12 @@
     },
     {
       "file": ".github/workflows/ci.yml",
-      "description": "Creation of package versions for each package is automated using GitHub actions.\n\nWhen the repository was first created, package definitions were manually created for each source folder using the `sfdx force:package:create` command.\n\nFor example, a package `ESObjects` is created with this command `sfdx force:package:create --name=ESObjects --packagetype=Unlocked --path=./es-base-objects`",
+      "description": "Creation of package versions for each package is automated using GitHub actions.\n\nWhen the repository was first created, package definitions were manually created for each source folder using the `sf package create` command.\n\nFor example, a package `ESObjects` is created with this command `sf package create --name=ESObjects --package-type=Unlocked --path=./es-base-objects`",
       "line": 121
     },
     {
       "file": ".github/workflows/packaging.yml",
-      "description": "Package version for each package is created using the command `sfdx force:package:version:create`.\n\nFor example to create a package version for ESObjects use the command `sfdx force:package:version:create --package=ESObjects --installationkeybypass --wait=20`",
+      "description": "Package version for each package is created using the command `sf package version create`.\n\nFor example to create a package version for ESObjects use the command `sf package version create -p ESObjects -x --wait=20`",
       "line": 66
     },
     {

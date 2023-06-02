@@ -50,7 +50,7 @@ There are two ways to install Easy Spaces:
 1. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
     ```
-    sfdx auth:web:login -d -a myhuborg
+    sf org login web -d -a myhuborg
     ```
 
 1. Clone this repository:
@@ -63,20 +63,20 @@ There are two ways to install Easy Spaces:
 1. Create a scratch org and provide it with an alias (**easyspaces** in the command below):
 
     ```
-    sfdx force:org:create -s -f config/project-scratch-def.json -a easyspaces
+    sf org create scratch -d -f config/project-scratch-def.json -a easyspaces
     ```
 
 1. Push source to your scratch org:
 
     ```
-    sfdx force:source:push
+    sf project deploy start
     ```
 
 1. Assign two Easy Spaces permission sets to the default user:
 
     ```
-    sfdx force:user:permset:assign -n EasySpacesObjects
-    sfdx force:user:permset:assign -n SpaceManagementApp
+    sf org assign permset -n EasySpacesObjects
+    sf org assign permset -n SpaceManagementApp
     ```
 
 1. (Optional) Assign the `Walkthroughs` permission set to the default user.
@@ -84,20 +84,20 @@ There are two ways to install Easy Spaces:
     > Note: this will enable your user to use In-App Guidance Walkthroughs, allowing you to be taken through a guided tour of the sample app. The Walkthroughs permission set gets auto-created with In-App guidance activation.
 
     ```
-    sfdx force:user:permset:assign -n Walkthroughs
+    sf org assign permset -n Walkthroughs
     ```
 
 1. Import sample data:
 
     ```
-    sfdx force:data:tree:import -p ./data/Plan1.json
-    sfdx force:data:tree:import -p ./data/Plan2.json
+    sf data tree import -p ./data/Plan1.json
+    sf data tree import -p ./data/Plan2.json
     ```
 
 1. Open the scratch org:
 
     ```
-    sfdx force:org:open
+    sf org open
     ```
 
 1. In **Setup**, navigate to **Themes and Branding**
