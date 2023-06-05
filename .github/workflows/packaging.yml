@@ -139,7 +139,7 @@ jobs:
 
             # Create scratch org
             - name: 'Create scratch org'
-              run: sf org create scratch -f config/project-scratch-def.json -a streaming-ci -d -y 1
+              run: sf org create scratch -f config/project-scratch-def.json -a scratch-org -d -y 1
 
             # Get package version IDs
             - name: 'Get package version IDs'
