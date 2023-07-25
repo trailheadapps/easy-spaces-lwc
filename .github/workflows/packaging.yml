@@ -62,7 +62,7 @@ jobs:
             # Create package version - ES Base Objects
             - name: 'Create package version - ES Base Objects'
               id: package-baseObj
-              if: ${{ github.event.inputs.forcePackageBaseObjects == 'true' || contains(github.event.client_payload.packageNames, 'ESObjects') }}
+              if: github.event.inputs.forcePackageBaseObjects == 'true' || contains(github.event.client_payload.packageNames, 'ESObjects')
               run: |
                   set +e
                   json=$(sf package version create -p ESObjects -x -w 20 --json)
@@ -79,7 +79,7 @@ jobs:
             # Create package version - ES Base Code
             - name: 'Create package version - ES Base Code'
               id: package-baseCode
-              if: ${{ github.event.inputs.forcePackageBaseCode == 'true' || contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC') }}
+              if: github.event.inputs.forcePackageBaseCode == 'true' || contains(github.event.client_payload.packageNames, 'ESBaseCodeLWC')
               run: |
                   set +e
                   json=$(sf package version create -p ESBaseCodeLWC -x -w 20 --json)
@@ -96,7 +96,7 @@ jobs:
             # Create package version - ES Base Styles
             - name: 'Create package version - ES Base Styles'
               id: package-baseStyles
-              if: ${{ github.event.inputs.forcePackageBaseStyles == 'true' || contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC') }}
+              if: github.event.inputs.forcePackageBaseStyles == 'true' || contains(github.event.client_payload.packageNames, 'ESBaseStylesLWC')
               run: |
                   set +e
                   json=$(sf package version create -p ESBaseStylesLWC -x -w 20 --json)
@@ -113,7 +113,7 @@ jobs:
             # Create package version - ES Space Management
             - name: 'Create package version - ES Space Management'
               id: package-spaceMgmt
-              if: ${{ github.event.inputs.forcePackageSpaceMgmt == 'true' || contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC') }}
+              if: github.event.inputs.forcePackageSpaceMgmt == 'true' || contains(github.event.client_payload.packageNames, 'ESSpaceMgmtLWC')
               run: |
                   set +e
                   json=$(sf package version create -p ESSpaceMgmtLWC -x -w 20 --json)
