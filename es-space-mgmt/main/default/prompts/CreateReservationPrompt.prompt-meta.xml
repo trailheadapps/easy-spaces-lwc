@@ -34,7 +34,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 2</masterLabel>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>2</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
@@ -53,7 +53,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 3</masterLabel>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>3</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
@@ -72,7 +72,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 4</masterLabel>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>4</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
@@ -91,7 +91,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 5</masterLabel>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>5</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
@@ -110,7 +110,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 6</masterLabel>
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>6</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
@@ -131,7 +131,7 @@
         <isPublished>false</isPublished>
         <masterLabel>Create Reservation Prompt Step 7</masterLabel>
         <shouldDisplayActionButton>true</shouldDisplayActionButton>
-        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>7</stepNumber>
         <targetPageKey1>Reservation_Manager</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
