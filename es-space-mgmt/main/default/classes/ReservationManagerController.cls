@@ -36,7 +36,7 @@ public with sharing class ReservationManagerController {
                 c.Customer_Status__r.QualifiedAPIName +
                 ' IN: draftStatus';
         }
-        query += ' WITH SECURITY_ENFORCED ORDER BY CreatedDate DESC LIMIT 5';
+        query += ' WITH SECURITY_ENFORCED ORDER BY CreatedDate DESC LIMIT 6';
 
         for (Sobject sobj : Database.query(query)) {
             CustomerServices.Customer customer = new CustomerServices.Customer(
