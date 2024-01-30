@@ -52,15 +52,6 @@
     "pushPackageDirectoriesSequentially": true,
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "57.0",
-    "packageAliases": {
-        "ESObjects": "0Ho4W000000CaeJSAS",
-        "ESBaseCodeLWC": "0Ho4W000000CaeTSAS",
-        "ESBaseStylesLWC": "0Ho4W000000CaeOSAS",
-        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS",
-        "ESObjects@57.0.0-3": "04t4W000002nizdQAA",
-        "ESBaseCodeLWC@57.0.0-2": "04t4W000002niziQAA",
-        "ESBaseStylesLWC@57.0.0-2": "04t4W000002niznQAA",
-        "ESSpaceMgmtLWC@57.0.0-4": "04t4W000002nizsQAA"
-    }
+    "sourceApiVersion": "57.0"
+
 }
