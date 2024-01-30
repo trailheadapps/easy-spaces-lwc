@@ -1,3 +1,6 @@
+/**
+ * @description       : This component is used to get the customer fields from the metadata and display it in the UI
+ */
 public inherited sharing class CustomerServices {
     @auraEnabled(cacheable=true)
     public static Customer getCustomerFields(String objectType) {
