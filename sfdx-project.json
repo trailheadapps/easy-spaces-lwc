@@ -1,57 +1,66 @@
 {
-    "packageDirectories": [
+  "packageDirectories": [
+    {
+      "path": "es-base-objects",
+      "package": "ESObjects",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "versionDescription": ""
+    },
+    {
+      "path": "es-base-styles",
+      "package": "ESBaseStylesLWC",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "versionDescription": ""
+    },
+    {
+      "path": "es-base-code",
+      "package": "ESBaseCodeLWC",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "dependencies": [
         {
-            "path": "./es-base-objects",
-            "package": "ESObjects",
-            "versionName": "Base Objects - Spring '23",
-            "versionNumber": "57.0.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "./es-base-styles",
-            "package": "ESBaseStylesLWC",
-            "versionName": "Base Styles LWC - Spring '23",
-            "versionNumber": "57.0.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "./es-base-code",
-            "package": "ESBaseCodeLWC",
-            "versionName": "Base Code LWC - Spring '23",
-            "versionNumber": "57.0.0.NEXT",
-            "default": false,
-            "dependencies": [
-                {
-                    "package": "ESObjects",
-                    "versionNumber": "57.0.0.LATEST"
-                }
-            ]
-        },
-        {
-            "path": "./es-space-mgmt",
-            "package": "ESSpaceMgmtLWC",
-            "versionName": "Space Management App - Spring '23",
-            "versionNumber": "57.0.0.NEXT",
-            "default": true,
-            "dependencies": [
-                {
-                    "package": "ESObjects",
-                    "versionNumber": "57.0.0.LATEST"
-                },
-                {
-                    "package": "ESBaseCodeLWC",
-                    "versionNumber": "57.0.0.LATEST"
-                },
-                {
-                    "package": "ESBaseStylesLWC",
-                    "versionNumber": "57.0.0.LATEST"
-                }
-            ]
+          "package": "ESObjects",
+          "versionNumber": "57.0.0.LATEST"
         }
-    ],
-    "pushPackageDirectoriesSequentially": true,
-    "namespace": "",
-    "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "57.0"
-
+      ],
+      "versionDescription": ""
+    },
+    {
+      "path": "es-space-mgmt",
+      "package": "ESSpaceMgmtLWC",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "ESObjects",
+          "versionNumber": "57.0.0.LATEST"
+        },
+        {
+          "package": "ESBaseCodeLWC",
+          "versionNumber": "57.0.0.LATEST"
+        },
+        {
+          "package": "ESBaseStylesLWC",
+          "versionNumber": "57.0.0.LATEST"
+        }
+      ],
+      "versionDescription": ""
+    }
+  ],
+  "pushPackageDirectoriesSequentially": true,
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+    "ESObjects": "0Ho3h0000008On7CAE",
+    "ESBaseStylesLWC": "0Ho3h0000008OnCCAU",
+    "ESBaseCodeLWC": "0Ho3h0000008OnHCAU",
+    "ESSpaceMgmtLWC": "0Ho3h0000008OnMCAU"
+  }
 }
