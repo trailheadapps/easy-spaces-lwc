@@ -33,7 +33,7 @@
         "eslint-config-prettier": "^8.9.0",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jest": "^27.6.3",
-        "husky": "^8.0.3",
+        "husky": "^9.0.9",
         "lint-staged": "^13.2.3",
         "prettier": "^2.8.8",
         "prettier-plugin-apex": "^1.13.0"
