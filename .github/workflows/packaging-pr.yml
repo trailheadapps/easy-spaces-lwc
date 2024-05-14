@@ -27,7 +27,7 @@ jobs:
 
             # Checkout the source code
             - name: 'Checkout source code'
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   ref: ${{ github.event.client_payload.ref }}
 
@@ -124,7 +124,7 @@ jobs:
 
             # Update sfdx-project.json and README to use only latest package version
             - name: 'Update sfdx-project.json and README'
-              uses: trailheadapps/github-action-sfdx-packaging-updater@1.2.0
+              uses: trailheadapps/github-action-sfdx-packaging-updater@2.0.0
 
             # Create prerelease scratch org
             - name: 'Create prerelease scratch org'

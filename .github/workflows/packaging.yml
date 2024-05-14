@@ -36,7 +36,7 @@ jobs:
 
             # Checkout the source code
             - name: 'Checkout source code'
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   ref: ${{ github.event.client_payload.ref }}
 
@@ -133,7 +133,7 @@ jobs:
 
             # Update sfdx-project.json and README to use only latest package version
             - name: 'Update sfdx-project.json and README'
-              uses: trailheadapps/github-action-sfdx-packaging-updater@1.2.0
+              uses: trailheadapps/github-action-sfdx-packaging-updater@2.0.0
 
             # Create scratch org
             - name: 'Create scratch org'
@@ -174,7 +174,7 @@ jobs:
             # The main branch is protected, so we have to take a sequea for updating the README through a new PR
             - name: 'Create PR for new package versions'
               id: create-pr
-              uses: peter-evans/create-pull-request@v4
+              uses: peter-evans/create-pull-request@v6
               with:
                   title: 'Released new package versions'
                   body: |
