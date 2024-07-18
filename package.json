@@ -6,13 +6,13 @@
     "scripts": {
         "lint": "eslint **/{lwc,aura}/**/*.js",
         "test": "npm run test:unit",
-        "test:unit": "sfdx-lwc-jest --skipApiVersionCheck",
-        "test:unit:watch": "sfdx-lwc-jest --watch --skipApiVersionCheck",
-        "test:unit:debug": "sfdx-lwc-jest --debug --skipApiVersionCheck",
-        "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
+        "test:unit": "sfdx-lwc-jest",
+        "test:unit:watch": "sfdx-lwc-jest --watch ",
+        "test:unit:debug": "sfdx-lwc-jest --debug ",
+        "test:unit:coverage": "sfdx-lwc-jest --coverage ",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "postinstall": "husky install",
+        "prepare": "husky || true",
         "precommit": "lint-staged"
     },
     "author": "salesforce.com",
@@ -23,20 +23,20 @@
     },
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^1.8.2",
-        "@prettier/plugin-xml": "^2.2.0",
+        "@prettier/plugin-xml": "^3.4.1",
         "@sa11y/jest": "^5.3.0",
-        "@salesforce/eslint-config-lwc": "^3.5.3",
+        "@salesforce/eslint-config-lwc": "^3.6.0",
         "@salesforce/eslint-plugin-aura": "^2.1.0",
         "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "@salesforce/sfdx-lwc-jest": "^1.4.1",
+        "@salesforce/sfdx-lwc-jest": "^5.1.0",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^8.9.0",
         "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-jest": "^27.9.0",
-        "husky": "^8.0.3",
-        "lint-staged": "^13.2.3",
-        "prettier": "^2.8.8",
-        "prettier-plugin-apex": "^1.13.0"
+        "eslint-plugin-jest": "^28.6.0",
+        "husky": "^9.1.0",
+        "lint-staged": "^15.2.7",
+        "prettier": "^3.3.3",
+        "prettier-plugin-apex": "^2.1.4"
     },
     "lint-staged": {
         "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
@@ -46,11 +46,11 @@
             "eslint"
         ],
         "**/lwc/**": [
-            "sfdx-lwc-jest --skipApiVersionCheck -- --bail --findRelatedTests"
+            "sfdx-lwc-jest -- --bail --findRelatedTests"
         ]
     },
     "volta": {
-        "node": "20.13.1"
+        "node": "20.15.0"
     },
     "dependencies": {}
 }
